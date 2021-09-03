@@ -11,7 +11,12 @@
     <ul>
         <li style="list-style: none;">
             <button type="button" onclick="drawPencil()">Lapiz</button>
+            <input id="color" name="color" type="color" value='#000000' > 
+            <input type="range" id="tamaño" min="1" max="5" value="3">
             <button type="button" onclick="drawRubber()">Goma</button>
+            <button type="button" id="onload" class="onload" onclick="document.querySelector('.pictureChooser').click();"> Cargar Imagen</button>
+            <input type="file"  class="pictureChooser" accept="image/*" style="display: none;">
+            <button type="button" onclick="saveImage()">Guardar Imagen</button>
         </li>
     </ul>
     <canvas id="canvas" width="500" height="500"></canvas>
