@@ -5,7 +5,7 @@ let context = canvas.getContext("2d");
 let limitCanvas = canvas.getBoundingClientRect();
 let pencilLine, currentPosition, coordinates;
 let selected = null;
-
+let pictureData;
 
 // paint 
 
@@ -89,8 +89,8 @@ async function setImage (){
     let content = await processPicture (choosenFile);
     let image = await loadPictureAsync (content);
     drawImage(image);
-    let imageData =context.getImageData(0,0,canvas.width,canvas.height);
-    }
+    pictureData = context.getImageData(0, 0, canvas.width,canvas.height);
+}
 
 async function processPicture(image){
     try{
@@ -120,7 +120,7 @@ function loadPictureAsync (content){
         image.onload = () => {
             resolve (image)
         };
-        image.onerror = reject ;
+        image.onerror = reject;
     })
 }
 
@@ -129,25 +129,91 @@ function drawImage (image){
     let imageScaleHeight = image.height;
     if (image.width > canvas.width || image.height > canvas.height){
         if (image.width > canvas.width){
-            let imageAspectRatio = (1.0 * image.height) / image.width ;
+            let imageAspectRatio = (1.0 * image.height) / image.width;
             imageScaleWidth = canvas.width;
             imageScaleHeight = canvas.width * imageAspectRatio;
         }else{
-            let imageAspectRatio = (1.0 * image.width) / image.height ;
+            let imageAspectRatio = (1.0 * image.width) / image.height;
             imageScaleWidth = canvas.width * imageAspectRatio;
             imageScaleWidth = canvas.width ;
         }
     } 
-    canvas.width = imageScaleWidth ;
+    canvas.width = imageScaleWidth;
     canvas.height = imageScaleHeight;
-    context.drawImage (image , 0,0 , imageScaleWidth , imageScaleHeight);
+    context.drawImage (image ,0, 0, imageScaleWidth, imageScaleHeight);
 }
 
 //end load image 
+
+// save image
 
 function saveImage (){
     let save = document.createElement('a');
     save.download = "canvas"
     save.href = canvas.toDataURL("image/png").replace ("image.png","image/octet-string");
     save.click();
+}
+
+// end save image
+
+// filters
+
+//binary filter 
+
+function binaryFilter(){
+    deselectFilters();
+    let button = document.querySelector('#binaryFilter');
+    button.classList.add("selected");
+    let bkpPicture = backupImage(pictureData);
+
+    for (let x = 0; x < pictureData.width; x++){
+        for (let y = 0; y < pictureData.height; y++){
+            let i = (x + y * pictureData.width) * 4;
+            let index = (pictureData.data[i] + pictureData.data[i + 1] + pictureData.data[i + 2]) / 3;
+            if (index <= (255 / 2)){
+                let r = 255;
+                let g = 255;
+                let b = 255;
+                setPixel(pictureData, x, y, r, g, b, 255);
+            } else {
+                let r = 0;
+                let g = 0;
+                let b = 0;
+                setPixel(pictureData, x, y, r, g, b, 255);
+            }
+        }
+    }
+    context.putImageData(pictureData, 0, 0);
+    pictureData = bkpPicture;
+}
+
+// helps 
+function setPixel (imageData, x, y, r, g, b, a) {
+    let index = (x + y * imageData.width) * 4
+    imageData.data[index+0] = r;
+    imageData.data[index+1] = g;
+    imageData.data[index+2] = b;
+    imageData.data[index+3] = a; 
+}
+
+function backupImage(pictureData){
+    let backupPicture = new ImageData(pictureData.width, pictureData.height);
+    for (let x = 0; x < pictureData.width; x++){
+        for (let y = 0; y < pictureData.height; y++){
+            let index = (x + y * pictureData.width) * 4
+            let r = pictureData.data[index + 0];
+            let g = pictureData.data[index + 1];
+            let b = pictureData.data[index + 2];
+            let a = pictureData.data[index + 3];
+            setPixel(backupPicture, x, y, r, g, b, 255);
+        }
+    }
+    return backupPicture;
+}
+
+function deselectFilters() {
+	let buttons = document.querySelectorAll("button");
+	buttons.forEach(b => {
+		b.classList.remove("selected");
+	})
 }
