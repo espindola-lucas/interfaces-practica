@@ -22,7 +22,35 @@
 
     <ul>
         <li style="list-style: none;">
+            <button id="negativeFilter" onclick="negativeFilter()">Negativo</button>
+            
+            <label>Brillo</label>
+            <input type="range" 
+                    name="brightnessRange" 
+                    id="brightnessRange" 
+                    min="0" 
+                    max="200" 
+                    value="100">
+            <button type="button" onclick="brightnessFilter()">Aplicar</button>
+
             <button id="binaryFilter" onclick="binaryFilter()">Binarización</button>
+
+            <button id="sepiaFilter" onclick="sepiaFilter()">Sepia</button>
+        
+            <label>Saturacion</label>
+            <input type="range" 
+                    name="SaturationRange" 
+                    id="saturationRange" 
+                    min="0" 
+                    max="200" 
+                    value="100">
+            <button type="button" onclick="saturationFilter()">Aplicar</button>
+
+            <button id="blurFilter" onclick="blurFilter()">Blur</button>
+
+            <button id="edgeDetectionFilter" onclick="edgeDetectionFilter()">Deteccion de Bordes</button>
+
+            <button onclick="clearCanvas()">Limpiar Lienzo</button>
         </li>
     </ul>
     <canvas id="canvas" width="500" height="500"></canvas>
