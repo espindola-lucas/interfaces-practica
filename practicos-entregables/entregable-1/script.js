@@ -6,6 +6,7 @@ let limitCanvas = canvas.getBoundingClientRect();
 let pencilLine, currentPosition, coordinates;
 let selected = null;
 let pictureData;
+let statusImage = 0 ;
 
 // paint 
 
@@ -140,6 +141,7 @@ function drawImage (image){
     canvas.width = imageScaleWidth;
     canvas.height = imageScaleHeight;
     context.drawImage (image ,0, 0, imageScaleWidth, imageScaleHeight);
+    statusImage = 1 ;
 }
 
 //end load image 
@@ -160,11 +162,11 @@ function saveImage (){
 //binary filter 
 
 function binaryFilter(){
-    deselectFilters();
+    if(statusImage ==  1){
+     deselectFilters();
     let button = document.querySelector('#binaryFilter');
     button.classList.add("selected");
     let bkpPicture = backupImage(pictureData);
-
     for (let x = 0; x < pictureData.width; x++){
         for (let y = 0; y < pictureData.height; y++){
             let i = (x + y * pictureData.width) * 4;
@@ -182,14 +184,17 @@ function binaryFilter(){
             }
         }
     }
+
     context.putImageData(pictureData, 0, 0);
     pictureData = bkpPicture;
+}
 }
 //end binary
 
 //sepia filter
 function sepiaFilter (){
-    deselectFilters();
+    if(statusImage ==  1){
+         deselectFilters();
     let button = document.querySelector('#sepiaFilter');
     button.classList.add("selected");
     let bkpPicture = backupImage(pictureData);
@@ -205,10 +210,12 @@ function sepiaFilter (){
     context.putImageData(pictureData, 0, 0);
     pictureData = bkpPicture;
 }
+}
 //end sepia
 
 //sobel filter 
 function edgeDetectionFilter (){
+    if(statusImage ==  1){
     deselectFilters();
     let button = document.querySelector('#sepiaFilter');
     button.classList.add("selected");
@@ -276,6 +283,7 @@ function edgeDetectionFilter (){
     } 
     context.putImageData(datos, 0, 0);      
     pictureData = bkpPicture;
+} 
 }
 // end sobel
 
@@ -302,6 +310,11 @@ function backupImage(pictureData){
     }
     return backupPicture;
 }
+function clearFilter (){
+    let button = document.querySelector('#clearFilter');
+    button.classList.add("selected");
+    context.putImageData(pictureData ,0, 0 );
+}
 
 function deselectFilters() {
 	let buttons = document.querySelectorAll("button");
@@ -311,4 +324,5 @@ function deselectFilters() {
 }
 function clearCanvas (){
     context.clearRect(0, 0, canvas.width, canvas.height);
+    statusImage = 0 ;
 }

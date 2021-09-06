@@ -26,7 +26,7 @@
     <div class="filters">
         <button onclick="clearCanvas()">Limpiar Lienzo</button> <br>
 
-        <button onclick="clearFilter()">Limpiar Filtro</button> <br>
+        <button id= "clearFilter" onclick="clearFilter()">Limpiar Filtro</button> <br>
 
         <button id="negativeFilter" onclick="negativeFilter()">Negativo</button> <br>
             
@@ -70,7 +70,9 @@
         
         <h3>Filtros</h3>
 
-        <p>Los filtros no son acumulativos. Cada vez que se aplique un filtro se hara sobre la imágen original.</p>
+        <p>Los filtros no son acumulativos. Cada vez que se aplique un filtro se hara sobre la imágen original. Si no hay ninguna imagen,
+             y se apreta un filtro no sucedera nada. Ya que los filtros son para las imagenes y no para el canvas vacio.
+        </p>
     </div>
             
     <!--<canvas id="canvas" width="500" height="500"></canvas> -->
