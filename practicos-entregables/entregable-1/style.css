@@ -1,3 +1,99 @@
- #canvas{
+body{
+    background: rgb(115, 172, 150);
+}
+
+.paint{
+    position: fixed;
+    margin-left: 20%;
+    width: 20%;
+}
+
+.paint .rubber{
+    margin-left: 10%;
+}
+
+.file{
+    position: fixed;
+    margin-left: 50%;
+    width: 25%;
+}
+
+.file .download{
+    margin-left: 10%;
+}
+
+.paint button, .file button{
     border: solid 1px black;
+    padding: 2%;
+}
+
+button{
+    background: white;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button:hover{
+    background: rgb(212, 233, 225);
+}
+
+.canvasPreview{
+    border: solid 1px black;
+    position: fixed;
+    min-width: 700px;
+	min-height: 600px;
+	max-width: 700px;
+	max-height: 600px;
+	background-color: white;
+    margin-top: 3.5%;
+    margin-left: 20%;
+}
+
+.filters{
+    position: fixed;
+    display: inline-block;
+    padding: 2%;
+    margin-top: 3.5%;
+    margin-left: 4%;
+}
+
+.filters button{
+    border: solid 1px black;
+    padding: 2% 5%;
+    margin-top: 5%;
+}
+
+.filters .filterRangeBrightness, .filters .filterRangeSaturation{
+    border: solid 1px black;
+    padding: 2% 5%;
+    margin-top: 5%;
+    background: white;
+}
+
+.filters .filterRangeBrightness > label{
+    position: fixed;
+    margin-left: 3.5%;
+}
+
+.filters .filterRangeSaturation > label{
+    position: fixed;
+    margin-left: 2.5%;
+}
+
+.help{
+    border: solid 1px black;
+    position: fixed;
+    width: 22%;
+    margin-left: 73%;
+    margin-top: 3.5%;
+    background: white;
+    padding: 1%;
+    background: rgb(212, 233, 225);
 }
