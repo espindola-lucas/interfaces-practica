@@ -8,53 +8,72 @@
     <title>Entregable Nº1</title>
 </head>
 <body>
-    <ul>
-        <li style="list-style: none;">
-            <button type="button" onclick="drawPencil()">Lapíz</button>
-            <input id="color" name="color" type="color" value='#000000' > 
-            <input type="range" id="tamaño" min="1" max="5" value="3">
-            <button type="button" onclick="drawRubber()">Goma</button>
-            <button type="button" id="onload" class="onload" onclick="document.querySelector('.pictureChooser').click();"> Cargar Imagen</button>
-            <input type="file"  class="pictureChooser" accept="image/*" style="display: none;">
-            <button type="button" onclick="saveImage()">Guardar Imagen</button>
-        </li>
-    </ul>
+    <div class="paint">
+        <button type="button" onclick="drawPencil()">Lapíz</button>
+        <input id="color" name="color" type="color" value='#000000' > 
+        <button class="rubber" type="button" onclick="drawRubber()">Goma</button>
+    </div>
+    <div class="file">
+        <button type="button" id="onload" class="onload" onclick="document.querySelector('.pictureChooser').click();"> Cargar Imagen</button>
+        <input type="file"  class="pictureChooser" accept="image/*" style="display: none;">
+        <button class="download" type="button" onclick="saveImage()">Guardar Imagen</button>
+    </div>
 
-    <ul>
-        <li style="list-style: none;">
-            <button id="negativeFilter" onclick="negativeFilter()">Negativo</button>
+    <div class="canvasPreview">
+        <canvas id="canvas" width="700" height="600"></canvas>
+    </div>
+
+    <div class="filters">
+        <button onclick="clearCanvas()">Limpiar Lienzo</button> <br>
+
+        <button onclick="clearFilter()">Limpiar Filtro</button> <br>
+
+        <button id="negativeFilter" onclick="negativeFilter()">Negativo</button> <br>
             
-            <label>Brillo</label>
+        <button id="binaryFilter" onclick="binaryFilter()">Binarización</button> <br>
+
+        <button id="sepiaFilter" onclick="sepiaFilter()">Sepia</button> <br>
+
+        <button id="blurFilter" onclick="blurFilter()">Blur</button> <br>
+
+        <button id="edgeDetectionFilter" onclick="edgeDetectionFilter()">Deteccion de Bordes</button> <br>
+        
+        <div class="filterRangeBrightness">
+            <label>Brillo</label> <br>
             <input type="range" 
                     name="brightnessRange" 
                     id="brightnessRange" 
                     min="0" 
                     max="200" 
-                    value="100">
-            <button type="button" onclick="brightnessFilter()">Aplicar</button>
+                    value="100"> <br>
+            <button type="button" onclick="brightnessFilter()">Aplicar</button> <br>
+        </div>
 
-            <button id="binaryFilter" onclick="binaryFilter()">Binarización</button>
-
-            <button id="sepiaFilter" onclick="sepiaFilter()">Sepia</button>
-        
-            <label>Saturacion</label>
+        <div class="filterRangeSaturation">
+            <label>Saturacion</label> <br>
             <input type="range" 
                     name="SaturationRange" 
                     id="saturationRange" 
                     min="0" 
                     max="200" 
-                    value="100">
-            <button type="button" onclick="saturationFilter()">Aplicar</button>
+                    value="100"> <br>
+            <button type="button" onclick="saturationFilter()">Aplicar</button> <br>
+        </div>
+    </div>
 
-            <button id="blurFilter" onclick="blurFilter()">Blur</button>
+    <div class="help">
+        <h1>Ayuda</h1> 
 
-            <button id="edgeDetectionFilter" onclick="edgeDetectionFilter()">Deteccion de Bordes</button>
+        <h3>Imágenes</h3>
+        
+        <p>Las imagenes mayor 700px x 600px se van a adaptar a la medida del canvas.</p>
+        
+        <h3>Filtros</h3>
 
-            <button onclick="clearCanvas()">Limpiar Lienzo</button>
+        <p>Los filtros no son acumulativos. Cada vez que se aplique un filtro se hara sobre la imágen original.</p>
+    </div>
             
-        </li>
-    </ul>
-    <canvas id="canvas" width="500" height="500"></canvas>
+    <!--<canvas id="canvas" width="500" height="500"></canvas> -->
 </body>
 <script src="script.js"></script>
 </html>

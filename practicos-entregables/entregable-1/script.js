@@ -57,7 +57,7 @@ function paint(event){
             x:coordinates.x,
             y:coordinates.y
         };
-        context.lineWidth = document.getElementById("tamaño").value;
+        context.lineWidth = 1;
         context.strokeStyle = document.getElementById("color").value; 
         context.stroke();
     }
@@ -186,8 +186,8 @@ function binaryFilter(){
     pictureData = bkpPicture;
 }
 //end binary
-//sepia filter
 
+//sepia filter
 function sepiaFilter (){
     deselectFilters();
     let button = document.querySelector('#sepiaFilter');
@@ -195,20 +195,19 @@ function sepiaFilter (){
     let bkpPicture = backupImage(pictureData);
     for (let x = 0; x < pictureData.width; x++){
         for (let y = 0; y < pictureData.height; y++){
-        let i = (x+y*pictureData.width)*4;
-        let r = 0.393*pictureData.data[i]+ 0.769*pictureData.data [i+1]+ 0.189*pictureData.data [i+2];
-        let g = 0.393*pictureData.data[i]+ 0.686*pictureData.data [i+1]+ 0.168*pictureData.data [i+2];
-        let b = 0.272*pictureData.data[i]+ 0.534*pictureData.data [i+1]+ 0.131*pictureData.data [i+2];
-        setPixel(pictureData, x, y, r, g, b, 255);
-}
-}
-context.putImageData(pictureData, 0, 0);
-pictureData = bkpPicture;
+            let i = (x+y*pictureData.width)*4;
+            let r = 0.393*pictureData.data[i]+ 0.769*pictureData.data [i+1]+ 0.189*pictureData.data [i+2];
+            let g = 0.393*pictureData.data[i]+ 0.686*pictureData.data [i+1]+ 0.168*pictureData.data [i+2];
+            let b = 0.272*pictureData.data[i]+ 0.534*pictureData.data [i+1]+ 0.131*pictureData.data [i+2];
+            setPixel(pictureData, x, y, r, g, b, 255);
+        }
+    }
+    context.putImageData(pictureData, 0, 0);
+    pictureData = bkpPicture;
 }
 //end sepia
 
 //sobel filter 
-
 function edgeDetectionFilter (){
     deselectFilters();
     let button = document.querySelector('#sepiaFilter');
@@ -236,19 +235,19 @@ function edgeDetectionFilter (){
 
     let data = pictureData.data ;
     let pixel = mezclarPixel(data);
-       for (let y = 0; y< pictureData.height;y++){
-          for (let x = 0 ; x < pictureData.width ; x++){
-               let r = pixel(x,y,0);
-               let g = pixel(x,y,1);
-               let b = pixel(x,y,2);
-            let avg = (r + g + b) / 3 ;
-            EscalaGrises.push(avg,avg,avg,255);
-          }
-    }
-    pixel = mezclarPixel(EscalaGrises);
-    for (let y = 0; y< pictureData.height;y++){
-        for (let x = 0 ; x < pictureData.width ; x++){
-             let pixelX = (
+        for (let y = 0; y< pictureData.height;y++){
+            for (let x = 0 ; x < pictureData.width ; x++){
+                let r = pixel(x,y,0);
+                let g = pixel(x,y,1);
+                let b = pixel(x,y,2);
+                let avg = (r + g + b) / 3 ;
+                EscalaGrises.push(avg,avg,avg,255);
+            }
+        }
+        pixel = mezclarPixel(EscalaGrises);
+        for (let y = 0; y< pictureData.height;y++){
+            for (let x = 0 ; x < pictureData.width ; x++){
+                let pixelX = (
                 (k_x[0][0]* pixel (x-1,y-1))+
                 (k_x[0][1]* pixel (x,y-1))+
                 (k_x[0][2]* pixel (x+1,y-1))+
@@ -258,29 +257,28 @@ function edgeDetectionFilter (){
                 (k_x[2][0]* pixel (x-1,y+1))+
                 (k_x[2][1]* pixel (x,y+1))+
                 (k_x[2][2]* pixel (x +1,y+1))
-             );
-             let pixelY = (
-              (k_y[0][0]*pixel(x-1,y-1))+
-              (k_y[0][1]*pixel(x,y-1))+
-              (k_y[0][2]*pixel(x+1,y-1))+
-              (k_y[1][0]*pixel(x-1,y))+
-              (k_y[1][1]*pixel(x,y))+
-              (k_y[1][2]*pixel(x+1,y))+
-              (k_y[2][0]*pixel(x-1,y+1))+
-              (k_y[2][1]*pixel(x,y+1))+
-              (k_y[2][2]*pixel(x+1,y+1))
-             );
-         let magnitud = Math.sqrt((pixelX * pixelX) + (pixelY * pixelY))>>>0;
-             magnitud = (magnitud/1000) * 255;
-         setPixel(datos,x,y,magnitud,magnitud,magnitud,255);
+                );
+                let pixelY = (
+                (k_y[0][0]*pixel(x-1,y-1))+
+                (k_y[0][1]*pixel(x,y-1))+
+                (k_y[0][2]*pixel(x+1,y-1))+
+                (k_y[1][0]*pixel(x-1,y))+
+                (k_y[1][1]*pixel(x,y))+
+                (k_y[1][2]*pixel(x+1,y))+
+                (k_y[2][0]*pixel(x-1,y+1))+
+                (k_y[2][1]*pixel(x,y+1))+
+                (k_y[2][2]*pixel(x+1,y+1))
+                );
+            let magnitud = Math.sqrt((pixelX * pixelX) + (pixelY * pixelY))>>>0;
+            magnitud = (magnitud/1000) * 255;
+            setPixel(datos,x,y,magnitud,magnitud,magnitud,255);
         }
-
-
     } 
     context.putImageData(datos, 0, 0);      
     pictureData = bkpPicture;
 }
 // end sobel
+
 // helps 
 function setPixel (imageData, x, y, r, g, b, a) {
     let index = (x + y * imageData.width) * 4
@@ -312,6 +310,5 @@ function deselectFilters() {
 	})
 }
 function clearCanvas (){
-    let ctx= canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    context.clearRect(0, 0, canvas.width, canvas.height);
 }
