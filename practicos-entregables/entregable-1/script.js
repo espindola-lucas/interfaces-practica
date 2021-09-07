@@ -7,6 +7,8 @@ let pencilLine, currentPosition, coordinates;
 let selected = null;
 let pictureData;
 let statusImage = 0 ;
+let width = canvas.width;
+let height = canvas.height;
 
 // paint 
 
@@ -127,15 +129,15 @@ function loadPictureAsync (content){
 function drawImage (image){
     let imageScaleWidth = image.width;
     let imageScaleHeight = image.height;
-    if (image.width > canvas.width || image.height > canvas.height){
-        if (image.width > canvas.width){
+    if (image.width > width || image.height > height){
+        if (image.width > width){
             let imageAspectRatio = (1.0 * image.height) / image.width;
-            imageScaleWidth = canvas.width;
-            imageScaleHeight = canvas.width * imageAspectRatio;
+            imageScaleWidth = width;
+            imageScaleHeight = width * imageAspectRatio;
         }else{
             let imageAspectRatio = (1.0 * image.width) / image.height;
-            imageScaleWidth = canvas.width * imageAspectRatio;
-            imageScaleWidth = canvas.width ;
+            imageScaleWidth = width * imageAspectRatio;
+            imageScaleWidth = width ;
         }
     } 
     canvas.width = imageScaleWidth;
