@@ -46,18 +46,18 @@
                     min="0" 
                     max="200" 
                     value="100"> <br>
-            <button id="filterBrightness" type="button" onclick="brightnessFilter()">Aplicar</button> <br>
+            <button id="brightnessFilter" type="button" onclick="brightnessFilter()">Aplicar</button> <br>
         </div>
 
         <div class="filterRangeSaturation">
             <label>Saturacion</label> <br>
             <input type="range" 
-                    name="SaturationRange" 
+                    name="saturationRange" 
                     id="saturationRange" 
                     min="0" 
                     max="200" 
                     value="100"> <br>
-            <button type="button" onclick="saturationFilter()">Aplicar</button> <br>
+            <button id="saturationFilter" type="button" onclick="saturationFilter()">Aplicar</button> <br>
         </div>
     </div>
 
@@ -66,7 +66,7 @@
 
         <h3>Imágenes</h3>
         
-        <p>Las imagenes mayor 700px x 600px se van a adaptar a la medida del canvas.</p>
+        <p>Las imagenes mayor 700px x 600px (W x H) se van a adaptar a la medida del canvas, manteniendo la calidad de la imagen.</p>
         
         <h3>Filtros</h3>
 
