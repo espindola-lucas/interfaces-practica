@@ -316,7 +316,7 @@ function negativeFilter(){
 function brightnessFilter(){
     if(statusImage == 1){
         deselectFilters();
-        let button = document.querySelector('#filterBrightness');
+        let button = document.querySelector('#brightnessFilter');
         button.classList.add("selected");
         let bkpPicture = backupImage(pictureData);
         let filterAmmount = (document.querySelector("#brightnessRange").value) / 100;
@@ -349,6 +349,70 @@ function brightnessFilter(){
 }
 
 // end brightness
+
+// saturation
+
+function saturationFilter(){
+    if(statusImage == 1){
+        deselectFilters();
+        let button = document.querySelector('#saturationFilter');
+        button.classList.add("selected");
+        let bkpPicture = backupImage(pictureData);
+        let filterAmmount = (document.querySelector("#saturationRange").value) / 100;
+
+        for(let x = 0; x < pictureData.width; x++){
+            for(let y = 0; y < pictureData.height; y++){
+                let index = (x + y * pictureData.width) * 4;
+                let r = pictureData.data[index];
+                let g = pictureData.data[index + 1];
+                let b = pictureData.data[index + 2];
+                let hslPixel = RGBtoHSL(r, g, b);
+                
+                if(filterAmmount <= 1){
+                    hslPixel.s = hslPixel.s * filterAmmount;
+                }
+                if(filterAmmount > 1){
+                    hslPixel.s = hslPixel.s + (100 - hslPixel.s) * (filterAmmount - 1);
+                }
+
+                let newRGB = HSLtoRGB(hslPixel.h, hslPixel.s, hslPixel.l);
+                r = newRGB.r;
+                g = newRGB.g;
+                b = newRGB.b;
+                setPixel(pictureData, x, y, r, g, b, 255);
+            }
+        }
+        context.putImageData(pictureData, 0, 0);
+        pictureData = bkpPicture;
+    }
+}
+
+// end saturation
+
+// blur
+
+function blurFilter(){
+    if(statusImage == 1){
+        deselectFilters();
+        let button = document.querySelector('#blurFilter');
+        button.classList.add("selected");
+        let bkpPicture = backupImage(pictureData);
+
+        for(let x = 0; x < pictureData.width; x++){
+            for(let y = 0; y < pictureData.height; y++){
+                let average = averageNeighbors(bkpPicture, x, y);
+                let r = average.r;
+                let g = average.g;
+                let b = average.b;
+                setPixel(pictureData, x, y, r, g, b, 255);
+            }
+        }
+        context.putImageData(pictureData, 0, 0);
+        pictureData = bkpPicture;
+    }
+}
+
+// end blur
 
 // helps 
 function setPixel (imageData, x, y, r, g, b, a) {
@@ -388,6 +452,27 @@ function deselectFilters() {
 function clearCanvas (){
     context.clearRect(0, 0, canvas.width, canvas.height);
     statusImage = 0 ;
+}
+
+// average rgb neighbors
+function averageNeighbors(imageData, pixInX, pixInY){
+    let average = {r:0,
+                    g:0,
+                    b:0};
+    for(let x = pixInX - 1; x <= pixInX + 1; x++){
+        for(let y = pixInY - 1; y <= pixInY + 1; y++){
+            let index = (x + y * imageData.width) * 4;
+            average.r += imageData.data[index];
+            average.g += imageData.data[index + 1];
+            average.b += imageData.data[index + 2];
+        }
+    }
+
+    average.r = Math.floor(average.r / 9);
+    average.g = Math.floor(average.g / 9);
+    average.b = Math.floor(average.b / 9);
+
+    return average;
 }
 
 // rgb to hls
