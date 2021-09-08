@@ -51,7 +51,7 @@ function getCoordinates(event){
 }
 
 function paint(event){
-      if(pencilLine && selected == "pencil"){
+    if(pencilLine && selected == "pencil"){
         coordinates = getCoordinates(event);
         context.beginPath();
         context.moveTo(currentPosition.x, currentPosition.y);
