@@ -44,7 +44,7 @@
 
         <button id="edgeDetectionFilter" onclick="edgeDetectionFilter()">Deteccion de Bordes</button> <br>
         
-        <div class="filterRangeBrightness">
+        <div class="filterRangeBrightness" id="filterRangeBrightness">
             <label>Brillo</label> <br>
             <input type="range" 
                     name="brightnessRange" 
@@ -55,7 +55,8 @@
             <button id="brightnessFilter" type="button" onclick="brightnessFilter()">Aplicar</button> <br>
         </div>
 
-        <div class="filterRangeSaturation">
+        <div class="filterRangeSaturation"
+        id="filterRangeSaturation">
             <label>Saturacion</label> <br>
             <input type="range" 
                     name="saturationRange" 
