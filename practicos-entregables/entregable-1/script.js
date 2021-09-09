@@ -9,6 +9,7 @@ let pictureData;
 let statusImage = 0 ;
 let width = canvas.width;
 let height = canvas.height;
+let buttonFilter, buttonBrightness, buttonSaturation;
 
 // paint 
 
@@ -20,11 +21,13 @@ function prepareCanvas(){
 
 function drawPencil(color){
     selected = "pencil";
+    activeButtons();
     prepareCanvas();
 }
 
 function drawRubber(){
     selected = "rubber";
+    activeButtons();
     prepareCanvas();
 }
 
@@ -91,7 +94,7 @@ async function setImage (){
     let image = await loadPictureAsync (content);
     drawImage(image);
     pictureData = context.getImageData(0, 0, canvas.width,canvas.height);
-    
+    activeButtons();
 }
 
 async function processPicture(image){
@@ -417,6 +420,7 @@ function blurFilter(){
 // end blur
 
 // helps 
+
 function setPixel (imageData, x, y, r, g, b, a) {
     let index = (x + y * imageData.width) * 4
     imageData.data[index+0] = r;
@@ -454,6 +458,44 @@ function deselectFilters() {
 function clearCanvas (){
     context.clearRect(0, 0, canvas.width, canvas.height);
     statusImage = 0 ;
+}
+
+function shadowButtons(){
+    buttonFilter = document.querySelector(".filters").querySelectorAll("button");
+
+    buttonBrightness = document.getElementById('filterRangeBrightness').style.visibility = 'hidden';
+
+    buttonSaturation = document.getElementById('filterRangeSaturation').style.visibility = 'hidden';
+
+    buttonFilter.forEach(b => {
+        b.style.visibility = 'hidden';
+    })
+}
+
+function activeButtons(){
+    if(selected == "pencil" || selected == "rubber"){
+        let onload = document.getElementById('onload').style.display = 'none';
+    }else if(statusImage != 0){
+        buttonFilter.forEach(b => {
+            b.style.visibility = 'visible';
+        })
+        
+        buttonBrightness = document.getElementById('filterRangeBrightness').style.visibility = 'visible';
+
+        buttonSaturation = document.getElementById('filterRangeSaturation').style.visibility = 'visible';
+
+        let paintButtons = document.querySelector(".paint").querySelectorAll("button");
+
+        let paintInputs = document.querySelector(".paint").querySelectorAll("input");
+
+        paintButtons.forEach(pb => {
+            pb.style.visibility = 'hidden';
+        })
+
+        paintInputs.forEach(pi => {
+            pi.style.visibility = 'hidden';
+        })
+    }
 }
 
 // average rgb neighbors
@@ -556,3 +598,5 @@ function HSLtoRGB(h, s, l) {
 		"b": b
 	};
 }
+
+document.addEventListener("DOMContentLoaded", shadowButtons());
