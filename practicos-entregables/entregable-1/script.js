@@ -455,12 +455,19 @@ function deselectFilters() {
 		b.classList.remove("selected");
 	})
 }
+// function clearCanvas (){
+//     context.clearRect(0, 0, canvas.width, canvas.height);
+//     statusImage = 0 ;
+// }
 function clearCanvas (){
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle="white";
+    context.fillRect(0,0,canvas.width,canvas.height);
+    context.beginPath();
     statusImage = 0 ;
 }
 
 function shadowButtons(){
+    clearCanvas ();
     buttonFilter = document.querySelector(".filters").querySelectorAll("button");
 
     buttonBrightness = document.getElementById('filterRangeBrightness').style.visibility = 'hidden';
