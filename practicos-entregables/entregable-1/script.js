@@ -132,17 +132,17 @@ function loadPictureAsync (content){
 function drawImage (image){
     let imageScaleWidth = image.width;
     let imageScaleHeight = image.height;
-    if (image.width > width || image.height > height){
-        if (image.width > width){
+  
+        if (image.width > image.height){
             let imageAspectRatio = (1.0 * image.height) / image.width;
             imageScaleWidth = width;
             imageScaleHeight = width * imageAspectRatio;
         }else{
             let imageAspectRatio = (1.0 * image.width) / image.height;
-            imageScaleWidth = width * imageAspectRatio;
-            imageScaleWidth = width ;
+            imageScaleWidth = height * imageAspectRatio;
+            imageScaleHeight = height ;
         }
-    } 
+     
     canvas.width = imageScaleWidth;
     canvas.height = imageScaleHeight;
     context.drawImage (image ,0, 0, imageScaleWidth, imageScaleHeight);
