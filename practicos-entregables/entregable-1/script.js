@@ -470,6 +470,9 @@ function shadowButtons(){
     buttonFilter.forEach(b => {
         b.style.visibility = 'hidden';
     })
+
+
+    document.getElementById('clear').style.visibility = 'visible';
 }
 
 function activeButtons(){
