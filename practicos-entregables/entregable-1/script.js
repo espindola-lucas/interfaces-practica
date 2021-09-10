@@ -9,7 +9,6 @@ let pictureData;
 let statusImage = 0 ;
 let width = canvas.width;
 let height = canvas.height;
-let buttonFilter, buttonBrightness, buttonSaturation;
 
 // paint 
 
@@ -21,13 +20,11 @@ function prepareCanvas(){
 
 function drawPencil(color){
     selected = "pencil";
-    activeButtons();
     prepareCanvas();
 }
 
 function drawRubber(){
     selected = "rubber";
-    activeButtons();
     prepareCanvas();
 }
 
@@ -94,7 +91,6 @@ async function setImage (){
     let image = await loadPictureAsync (content);
     drawImage(image);
     pictureData = context.getImageData(0, 0, canvas.width,canvas.height);
-    activeButtons();
 }
 
 async function processPicture(image){
@@ -132,7 +128,6 @@ function loadPictureAsync (content){
 function drawImage (image){
     let imageScaleWidth = image.width;
     let imageScaleHeight = image.height;
-  
         if (image.width > image.height){
             let imageAspectRatio = (1.0 * image.height) / image.width;
             imageScaleWidth = width;
@@ -142,7 +137,6 @@ function drawImage (image){
             imageScaleWidth = height * imageAspectRatio;
             imageScaleHeight = height ;
         }
-     
     canvas.width = imageScaleWidth;
     canvas.height = imageScaleHeight;
     context.drawImage (image ,0, 0, imageScaleWidth, imageScaleHeight);
@@ -168,9 +162,6 @@ function saveImage (){
 
 function binaryFilter(){
     if(statusImage ==  1){
-        deselectFilters();
-        let button = document.querySelector('#binaryFilter');
-        button.classList.add("selected");
         let bkpPicture = backupImage(pictureData);
         for (let x = 0; x < pictureData.width; x++){
             for (let y = 0; y < pictureData.height; y++){
@@ -198,9 +189,6 @@ function binaryFilter(){
 //sepia filter
 function sepiaFilter (){
     if(statusImage ==  1){
-        deselectFilters();
-        let button = document.querySelector('#sepiaFilter');
-        button.classList.add("selected");
         let bkpPicture = backupImage(pictureData);
         for (let x = 0; x < pictureData.width; x++){
             for (let y = 0; y < pictureData.height; y++){
@@ -220,9 +208,6 @@ function sepiaFilter (){
 //sobel filter 
 function edgeDetectionFilter (){
     if(statusImage ==  1){
-        deselectFilters();
-        let button = document.querySelector('#sepiaFilter');
-        button.classList.add("selected");
         let bkpPicture = backupImage(pictureData);
         let k_x =[
             [-1,0,1],
@@ -295,9 +280,6 @@ function edgeDetectionFilter (){
 
 function negativeFilter(){
     if(statusImage == 1){
-        deselectFilters();
-        let button = document.querySelector('#negativeFilter');
-        button.classList.add("selected");
         let bkpPicture = backupImage(pictureData);
 
         for(let x = 0; x < pictureData.width; x++){
@@ -320,9 +302,6 @@ function negativeFilter(){
 
 function brightnessFilter(){
     if(statusImage == 1){
-        deselectFilters();
-        let button = document.querySelector('#brightnessFilter');
-        button.classList.add("selected");
         let bkpPicture = backupImage(pictureData);
         let filterAmmount = (document.querySelector("#brightnessRange").value) / 100;
 
@@ -359,9 +338,6 @@ function brightnessFilter(){
 
 function saturationFilter(){
     if(statusImage == 1){
-        deselectFilters();
-        let button = document.querySelector('#saturationFilter');
-        button.classList.add("selected");
         let bkpPicture = backupImage(pictureData);
         let filterAmmount = (document.querySelector("#saturationRange").value) / 100;
 
@@ -398,9 +374,6 @@ function saturationFilter(){
 
 function blurFilter(){
     if(statusImage == 1){
-        deselectFilters();
-        let button = document.querySelector('#blurFilter');
-        button.classList.add("selected");
         let bkpPicture = backupImage(pictureData);
 
         for(let x = 0; x < pictureData.width; x++){
@@ -449,16 +422,6 @@ function clearFilter (){
     context.putImageData(pictureData ,0, 0 );
 }
 
-function deselectFilters() {
-	let buttons = document.querySelectorAll("button");
-	buttons.forEach(b => {
-		b.classList.remove("selected");
-	})
-}
-// function clearCanvas (){
-//     context.clearRect(0, 0, canvas.width, canvas.height);
-//     statusImage = 0 ;
-// }
 function clearCanvas (){
     context.fillStyle="white";
     context.fillRect(0,0,canvas.width,canvas.height);
@@ -466,47 +429,47 @@ function clearCanvas (){
     statusImage = 0 ;
 }
 
-function shadowButtons(){
-    clearCanvas ();
-    buttonFilter = document.querySelector(".filters").querySelectorAll("button");
+// function shadowButtons(){
+//     clearCanvas ();
+//     buttonFilter = document.querySelector(".filters").querySelectorAll("button");
 
-    buttonBrightness = document.getElementById('filterRangeBrightness').style.visibility = 'hidden';
+//     buttonBrightness = document.getElementById('filterRangeBrightness').style.visibility = 'hidden';
 
-    buttonSaturation = document.getElementById('filterRangeSaturation').style.visibility = 'hidden';
+//     buttonSaturation = document.getElementById('filterRangeSaturation').style.visibility = 'hidden';
 
-    buttonFilter.forEach(b => {
-        b.style.visibility = 'hidden';
-    })
+//     buttonFilter.forEach(b => {
+//         b.style.visibility = 'hidden';
+//     })
 
 
-    document.getElementById('clear').style.visibility = 'visible';
-}
+//     document.getElementById('clear').style.visibility = 'visible';
+// }
 
-function activeButtons(){
-    if(selected == "pencil" || selected == "rubber"){
-        let onload = document.getElementById('onload').style.display = 'none';
-    }else if(statusImage != 0){
-        buttonFilter.forEach(b => {
-            b.style.visibility = 'visible';
-        })
+// function activeButtons(){
+//     if(selected == "pencil" || selected == "rubber"){
+//         let onload = document.getElementById('onload').style.display = 'none';
+//     }else if(statusImage != 0){
+//         buttonFilter.forEach(b => {
+//             b.style.visibility = 'visible';
+//         })
         
-        buttonBrightness = document.getElementById('filterRangeBrightness').style.visibility = 'visible';
+//         buttonBrightness = document.getElementById('filterRangeBrightness').style.visibility = 'visible';
 
-        buttonSaturation = document.getElementById('filterRangeSaturation').style.visibility = 'visible';
+//         buttonSaturation = document.getElementById('filterRangeSaturation').style.visibility = 'visible';
 
-        let paintButtons = document.querySelector(".paint").querySelectorAll("button");
+//         let paintButtons = document.querySelector(".paint").querySelectorAll("button");
 
-        let paintInputs = document.querySelector(".paint").querySelectorAll("input");
+//         let paintInputs = document.querySelector(".paint").querySelectorAll("input");
 
-        paintButtons.forEach(pb => {
-            pb.style.visibility = 'hidden';
-        })
+//         paintButtons.forEach(pb => {
+//             pb.style.visibility = 'hidden';
+//         })
 
-        paintInputs.forEach(pi => {
-            pi.style.visibility = 'hidden';
-        })
-    }
-}
+//         paintInputs.forEach(pi => {
+//             pi.style.visibility = 'hidden';
+//         })
+//     }
+// }
 
 // average rgb neighbors
 function averageNeighbors(imageData, pixInX, pixInY){
@@ -609,4 +572,4 @@ function HSLtoRGB(h, s, l) {
 	};
 }
 
-document.addEventListener("DOMContentLoaded", shadowButtons());
+document.addEventListener("DOMContentLoaded", clearCanvas());
