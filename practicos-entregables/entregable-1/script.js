@@ -346,8 +346,7 @@ function saturationFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
         let filterAmmount = (document.querySelector("#saturationRange").value) / 100;
-
-        for(let x = 0; x < pictureData.width; x++){
+         for(let x = 0; x < pictureData.width; x++){
             for(let y = 0; y < pictureData.height; y++){
                 let index = (x + y * pictureData.width) * 4;
                 let r = pictureData.data[index];
