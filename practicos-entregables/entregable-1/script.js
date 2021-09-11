@@ -80,7 +80,6 @@ function paint(event){
     }
     if (statusImage == 1 ){
         pictureData = context.getImageData(0, 0, canvas.width,canvas.height);
-       
     }
 }
 //end paint 
@@ -287,7 +286,6 @@ function edgeDetectionFilter (){
 function negativeFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
-
         for(let x = 0; x < pictureData.width; x++){
             for(let y = 0; y < pictureData.height; y++){
                 let index = (x + y * pictureData.width) * 4;
@@ -310,7 +308,6 @@ function brightnessFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
         let filterAmmount = (document.querySelector("#brightnessRange").value) / 100;
-
         for(let x = 0; x < pictureData.width; x++){
             for(let y = 0; y < pictureData.height; y++){
                 let index = (x + y * pictureData.width) * 4;
@@ -346,7 +343,7 @@ function saturationFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
         let filterAmmount = (document.querySelector("#saturationRange").value) / 100;
-         for(let x = 0; x < pictureData.width; x++){
+        for(let x = 0; x < pictureData.width; x++){
             for(let y = 0; y < pictureData.height; y++){
                 let index = (x + y * pictureData.width) * 4;
                 let r = pictureData.data[index];
@@ -380,7 +377,7 @@ function saturationFilter(){
 function blurFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
-         for(let x = 0; x < pictureData.width; x++){
+        for(let x = 0; x < pictureData.width; x++){
             for(let y = 0; y < pictureData.height; y++){
                 let average = averageNeighbors(bkpPicture, x, y);
                 let r = average.r;
@@ -432,48 +429,6 @@ function clearCanvas (){
     context.beginPath();
     statusImage = 0 ;
 }
-
-// function shadowButtons(){
-//     clearCanvas ();
-//     buttonFilter = document.querySelector(".filters").querySelectorAll("button");
-
-//     buttonBrightness = document.getElementById('filterRangeBrightness').style.visibility = 'hidden';
-
-//     buttonSaturation = document.getElementById('filterRangeSaturation').style.visibility = 'hidden';
-
-//     buttonFilter.forEach(b => {
-//         b.style.visibility = 'hidden';
-//     })
-
-
-//     document.getElementById('clear').style.visibility = 'visible';
-// }
-
-// function activeButtons(){
-//     if(selected == "pencil" || selected == "rubber"){
-//         let onload = document.getElementById('onload').style.display = 'none';
-//     }else if(statusImage != 0){
-//         buttonFilter.forEach(b => {
-//             b.style.visibility = 'visible';
-//         })
-        
-//         buttonBrightness = document.getElementById('filterRangeBrightness').style.visibility = 'visible';
-
-//         buttonSaturation = document.getElementById('filterRangeSaturation').style.visibility = 'visible';
-
-//         let paintButtons = document.querySelector(".paint").querySelectorAll("button");
-
-//         let paintInputs = document.querySelector(".paint").querySelectorAll("input");
-
-//         paintButtons.forEach(pb => {
-//             pb.style.visibility = 'hidden';
-//         })
-
-//         paintInputs.forEach(pi => {
-//             pi.style.visibility = 'hidden';
-//         })
-//     }
-// }
 
 // average rgb neighbors
 function averageNeighbors(imageData, pixInX, pixInY){

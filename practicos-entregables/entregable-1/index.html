@@ -15,7 +15,7 @@
         </button>
         <input id="color" name="color" type="color" value='#000000' > 
         <button type="button" onclick="drawPencil()">
-          Aplicar color
+            Aplicar color
         </button>
         <button class="rubber" type="button" onclick="drawRubber()">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
@@ -34,6 +34,8 @@
 
     <div class="filters">
         <button id= "clear" onclick="clearCanvas()">Limpiar Lienzo</button> <br>
+        
+        <button id= "clear" onclick="originalImage()">Restaurar Imagen</button> <br>
 
         <button id= "clearFilter" onclick="clearFilter()">Limpiar Filtro</button> <br>
 
@@ -76,16 +78,15 @@
 
         <h3>Imágenes</h3>
         
-        <p>Las imagenes mayor 700px x 600px (W x H) se van a adaptar a la medida del canvas, manteniendo la calidad de la imagen.</p>
+        <p>Las imagenes mayor 700px x 600px (W x H) se van a adaptar a la medida del canvas, manteniendo la calidad de la imagen. El fondo blanco
+            que queda luego de la carga de una imagen, es solo por estilo, ya que no se puede dibujar en el.
+        </p>
         
         <h3>Filtros</h3>
 
-        <p>Los filtros no son acumulativos. Cada vez que se aplique un filtro se hara sobre la imágen original. Si no hay ninguna imagen,
-            y se apreta un filtro no sucedera nada. Ya que los filtros son para las imagenes y no para el canvas vacio.
+        <p>Los filtros no son acumulativos. Si no hay ninguna imagen, y se apreta un filtro no sucedera nada. Ya que los filtros son para las imagenes y no para el canvas vacio.
         </p>
     </div>
-            
-    <!--<canvas id="canvas" width="500" height="500"></canvas> -->
 </body>
 <script src="script.js"></script>
 </html>
