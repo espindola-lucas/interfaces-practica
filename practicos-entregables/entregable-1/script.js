@@ -9,6 +9,7 @@ let pictureData;
 let statusImage = 0 ;
 let width = canvas.width;
 let height = canvas.height;
+let originImage;
 
 // paint 
 
@@ -77,6 +78,10 @@ function paint(event){
         context.strokeStyle = "#FFFFFF";
         context.stroke();
     }
+    if (statusImage == 1 ){
+        pictureData = context.getImageData(0, 0, canvas.width,canvas.height);
+       
+    }
 }
 //end paint 
 
@@ -91,6 +96,7 @@ async function setImage (){
     let image = await loadPictureAsync (content);
     drawImage(image);
     pictureData = context.getImageData(0, 0, canvas.width,canvas.height);
+    originImage =  context.getImageData(0, 0, canvas.width,canvas.height);
 }
 
 async function processPicture(image){
@@ -340,8 +346,7 @@ function saturationFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
         let filterAmmount = (document.querySelector("#saturationRange").value) / 100;
-
-        for(let x = 0; x < pictureData.width; x++){
+         for(let x = 0; x < pictureData.width; x++){
             for(let y = 0; y < pictureData.height; y++){
                 let index = (x + y * pictureData.width) * 4;
                 let r = pictureData.data[index];
@@ -375,8 +380,7 @@ function saturationFilter(){
 function blurFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
-
-        for(let x = 0; x < pictureData.width; x++){
+         for(let x = 0; x < pictureData.width; x++){
             for(let y = 0; y < pictureData.height; y++){
                 let average = averageNeighbors(bkpPicture, x, y);
                 let r = average.r;
@@ -419,7 +423,7 @@ function backupImage(pictureData){
 function clearFilter (){
     let button = document.querySelector('#clearFilter');
     button.classList.add("selected");
-    context.putImageData(pictureData ,0, 0 );
+    context.putImageData(originImage,0, 0 );
 }
 
 function clearCanvas (){
