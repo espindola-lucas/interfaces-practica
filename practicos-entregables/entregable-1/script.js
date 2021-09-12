@@ -193,19 +193,21 @@ function binaryFilter(){
 
 //sepia filter
 function sepiaFilter (){
-    if(statusImage ==  1){
-        let bkpPicture = backupImage(pictureData);
-        for (let x = 0; x < pictureData.width; x++){
-            for (let y = 0; y < pictureData.height; y++){
-                let i = (x+y*pictureData.width)*4;
+    if(statusImage ==  1){ // si da true es porq existe una imagen y procede a aplicar el filtro , si da false quiere decir que no existe una imagen y no se debe aplicar el filtro 
+         let bkpPicture = backupImage(pictureData); // hace un backup de la imagen original.
+        for (let x = 0; x < pictureData.width; x++){ // recorre ancho de la imagen .
+            for (let y = 0; y < pictureData.height; y++){ // recorre largo de la imagen. 
+                let i = (x+y*pictureData.width)*4; // 
                 let r = 0.393*pictureData.data[i]+ 0.769*pictureData.data [i+1]+ 0.189*pictureData.data [i+2];
                 let g = 0.393*pictureData.data[i]+ 0.686*pictureData.data [i+1]+ 0.168*pictureData.data [i+2];
                 let b = 0.272*pictureData.data[i]+ 0.534*pictureData.data [i+1]+ 0.131*pictureData.data [i+2];
+               // A cada pixel (rgb) se le asigna una formula que consiste en tomar el r(pictureData.data[i]) ,  g (pictureData.data[i+1])  y  b (pictureData.data[i+2]) y
+               // a cada uno multiplicarle un valor para tratar de equilibrarlos y formar el efecto.
                 setPixel(pictureData, x, y, r, g, b, 255);
             }
         }
         context.putImageData(pictureData, 0, 0);
-        pictureData = bkpPicture;
+         pictureData = bkpPicture;
     }
 }
 //end sepia
@@ -218,34 +220,36 @@ function edgeDetectionFilter (){
             [-1,0,1],
             [-2,0,2],
             [-1,0,1]
-        ];
+        ];  // matriz para multiplicar el lado  horizontal
         let k_y =[
             [-1,-2,-1],
             [0,0,0],
             [1,2,1]
-        ];
+        ];// matriz para multiplicar el lado vertical
         let datos = pictureData ;
         let grayscale = [];
 
         function mixPixel (data){
             return function(x,y,i){
                 i = i || 0 ; 
-                return data[((pictureData.width*y)+x)*4+i];
+                return data[((pictureData.width*y)+x)*4+i];//accede a los datos de la amagen solo si el valor de i es i o 0
             };
         } 
 
-        let data = pictureData.data ;
-        let pixel = mixPixel(data);
-            for (let y = 0; y< pictureData.height;y++){
-                for (let x = 0 ; x < pictureData.width ; x++){
-                    let r = pixel(x,y,0);
-                    let g = pixel(x,y,1);
-                    let b = pixel(x,y,2);
-                    let avg = (r + g + b) / 3 ;
-                    grayscale.push(avg,avg,avg,255);
-                }
-            }
-            pixel = mixPixel(grayscale);
+         let data = pictureData.data ; // toma los datos de la imagen a la que se le quiere aplicar el filtro 
+         let pixel = mixPixel(data); // contiene la funcion anonima que rsta dentro de mixPixel () , paso la variable data para que cuando se acceda con x,y recorra sobre los datos que tiene la variable data.
+             for (let y = 0; y< pictureData.height;y++){
+                 for (let x = 0 ; x < pictureData.width ; x++){
+                     let r = pixel(x,y,0); // accede al pixel r de la posicion x,y actual   
+                     let g = pixel(x,y,1); // accede al pixel g de la posicion x,y actual   
+                     let b = pixel(x,y,2);// accede al pixel b de la posicion x,y actual   
+                     let avg = (r + g + b) / 3 ; // hace el promedio de los 3 para transformar en una tonalidad gris 
+                     grayscale.push(avg,avg,avg,255); // va guardando en un arreglo los valores que van tomando los pixel rgb y el a en 255 ya que no es necesario modificar 
+                 }
+             }
+            
+           
+          pixel = mixPixel(grayscale); // contiene la funcion anonima que rsta dentro de mixPixel () , paso la variable grayscale que tiene los valores de los pixeles de la imagen con las tonalidades de grises,  para que cuando se acceda con x,y recorra sobre los datos que tiene la variable grayscale.
             for (let y = 0; y< pictureData.height;y++){
                 for (let x = 0 ; x < pictureData.width ; x++){
                     let pixelX = (
@@ -258,7 +262,7 @@ function edgeDetectionFilter (){
                     (k_x[2][0]* pixel (x-1,y+1))+
                     (k_x[2][1]* pixel (x,y+1))+
                     (k_x[2][2]* pixel (x +1,y+1))
-                    );
+                    );//multiplico los valores de la matriz horizontal  (k_x) con los pixel de la imagen con las tonalidades de grises  y los guardo como matriz en pixelX 
                     let pixelY = (
                     (k_y[0][0]*pixel(x-1,y-1))+
                     (k_y[0][1]*pixel(x,y-1))+
@@ -269,8 +273,8 @@ function edgeDetectionFilter (){
                     (k_y[2][0]*pixel(x-1,y+1))+
                     (k_y[2][1]*pixel(x,y+1))+
                     (k_y[2][2]*pixel(x+1,y+1))
-                    );
-                    let magnitud = Math.sqrt((pixelX * pixelX) + (pixelY * pixelY))>>>0;
+                    );//multiplico los valores de la matriz vertical (k_y) con los pixel de la imagen con las tonalidades de grises  y lo guardo como matriz en pixelY
+                    let magnitud = Math.sqrt((pixelX * pixelX) + (pixelY * pixelY));// Math.sqrt retorna la raiz cuadrada de  pixelX elevado al cuadrado (pixelX * pixelX) + pixelY elevado al cuadrado (pixelY * pixelY).
                     magnitud = (magnitud/1000) * 255;
                     setPixel(datos,x,y,magnitud,magnitud,magnitud,255);
                 }
