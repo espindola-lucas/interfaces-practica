@@ -164,20 +164,20 @@ function saveImage (){
 // filters
 
 //binary filter 
-
+//El filtro consta de que los pixeles pueden tener uno de exactamente dos colores, blanco y negro.
 function binaryFilter(){
-    if(statusImage ==  1){
-        let bkpPicture = backupImage(pictureData);
-        for (let x = 0; x < pictureData.width; x++){
-            for (let y = 0; y < pictureData.height; y++){
-                let i = (x + y * pictureData.width) * 4;
-                let index = (pictureData.data[i] + pictureData.data[i + 1] + pictureData.data[i + 2]) / 3;
-                if (index <= (255 / 2)){
+    if(statusImage ==  1){  //pregunta si hay seteada una imagen
+        let bkpPicture = backupImage(pictureData);  //hace un backup de la imagen original.
+        for (let x = 0; x < pictureData.width; x++){    //recorre el ancho de la imagen
+            for (let y = 0; y < pictureData.height; y++){   //recorre el alto de la imagen
+                let i = (x + y * pictureData.width) * 4;    //convierte la matriz en un arreglo
+                let index = (pictureData.data[i] + pictureData.data[i + 1] + pictureData.data[i + 2]) / 3; //suma los datos de la imagen (RGB) y los divide
+                if (index <= (255 / 2)){    //si el es index menor a la 127, setea RGB en blanco 
                     let r = 255;
                     let g = 255;
                     let b = 255;
                     setPixel(pictureData, x, y, r, g, b, 255);
-                }else{
+                }else{  //si el index es mayor a la 127, setea RGB en negro
                     let r = 0;
                     let g = 0;
                     let b = 0;
@@ -185,8 +185,8 @@ function binaryFilter(){
                 }
             }
         }
-        context.putImageData(pictureData, 0, 0);
-        pictureData = bkpPicture;
+        context.putImageData(pictureData, 0, 0);    //devuelve la imagen con el filtro aplicado
+        pictureData = bkpPicture;   
     }
 }
 //end binary
@@ -210,7 +210,7 @@ function sepiaFilter (){
 }
 //end sepia
 
-//sobel filter 
+//border detection filter with sobel 
 function edgeDetectionFilter (){
     if(statusImage ==  1){
         let bkpPicture = backupImage(pictureData);
@@ -282,16 +282,16 @@ function edgeDetectionFilter (){
 // end sobel
 
 // negative
-
+//El negativo lo que hace es restarle 255 el color de cada pixel
 function negativeFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
         for(let x = 0; x < pictureData.width; x++){
             for(let y = 0; y < pictureData.height; y++){
                 let index = (x + y * pictureData.width) * 4;
-                let r = 255 - pictureData.data[index];
-                let g = 255 - pictureData.data[index + 1];
-                let b = 255 - pictureData.data[index + 2];
+                let r = 255 - pictureData.data[index];  //le resta 255 a R
+                let g = 255 - pictureData.data[index + 1];  //le resta 255 a G
+                let b = 255 - pictureData.data[index + 2];  //le resta 255 a B
                 setPixel(pictureData, x, y, r, g, b, 255);
             }
         }
@@ -303,7 +303,7 @@ function negativeFilter(){
 // end negative
 
 // brightness
-
+//El filtro se logra aumento el brillo al canvas, para eso pase de RGB a HSL, y aumente la "l" (Lightness) o la disminui, dependiendo que se haga.
 function brightnessFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
@@ -311,19 +311,19 @@ function brightnessFilter(){
         for(let x = 0; x < pictureData.width; x++){
             for(let y = 0; y < pictureData.height; y++){
                 let index = (x + y * pictureData.width) * 4;
-                let r = pictureData.data[index];
-                let g = pictureData.data[index + 1];
-                let b = pictureData.data[index + 2];
-                let hslPixel = RGBtoHSL(r, g, b);
+                let r = pictureData.data[index];    //tomo los valores de r de la imagen
+                let g = pictureData.data[index + 1];    //tomo los valores de g de la imagen
+                let b = pictureData.data[index + 2];    //tomo los valores de b de la imagen
+                let hslPixel = RGBtoHSL(r, g, b);   //paso las variables con los valores de RGB a una funcion, para pasarlos HSL
                 
-                if(filterAmmount <= 1){
+                if(filterAmmount <= 1){ //si cantidad de brillo es menor o igual a 1, multiplacara "l" por la cantidad de filtro deseado
                     hslPixel.l = hslPixel.l * filterAmmount;
                 }
-                if(filterAmmount > 1){
+                if(filterAmmount > 1){  //si la cantidad de brillo es mayor a 1, le restare a "l" la cantidad de filtro deseado
                     hslPixel.l = hslPixel.l + (100 - hslPixel.l) * (filterAmmount - 1);
                 }
 
-                let newRGB = HSLtoRGB(hslPixel.h, hslPixel.s, hslPixel.l);
+                let newRGB = HSLtoRGB(hslPixel.h, hslPixel.s, hslPixel.l);  //devuelvo los pixeles en RGB para poder usarlos en cada pixel
                 r = newRGB.r;
                 g = newRGB.g;
                 b = newRGB.b;
@@ -338,7 +338,8 @@ function brightnessFilter(){
 // end brightness
 
 // saturation
-
+//El filtro se logra aumento la saturacion al canvas, para eso pase de RGB a HSL, y aumente la "s" o la disminui, dependiendo que se haga.
+//El procedimiento es similar al que que esta explicado en brightnessFilter(), lo que cambia es que es vez de aumentar o disminuir la "l", se aumenta o disminuye la "s" (Saturation).
 function saturationFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
@@ -373,13 +374,13 @@ function saturationFilter(){
 // end saturation
 
 // blur
-
+//El filtro de blur se logra tomando un pixel de la imagen junto a todos sus pixeles vecinos, y dividiendolos por la cantidad de pixeles tomados, ya que un pixel que esta en el x:100, y:100 de la imagen va a tener 8 pixeles vecinos, mientras que un pixel qu esta x:0, y:0, va a tener 3 pixeles vecinos
 function blurFilter(){
     if(statusImage == 1){
         let bkpPicture = backupImage(pictureData);
         for(let x = 0; x < pictureData.width; x++){
             for(let y = 0; y < pictureData.height; y++){
-                let average = averageNeighbors(bkpPicture, x, y);
+                let average = averageNeighbors(bkpPicture, x, y);   //con el x, y de cada imagen puede calcular la cantidad de vecinos que tiene, para asi dividirlo por la cantidad que son. Y luego setea en en cada pixel su valor divido.
                 let r = average.r;
                 let g = average.g;
                 let b = average.b;
