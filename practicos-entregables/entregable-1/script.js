@@ -394,6 +394,24 @@ function blurFilter(){
 
 // end blur
 
+ 
+    // clear Filter
+function clearFilter (){
+     context.putImageData(pictureData,0, 0 );
+}
+// end Clear Filter
+
+function originalImage (){
+  context.putImageData(originImage,0,0);
+}
+// Clear Canvas
+function clearCanvas (){
+    context.fillStyle="white";
+    context.fillRect(0,0,canvas.width,canvas.height);
+    context.beginPath();
+    statusImage = 0 ;
+}
+// end Clear Canvas
 // helps 
 
 function setPixel (imageData, x, y, r, g, b, a) {
@@ -417,18 +435,6 @@ function backupImage(pictureData){
         }
     }
     return backupPicture;
-}
-function clearFilter (){
-    let button = document.querySelector('#clearFilter');
-    button.classList.add("selected");
-    context.putImageData(originImage,0, 0 );
-}
-
-function clearCanvas (){
-    context.fillStyle="white";
-    context.fillRect(0,0,canvas.width,canvas.height);
-    context.beginPath();
-    statusImage = 0 ;
 }
 
 // average rgb neighbors
