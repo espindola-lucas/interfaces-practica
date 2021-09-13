@@ -84,7 +84,7 @@ function paint(event){
 }
 //end paint 
 
-//load image
+//load images
 
  let filePictureChooser = document.querySelector('.pictureChooser'); 
  filePictureChooser.addEventListener("change", setImage);
