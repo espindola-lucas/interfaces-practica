@@ -19,7 +19,7 @@ function prepareCanvas(){
     canvas.addEventListener("mousemove", paint, false);
 }
 
-function drawPencil(color){
+function drawPencil(){
     selected = "pencil";
     prepareCanvas();
 }
@@ -52,17 +52,18 @@ function getCoordinates(event){
 }
 
 function paint(event){
+    //en ambos if, pregunta que se eligio, si lapiz o goma
     if(pencilLine && selected == "pencil"){
-        coordinates = getCoordinates(event);
+        coordinates = getCoordinates(event);    //va a obtener las coordenadas del mouse
         context.beginPath();
-        context.moveTo(currentPosition.x, currentPosition.y);
-        context.lineTo(coordinates.x, coordinates.y);
-        currentPosition = {
+        context.moveTo(currentPosition.x, currentPosition.y);      //comienza a dibujar
+        context.lineTo(coordinates.x, coordinates.y);       //va dibujando a medida que vamos moviendo el mouse 
+        currentPosition = {  
             x:coordinates.x,
             y:coordinates.y
         };
         context.lineWidth = 1;
-        context.strokeStyle = document.getElementById("color").value; 
+        context.strokeStyle = document.getElementById("color").value;       //obtiene el valor del color elegido
         context.stroke();
     }
     if(pencilLine && selected == "rubber"){
@@ -78,10 +79,11 @@ function paint(event){
         context.strokeStyle = "#FFFFFF";
         context.stroke();
     }
-    if (statusImage == 1 ){
+    if (statusImage == 1 ){     //si hay una imagen, obtiene y guarda sus datos
         pictureData = context.getImageData(0, 0, canvas.width,canvas.height);
     }
 }
+
 //end paint 
 
 //load image
@@ -90,8 +92,8 @@ let filePictureChooser = document.querySelector('.pictureChooser');
 filePictureChooser.addEventListener("change", setImage);
 
 async function setImage (){
-    let choosenFile = this;
-    let content = await processPicture (choosenFile);
+    let choosenFile = this;     
+    let content = await processPicture (choosenFile);       
     let image = await loadPictureAsync (content);
     drawImage(image);
     pictureData = context.getImageData(0, 0, canvas.width,canvas.height);
@@ -122,8 +124,8 @@ async function readPictureAsync(file) {
 function loadPictureAsync (content){
     return new Promise ((resolve,reject) => {
         let image = new Image();
-        image.src = content;
-        image.onload = () => {
+        image.src = content;    
+        image.onload = () => {  
             resolve (image)
         };
         image.onerror = reject;
@@ -189,9 +191,11 @@ function binaryFilter(){
         pictureData = bkpPicture;   
     }
 }
+
 //end binary
 
 //sepia filter
+
 function sepiaFilter (){
     if(statusImage ==  1){ // si da true es porq existe una imagen y procede a aplicar el filtro , si da false quiere decir que no existe una imagen y no se debe aplicar el filtro 
          let bkpPicture = backupImage(pictureData); // hace un backup de la imagen original.
@@ -207,12 +211,14 @@ function sepiaFilter (){
             }
         }
         context.putImageData(pictureData, 0, 0);
-         pictureData = bkpPicture;
+        pictureData = bkpPicture;
     }
 }
+
 //end sepia
 
 //border detection filter with sobel 
+
 function edgeDetectionFilter (){
     if(statusImage ==  1){
         let bkpPicture = backupImage(pictureData);
@@ -238,17 +244,15 @@ function edgeDetectionFilter (){
 
          let data = pictureData.data ; // toma los datos de la imagen a la que se le quiere aplicar el filtro 
          let pixel = mixPixel(data); // contiene la funcion anonima que rsta dentro de mixPixel () , paso la variable data para que cuando se acceda con x,y recorra sobre los datos que tiene la variable data.
-             for (let y = 0; y< pictureData.height;y++){
-                 for (let x = 0 ; x < pictureData.width ; x++){
-                     let r = pixel(x,y,0); // accede al pixel r de la posicion x,y actual   
-                     let g = pixel(x,y,1); // accede al pixel g de la posicion x,y actual   
-                     let b = pixel(x,y,2);// accede al pixel b de la posicion x,y actual   
-                     let avg = (r + g + b) / 3 ; // hace el promedio de los 3 para transformar en una tonalidad gris 
-                     grayscale.push(avg,avg,avg,255); // va guardando en un arreglo los valores que van tomando los pixel rgb y el a en 255 ya que no es necesario modificar 
-                 }
-             }
-            
-           
+            for (let y = 0; y< pictureData.height;y++){
+                for (let x = 0 ; x < pictureData.width ; x++){
+                    let r = pixel(x,y,0); // accede al pixel r de la posicion x,y actual   
+                    let g = pixel(x,y,1); // accede al pixel g de la posicion x,y actual   
+                    let b = pixel(x,y,2);// accede al pixel b de la posicion x,y actual   
+                    let avg = (r + g + b) / 3 ; // hace el promedio de los 3 para transformar en una tonalidad gris 
+                    grayscale.push(avg,avg,avg,255); // va guardando en un arreglo los valores que van tomando los pixel rgb y el a en 255 ya que no esnecesario modificar 
+                }
+            }
           pixel = mixPixel(grayscale); // contiene la funcion anonima que rsta dentro de mixPixel () , paso la variable grayscale que tiene los valores de los pixeles de la imagen con las tonalidades de grises,  para que cuando se acceda con x,y recorra sobre los datos que tiene la variable grayscale.
             for (let y = 0; y< pictureData.height;y++){
                 for (let x = 0 ; x < pictureData.width ; x++){
@@ -283,6 +287,7 @@ function edgeDetectionFilter (){
             pictureData = bkpPicture;
     } 
 }
+
 // end sobel
 
 // negative
@@ -398,24 +403,29 @@ function blurFilter(){
 
 // end blur
 
- 
-    // clear Filter
+// clear Filter
+
 function clearFilter (){
-     context.putImageData(pictureData,0, 0 );
+    context.putImageData(pictureData,0, 0 );
 }
+
 // end Clear Filter
 
 function originalImage (){
-  context.putImageData(originImage,0,0);
+    context.putImageData(originImage,0,0);
 }
+
 // Clear Canvas
+
 function clearCanvas (){
     context.fillStyle="white";
     context.fillRect(0,0,canvas.width,canvas.height);
     context.beginPath();
     statusImage = 0 ;
 }
+
 // end Clear Canvas
+
 // helps 
 
 function setPixel (imageData, x, y, r, g, b, a) {
@@ -442,20 +452,21 @@ function backupImage(pictureData){
 }
 
 // average rgb neighbors
-function averageNeighbors(imageData, pixInX, pixInY){
-    let average = {r:0,
+function averageNeighbors(pictureData, pixInX, pixInY){
+    let average = {r:0,     //setea el RGB en 0, para luego a cada pixel darle su valor de la imagen pero suavizado
                     g:0,
                     b:0};
     for(let x = pixInX - 1; x <= pixInX + 1; x++){
         for(let y = pixInY - 1; y <= pixInY + 1; y++){
-            let index = (x + y * imageData.width) * 4;
-            average.r += imageData.data[index];
-            average.g += imageData.data[index + 1];
-            average.b += imageData.data[index + 2];
+            let index = (x + y * pictureData.width) * 4;
+            //setea rgb, con sus valures acumulados a medida que va recorrendi en W x H
+            average.r += pictureData.data[index];   
+            average.g += pictureData.data[index + 1];
+            average.b += pictureData.data[index + 2];   
         }
     }
-
-    average.r = Math.floor(average.r / 9);
+    //redondea cada valor en un numero menor o igual al obtenido
+    average.r = Math.floor(average.r / 9);      
     average.g = Math.floor(average.g / 9);
     average.b = Math.floor(average.b / 9);
 
