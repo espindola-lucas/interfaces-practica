@@ -90,6 +90,8 @@ function paint(event){
  filePictureChooser.addEventListener("change", setImage);
 
 async function setImage (){
+    // la funcion es ascincronica , ya que el awit pone en pausa la ejecucion esperando una respuesta de las promise
+    //de las demas funciones que son llamadas
     let choosenFile = this;
     let content = await processPicture (choosenFile);
     let image = await loadPictureAsync (content);
@@ -99,6 +101,7 @@ async function setImage (){
 }
 
 async function processPicture(image){
+    //si se logra procesar la imagen , va la  funcion readPictureAsync, sino  tira un erro 
     try{
         let file = image.files[0];
         let content = await readPictureAsync (file);
@@ -109,6 +112,8 @@ async function processPicture(image){
 }
 
 async function readPictureAsync(file) {
+    //la promesa va a intentar resolver el FileReader() consiste en leer infomacion almacenada en el buffer ,eso se logra mediando funciones asincronicas
+    // si no logra resolver la promesa , el reject es el encargado de decir q no se pudo resolver 
     return new Promise((resolve, reject) => {
         let reader = new FileReader();
         reader.readAsDataURL(file);
@@ -122,8 +127,8 @@ async function readPictureAsync(file) {
 function loadPictureAsync (content){
     return new Promise ((resolve,reject) => {
         let image = new Image();
-        image.src = content;
-        image.onload = () => {
+        image.src = content; // mediante en src especificada la URL de la imagen
+        image.onload = () => { // despues de obtener la url de la imagen , el evento onload carga el objeto , en este caso la imagen
             resolve (image)
         };
         image.onerror = reject;
