@@ -86,8 +86,8 @@ function paint(event){
 
 //load image
 
-let filePictureChooser = document.querySelector('.pictureChooser'); 
-filePictureChooser.addEventListener("change", setImage);
+ let filePictureChooser = document.querySelector('.pictureChooser'); 
+ filePictureChooser.addEventListener("change", setImage);
 
 async function setImage (){
     let choosenFile = this;
@@ -130,22 +130,22 @@ function loadPictureAsync (content){
     })
 }
 
-function drawImage (image){
-    let imageScaleWidth = image.width;
-    let imageScaleHeight = image.height;
-        if (image.width > image.height){
-            let imageAspectRatio = (1.0 * image.height) / image.width;
-            imageScaleWidth = width;
-            imageScaleHeight = width * imageAspectRatio;
+function drawImage (image){ // dibuja la imagen en el canvas.
+    let imageScaleWidth = image.width;  // guarda el ancho original de la imagen
+    let imageScaleHeight = image.height;// guarda el largo original de la imagen
+        if (image.width > image.height){ 
+            let imageAspectRatio = (1.0 * image.height) / image.width;// saca el Aspect Ratio de la imagen para modificar el alto.
+            imageScaleWidth = width; // modifica el ancho de la imagen por el ancho del canvas.
+            imageScaleHeight = width * imageAspectRatio; // modifica el alto de la imagen (w x Aspect Ratio) .
         }else{
-            let imageAspectRatio = (1.0 * image.width) / image.height;
-            imageScaleWidth = height * imageAspectRatio;
-            imageScaleHeight = height ;
+            let imageAspectRatio = (1.0 * image.width) / image.height;// saca el Aspect Ratio de la imagen para modificar el ancho.
+            imageScaleWidth = height * imageAspectRatio;// modifica el ancho de la imagen (h x Aspect Ratio) .
+            imageScaleHeight = height ;// modifica el alto de la imagen por el alto del canvas.
         }
-    canvas.width = imageScaleWidth;
-    canvas.height = imageScaleHeight;
-    context.drawImage (image ,0, 0, imageScaleWidth, imageScaleHeight);
-    statusImage = 1 ;
+    canvas.width = imageScaleWidth; // le asigno al ancho del  canvas el ancho con  que voy a dibujar la imagen.
+    canvas.height = imageScaleHeight;// le asigno al alto del  canvas el alto con  que voy a dibujar la imagen.
+    context.drawImage (image ,0, 0, imageScaleWidth, imageScaleHeight); // dibula la imagen en el canvas.
+    statusImage = 1 ;// el estado de la imagen en 1 porque actualmente en el canvas hay dibujada una imagen.
 }
 
 //end load image 
@@ -153,10 +153,10 @@ function drawImage (image){
 // save image
 
 function saveImage (){
-    let save = document.createElement('a');
-    save.download = "canvas"
-    save.href = canvas.toDataURL("image/png").replace ("image.png","image/octet-string");
-    save.click();
+    let save = document.createElement('a'); // crea un elemento 
+    save.download = "canvas" ; // cuando se descargue ese elemento lo va a hacer con el nombre "canvas"
+    save.href = canvas.toDataURL("image/png").replace ("image.png","image/octet-string");// devuelve un URL con el formato png
+    save.click(); // se guarda en disco cuando se hace click
 }
 
 // end save image
@@ -401,21 +401,24 @@ function blurFilter(){
  
     // clear Filter
 function clearFilter (){
-     context.putImageData(pictureData,0, 0 );
+     context.putImageData(pictureData,0, 0 );//pinta los datos que contiene originImage (datos de la imagen editada con lapiz o con algun filtro) en el canvas.
 }
 // end Clear Filter
-
+     
+ // original image
 function originalImage (){
-  context.putImageData(originImage,0,0);
+  context.putImageData(originImage,0,0);//pinta los datos que contiene originImage (datos de la imagen sin editar) en el canvas.
 }
+// end original image
+
 // Clear Canvas
 function clearCanvas (){
-    context.fillStyle="white";
-    context.fillRect(0,0,canvas.width,canvas.height);
-    context.beginPath();
-    statusImage = 0 ;
+    context.fillStyle="white"; // color del rectangulo
+    context.fillRect(0,0,canvas.width,canvas.height); // dibuja un rectangulo
+    statusImage = 0 ; // esta variable de asigno 0 porque si habia una imagen antes de limpiar el lienzo luego de que se limpie no va a estar mas dicha imagen
 }
 // end Clear Canvas
+
 // helps 
 
 function setPixel (imageData, x, y, r, g, b, a) {
