@@ -6,5 +6,5 @@ class Help {
     static getRandomInt(min, max) {     //Obtengo un numero random entre dos valores dados
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    
+
 }

@@ -2,7 +2,7 @@
 
 let canvas;
 let context;
-let tokens = 1;
+let tokens = 25;
 let playerRed;
 let playerGreen;
 let arrayTokens = [];
