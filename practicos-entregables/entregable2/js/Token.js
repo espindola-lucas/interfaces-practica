@@ -22,28 +22,24 @@ class Token {
     }
 
     createToken(){
-        let choosePlayer;
-
-        if(player1.name == 1){
-            choosePlayer = player1.name;
-        }else{
-            choosePlayer = player2.name;
-        }
-        
-        switch(choosePlayer){
-            case player1.name:
+        switch(this.colour){
+            case player1.colour:
                 for(let i = 0; i < this.totalTokens; i++){
-                    let token = new Circle(50, 50, 20, this.colour, this.context);
+                    let x = Help.getRandomInt(20, 70);
+                    let y = Help.getRandomInt(200, 400);
+                    let token = new Circle(x, y, 20, this.colour, this.context);
                     this.arrayTokens.push(token);
                 }
-                choosePlayer = player1.name;
                 break;
 
-            case player2.name: 
+            case player2.colour: 
                 for(let i = 0; i < this.totalTokens; i++){
-                    let token = new Circle(400, 400, 20, this.colour, this.context);
+                    let x = Help.getRandomInt(730, 780);
+                    let y = Help.getRandomInt(200, 400);
+                    let token = new Circle(x, y, 20, this.colour, this.context);
                     this.arrayTokens.push(token);
                 }
+                break;
         }
     }
 

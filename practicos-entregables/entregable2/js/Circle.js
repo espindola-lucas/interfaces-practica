@@ -11,6 +11,10 @@ class Circle extends Figure {
         super.draw();
         this.context.beginPath();
         this.context.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
+        this.context.lineWidth = 5;
+        this.context.lineCap = 'round';
+        this.context.strokestyle = 'black';
+        this.context.stroke();
         this.context.fill();
 
         if (this.fill instanceof Image) {
