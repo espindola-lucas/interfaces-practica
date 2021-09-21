@@ -34,8 +34,10 @@ class Figure {
         this.context.fillStyle = this.fill;
     }
 
-    setPosition(point){
-        this.posX = point.x;
-        this.posY = point.y;
+    setPosition(x, y){
+        this.posX = x;
+        this.posY = y;
     }
+    
+    isPointInside(x, y) {}
 }

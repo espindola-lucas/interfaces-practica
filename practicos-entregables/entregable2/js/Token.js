@@ -49,4 +49,13 @@ class Token {
             t.draw();
         });
     }
+    static drawTokens(tokens){
+        canvas = document.querySelector("canvas");
+        context = canvas.getContext("2d");   
+        context.fillStyle="white";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        tokens.forEach(t => {
+            t.draw();
+        });
+    }
 }
