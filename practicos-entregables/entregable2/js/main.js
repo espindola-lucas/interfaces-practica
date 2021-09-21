@@ -7,6 +7,9 @@ let playerRed;
 let playerGreen;
 let arrayTokens = [];
 let arrayLockers = [];
+let array = [];
+let isMouseDown = false;
+let lastClickedFigure = null;
 
 const player1 = {
     name: 1,
@@ -29,9 +32,10 @@ function mainFunction(){
     playerGreen = new Token(player2.colour, tokens, arrayTokens, context);
     playerGreen.createToken();
     playerGreen.drawToken();
-    board ();
-   }
 
+    array = playerGreen.getArrayToken();
+    board ();
+}
 
 function board (){
     let img = new Image ();
@@ -44,4 +48,41 @@ function board (){
     }
 }
 
+function onMouseDown(e){
+    isMouseDown = true;
+    if(lastClickedFigure != null){
+        lastClickedFigure = null;
+    }
+
+    let clickFigure = findClickedFigure(e.layerX, e.layerY);
+    if(clickFigure != null){
+        lastClickedFigure = clickFigure;
+    }
+    Token.drawTokens(array);
+}
+
+function onMouseMove(e){
+    if(isMouseDown && lastClickedFigure != null){
+        lastClickedFigure.setPosition(e.layerX, e.layerY);
+        Token.drawTokens(array);
+    }
+}
+
+function onMouseUp(e){
+    isMouseDown = false;
+}
+
+function findClickedFigure(x, y){
+    for(let i = 0; i < array.length; i++){
+        const element = array[i];
+        if(element.isPointInside(x, y)){
+            return element; 
+        }
+    }
+}
+
+
 document.addEventListener("DOMContentLoaded", mainFunction());
+document.addEventListener("mousedown", onMouseDown, false);
+document.addEventListener("mouseup", onMouseUp, false);
+document.addEventListener("mousemove", onMouseMove, false);
