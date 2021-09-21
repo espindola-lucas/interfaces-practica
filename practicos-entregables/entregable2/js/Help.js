@@ -42,4 +42,13 @@ class Help {
         }
     }
 
+    static uploadImage(path){
+        return new Promise((resolve, reject) => {
+            let img = new Image();
+            img.src = path;
+            img.onload = () => resolve(img);
+            img.onerror = reject;
+        });
+    }
+
 }
