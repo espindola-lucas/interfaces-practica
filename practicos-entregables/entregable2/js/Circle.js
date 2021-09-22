@@ -18,7 +18,7 @@ class Circle extends Figure {
         this.context.fill();
 
         if (this.fill instanceof Image) {
-            console.log(this.fill)
+            
             // this.context.clip();
             this.context.drawImage(this.fill, this.posX - this.radius, this.posY - this.radius, this.radius * 2, this.radius * 2);
         }
