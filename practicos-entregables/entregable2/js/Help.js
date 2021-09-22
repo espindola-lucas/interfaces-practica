@@ -7,7 +7,7 @@ class Help {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-        static onMouseDown(e){
+    static onMouseDown(e){
         isMouseDown = true;
         if(lastClickedFigure != null){
             lastClickedFigure = null;
@@ -18,7 +18,8 @@ class Help {
             lastClickedFigure = clickFigure;
         }
         Help.redraw();
-        }
+    }
+        
     static redraw (){
         canvas = document.querySelector("canvas");
         context = canvas.getContext("2d");
@@ -27,13 +28,12 @@ class Help {
         Board.drawBackgroundS(context, imageBoard.img);
         let ctx = canvas.getContext("2d");
         Board.drawLockers(alllockers.array , ctx);
-        
     }
-   
+
     static onMouseMove(e){
         if(isMouseDown && lastClickedFigure != null){
             lastClickedFigure.setPosition(e.layerX, e.layerY);
-           Help.redraw();
+            Help.redraw();
         }
     }
     
@@ -41,8 +41,9 @@ class Help {
         isMouseDown = false;
         let rectan = allConteiners.array
         for (let i= 0 ; i <rectan.length; i++ ){
-             const elemento = rectan[i];
+            const elemento = rectan[i];
             if (elemento.isPointInside(e.layerX,e.layerY) &&  lastClickedFigure != null ){
+                Help.fillWhite(lastClickedFigure);
                 console.log("hola");
             }else if (lastClickedFigure != null ) {
                 Token.drawInOldPosition(oldPositions.selected, oldPositions.X ,oldPositions.Y );
@@ -64,7 +65,7 @@ class Help {
         }
     }
     
-  static uploadImage(path){
+    static uploadImage(path){
         return new Promise((resolve, reject) => {
             let img = new Image();
             img.src = path;
@@ -72,7 +73,11 @@ class Help {
             img.onerror = reject;
             
         });
-       
+    }
+
+    static fillWhite(element){
+        element.fill = "white";
+        element.draw();
     }
 
 }
