@@ -39,7 +39,6 @@ async function mainFunction(){
     img = await Help.uploadImage("./images/canvas.png");
     player2.colour = img;
 
-
     playerGreen = new Token(player2.colour, tokens, arrayTokens, context);
     playerGreen.createToken();
     playerGreen.drawToken();
