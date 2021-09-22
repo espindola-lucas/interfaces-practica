@@ -49,6 +49,7 @@ class Token {
             t.draw();
         });
     }
+
     static drawTokens(tokens){
         canvas = document.querySelector("canvas");
         context = canvas.getContext("2d");   
@@ -58,9 +59,11 @@ class Token {
             t.draw();
         });
     }
+    
     static drawInOldPosition (elemento, X ,Y ){
         elemento.posX = X;
         elemento.posY = Y ;
         elemento.draw();
+        Help.redraw();
     }
 }
