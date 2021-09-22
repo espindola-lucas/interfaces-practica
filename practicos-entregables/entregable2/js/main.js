@@ -15,6 +15,12 @@ let img;
 const allFig = {
     array: null
 };
+
+const oldPositions = {
+    X: null ,
+    Y : null,
+    selected :null 
+};
 const imageBoard = {
     img: null
 };
