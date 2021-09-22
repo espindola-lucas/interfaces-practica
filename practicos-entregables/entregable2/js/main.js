@@ -2,16 +2,26 @@
 
 let canvas;
 let context;
-let tokens = 2;
+let tokens = 25;
 let playerRed;
 let playerGreen;
 let arrayTokens = [];
 let arrayLockers = [];
+let arrayConteiners = [];
 let isMouseDown = false;
 let lastClickedFigure = null;
 let img;
 
 const allFig = {
+    array: null
+};
+const imageBoard = {
+    img: null
+};
+const alllockers = {
+    array: null
+};
+const allConteiners = {
     array: null
 };
 
@@ -45,18 +55,21 @@ async function mainFunction(){
 
     allFig.array = playerGreen.getArrayToken();
     board ();
+    
 }
 
-function board (){
-    let img = new Image ();
-    img.src = "./images/board.jpeg";
-    img.onload = function (){
-        let  board = new Board(canvas, context, img, 7, 7, arrayLockers);
+async function board (){
+        img = await Help.uploadImage("./images/board.jpeg");
+        let  board = new Board(canvas, context, img, 7, 7, arrayLockers,arrayConteiners);
         board.drawBackground();
         board.createLockers();
         board.drawcontainers();
+        alllockers.array = board.getArrayLockers();
+        allConteiners.array = board.getArrayConteiners();
+        imageBoard.img = img ;
+       
     }
-}
+
 
 document.addEventListener("DOMContentLoaded", mainFunction());
 document.addEventListener("mousedown", Help.onMouseDown, false);

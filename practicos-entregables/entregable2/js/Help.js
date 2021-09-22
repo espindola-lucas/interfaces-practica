@@ -1,6 +1,5 @@
 "use strict";
 
-
 class Help {
 
     //La propiedad static es utilizada para usar su metodo sin instaciar su clase
@@ -8,7 +7,7 @@ class Help {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    static onMouseDown(e){
+        static onMouseDown(e){
         isMouseDown = true;
         if(lastClickedFigure != null){
             lastClickedFigure = null;
@@ -18,13 +17,23 @@ class Help {
         if(clickFigure != null){
             lastClickedFigure = clickFigure;
         }
+        Help.redraw();
+        }
+    static redraw (){
+        canvas = document.querySelector("canvas");
+        context = canvas.getContext("2d");
         Token.drawTokens(allFig.array);
+        Board.drawcontainer(allConteiners.array);
+        Board.drawBackgroundS(context, imageBoard.img);
+        let ctx = canvas.getContext("2d");
+        Board.drawLockers(alllockers.array , ctx);
+        
     }
-    
+   
     static onMouseMove(e){
         if(isMouseDown && lastClickedFigure != null){
             lastClickedFigure.setPosition(e.layerX, e.layerY);
-            Token.drawTokens(allFig.array);
+           Help.redraw();
         }
     }
     
@@ -41,14 +50,16 @@ class Help {
             }
         }
     }
-
-    static uploadImage(path){
+    
+  static uploadImage(path){
         return new Promise((resolve, reject) => {
             let img = new Image();
             img.src = path;
             img.onload = () => resolve(img);
             img.onerror = reject;
+            
         });
+       
     }
 
 }

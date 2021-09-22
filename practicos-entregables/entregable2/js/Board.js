@@ -1,11 +1,12 @@
 class Board {
-    constructor (canvas, contexto, image, rows, columns, arrayLockers){
+    constructor (canvas, contexto, image, rows, columns, arrayLockers,arrayConteiners){
         this.canvas = canvas;
         this.contexto = contexto;
         this.image = image;
         this.rows = rows;
         this.columns = columns;
         this.arrayLockers = arrayLockers;
+        this.arrayConteiners = arrayConteiners
          
     }
 
@@ -27,15 +28,25 @@ class Board {
         posY  = 130;
         }
     }
-    
+    static drawLockers (array , contexto){
+        array.forEach(l => {
+            l.ctx = contexto;
+            l.draw();
+            
+        });
+    }
     drawBackground(){
         this.contexto.drawImage(this.image,190,100,400,410)
     }
-
+   static drawBackgroundS(contexto,i){
+        contexto.drawImage(i,190,100,400,410)
+   }
     getArrayLockers(){
         return this.arrayLockers;
     }
-
+    getArrayConteiners(){
+        return this.arrayConteiners;
+    }
     drawcontainers(){
         let ctx = this.canvas.getContext("2d");
         let posx = 230;
@@ -43,7 +54,15 @@ class Board {
         for (let e = 0 ; e < this.rows; e++){
             let conteiner = new Rectangle (posx , posy ,20, 20, "#801A15",ctx);
             conteiner.draw();
+            this.arrayConteiners.push(conteiner)
             posx += 50 ;
         }
     }
+    static drawcontainer(arrayConteiners){
+        arrayConteiners.forEach(t => {
+            t.draw();
+        });
+    
+    }
+  
 }
