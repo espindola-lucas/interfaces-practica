@@ -58,4 +58,9 @@ class Token {
             t.draw();
         });
     }
+    static drawInOldPosition (elemento, X ,Y ){
+        elemento.posX = X;
+        elemento.posY = Y ;
+        elemento.draw();
+    }
 }

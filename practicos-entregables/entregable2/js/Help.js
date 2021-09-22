@@ -39,6 +39,16 @@ class Help {
     
     static onMouseUp(e){
         isMouseDown = false;
+        let rectan = allConteiners.array
+        for (let i= 0 ; i <rectan.length; i++ ){
+             const elemento = rectan[i];
+            if (elemento.isPointInside(e.layerX,e.layerY) &&  lastClickedFigure != null ){
+                console.log("hola");
+            }else if (lastClickedFigure != null ) {
+                Token.drawInOldPosition(oldPositions.selected, oldPositions.X ,oldPositions.Y );
+
+            }
+        }
     }
     
     static findClickedFigure(x, y){
@@ -46,6 +56,9 @@ class Help {
         for(let i = 0; i < array.length; i++){
             const element = array[i];
             if(element.isPointInside(x, y)){
+                oldPositions.selected = element;
+                oldPositions.X = element.posX;
+                oldPositions.Y = element.posY;
                 return element; 
             }
         }
