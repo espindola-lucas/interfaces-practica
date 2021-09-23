@@ -1,8 +1,10 @@
 "use strict";
 
 class Token {
-    constructor(colour, totalTokens, arrayTokens, context){
+    constructor(token1, token2, colour, totalTokens, arrayTokens, context){
         this.colour = colour;
+        this.token1 = token1;
+        this.token2 = token2;
         this.totalTokens = totalTokens;
         this.arrayTokens = arrayTokens;
         this.context = context;
@@ -16,6 +18,13 @@ class Token {
         return this.totalTokens;
     }
 
+    getToken1(){
+        return this.token1;
+    }
+
+    getToken2(){
+        return this.token2;
+    }
 
     getArrayToken(){
         return this.arrayTokens;
@@ -29,6 +38,7 @@ class Token {
                     let y = Help.getRandomInt(200, 400);
                     let token = new Circle(x, y, 20, this.colour, this.context);
                     this.arrayTokens.push(token);
+                    this.token1.push(token);
                 }
                 break;
 
@@ -38,6 +48,7 @@ class Token {
                     let y = Help.getRandomInt(200, 400);
                     let token = new Circle(x, y, 20, this.colour, this.context);
                     this.arrayTokens.push(token);
+                    this.token2.push(token);
                 }
                 break;
         }
