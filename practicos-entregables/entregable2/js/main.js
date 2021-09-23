@@ -2,7 +2,7 @@
 
 let canvas;
 let context;
-let tokens = 2;
+let tokens = 25;
 let playerRed;
 let playerGreen;
 let arrayTokens = [];
@@ -13,6 +13,11 @@ let lastClickedFigure = null;
 let img;
 let token1 = [];
 let token2 = [];
+let asd;
+
+const turno = {
+    turn: null
+};
 
 const allFig = {
     array: null
@@ -39,13 +44,13 @@ const allConteiners = {
 const player1 = {
     name: 1,
     arrayTokensPlayer1: 0,
-    colour: "red"
+    colour: "rojo"
 };
 
 const player2 = {
     name: 2,
     arrayTokensPlayer2: 0,
-    colour: "green"
+    colour: "verde"
 };
 
 const currentPlayer = {
@@ -77,7 +82,7 @@ async function mainFunction(){
     allFig.array = playerGreen.getArrayToken();
     
     board();
-    
+
 }
 
 async function board (){

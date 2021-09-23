@@ -34,8 +34,8 @@ class Token {
         switch(this.colour){
             case player1.colour:
                 for(let i = 0; i < this.totalTokens; i++){
-                    let x = Help.getRandomInt(20, 70);
-                    let y = Help.getRandomInt(200, 400);
+                    let x = Help.getRandomInt(70, 110);
+                    let y = Help.getRandomInt(150, 350);
                     let token = new Circle(x, y, 20, this.colour, this.context);
                     this.arrayTokens.push(token);
                     this.token1.push(token);
@@ -44,8 +44,8 @@ class Token {
 
             case player2.colour: 
                 for(let i = 0; i < this.totalTokens; i++){
-                    let x = Help.getRandomInt(730, 780);
-                    let y = Help.getRandomInt(200, 400);
+                    let x = Help.getRandomInt(680, 730);
+                    let y = Help.getRandomInt(150, 350);
                     let token = new Circle(x, y, 20, this.colour, this.context);
                     this.arrayTokens.push(token);
                     this.token2.push(token);

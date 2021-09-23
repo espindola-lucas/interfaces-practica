@@ -98,9 +98,9 @@ class Help {
 
     static selectPlayer(current){
         if(current == 1){
-            current = player2.name;
+            currentPlayer.actual = player2.name;
         }else{
-            current = player1.name;
+            currentPlayer.actual = player1.name;
         }
     }
 
