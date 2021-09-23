@@ -1,4 +1,19 @@
 .canvasPreview{
     position: fixed;
     margin-left: 18%;
+    margin-bottom: -20%;
+}
+
+#frontGame{
+    margin-left: 22%;
+    border: 1px solid black;
+    width: 50%;
+}
+
+#frontGame > h1, h3, p, button{
+    text-align: center;
+}
+
+.game{
+    text-align: center;
 }
