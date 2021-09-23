@@ -14,20 +14,19 @@ let lastClickedFigure = null;
 let img;
 let token1 = [];
 let token2 = [];
-let asd;
+let filas = 7;
+let columnas = 7;
 
 const turno = {
     turn: null
 };
 
-const allFig = {
-    array: null
-};
-
 const oldPositions = {
     X: null ,
     Y : null,
-    selected :null 
+    selected : null ,
+    positionInArray: null,
+    array : null
 };
 
 const imageBoard = {
@@ -45,13 +44,13 @@ const allConteiners = {
 const player1 = {
     name: 1,
     arrayTokensPlayer1: 0,
-    colour: "rojo"
+    colour:"./images/redToken.jpg"
 };
 
 const player2 = {
     name: 2,
     arrayTokensPlayer2: 0,
-    colour: "verde"
+    colour: "./images/greenToken.jpg"
 };
 
 const currentPlayer = {
@@ -63,43 +62,31 @@ function hiddenGame(){
 }
 
 async function initGame(){
-    // canvas = document.querySelector("canvas");
-    // context = canvas.getContext("2d");
-    
-    canvas.style.visibility = 'visible';
-
-    play.style.display = 'none';
-
-    img = await Help.uploadImage("./images/redToken.jpg");
-    player1.colour = img;
-
-    playerRed = new Token(token1, token2, player1.colour, tokens, arrayTokens, context);
-    playerRed.createToken();
-    playerRed.drawToken();
-
-    player1.arrayTokensPlayer1 = playerRed.getToken1();
-
-    img = await Help.uploadImage("./images/greenToken.jpg");
-    player2.colour = img;
-
-    playerGreen = new Token(token1, token2, player2.colour, tokens, arrayTokens, context);
-    playerGreen.createToken();
-    playerGreen.drawToken();
-
-    player2.arrayTokensPlayer2 = playerRed.getToken2();
-
-    allFig.array = playerGreen.getArrayToken();
-    
+   canvas.style.visibility = 'visible';
+   play.style.display = 'none';
     board();
-
+    token();
     document.addEventListener("mousedown", Help.onMouseDown, false);
     document.addEventListener("mouseup", Help.onMouseUp, false);
     document.addEventListener("mousemove", Help.onMouseMove, false);
 }
-
+ async function token (){
+    img = await Help.uploadImage("./images/redToken.jpg");
+    player1.colour = img;
+    playerRed = new Token(token1, token2, player1.colour, tokens, arrayTokens, context);
+    playerRed.createToken();
+    playerRed.drawToken();
+    player1.arrayTokensPlayer1 = playerRed.getToken1();
+    img = await Help.uploadImage("./images/greenToken.jpg");
+    player2.colour = img;
+    playerGreen = new Token(token1, token2, player2.colour, tokens, arrayTokens, context);
+    playerGreen.createToken();
+    playerGreen.drawToken();
+    player2.arrayTokensPlayer2 = playerRed.getToken2();
+    }
 async function board (){
         img = await Help.uploadImage("./images/table.jpg");
-        let  board = new Board(canvas, context, img, 7, 7, arrayLockers,arrayConteiners);
+        let  board = new Board(canvas, context, img, filas, columnas, arrayLockers,arrayConteiners);
         board.drawBackground();
         board.createLockers();
         board.drawcontainers();

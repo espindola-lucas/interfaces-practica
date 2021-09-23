@@ -28,13 +28,6 @@ class Rectangle extends Figure {
         return this.height;
     }
 
-    setGradientColour(colour1, colour2) {
-        let gradient = this.context.createLinearGradient(this.posX, this.posY, this.posX + this.width, this.posY + this.height);
-        gradient.addColorStop(0, colour1);
-        gradient.addColorStop(1, colour2);
-        super.setFill(gradient);
-    }
-
     isPointInside(x, y) {
         return !(x < this.posX || x > this.posX + this.width || 
                 y < this.posY || y > this.posY + this.height);

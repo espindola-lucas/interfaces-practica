@@ -25,17 +25,7 @@ class Circle extends Figure {
         this.context.closePath();
     }
 
-    // getRadius() {
-    //     return this.radius;
-    // }
-
-    setGradientColour(colour1, colour2) {
-        let gradient = this.context.createLinearGradient(this.posX - this.radius, this.posY - this.radius, this.posX + this.radius, this.posY + this.radius);
-        gradient.addColorStop(0, colour1);
-        gradient.addColorStop(1, colour2);
-        super.setFill(gradient);
-    }
-
+    
     isPointInside(x, y) {
         let _x = this.posX - x;
         let _y = this.posY - y;

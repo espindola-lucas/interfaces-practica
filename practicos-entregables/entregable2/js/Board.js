@@ -27,29 +27,17 @@ class Board {
         posY = 90;
         }
     }
-    static drawLockers (array , contexto){
-        array.forEach(l => {
-            l.ctx = contexto;
-            l.draw();
-        });
-    }
+    
 
     drawBackground(){
         this.contexto.drawImage(this.image,190,60,400,410)
     }
-    
-    static drawBackgroundS(contexto,i){
-        contexto.drawImage(i,190,60,400,410)
-    }
-    
     getArrayLockers(){
         return this.arrayLockers;
     }
-    
     getArrayConteiners(){
         return this.arrayConteiners;
     }
-    
     drawcontainers(){
         let ctx = this.canvas.getContext("2d");
         let posx = 230;
@@ -61,7 +49,15 @@ class Board {
             posx += 50 ;
         }
     }
-    
+    static drawBackgroundS(contexto,i){
+        contexto.drawImage(i,190,60,400,410)
+    }
+    static drawLockers (array , contexto){
+        array.forEach(l => {
+            l.ctx = contexto;
+            l.draw();
+        });
+    }
     static drawcontainer(arrayConteiners){
         arrayConteiners.forEach(t => {
             t.draw();

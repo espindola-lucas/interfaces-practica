@@ -10,14 +10,7 @@ class Token {
         this.context = context;
     }
 
-    getColour(){
-        return this.colour;
-    }
-
-    getTotalTokens(){
-        return this.totalTokens;
-    }
-
+    
     getToken1(){
         return this.token1;
     }
@@ -61,14 +54,17 @@ class Token {
         });
     }
 
-    static drawTokens(tokens){
+    static drawTokens(tokens1,tokens2){
         canvas = document.querySelector("canvas");
         context = canvas.getContext("2d");   
         context.fillStyle="white";
         context.fillRect(0, 0, canvas.width, canvas.height);
-        tokens.forEach(t => {
-            t.draw();
-        });
+        tokens1.forEach(t => {
+             t.draw();
+         });
+         tokens2.forEach(T => {
+             T.draw()
+         });
     }
     
     static drawInOldPosition (elemento, X ,Y ){
