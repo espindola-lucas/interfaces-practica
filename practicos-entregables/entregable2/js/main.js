@@ -1,7 +1,8 @@
 "use strict";
 
-let canvas;
-let context;
+let canvas = document.querySelector("canvas");
+let context = canvas.getContext("2d");
+let play = document.getElementById("frontGame");
 let tokens = 25;
 let playerRed;
 let playerGreen;
@@ -57,10 +58,18 @@ const currentPlayer = {
     actual: player1.name
 };
 
-async function mainFunction(){
-    canvas = document.querySelector("canvas");
-    context = canvas.getContext("2d");
+function hiddenGame(){
+    canvas.style.visibility = 'hidden';
+}
+
+async function initGame(){
+    // canvas = document.querySelector("canvas");
+    // context = canvas.getContext("2d");
     
+    canvas.style.visibility = 'visible';
+
+    play.style.display = 'none';
+
     img = await Help.uploadImage("./images/redToken.jpg");
     player1.colour = img;
 
@@ -83,6 +92,9 @@ async function mainFunction(){
     
     board();
 
+    document.addEventListener("mousedown", Help.onMouseDown, false);
+    document.addEventListener("mouseup", Help.onMouseUp, false);
+    document.addEventListener("mousemove", Help.onMouseMove, false);
 }
 
 async function board (){
@@ -97,7 +109,4 @@ async function board (){
     }
 
 
-document.addEventListener("DOMContentLoaded", mainFunction());
-document.addEventListener("mousedown", Help.onMouseDown, false);
-document.addEventListener("mouseup", Help.onMouseUp, false);
-document.addEventListener("mousemove", Help.onMouseMove, false);
+document.addEventListener("DOMContentLoaded", hiddenGame());
