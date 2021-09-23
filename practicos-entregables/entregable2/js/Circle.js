@@ -25,9 +25,9 @@ class Circle extends Figure {
         this.context.closePath();
     }
 
-    getRadius() {
-        return this.radius;
-    }
+    // getRadius() {
+    //     return this.radius;
+    // }
 
     setGradientColour(colour1, colour2) {
         let gradient = this.context.createLinearGradient(this.posX - this.radius, this.posY - this.radius, this.posX + this.radius, this.posY + this.radius);

@@ -9,6 +9,7 @@ class Help {
 
     static onMouseDown(e){
         isMouseDown = true;
+
         if(lastClickedFigure != null){
             lastClickedFigure = null;
         }
@@ -20,15 +21,6 @@ class Help {
         Help.redraw();
     }
         
-    static redraw (){
-        canvas = document.querySelector("canvas");
-        context = canvas.getContext("2d");
-        Token.drawTokens(allFig.array);
-        Board.drawcontainer(allConteiners.array);
-        Board.drawBackgroundS(context, imageBoard.img);
-        let ctx = canvas.getContext("2d");
-        Board.drawLockers(alllockers.array , ctx);
-    }
 
     static onMouseMove(e){
         if(isMouseDown && lastClickedFigure != null){
@@ -42,27 +34,51 @@ class Help {
         let rectan = allConteiners.array
         for (let i= 0 ; i <rectan.length; i++ ){
             const elemento = rectan[i];
-            if (elemento.isPointInside(e.layerX,e.layerY) &&  lastClickedFigure != null ){
+            if (elemento.isPointInside(e.layerX,e.layerY) &&  lastClickedFigure != null){
                 Help.fillWhite(lastClickedFigure);
-                console.log("hola");
-            }else if (lastClickedFigure != null ) {
+            }else if (lastClickedFigure != null) {
+                Help.selectPlayer(currentPlayer.actual);
                 Token.drawInOldPosition(oldPositions.selected, oldPositions.X ,oldPositions.Y );
-
             }
         }
     }
     
     static findClickedFigure(x, y){
-        let array = allFig.array;
-        for(let i = 0; i < array.length; i++){
-            const element = array[i];
-            if(element.isPointInside(x, y)){
-                oldPositions.selected = element;
-                oldPositions.X = element.posX;
-                oldPositions.Y = element.posY;
-                return element; 
+        if(currentPlayer.actual == 1){
+            let array = player1.arrayTokensPlayer1;
+            for(let i = 0; i < array.length; i++){
+                const element = array[i];
+                if(element.isPointInside(x, y)){
+                    oldPositions.selected = element;
+                    oldPositions.X = element.posX;
+                    oldPositions.Y = element.posY;
+                    currentPlayer.actual = player2.name; 
+                    return element;
+                }
+            }
+        }else{
+            let array = player2.arrayTokensPlayer2;
+            for(let i = 0; i < array.length; i++){
+                const element = array[i];
+                if(element.isPointInside(x, y)){
+                    oldPositions.selected = element;
+                    oldPositions.X = element.posX;
+                    oldPositions.Y = element.posY;
+                    currentPlayer.actual = player1.name; 
+                    return element;
+                }
             }
         }
+    }
+
+    static redraw (){
+        canvas = document.querySelector("canvas");
+        context = canvas.getContext("2d");
+        Token.drawTokens(allFig.array);
+        Board.drawcontainer(allConteiners.array);
+        Board.drawBackgroundS(context, imageBoard.img);
+        let ctx = canvas.getContext("2d");
+        Board.drawLockers(alllockers.array , ctx);
     }
     
     static uploadImage(path){
@@ -78,6 +94,14 @@ class Help {
     static fillWhite(element){
         element.fill = "white";
         element.draw();
+    }
+
+    static selectPlayer(current){
+        if(current == 1){
+            current = player2.name;
+        }else{
+            current = player1.name;
+        }
     }
 
 }
