@@ -9,6 +9,7 @@ let playerGreen;
 let arrayTokens = [];
 let arrayLockers = [];
 let arrayConteiners = [];
+let matrixArray = [];
 let isMouseDown = false;
 let lastClickedFigure = null;
 let img;
@@ -16,11 +17,17 @@ let token1 = [];
 let token2 = [];
 let filas = 7;
 let columnas = 7;
-
+let m =[];
+const rowsAndColumns ={
+    f:7,
+    c:7
+};
 const turno = {
     turn: null
 };
-
+const Juego ={
+    matrix : null 
+};
 const oldPositions = {
     X: null ,
     Y : null,
@@ -36,6 +43,9 @@ const imageBoard = {
 const alllockers = {
     array: null
 };
+const MatrixLockers={
+    matrix:null
+}
 
 const allConteiners = {
     array: null
@@ -57,15 +67,16 @@ const currentPlayer = {
     actual: player1.name
 };
 
-function hiddenGame(){
-    canvas.style.visibility = 'hidden';
+ function hiddenGame(){
+     canvas.style.visibility = 'hidden';
 }
 
-async function initGame(){
-   canvas.style.visibility = 'visible';
-   play.style.display = 'none';
+ function initGame(){
+    canvas.style.visibility = 'visible';
+    play.style.display = 'none';
     board();
     token();
+    game();
     document.addEventListener("mousedown", Help.onMouseDown, false);
     document.addEventListener("mouseup", Help.onMouseUp, false);
     document.addEventListener("mousemove", Help.onMouseMove, false);
@@ -86,14 +97,21 @@ async function initGame(){
     }
 async function board (){
         img = await Help.uploadImage("./images/table.jpg");
-        let  board = new Board(canvas, context, img, filas, columnas, arrayLockers,arrayConteiners);
+        let  board = new Board(canvas, context, img, filas, columnas, arrayLockers,arrayConteiners,m);
         board.drawBackground();
         board.createLockers();
         board.drawcontainers();
         alllockers.array = board.getArrayLockers();
         allConteiners.array = board.getArrayConteiners();
         imageBoard.img = img ;
+       MatrixLockers.matrix=board.getMatrix()
+    }
+
+    function game (){
+     let g = new Game (filas,columnas,matrixArray)
+     g.createMatrix();
+     Juego.matrix = g.getMatrix();
     }
 
 
-document.addEventListener("DOMContentLoaded", hiddenGame());
+document.addEventListener("DOMContentLoaded", initGame());
