@@ -1,17 +1,18 @@
 "use strict"
 
 class Rectangle extends Figure {
-    constructor(posX, posY, width, height, fill, context) {
+    constructor(posX, posY, width, height, fill, context,e) {
         super(posX, posY, fill, context);
 
         this.width = width;
         this.height = height;
+        this.e = e;
     }
 
     draw() {
         super.draw();
         this.context.beginPath();
-        this.context.fillRect(this.posX, this.posY, this.width, this.height);
+        this.context.fillRect(this.posX, this.posY, this.width, this.height,this.e);
 
         if (this.fill instanceof Image) {
             console.log(this.fill)

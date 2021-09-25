@@ -13,7 +13,6 @@ class Help {
         if(lastClickedFigure != null){
             lastClickedFigure = null;
         }
-    
         let clickFigure = Help.findClickedFigure(e.layerX, e.layerY);
         if(clickFigure != null){
             lastClickedFigure = clickFigure;
@@ -36,8 +35,10 @@ class Help {
             const elemento = rectan[i];
             if (elemento.isPointInside(e.layerX,e.layerY) &&  lastClickedFigure != null){
                 Help.fillWhite(lastClickedFigure,oldPositions.array,oldPositions.positionInArray);
+                Game.getRows(elemento.e,currentPlayer.actual);
+                Help.selectPlayer(currentPlayer.actual)
             }else if (lastClickedFigure != null) {
-                Help.selectPlayer(currentPlayer.actual);
+                // Help.selectPlayer(currentPlayer.actual);
                 Token.drawInOldPosition(oldPositions.selected, oldPositions.X ,oldPositions.Y );
             }
         }
@@ -55,7 +56,7 @@ class Help {
                      oldPositions.Y = element.posY;
                      oldPositions.positionInArray = i;
                      oldPositions.array =player1.arrayTokensPlayer1;
-                     currentPlayer.actual = player2.name;
+                    //  currentPlayer.actual = player2.name;
                      return element;
                     }  
                  }
@@ -69,7 +70,7 @@ class Help {
                      oldPositions.Y = element.posY;
                     oldPositions.positionInArray = i;
                     oldPositions.array =player2.arrayTokensPlayer2;
-                    currentPlayer.actual = player1.name; 
+                    // currentPlayer.actual = player1.name; 
                     
                      return element;
                     }   }
@@ -79,7 +80,6 @@ class Help {
         canvas = document.querySelector("canvas");
         context = canvas.getContext("2d");
         Token.drawTokens(player1.arrayTokensPlayer1,player2.arrayTokensPlayer2);
-        
         Board.drawcontainer(allConteiners.array);
         Board.drawBackgroundS(context, imageBoard.img);
         let ctx = canvas.getContext("2d");
@@ -109,5 +109,6 @@ class Help {
             currentPlayer.actual = player1.name;
         }
     }
+  
 
 }
