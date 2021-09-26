@@ -3,7 +3,7 @@
 let canvas = document.querySelector("canvas");
 let context = canvas.getContext("2d");
 let play = document.getElementById("frontGame");
-let tokens = 25;
+let tokens =25;
 let playerRed;
 let playerGreen;
 let arrayTokens = [];
@@ -15,8 +15,6 @@ let lastClickedFigure = null;
 let img;
 let token1 = [];
 let token2 = [];
-let filas = 7;
-let columnas = 7;
 let m =[];
 const rowsAndColumns ={
     f:7,
@@ -25,6 +23,9 @@ const rowsAndColumns ={
 const turno = {
     turn: null
 };
+const Rows ={
+    empty:[]
+    };
 const Juego ={
     matrix : null 
 };
@@ -97,7 +98,7 @@ const currentPlayer = {
     }
 async function board (){
         img = await Help.uploadImage("./images/table.jpg");
-        let  board = new Board(canvas, context, img, filas, columnas, arrayLockers,arrayConteiners,m);
+        let  board = new Board(canvas, context, img,rowsAndColumns.f , rowsAndColumns.c, arrayLockers,arrayConteiners,m);
         board.drawBackground();
         board.createLockers();
         board.drawcontainers();
@@ -108,10 +109,11 @@ async function board (){
     }
 
     function game (){
-     let g = new Game (filas,columnas,matrixArray)
+     let g = new Game (rowsAndColumns.f,rowsAndColumns.c,matrixArray)
      g.createMatrix();
      Juego.matrix = g.getMatrix();
-    }
+     Rows.empty = Game.emptyFile();
+     }
 
 
 document.addEventListener("DOMContentLoaded", initGame());

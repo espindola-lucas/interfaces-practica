@@ -19,6 +19,12 @@ class Game {
     getMatrix(){
         return this.matrixGame;
     }
+    static emptyFile (){
+        for (let i = 0 ; i  <= rowsAndColumns.f-1 ; i++){
+            Rows.empty[i]= "no";
+        }
+        return Rows.empty
+    }
 
     static getRows (conteiner,jugadorActual){
         let NombreJugador;
@@ -46,26 +52,41 @@ class Game {
                 Juego.matrix[file][position] = NombreJugador;
                 MatrixLockers.matrix[file][position].fill= jugadorActual;
                 Help.redraw()
-                console.table( Juego.matrix);
                 position = 0;
                 p= p-1
             }else{
                 position = position-1;  
                 if (position == 0){
-                    Game.volve(position, file, p, NombreJugador, jugadorActual);
+                    Game.lastPosition(position, file, p, NombreJugador, jugadorActual);
                 }
               
                 p = position
             }
         } while (position != 0)
+        console.log("matriz del tablero") + console.table(Juego.matrix)
+        if (position == 0 && Juego.matrix[file][p] != 0){
+            Rows.empty[file] = "si";
+            console.log (Rows.empty)
+          
+           
+        }
     }
     
-    static volve (position, file, p, NombreJugador, jugadorActual){
+    static lastPosition (position, file, p, NombreJugador, jugadorActual){
         if (Juego.matrix[file][p-1] == 0 ){
             Juego.matrix[file][position] = NombreJugador;
             MatrixLockers.matrix[file][position].fill= jugadorActual;
             Help.redraw()
-            console.table( Juego.matrix);
+           
        }   
+    }
+
+    static fullRows (numberElement,selected, X ,Y){
+        if (numberElement == Rows.number &&   Rows.empty[numberElement] == "si"){
+            Token.drawInOldPosition(selected, X ,Y );
+            }else{
+            Help.deleteElement(oldPositions.array,oldPositions.positionInArray);
+           
+        }
     }
 }
