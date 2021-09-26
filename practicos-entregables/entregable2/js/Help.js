@@ -34,15 +34,27 @@ class Help {
         for (let i= 0 ; i <rectan.length; i++ ){
             const elemento = rectan[i];
             if (elemento.isPointInside(e.layerX,e.layerY) &&  lastClickedFigure != null){
-                Help.fillWhite(lastClickedFigure,oldPositions.array,oldPositions.positionInArray);
-                Game.getRows(elemento.e,currentPlayer.actual);
-                Help.selectPlayer(currentPlayer.actual)
-            }else if (lastClickedFigure != null) {
-                // Help.selectPlayer(currentPlayer.actual);
-                Token.drawInOldPosition(oldPositions.selected, oldPositions.X ,oldPositions.Y );
+                Game.fullRows (elemento.e,oldPositions.selected, oldPositions.X ,oldPositions.Y )
+                    if (Rows.empty[elemento.e] =="no" ){
+                       if (Rows.number == null || Rows.number == elemento.e){
+                          Game.getRows(elemento.e,currentPlayer.actual);
+                          Help.selectPlayer(currentPlayer.actual)
+                        }
+                    }else {
+                    // if (Rows.empty[elemento.e] == "no"){
+                    //     console.log("deberas jugar otra vez")
+                    //     Game.fullRows (elemento.e,oldPositions.selected, oldPositions.X ,oldPositions.Y )
+                    //     Game.getRows(elemento.e,currentPlayer.actual);
+                    //     Help.selectPlayer(currentPlayer.actual)
+                    // }
+                       
             }
         }
-    }
+             if (lastClickedFigure != null) {
+                Token.drawInOldPosition(oldPositions.selected, oldPositions.X ,oldPositions.Y );}
+       
+        } 
+     }
     
     static findClickedFigure(x, y){
         let array;
@@ -56,7 +68,6 @@ class Help {
                      oldPositions.Y = element.posY;
                      oldPositions.positionInArray = i;
                      oldPositions.array =player1.arrayTokensPlayer1;
-                    //  currentPlayer.actual = player2.name;
                      return element;
                     }  
                  }
@@ -68,11 +79,9 @@ class Help {
                      oldPositions.selected = element;
                      oldPositions.X = element.posX;
                      oldPositions.Y = element.posY;
-                    oldPositions.positionInArray = i;
-                    oldPositions.array =player2.arrayTokensPlayer2;
-                    // currentPlayer.actual = player1.name; 
-                    
-                     return element;
+                     oldPositions.positionInArray = i;
+                     oldPositions.array =player2.arrayTokensPlayer2;
+                    return element;
                     }   }
     } }
 
@@ -96,8 +105,7 @@ class Help {
         });
     }
 
-    static fillWhite(element,array,i){
-        
+    static deleteElement(array,i){
         array.splice(i,1);
         Help.redraw();
     }
