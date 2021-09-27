@@ -66,9 +66,6 @@ class Game {
         console.log("matriz del tablero") + console.table(Juego.matrix)
         if (position == 0 && Juego.matrix[file][p] != 0){
             Rows.empty[file] = "si";
-            console.log (Rows.empty)
-          
-           
         }
     }
     
@@ -82,7 +79,7 @@ class Game {
     }
 
     static fullRows (numberElement,selected, X ,Y){
-        if (numberElement == Rows.number &&   Rows.empty[numberElement] == "si"){
+        if (  Rows.empty[numberElement] == "si"){
             Token.drawInOldPosition(selected, X ,Y );
             }else{
             Help.deleteElement(oldPositions.array,oldPositions.positionInArray);

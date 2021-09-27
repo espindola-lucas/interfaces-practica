@@ -40,20 +40,11 @@ class Help {
                           Game.getRows(elemento.e,currentPlayer.actual);
                           Help.selectPlayer(currentPlayer.actual)
                         }
-                    }else {
-                    // if (Rows.empty[elemento.e] == "no"){
-                    //     console.log("deberas jugar otra vez")
-                    //     Game.fullRows (elemento.e,oldPositions.selected, oldPositions.X ,oldPositions.Y )
-                    //     Game.getRows(elemento.e,currentPlayer.actual);
-                    //     Help.selectPlayer(currentPlayer.actual)
-                    // }
-                       
+                    }
             }
-        }
              if (lastClickedFigure != null) {
                 Token.drawInOldPosition(oldPositions.selected, oldPositions.X ,oldPositions.Y );}
-       
-        } 
+             } 
      }
     
     static findClickedFigure(x, y){
