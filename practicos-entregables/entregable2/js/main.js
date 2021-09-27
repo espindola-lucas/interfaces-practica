@@ -16,19 +16,24 @@ let img;
 let token1 = [];
 let token2 = [];
 let m =[];
+
 const rowsAndColumns ={
     f:7,
     c:7
 };
+
 const turno = {
     turn: null
 };
+
 const Rows ={
     empty:[]
-    };
+};
+
 const Juego ={
     matrix : null 
 };
+
 const oldPositions = {
     X: null ,
     Y : null,
@@ -68,11 +73,11 @@ const currentPlayer = {
     actual: player1.name
 };
 
- function hiddenGame(){
-     canvas.style.visibility = 'hidden';
+function hiddenGame(){
+    canvas.style.visibility = 'hidden';
 }
 
- function initGame(){
+function initGame(){
     canvas.style.visibility = 'visible';
     play.style.display = 'none';
     board();
@@ -82,8 +87,9 @@ const currentPlayer = {
     document.addEventListener("mouseup", Help.onMouseUp, false);
     document.addEventListener("mousemove", Help.onMouseMove, false);
 }
- async function token (){
-    img = await Help.uploadImage("./images/redToken.jpg");
+
+async function token (){
+    img = await Help.uploadImage("./images/redToken.png");
     player1.colour = img;
     playerRed = new Token(token1, token2, player1.colour, tokens, arrayTokens, context);
     playerRed.createToken();
@@ -95,25 +101,25 @@ const currentPlayer = {
     playerGreen.createToken();
     playerGreen.drawToken();
     player2.arrayTokensPlayer2 = playerRed.getToken2();
-    }
+}
+    
 async function board (){
-        img = await Help.uploadImage("./images/table.jpg");
-        let  board = new Board(canvas, context, img,rowsAndColumns.f , rowsAndColumns.c, arrayLockers,arrayConteiners,m);
-        board.drawBackground();
-        board.createLockers();
-        board.drawcontainers();
-        alllockers.array = board.getArrayLockers();
-        allConteiners.array = board.getArrayConteiners();
-        imageBoard.img = img ;
-       MatrixLockers.matrix=board.getMatrix()
-    }
+    img = await Help.uploadImage("./images/table.jpg");
+    let  board = new Board(canvas, context, img,rowsAndColumns.f , rowsAndColumns.c, arrayLockers,arrayConteiners,m);
+    board.drawBackground();
+    board.createLockers();
+    board.drawcontainers();
+    alllockers.array = board.getArrayLockers();
+    allConteiners.array = board.getArrayConteiners();
+    imageBoard.img = img ;
+    MatrixLockers.matrix=board.getMatrix()
+}
 
-    function game (){
-     let g = new Game (rowsAndColumns.f,rowsAndColumns.c,matrixArray)
-     g.createMatrix();
-     Juego.matrix = g.getMatrix();
-     Rows.empty = Game.emptyFile();
-     }
-
+function game (){
+    let g = new Game (rowsAndColumns.f,rowsAndColumns.c,matrixArray)
+    g.createMatrix();
+    Juego.matrix = g.getMatrix();
+    Rows.empty = Game.emptyFile();
+}
 
 document.addEventListener("DOMContentLoaded", initGame());

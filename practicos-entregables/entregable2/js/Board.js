@@ -9,18 +9,20 @@ class Board {
         this.arrayConteiners = arrayConteiners
         this.matrixGame = matrixGame;
     }
+
     getMatrix(){
         let i = 0;
         for(let f = 0; f <= this.rows; f++){
             this.matrixGame[f] = [];
             for (let c = 0 ; c <= this.columns-1; c++){
                 this.matrixGame[f][c]=alllockers.array[i];
-                 i = i + 1;}
-           if (i <= alllockers.array.length ){
-            i = i ;
-           }
-           }
-        return    this.matrixGame;
+                i = i + 1;
+            }
+            if (i <= alllockers.array.length ){
+                i = i ;
+            }
+        }
+        return this.matrixGame;
     }
 
     createLockers(){
@@ -46,12 +48,15 @@ class Board {
     drawBackground(){
         this.contexto.drawImage(this.image,190,60,400,410)
     }
+
     getArrayLockers(){
         return this.arrayLockers;
     }
+
     getArrayConteiners(){
         return this.arrayConteiners;
     }
+
     drawcontainers(){
         let ctx = this.canvas.getContext("2d");
         let posx = 230;
@@ -66,16 +71,17 @@ class Board {
     static drawBackgroundS(contexto,i){
         contexto.drawImage(i,190,60,400,410)
     }
+
     static drawLockers (array , contexto){
         array.forEach(l => {
             l.ctx = contexto;
             l.draw();
         });
     }
+    
     static drawcontainer(arrayConteiners){
         arrayConteiners.forEach(t => {
             t.draw();
         });
-    
     }
 }
