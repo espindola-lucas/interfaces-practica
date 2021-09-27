@@ -22,6 +22,7 @@ class Circle extends Figure {
             // this.context.clip();
             this.context.drawImage(this.fill, this.posX - this.radius, this.posY - this.radius, this.radius * 2, this.radius * 2);
         }
+        // this.context.restore();
         this.context.closePath();
     }
 

@@ -36,16 +36,16 @@ class Help {
             if (elemento.isPointInside(e.layerX,e.layerY) &&  lastClickedFigure != null){
                 Game.fullRows (elemento.e,oldPositions.selected, oldPositions.X ,oldPositions.Y )
                     if (Rows.empty[elemento.e] =="no" ){
-                       if (Rows.number == null || Rows.number == elemento.e){
-                          Game.getRows(elemento.e,currentPlayer.actual);
-                          Help.selectPlayer(currentPlayer.actual)
+                        if (Rows.number == null || Rows.number == elemento.e){
+                            Game.getRows(elemento.e,currentPlayer.actual);
+                            Help.selectPlayer(currentPlayer.actual)
                         }
                     }
             }
-             if (lastClickedFigure != null) {
+            if (lastClickedFigure != null) {
                 Token.drawInOldPosition(oldPositions.selected, oldPositions.X ,oldPositions.Y );}
-             } 
-     }
+            } 
+    }
     
     static findClickedFigure(x, y){
         let array;
@@ -54,27 +54,29 @@ class Help {
             for(let i = 0; i < array.length; i++){
                 const element = array[i];
                 if(element.isPointInside(x, y)){
-                     oldPositions.selected = element;
-                     oldPositions.X = element.posX;
-                     oldPositions.Y = element.posY;
-                     oldPositions.positionInArray = i;
-                     oldPositions.array =player1.arrayTokensPlayer1;
-                     return element;
-                    }  
-                 }
-           }else{
+                        oldPositions.selected = element;
+                        oldPositions.X = element.posX;
+                        oldPositions.Y = element.posY;
+                        oldPositions.positionInArray = i;
+                        oldPositions.array =player1.arrayTokensPlayer1;
+                        return element;
+                }  
+            }
+        }else{
             array = player2.arrayTokensPlayer2;
-           for(let i = 0; i < array.length; i++){
+            for(let i = 0; i < array.length; i++){
                 const element = array[i];
                 if(element.isPointInside(x, y)){
-                     oldPositions.selected = element;
-                     oldPositions.X = element.posX;
-                     oldPositions.Y = element.posY;
-                     oldPositions.positionInArray = i;
-                     oldPositions.array =player2.arrayTokensPlayer2;
+                    oldPositions.selected = element;
+                    oldPositions.X = element.posX;
+                    oldPositions.Y = element.posY;
+                    oldPositions.positionInArray = i;
+                    oldPositions.array =player2.arrayTokensPlayer2;
                     return element;
-                    }   }
-    } }
+                }   
+            }
+        } 
+    }
 
     static redraw (){
         canvas = document.querySelector("canvas");
@@ -108,6 +110,5 @@ class Help {
             currentPlayer.actual = player1.name;
         }
     }
-  
 
 }
