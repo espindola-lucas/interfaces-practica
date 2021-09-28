@@ -51,5 +51,52 @@ class Check {
             }
         }
         //end verificacion en horizontal
+
+        // verificacion diagonal 
+        for (let r = 0; r <= 3; r++){
+            for (let c =  rowsAndColumns.c - 1; c >= 4; c--){
+                if (Check.chkLine(bd[r][c], bd[r+1][c-1], bd[r+2][c-2], bd[r+3][c-3])){
+                    console.log("diagonal");
+                    return bd[r][c];
+                }
+            }
+        }
+       
+        for (let r = rowsAndColumns.f-1; r >= 3; r--){
+            for (let c =rowsAndColumns.c-1; c >= 4; c--){
+                if (Check.chkLine(bd[r][c], bd[r-1][c-1], bd[r-2][c-2], bd[r-3][c-3])){
+                    console.log("diagonal");
+                    return bd[r][c];
+                }
+            }
+        }
+
+
+        for (let r = 0; r <= 3; r++){
+         for (let c = 0; c <= 3; c++){
+               if (Check.chkLine(bd[r][c], bd[r+1][c+1], bd[r+2][c+2], bd[r+3][c+3])){
+                console.log("diagonal");
+                  return bd[r][c];
+                 }
+            }
+         }
+
+         for (let r = 0; r <= 3; r++){
+            for (let c = rowsAndColumns.c-1; c >= 3; c--){
+                  if (Check.chkLine(bd[r][c], bd[r+1][c-1], bd[r+2][c-2], bd[r+3][c-3])){
+                   console.log("diagonal");
+                     return bd[r][c];
+                    }
+               }
+            } 
+
+
+       
+            
+                
+       
     }
+
+    
+    
 }
