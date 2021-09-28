@@ -47,8 +47,8 @@ class Token {
         }
     }
 
-    drawToken(){
-        let tokens = this.arrayTokens;
+    drawToken(tokens){
+       
         tokens.forEach(t => {
             t.draw();
         });
@@ -59,12 +59,14 @@ class Token {
         context = canvas.getContext("2d");   
         context.fillStyle="white";
         context.fillRect(0, 0, canvas.width, canvas.height);
+        tokens2.forEach(T => {
+            context.fillStyle="#008000";
+            T.draw()
+        });
         tokens1.forEach(t => {
              t.draw();
          });
-         tokens2.forEach(T => {
-             T.draw()
-         });
+        
     }
     
     static drawInOldPosition (elemento, X ,Y ){

@@ -3,7 +3,7 @@
 let canvas = document.querySelector("canvas");
 let context = canvas.getContext("2d");
 let play = document.getElementById("frontGame");
-let tokens =25;
+let tokens =2;
 let playerRed;
 let playerGreen;
 let arrayTokens = [];
@@ -81,29 +81,29 @@ function hiddenGame(){
 function initGame(){
     canvas.style.visibility = 'visible';
     play.style.display = 'none';
-    board();
-    token();
+    tokenANDboard();
     game();
-    document.addEventListener("mousedown", Help.onMouseDown, false);
-    document.addEventListener("mouseup", Help.onMouseUp, false);
-    document.addEventListener("mousemove", Help.onMouseMove, false);
+     document.addEventListener("mousedown", Help.onMouseDown, false);
+     document.addEventListener("mouseup", Help.onMouseUp, false);
+     document.addEventListener("mousemove", Help.onMouseMove, false);
 }
 
-async function token (){
+async function tokenANDboard(){
 
     img = await Help.uploadImage("./images/redToken.png");
     player1.colour = img;
     playerRed = new Token(token1, token2, player1.colour, tokens, arrayTokens, context);
     playerRed.createToken();
-    playerRed.drawToken();
     player1.arrayTokensPlayer1 = playerRed.getToken1();
+    playerRed.drawToken(player1.arrayTokensPlayer1);
     
     img = await Help.uploadImage("./images/greenToken.png");
     player2.colour = img;
     playerGreen = new Token(token1, token2, player2.colour, tokens, arrayTokens, context);
     playerGreen.createToken();
-    playerGreen.drawToken();
     player2.arrayTokensPlayer2 = playerRed.getToken2();
+    playerGreen.drawToken(player2.arrayTokensPlayer2);
+     board();
 }
     
 async function board (){
