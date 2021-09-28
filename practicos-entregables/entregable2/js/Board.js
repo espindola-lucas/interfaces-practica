@@ -67,6 +67,7 @@ class Board {
             this.arrayConteiners.push(conteiner)
             posx += 50 ;
         }
+        
     }
     static drawBackgroundS(contexto,i){
         contexto.drawImage(i,190,60,400,360)
