@@ -46,7 +46,7 @@ class Board {
     
 
     drawBackground(){
-        this.contexto.drawImage(this.image,190,60,400,410)
+        this.contexto.drawImage(this.image,190,60,400,360)
     }
 
     getArrayLockers(){
@@ -69,7 +69,7 @@ class Board {
         }
     }
     static drawBackgroundS(contexto,i){
-        contexto.drawImage(i,190,60,400,410)
+        contexto.drawImage(i,190,60,400,360)
     }
 
     static drawLockers (array , contexto){

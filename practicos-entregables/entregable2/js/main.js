@@ -16,6 +16,7 @@ let img;
 let token1 = [];
 let token2 = [];
 let m =[];
+let hidden = false;
 
 const rowsAndColumns ={
     f:7,
@@ -89,13 +90,15 @@ function initGame(){
 }
 
 async function token (){
+
     img = await Help.uploadImage("./images/redToken.png");
     player1.colour = img;
     playerRed = new Token(token1, token2, player1.colour, tokens, arrayTokens, context);
     playerRed.createToken();
     playerRed.drawToken();
     player1.arrayTokensPlayer1 = playerRed.getToken1();
-    img = await Help.uploadImage("./images/greenToken.jpg");
+    
+    img = await Help.uploadImage("./images/greenToken.png");
     player2.colour = img;
     playerGreen = new Token(token1, token2, player2.colour, tokens, arrayTokens, context);
     playerGreen.createToken();
@@ -104,7 +107,7 @@ async function token (){
 }
     
 async function board (){
-    img = await Help.uploadImage("./images/table.jpg");
+    img = await Help.uploadImage("./images/table.png");
     let  board = new Board(canvas, context, img,rowsAndColumns.f , rowsAndColumns.c, arrayLockers,arrayConteiners,m);
     board.drawBackground();
     board.createLockers();
@@ -122,4 +125,4 @@ function game (){
     Rows.empty = Game.emptyFile();
 }
 
-document.addEventListener("DOMContentLoaded", initGame());
+document.addEventListener("DOMContentLoaded", hiddenGame());
