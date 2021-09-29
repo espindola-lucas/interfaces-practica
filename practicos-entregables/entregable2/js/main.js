@@ -3,6 +3,8 @@
 let canvas = document.querySelector("canvas");
 let context = canvas.getContext("2d");
 let play = document.getElementById("frontGame");
+let timeOut = document.getElementById("timeOut");
+let mainMenu = document.getElementById("menu");
 let tokens =2;
 let playerRed;
 let playerGreen;
@@ -17,6 +19,7 @@ let token1 = [];
 let token2 = [];
 let m =[];
 let hidden = false;
+
 
 const rowsAndColumns ={
     f:7,
@@ -52,7 +55,7 @@ const alllockers = {
 };
 const MatrixLockers={
     matrix:null
-}
+};
 
 const allConteiners = {
     array: null
@@ -76,6 +79,12 @@ const currentPlayer = {
 
 function hiddenGame(){
     canvas.style.visibility = 'hidden';
+    mainMenu.style.visibility = 'hidden';
+
+    if(hidden){
+        canvas.style.visibility = 'hidden';
+        mainMenu.style.visibility = 'visible';
+    }
 }
 
 function initGame(){
@@ -83,9 +92,10 @@ function initGame(){
     play.style.display = 'none';
     tokenANDboard();
     game();
-     document.addEventListener("mousedown", Help.onMouseDown, false);
-     document.addEventListener("mouseup", Help.onMouseUp, false);
-     document.addEventListener("mousemove", Help.onMouseMove, false);
+    timer();
+    document.addEventListener("mousedown", Help.onMouseDown, false);
+    document.addEventListener("mouseup", Help.onMouseUp, false);
+    document.addEventListener("mousemove", Help.onMouseMove, false);
 }
 
 async function tokenANDboard(){
@@ -103,9 +113,9 @@ async function tokenANDboard(){
     playerGreen.createToken();
     player2.arrayTokensPlayer2 = playerRed.getToken2();
     playerGreen.drawToken(player2.arrayTokensPlayer2);
-     board();
+    board();
 }
-    
+
 async function board (){
     img = await Help.uploadImage("./images/table.png");
     let  board = new Board(canvas, context, img,rowsAndColumns.f , rowsAndColumns.c, arrayLockers,arrayConteiners,m);
@@ -123,6 +133,14 @@ function game (){
     g.createMatrix();
     Juego.matrix = g.getMatrix();
     Rows.empty = Game.emptyFile();
+}
+
+function timer() {
+    setTimeout(function() {
+        timeOut.innerHTML = 'Se acabo el tiempo de juego';
+        hidden = true;
+        hiddenGame();
+    }, 600000); //600000
 }
 
 document.addEventListener("DOMContentLoaded", hiddenGame());
