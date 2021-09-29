@@ -48,7 +48,6 @@ class Token {
     }
 
     drawToken(tokens){
-       
         tokens.forEach(t => {
             t.draw();
         });
@@ -64,8 +63,8 @@ class Token {
             T.draw()
         });
         tokens1.forEach(t => {
-             t.draw();
-         });
+            t.draw();
+        });
         
     }
     
