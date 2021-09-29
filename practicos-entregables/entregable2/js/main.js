@@ -81,10 +81,16 @@ function hiddenGame(){
     canvas.style.visibility = 'hidden';
     mainMenu.style.visibility = 'hidden';
 
-    if(hidden){
+    if(hidden ){
         canvas.style.visibility = 'hidden';
         mainMenu.style.visibility = 'visible';
+        hidden= false
     }
+}
+function volver (){
+    canvas.style.visibility = 'hidden';
+    mainMenu.style.visibility = 'hidden';
+    play.style.display = 'block';
 }
 
 function initGame(){
@@ -140,7 +146,9 @@ function timer() {
         timeOut.innerHTML = 'Se acabo el tiempo de juego';
         hidden = true;
         hiddenGame();
-    }, 600000); //600000
+    }, 3000); //600000
 }
-
+mainMenu.addEventListener("click", () => {
+     volver();
+});
 document.addEventListener("DOMContentLoaded", hiddenGame());
