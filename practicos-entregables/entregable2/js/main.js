@@ -21,7 +21,7 @@ let token2 = [];
 let m =[];
 let hiddenMainMenu = false;
 let countSeconds, countMinutes, seconds, minutes;
-let again = false ;
+
 
 
 const rowsAndColumns ={
@@ -98,7 +98,7 @@ function initGame(){
     tokenANDboard();
     game();
 
-    again = false ;
+    
     timer(10);
     document.addEventListener("mousedown", Help.onMouseDown, false);
     document.addEventListener("mouseup", Help.onMouseUp, false);
@@ -149,7 +149,7 @@ function timer(stop){
     minutes = document.getElementById("minutos");
 
     window.setInterval( () => {
-        if(again == false){
+     
             if(stop != countSeconds){
                 if (countSeconds == 60){
                     countSeconds = 0;
@@ -170,17 +170,10 @@ function timer(stop){
                 countSeconds = 0;
                 countMinutes = 0;
             }
-        }
+        
        
     }, 1000)
 }
 
-mainMenu.addEventListener("click", () =>{
-    hiddenMainMenu = false;
-    timeOut.style.visibility = "hidden";
-    play.style.display = 'block'
-    hiddenGame();
-    again = true;
-});
 
 document.addEventListener("DOMContentLoaded", hiddenGame());
