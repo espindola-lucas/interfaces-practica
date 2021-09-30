@@ -85,6 +85,7 @@ function hiddenGame(){
         mainMenu.style.visibility = 'hidden';
         timerDiv.style.visibility = 'hidden';
     }else{
+        timerDiv.style.visibility = 'hidden'
         canvas.style.visibility = 'hidden';
         mainMenu.style.visibility = 'visible';
     }
@@ -159,15 +160,13 @@ function timer(stop){
         countSeconds++;
         }else{
             timeOut.innerHTML = 'Uups, se acabo el tiempo!';
+            
             hiddenMainMenu = true,
             hiddenGame();
         }
     }, 1000)
 }
 
-mainMenu.addEventListener("click", () =>{
-    hiddenMainMenu = false;
-    hiddenGame();
-});
+
 
 document.addEventListener("DOMContentLoaded", hiddenGame());
