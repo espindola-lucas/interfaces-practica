@@ -20,8 +20,7 @@ let token1 = [];
 let token2 = [];
 let m =[];
 let hiddenMainMenu = false;
-let countSeconds, countMinutes, seconds, minutes;
-
+let countSeconds, countMinutes, seconds, minutes, code;
 
 const rowsAndColumns ={
     f:7,
