@@ -21,6 +21,7 @@ let token2 = [];
 let m =[];
 let hiddenMainMenu = false;
 let countSeconds, countMinutes, seconds, minutes;
+let again = false ;
 
 
 const rowsAndColumns ={
@@ -96,6 +97,8 @@ function initGame(){
     timerDiv.style.visibility = 'visible';
     tokenANDboard();
     game();
+
+    again = false ;
     timer(10);
     document.addEventListener("mousedown", Help.onMouseDown, false);
     document.addEventListener("mouseup", Help.onMouseUp, false);
@@ -146,28 +149,38 @@ function timer(stop){
     minutes = document.getElementById("minutos");
 
     window.setInterval( () => {
-        if(stop != countSeconds){
-            if (countSeconds == 60){
-                countSeconds = 0;
-                countMinutes++;
-                minutes.innerHTML = countMinutes;
-                if(countMinutes == 0){
-                    countMinutes = 0;
+        if(again == false){
+            if(stop != countSeconds){
+                if (countSeconds == 60){
+                    countSeconds = 0;
+                    countMinutes++;
+                    minutes.innerHTML = countMinutes;
+                    if(countMinutes == 0){
+                        countMinutes = 0;
+                    }
                 }
+            seconds.innerHTML = countSeconds;
+            countSeconds++;
+            }else{
+                timeOut.innerHTML = 'Uups, se acabo el tiempo!';
+                timeOut.style.visibility = 'visible';
+                hiddenMainMenu = true,
+                timerDiv.style.visibility = 'hidden';
+                hiddenGame();
+                countSeconds = 0;
+                countMinutes = 0;
             }
-        seconds.innerHTML = countSeconds;
-        countSeconds++;
-        }else{
-            timeOut.innerHTML = 'Uups, se acabo el tiempo!';
-            hiddenMainMenu = true,
-            hiddenGame();
         }
+       
     }, 1000)
 }
 
 mainMenu.addEventListener("click", () =>{
     hiddenMainMenu = false;
+    timeOut.style.visibility = "hidden";
+    play.style.display = 'block'
     hiddenGame();
+    again = true;
 });
 
 document.addEventListener("DOMContentLoaded", hiddenGame());
