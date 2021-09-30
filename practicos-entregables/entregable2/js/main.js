@@ -5,6 +5,7 @@ let context = canvas.getContext("2d");
 let play = document.getElementById("frontGame");
 let timeOut = document.getElementById("timeOut");
 let mainMenu = document.getElementById("menu");
+let timerDiv = document.getElementById("timer");
 let tokens =2;
 let playerRed;
 let playerGreen;
@@ -18,7 +19,8 @@ let img;
 let token1 = [];
 let token2 = [];
 let m =[];
-let hidden = false;
+let hiddenMainMenu = false;
+let countSeconds, countMinutes, seconds, minutes;
 
 
 const rowsAndColumns ={
@@ -78,10 +80,11 @@ const currentPlayer = {
 };
 
 function hiddenGame(){
-    canvas.style.visibility = 'hidden';
-    mainMenu.style.visibility = 'hidden';
-
-    if(hidden){
+    if(hiddenMainMenu == false){
+        canvas.style.visibility = 'hidden';
+        mainMenu.style.visibility = 'hidden';
+        timerDiv.style.visibility = 'hidden';
+    }else{
         canvas.style.visibility = 'hidden';
         mainMenu.style.visibility = 'visible';
     }
@@ -90,9 +93,10 @@ function hiddenGame(){
 function initGame(){
     canvas.style.visibility = 'visible';
     play.style.display = 'none';
+    timerDiv.style.visibility = 'visible';
     tokenANDboard();
     game();
-    timer();
+    timer(10);
     document.addEventListener("mousedown", Help.onMouseDown, false);
     document.addEventListener("mouseup", Help.onMouseUp, false);
     document.addEventListener("mousemove", Help.onMouseMove, false);
@@ -135,12 +139,35 @@ function game (){
     Rows.empty = Game.emptyFile();
 }
 
-function timer() {
-    setTimeout(function() {
-        timeOut.innerHTML = 'Se acabo el tiempo de juego';
-        hidden = true;
-        hiddenGame();
-    }, 600000); //600000
+function timer(stop){
+    countSeconds = 0;
+    countMinutes = 0;
+    seconds = document.getElementById("segundos");
+    minutes = document.getElementById("minutos");
+
+    window.setInterval( () => {
+        if(stop != countSeconds){
+            if (countSeconds == 60){
+                countSeconds = 0;
+                countMinutes++;
+                minutes.innerHTML = countMinutes;
+                if(countMinutes == 0){
+                    countMinutes = 0;
+                }
+            }
+        seconds.innerHTML = countSeconds;
+        countSeconds++;
+        }else{
+            timeOut.innerHTML = 'Uups, se acabo el tiempo!';
+            hiddenMainMenu = true,
+            hiddenGame();
+        }
+    }, 1000)
 }
+
+mainMenu.addEventListener("click", () =>{
+    hiddenMainMenu = false;
+    hiddenGame();
+});
 
 document.addEventListener("DOMContentLoaded", hiddenGame());
