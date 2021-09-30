@@ -20,8 +20,7 @@ let token1 = [];
 let token2 = [];
 let m =[];
 let hiddenMainMenu = false;
-let countSeconds, countMinutes, seconds, minutes;
-
+let countSeconds, countMinutes, seconds, minutes, code;
 
 const rowsAndColumns ={
     f:7,
@@ -85,6 +84,7 @@ function hiddenGame(){
         mainMenu.style.visibility = 'hidden';
         timerDiv.style.visibility = 'hidden';
     }else{
+        timerDiv.style.visibility = 'hidden'
         canvas.style.visibility = 'hidden';
         mainMenu.style.visibility = 'visible';
     }
@@ -159,15 +159,13 @@ function timer(stop){
         countSeconds++;
         }else{
             timeOut.innerHTML = 'Uups, se acabo el tiempo!';
+            
             hiddenMainMenu = true,
             hiddenGame();
         }
     }, 1000)
 }
 
-mainMenu.addEventListener("click", () =>{
-    hiddenMainMenu = false;
-    hiddenGame();
-});
+
 
 document.addEventListener("DOMContentLoaded", hiddenGame());
