@@ -19,7 +19,7 @@ class Game {
     }
     
     static emptyFile (){
-        for (let i = 0 ; i  <= rowsAndColumns.f-1 ; i++){
+        for (let i = 0 ; i  <= Juego.rows-1 ; i++){
             Rows.empty[i]= "no";
         }
         return Rows.empty
@@ -27,7 +27,7 @@ class Game {
 
     static getRows (conteiner,jugadorActual){
         let NombreJugador;
-        for (let file= 0 ; file < rowsAndColumns.f ; file++){
+        for (let file= 0 ; file <Juego.rows ; file++){
             if (conteiner == file ){
                 if (jugadorActual == 2){
                     jugadorActual = player2.colour;
@@ -43,7 +43,7 @@ class Game {
     }
 
     static checkEmpty(file , jugadorActual,NombreJugador){
-        let position = rowsAndColumns.f -1;
+        let position = Juego.Columns-1;
         let p = position;
         do{
             if (Juego.matrix[file][p] == 0 ){
@@ -63,8 +63,9 @@ class Game {
                 p = position
             }
         } while (position != 0)
-        // console.log("matriz del tablero") + console.table(Juego.matrix)
-        Check.check();
+        console.table(Juego.matrix)
+       Check.check();
+      
         if (position == 0 && Juego.matrix[file][p] != 0){
             Rows.empty[file] = "si";
         }

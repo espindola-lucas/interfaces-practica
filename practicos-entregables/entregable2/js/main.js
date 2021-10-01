@@ -6,10 +6,8 @@ let play = document.getElementById("frontGame");
 let timeOut = document.getElementById("timeOut");
 let mainMenu = document.getElementById("menu");
 let timerDiv = document.getElementById("timer");
-let tokens =2;
 let playerRed;
 let playerGreen;
-let arrayTokens = [];
 let arrayLockers = [];
 let arrayConteiners = [];
 let matrixArray = [];
@@ -21,24 +19,19 @@ let token2 = [];
 let m =[];
 let hiddenMainMenu = false;
 let countSeconds, countMinutes, seconds, minutes, code;
-
-const rowsAndColumns ={
-    f:7,
-    c:7
-};
-
 const turno = {
     turn: null
 };
-
 const Rows ={
     empty:[]
 };
-
 const Juego ={
-    matrix : null 
+    matrix : null ,
+    winner : 0,
+    rows:7,
+    Columns:6,
+    Tokens:21
 };
-
 const oldPositions = {
     X: null ,
     Y : null,
@@ -103,17 +96,16 @@ function initGame(){
 }
 
 async function tokenANDboard(){
-
     img = await Help.uploadImage("./images/redToken.png");
     player1.colour = img;
-    playerRed = new Token(token1, token2, player1.colour, tokens, arrayTokens, context);
+    playerRed = new Token(token1, token2, player1.colour, Juego.Tokens, context);
     playerRed.createToken();
     player1.arrayTokensPlayer1 = playerRed.getToken1();
     playerRed.drawToken(player1.arrayTokensPlayer1);
     
     img = await Help.uploadImage("./images/greenToken.png");
     player2.colour = img;
-    playerGreen = new Token(token1, token2, player2.colour, tokens, arrayTokens, context);
+    playerGreen = new Token(token1, token2, player2.colour,Juego.Tokens, context);
     playerGreen.createToken();
     player2.arrayTokensPlayer2 = playerRed.getToken2();
     playerGreen.drawToken(player2.arrayTokensPlayer2);
@@ -122,7 +114,7 @@ async function tokenANDboard(){
 
 async function board (){
     img = await Help.uploadImage("./images/table.png");
-    let  board = new Board(canvas, context, img,rowsAndColumns.f , rowsAndColumns.c, arrayLockers,arrayConteiners,m);
+    let  board = new Board(canvas, context, img,Juego.rows , Juego.Columns, arrayLockers,arrayConteiners,m);
     board.drawBackground();
     board.createLockers();
     board.drawcontainers();
@@ -130,10 +122,11 @@ async function board (){
     allConteiners.array = board.getArrayConteiners();
     imageBoard.img = img ;
     MatrixLockers.matrix=board.getMatrix()
+    
 }
 
 function game (){
-    let g = new Game (rowsAndColumns.f,rowsAndColumns.c,matrixArray)
+    let g = new Game (Juego.rows,Juego.Columns,matrixArray)
     g.createMatrix();
     Juego.matrix = g.getMatrix();
     Rows.empty = Game.emptyFile();
@@ -155,17 +148,34 @@ function timer(stop){
                     countMinutes = 0;
                 }
             }
+            Winner ();
         seconds.innerHTML = countSeconds;
         countSeconds++;
         }else{
             timeOut.innerHTML = 'Uups, se acabo el tiempo!';
-            
             hiddenMainMenu = true,
             hiddenGame();
         }
     }, 1000)
 }
 
+function Winner (){
+    if (Juego.winner != 0 && Juego.winner != "Empate"){
+        countSeconds = 0;
+        countMinutes = 0;
+        timerDiv.style.visibility = 'hidden'
+        canvas.style.visibility = 'hidden';
+        mainMenu.style.visibility = 'visible';
+        timeOut.innerHTML = 'El juegador '+  Juego.winner  +  'gano';
+    }else if (Juego.winner =="Empate"){ 
+        countSeconds = 0;
+        countMinutes = 0;
+        timerDiv.style.visibility = 'hidden'
+        canvas.style.visibility = 'hidden';
+        mainMenu.style.visibility = 'visible';
+        timeOut.innerHTML = 'Empate!';
+    }
+}
 
 
 document.addEventListener("DOMContentLoaded", hiddenGame());
