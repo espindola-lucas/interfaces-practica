@@ -1,19 +1,106 @@
-.canvasPreview{
-    position: fixed;
-    margin-left: 18%;
-    margin-bottom: -20%;
+.title{
+    width: 50%;
+    padding: 0.5% 0%;
+    text-align: center;
+    background-color: lightsalmon;
+    border-radius: 10px;
+    margin-left: 25%;
 }
 
-#frontGame{
-    margin-left: 22%;
+.game > button{
+    all: unset;
+    padding: 1%;
+    background-color: lightseagreen;
+    margin-left: 48%;
+    margin-top: 1%;
+    font-size: 20px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu .chooserToken{
+    border: 1px solid black;
+    width: 30%;
+    margin-top: 1%;
+    flex-direction: row;
+    padding: 1%;
+}
+
+.chooserToken > button{
+    width: 100px;
+    height: 100px;
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 5px;
+}
+
+.chooserToken .token1 {
+    background-image: url();
+}
+
+.chooserToken .token2 {
+    background-image: url();
+}
+
+.chooserToken .token3 {
+    background-image: url();
+}
+
+.chooserToken .token4 {
+    background-image: url();
+}
+
+.chooserToken .token5 {
+    background-image: url();
+}
+
+.chooserToken .token6 {
+    background-image: url();
+}
+
+.menu .help{
+    border: 1px solid black;
+    margin-top: 1%;
+    text-align: center;
+}
+
+#finishGame{
     border: 1px solid black;
     width: 50%;
+    text-align: center;
+    background-color: lightseagreen;
+    border-radius: 5px;
+    margin-left: 23%;
+    margin-top: 5%;
 }
 
-#frontGame > h1, h3, p, button{
-    text-align: center;
+#finishGame > button{
+    all: unset;
+    border: 1px solid black;
+    padding: 1%;
+    background-color: lightyellow;
+    border-radius: 5px;
 }
 
-.game{
-    text-align: center;
+.insideGame{
+    display: flex;
+    justify-content: space-around;
+}
+
+#timer{
+    border: 1px solid black;
+    width: 10%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.canvasPreview{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
 }

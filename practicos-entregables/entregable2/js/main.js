@@ -6,6 +6,8 @@ let play = document.getElementById("frontGame");
 let timeOut = document.getElementById("timeOut");
 let mainMenu = document.getElementById("menu");
 let timerDiv = document.getElementById("timer");
+let player = document.getElementById("jugador");
+let finishGame = document.getElementById("finishGame");
 let playerRed;
 let playerGreen;
 let arrayLockers = [];
@@ -30,7 +32,7 @@ const Juego ={
     winner : 0,
     rows:7,
     Columns:6,
-    Tokens:2,
+    Tokens:25,
     forma: "circulo"
 };
 const oldPositions = {
@@ -74,23 +76,26 @@ const currentPlayer = {
 
 function hiddenGame(){
     if(hiddenMainMenu == false){
-        canvas.style.visibility = 'hidden';
+        canvas.style.display = 'none';
         mainMenu.style.visibility = 'hidden';
         timerDiv.style.visibility = 'hidden';
+        finishGame.style.display = 'none';
     }else{
         timerDiv.style.visibility = 'hidden'
-        canvas.style.visibility = 'hidden';
+        canvas.style.display = 'none';
         mainMenu.style.visibility = 'visible';
+        player.style.display = 'none';
+        finishGame.style.display = 'block';
     }
 }
 
 function initGame(){
-    canvas.style.visibility = 'visible';
+    canvas.style.display = 'block';
     play.style.display = 'none';
     timerDiv.style.visibility = 'visible';
     tokenANDboard();
     game();
-    // timer(10);
+    timer(10);
     document.addEventListener("mousedown", Help.onMouseDown, false);
     document.addEventListener("mouseup", Help.onMouseUp, false);
     document.addEventListener("mousemove", Help.onMouseMove, false);
@@ -140,7 +145,7 @@ function timer(stop){
     minutes = document.getElementById("minutos");
 
     window.setInterval( () => {
-        if(stop != countSeconds){
+        if(stop != countMinutes){
             if (countSeconds == 60){
                 countSeconds = 0;
                 countMinutes++;
@@ -149,7 +154,8 @@ function timer(stop){
                     countMinutes = 0;
                 }
             }
-            Winner ();
+            player.innerHTML = 'Turno de Jugador: ' + currentPlayer.actual;
+            Winner();
         seconds.innerHTML = countSeconds;
         countSeconds++;
         }else{
@@ -165,16 +171,20 @@ function Winner (){
         countSeconds = 0;
         countMinutes = 0;
         timerDiv.style.visibility = 'hidden'
-        canvas.style.visibility = 'hidden';
+        canvas.style.display = 'none';
         mainMenu.style.visibility = 'visible';
-        timeOut.innerHTML = 'El juegador '+  Juego.winner  +  'gano';
+        timeOut.innerHTML = 'El jugador '+  Juego.winner  +  ' gano';
+        player.style.display = 'none'
+        finishGame.style.display = 'block';
     }else if (Juego.winner =="Empate"){ 
         countSeconds = 0;
         countMinutes = 0;
         timerDiv.style.visibility = 'hidden'
-        canvas.style.visibility = 'hidden';
+        canvas.style.display = 'none';
         mainMenu.style.visibility = 'visible';
         timeOut.innerHTML = 'Empate!';
+        player.style.display = 'none'
+        finishGame.style.display = 'block';
     }
 }
 
