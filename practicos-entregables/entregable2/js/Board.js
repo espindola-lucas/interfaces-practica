@@ -1,5 +1,5 @@
 class Board {
-    constructor (canvas, contexto, image, rows, columns, arrayLockers,arrayConteiners,matrixGame){
+    constructor (canvas, contexto, image, rows, columns, arrayLockers,arrayConteiners,matrixGame,forma){
         this.canvas = canvas;
         this.contexto = contexto;
         this.image = image;
@@ -8,6 +8,7 @@ class Board {
         this.arrayLockers = arrayLockers;
         this.arrayConteiners = arrayConteiners
         this.matrixGame = matrixGame;
+        this.forma = forma 
     }
 
     getMatrix(){
@@ -29,13 +30,25 @@ class Board {
         let ctx = this.canvas.getContext("2d");
         let posX = 240;
         let posY = 90;
+      
         for(let f = 0; f <this.rows; f++){
-            let locker = new Circle (posX,posY,20,"#ffffff", ctx);
+            let locker
+            if(this.forma === "circulo"){
+             locker = new Circle (posX,posY,20,"#ffffff", ctx);
+        }
+        if (this.forma ===  "cuadrados"){
+            locker =  new Rectangle(posX,posY,30,30,"#ffffff",ctx,0)
+        }
             this.arrayLockers.push(locker );
             locker.draw();
             for (let c = 0 ; c <this.columns -1; c++){
                 posY += 50; 
-                let locker = new Circle (posX,posY,20,"#ffffff", ctx);
+                if(this.forma === "circulo"){
+                    locker = new Circle (posX,posY,20,"#ffffff", ctx);
+               }
+               if (this.forma ===  "cuadrados"){
+                locker =  new Rectangle(posX,posY,30,30,"#ffffff",ctx,0)
+           }
                 this.arrayLockers.push(locker );
                 locker.draw();
             }

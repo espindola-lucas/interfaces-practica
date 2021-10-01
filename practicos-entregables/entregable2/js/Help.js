@@ -66,7 +66,7 @@ class Help {
             array = player2.arrayTokensPlayer2;
             for(let i = 0; i < array.length; i++){
                 const element = array[i];
-                if(element.isPointInside(x, y)){
+                if(element.isPointInside(x, y,element)){
                     oldPositions.selected = element;
                     oldPositions.X = element.posX;
                     oldPositions.Y = element.posY;

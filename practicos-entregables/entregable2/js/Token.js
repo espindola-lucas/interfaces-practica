@@ -1,12 +1,13 @@
 "use strict";
 
 class Token {
-    constructor(token1, token2, colour, totalTokens, context){
+    constructor(token1, token2, colour, totalTokens, context,forma){
         this.colour = colour;
         this.token1 = token1;
         this.token2 = token2;
         this.totalTokens = totalTokens;
         this.context = context;
+        this.forma = forma;
     }
 
     
@@ -23,19 +24,40 @@ class Token {
     createToken(){
         switch(this.colour){
             case player1.colour:
+                
                 for(let i = 0; i < this.totalTokens; i++){
                     let x = Help.getRandomInt(70, 110);
                     let y = Help.getRandomInt(150, 350);
-                    let token = new Circle(x, y, 20, this.colour, this.context);
+                    let token 
+                    if(this.forma === "circulo"){
+                        token = new Circle(x, y, 20, this.colour, this.context);
+                    }
+                    if (this.forma ===  "cuadrados"){
+                        token = new Rectangle(x,y,30,30,this.colour,this.context,0)
+                    }
+                    if (this.forma ===  "hexagonos"){
+                        let myPath = new Path2D();
+                        token = new hexagono (x,y,30,this.colour ,this.context,myPath);
+                    }
                     this.token1.push(token);
                 }
                 break;
 
             case player2.colour: 
-                for(let i = 0; i < this.totalTokens; i++){
+              for(let i = 0; i < this.totalTokens; i++){
                     let x = Help.getRandomInt(680, 730);
                     let y = Help.getRandomInt(150, 350);
-                    let token = new Circle(x, y, 20, this.colour, this.context);
+                    let token
+                    if(this.forma === "circulo"){
+                        token = new Circle(x, y, 20, this.colour, this.context);
+                    }
+                    if (this.forma ===  "cuadrados"){
+                        token = new Rectangle(x,y,30,30,this.colour,this.context,0)
+                    }
+                    if (this.forma ===  "hexagonos"){
+                        let myPath = new Path2D();
+                        token = new hexagono (x,y,30,this.colour ,this.context,myPath);
+                    }
                     this.token2.push(token);
                 }
                 break;
