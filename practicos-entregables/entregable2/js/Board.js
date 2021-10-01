@@ -12,7 +12,7 @@ class Board {
 
     getMatrix(){
         let i = 0;
-        for(let f = 0; f <= this.rows; f++){
+        for(let f = 0; f <= this.rows-1; f++){
             this.matrixGame[f] = [];
             for (let c = 0 ; c <= this.columns-1; c++){
                 this.matrixGame[f][c]=alllockers.array[i];
@@ -46,7 +46,7 @@ class Board {
     
 
     drawBackground(){
-        this.contexto.drawImage(this.image,190,60,400,360)
+        this.contexto.drawImage(this.image,190,60,400,320)
     }
 
     getArrayLockers(){
@@ -70,7 +70,7 @@ class Board {
         
     }
     static drawBackgroundS(contexto,i){
-        contexto.drawImage(i,190,60,400,360)
+        contexto.drawImage(i,190,60,400,320)
     }
 
     static drawLockers (array , contexto){
