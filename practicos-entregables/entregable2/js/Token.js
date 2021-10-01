@@ -44,7 +44,7 @@ class Token {
                 break;
 
             case player2.colour: 
-              for(let i = 0; i < this.totalTokens; i++){
+                for(let i = 0; i < this.totalTokens; i++){
                     let x = Help.getRandomInt(680, 730);
                     let y = Help.getRandomInt(150, 350);
                     let token

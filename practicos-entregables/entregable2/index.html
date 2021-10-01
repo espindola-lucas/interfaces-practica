@@ -10,27 +10,49 @@
 <body>
 
     <div id="frontGame">
-        <h1>4 en Linea</h1>
 
-        <h3>Drag and Drop</h3>
-        <p>
-            Arrastrar y soltar las fichas en los cuadrados encima del tablero,
-            si la ficha se suelta fuera del cuadrado va a volver a su posicion inicial,
-            y hasta que el jugador no juegue, no va a cambiar el turno.
-        </p>
+        <div class="title">
+            <h1>4 en Linea</h1>
+        </div>
+
+        <div class="menu">
+            <div class="chooserToken">
+                <button class="token1">token 1</button>
+                <button class="token2">token 2</button>
+                <button class="token3">token 3</button>
+                <button class="token4">token 4</button>
+                <button class="token5">token 5</button>
+                <button class="token6">token 6</button>
+                <!-- <img src="images/chooserTokenCircle.png" alt="Circulo">
+                <img src="images/chooserTokenHexa.png" alt="Hexagono"> -->
+            </div>
+        
+            <div class="help">
+                <h3>Drag and Drop</h3>
+                <p>
+                    ● Arrastrar y soltar las fichas en los cuadrados encima del tablero. <br>
+                    ● Si la ficha se suelta fuera del cuadrado va a volver a su posicion inicial. <br>
+                    ● Hasta que el jugador no juegue, no va a cambiar el turno.
+                </p>
+            </div>
+        </div>
 
         <div class="game">
-            <button onclick="initGame()">Jugar</button>
+            <button onclick="initGame()"> <strong> Jugar </strong> </button>
         </div>
     </div>
 
-    <div>
+    <div id="finishGame">
         <h3 id="timeOut"></h3>
         <button id="menu" onclick="window.location.reload()">Volver a Jugar</button>
     </div>
 
-    <div id="timer">
-        <span id="minutos">0</span>:<span id="segundos">0</span>
+    <div class="insideGame">
+        <h2 id="jugador"></h2>
+
+        <div id="timer">
+            <span id="minutos">0</span>:<span id="segundos">0</span>
+        </div>
     </div>
 
     <div class="canvasPreview">
@@ -41,7 +63,7 @@
 <script src="js/Token.js"></script>
 <script src="js/Figure.js"></script>
 <script src="js/Circle.js"></script>
-<script src="js/hexagono.js"></script>
+<script src="js/Hexagono.js"></script>
 <script src="js/Rectangle.js"></script>
 <script src="js/Board.js"></script>
 <script src="js/Help.js"></script>
