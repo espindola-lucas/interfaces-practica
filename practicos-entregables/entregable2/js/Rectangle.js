@@ -15,7 +15,7 @@ class Rectangle extends Figure {
         this.context.fillRect(this.posX, this.posY, this.width, this.height,this.e);
 
         if (this.fill instanceof Image) {
-            console.log(this.fill)
+           
             this.context.drawImage(this.fill, this.posX, this.posY, this.width, this.height);
         }
         this.context.closePath();

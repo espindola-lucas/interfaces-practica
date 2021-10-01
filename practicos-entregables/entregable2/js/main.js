@@ -30,7 +30,8 @@ const Juego ={
     winner : 0,
     rows:7,
     Columns:6,
-    Tokens:21
+    Tokens:2,
+    forma: "circulo"
 };
 const oldPositions = {
     X: null ,
@@ -89,7 +90,7 @@ function initGame(){
     timerDiv.style.visibility = 'visible';
     tokenANDboard();
     game();
-    timer(10);
+    // timer(10);
     document.addEventListener("mousedown", Help.onMouseDown, false);
     document.addEventListener("mouseup", Help.onMouseUp, false);
     document.addEventListener("mousemove", Help.onMouseMove, false);
@@ -98,14 +99,14 @@ function initGame(){
 async function tokenANDboard(){
     img = await Help.uploadImage("./images/redToken.png");
     player1.colour = img;
-    playerRed = new Token(token1, token2, player1.colour, Juego.Tokens, context);
+    playerRed = new Token(token1, token2, player1.colour, Juego.Tokens, context,Juego.forma);
     playerRed.createToken();
     player1.arrayTokensPlayer1 = playerRed.getToken1();
     playerRed.drawToken(player1.arrayTokensPlayer1);
     
     img = await Help.uploadImage("./images/greenToken.png");
     player2.colour = img;
-    playerGreen = new Token(token1, token2, player2.colour,Juego.Tokens, context);
+    playerGreen = new Token(token1, token2, player2.colour,Juego.Tokens, context,Juego.forma);
     playerGreen.createToken();
     player2.arrayTokensPlayer2 = playerRed.getToken2();
     playerGreen.drawToken(player2.arrayTokensPlayer2);
@@ -114,7 +115,7 @@ async function tokenANDboard(){
 
 async function board (){
     img = await Help.uploadImage("./images/table.png");
-    let  board = new Board(canvas, context, img,Juego.rows , Juego.Columns, arrayLockers,arrayConteiners,m);
+    let  board = new Board(canvas, context, img,Juego.rows , Juego.Columns, arrayLockers,arrayConteiners,m,Juego.forma);
     board.drawBackground();
     board.createLockers();
     board.drawcontainers();
