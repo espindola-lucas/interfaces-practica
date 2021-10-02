@@ -29,36 +29,17 @@ class Token {
                     let x = Help.getRandomInt(70, 110);
                     let y = Help.getRandomInt(150, 350);
                     let token 
-                    if(this.forma === "circulo"){
-                        token = new Circle(x, y, 20, this.colour, this.context);
-                    }
-                    if (this.forma ===  "cuadrados"){
-                        token = new Rectangle(x,y,30,30,this.colour,this.context,0)
-                    }
-                    if (this.forma ===  "hexagonos"){
-                        let myPath = new Path2D();
-                        token = new hexagono (x,y,30,this.colour ,this.context,myPath);
-                    }
+                    token = new Circle(x, y, 20, this.colour, this.context);
                     this.token1.push(token);
                 }
                 break;
-
             case player2.colour: 
                 for(let i = 0; i < this.totalTokens; i++){
                     let x = Help.getRandomInt(680, 730);
                     let y = Help.getRandomInt(150, 350);
                     let token
-                    if(this.forma === "circulo"){
-                        token = new Circle(x, y, 20, this.colour, this.context);
-                    }
-                    if (this.forma ===  "cuadrados"){
-                        token = new Rectangle(x,y,30,30,this.colour,this.context,0)
-                    }
-                    if (this.forma ===  "hexagonos"){
-                        let myPath = new Path2D();
-                        token = new hexagono (x,y,30,this.colour ,this.context,myPath);
-                    }
-                    this.token2.push(token);
+                   token = new Circle(x, y, 20, this.colour, this.context);
+                   this.token2.push(token);
                 }
                 break;
         }
