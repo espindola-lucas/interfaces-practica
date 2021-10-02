@@ -21,9 +21,7 @@ let token2 = [];
 let m =[];
 let hiddenMainMenu = false;
 let countSeconds, countMinutes, seconds, minutes, code;
-const turno = {
-    turn: null
-};
+
 const Rows ={
     empty:[]
 };
@@ -32,9 +30,8 @@ const Juego ={
     winner : 0,
     rows:7,
     Columns:6,
-    Tokens:25,
-    forma: "circulo"
-};
+    Tokens:21
+   };
 const oldPositions = {
     X: null ,
     Y : null,
@@ -102,7 +99,7 @@ function initGame(){
 }
 
 async function tokenANDboard(){
-    img = await Help.uploadImage("./images/redToken.png");
+    img = await Help.uploadImage("./images/bp.png");
     player1.colour = img;
     playerRed = new Token(token1, token2, player1.colour, Juego.Tokens, context,Juego.forma);
     playerRed.createToken();
@@ -119,7 +116,7 @@ async function tokenANDboard(){
 }
 
 async function board (){
-    img = await Help.uploadImage("./images/table.png");
+    img = await Help.uploadImage("./images/table.jpeg");
     let  board = new Board(canvas, context, img,Juego.rows , Juego.Columns, arrayLockers,arrayConteiners,m,Juego.forma);
     board.drawBackground();
     board.createLockers();

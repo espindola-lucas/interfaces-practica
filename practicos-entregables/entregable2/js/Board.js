@@ -33,22 +33,13 @@ class Board {
       
         for(let f = 0; f <this.rows; f++){
             let locker
-            if(this.forma === "circulo"){
+          
              locker = new Circle (posX,posY,20,"#ffffff", ctx);
-        }
-        if (this.forma ===  "cuadrados"){
-            locker =  new Rectangle(posX,posY,30,30,"#ffffff",ctx,0)
-        }
             this.arrayLockers.push(locker );
             locker.draw();
             for (let c = 0 ; c <this.columns -1; c++){
                 posY += 50; 
-                if(this.forma === "circulo"){
-                    locker = new Circle (posX,posY,20,"#ffffff", ctx);
-               }
-               if (this.forma ===  "cuadrados"){
-                locker =  new Rectangle(posX,posY,30,30,"#ffffff",ctx,0)
-           }
+                locker = new Circle (posX,posY,20,"#ffffff", ctx);
                 this.arrayLockers.push(locker );
                 locker.draw();
             }
