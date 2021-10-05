@@ -29,8 +29,9 @@ const Juego ={
     matrix : null ,
     winner : 0,
     rows:7,
-    Columns:6,
-    Tokens:21
+    Columns:8,
+    Tokens:21, 
+    dimencion : 7*8
    };
 const oldPositions = {
     X: null ,
