@@ -16,7 +16,7 @@ let matrixArray = [];
 let isMouseDown = false;
 let lastClickedFigure = null;
 let img;
-let token1 = [];
+let token1 = []; 
 let token2 = [];
 let m =[];
 let hiddenMainMenu = false;
@@ -30,7 +30,7 @@ const Juego ={
     winner : 0,
     rows:7,
     Columns:8,
-    Tokens:21, 
+    Tokens:21, // cantidad de fichas por jugador 
     dimencion : 7*8
    };
 const oldPositions = {
@@ -56,13 +56,14 @@ const allConteiners = {
     array: null
 };
 
-const player1 = {
+const player1 = { // esta constante tiene los datos y el arreglo de las fichas del jugador 1
     name: 1,
     arrayTokensPlayer1: 0,
     colour:"./images/redToken.jpg"
 };
 
-const player2 = {
+const player2 = {// esta constante tiene los datos y el arreglo de las fichas del jugador 2
+    name: 1,
     name: 2,
     arrayTokensPlayer2: 0,
     colour: "./images/greenToken.jpg"
@@ -91,7 +92,7 @@ function initGame(){
     canvas.style.display = 'block';
     play.style.display = 'none';
     timerDiv.style.visibility = 'visible';
-    tokenANDboard();
+    tokenANDboard(); // llama a la funcion que crea todas las fichas y el tablero
     game();
     timer(10);
     document.addEventListener("mousedown", Help.onMouseDown, false);
@@ -100,20 +101,20 @@ function initGame(){
 }
 
 async function tokenANDboard(){
-    img = await Help.uploadImage("./images/bp.png");
-    player1.colour = img;
-    playerRed = new Token(token1, token2, player1.colour, Juego.Tokens, context,Juego.forma);
-    playerRed.createToken();
-    player1.arrayTokensPlayer1 = playerRed.getToken1();
-    playerRed.drawToken(player1.arrayTokensPlayer1);
+    img = await Help.uploadImage("./images/bp.png"); // carga la imagen selecionada por el jugador 1 , se llama a un metodo statico que carga la imagen 
+    player1.colour = img; // se guarda en la constante la imagen cargada 
+    playerRed = new Token(token1, token2, player1.colour, Juego.Tokens, context); //se crea una instancia de la clase token  
+    playerRed.createToken(); // se llama al metodo que las crea 
+    player1.arrayTokensPlayer1 = playerRed.getToken1(); // se guarda en el arreglo de la constante que le pertenece a dicho jugador , todo el arreglo que contiene todas las fichas
+    playerRed.drawToken(player1.arrayTokensPlayer1);// se llama al metodo que las dibuja
     
     img = await Help.uploadImage("./images/greenToken.png");
     player2.colour = img;
-    playerGreen = new Token(token1, token2, player2.colour,Juego.Tokens, context,Juego.forma);
+    playerGreen = new Token(token1, token2, player2.colour,Juego.Tokens, context);
     playerGreen.createToken();
     player2.arrayTokensPlayer2 = playerRed.getToken2();
     playerGreen.drawToken(player2.arrayTokensPlayer2);
-    board();
+    board(); // se llama a la funcion que crea el tablero
 }
 
 async function board (){
