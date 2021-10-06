@@ -156,6 +156,11 @@ function selectedToken1(){
             element.style.display = 'none';
         }
     });
+    document.querySelectorAll("div.chooserToken2 > button").forEach(function(element){
+        if(idButton == element.id){
+            element.style.display = 'none';
+        }
+    });
 }
 
 function selectedToken2(){
@@ -164,6 +169,11 @@ function selectedToken2(){
     player2.colour = idButton;
     document.querySelectorAll("div.chooserToken2 > button").forEach(function(element){
         if(idButton != element.id){
+            element.style.display = 'none';
+        }
+    });
+    document.querySelectorAll("div.chooserToken1 > button").forEach(function(element){
+        if(idButton == element.id){
             element.style.display = 'none';
         }
     });
