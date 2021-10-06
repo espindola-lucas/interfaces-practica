@@ -7,21 +7,47 @@
     margin-left: 25%;
 }
 
+.menu .help{
+    background-color: #FFCEB5;
+    padding: 0.5% 0%;
+    border-radius: 10px;
+    margin-top: 1%;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.menu .tokens{
+    display: flex;
+    justify-content: space-around; 
+}
+
 .game > button{
     all: unset;
     padding: 1%;
-    background-color: lightseagreen;
+    background-color: #FFCEB5;
     margin-left: 48%;
     margin-top: 1%;
     font-size: 20px;
 }
 
-.menu{
-    display: flex;
-    justify-content: space-around;
+.menu .tokens button{
+    border: none;
+    background-color: unset;
 }
 
-.menu .chooserToken{
+.menu .tokens button:hover{
+    border: 3px solid blue;
+}
+
+.menu .tokens h4{
+    border: black 1px solid;
+    width: 25%;
+    text-align: center;
+    margin-left: 35%;
+}
+
+.menu .chooserToken1, .menu .chooserToken2{
     border: 1px solid black;
     width: 30%;
     margin-top: 1%;
@@ -29,7 +55,11 @@
     padding: 1%;
 }
 
-.chooserToken > button{
+.tokens .chooserToken1, .tokens .chooserToken2{
+    border: black 1px solid;
+}
+
+.chooserToken1 > button, .chooserToken2 > button{
     width: 100px;
     height: 100px;
     margin-left: 5%;
@@ -37,34 +67,9 @@
     border-radius: 5px;
 }
 
-.chooserToken .token1 {
-    background-image: url();
-}
-
-.chooserToken .token2 {
-    background-image: url();
-}
-
-.chooserToken .token3 {
-    background-image: url();
-}
-
-.chooserToken .token4 {
-    background-image: url();
-}
-
-.chooserToken .token5 {
-    background-image: url();
-}
-
-.chooserToken .token6 {
-    background-image: url();
-}
-
-.menu .help{
-    border: 1px solid black;
-    margin-top: 1%;
-    text-align: center;
+.chooserToken1 > button img, .chooserToken2 > button img{
+    width: 70px;
+    height: 70px;
 }
 
 #finishGame{
