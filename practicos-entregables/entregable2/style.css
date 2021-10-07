@@ -47,7 +47,7 @@
     margin-left: 35%;
 }
 
-.menu .chooserToken1, .menu .chooserToken2{
+.menu .chooseToken1, .menu .chooseToken2{
     border: 1px solid black;
     width: 30%;
     margin-top: 1%;
@@ -55,11 +55,11 @@
     padding: 1%;
 }
 
-.tokens .chooserToken1, .tokens .chooserToken2{
+.tokens .chooseToken1, .tokens .chooseToken2{
     border: black 1px solid;
 }
 
-.chooserToken1 > button, .chooserToken2 > button{
+.chooseToken1 > button, .chooseToken2 > button{
     width: 100px;
     height: 100px;
     margin-left: 5%;
@@ -67,7 +67,7 @@
     border-radius: 5px;
 }
 
-.chooserToken1 > button img, .chooserToken2 > button img{
+.chooseToken1 > button img, .chooseToken2 > button img{
     width: 70px;
     height: 70px;
 }

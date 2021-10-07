@@ -44,8 +44,8 @@ class Token {
                     let x = Help.getRandomInt(680, 730); // posicion random para ubicar las fichas en el canvas del lado derecho
                     let y = Help.getRandomInt(150, 350);
                     let token                                 // en el caso 2 sucede lo mismo que en el caso 1 pero cambian los datos ya que es para crear las fichas del jugador 2
-                   token = new Circle(x, y, 20, this.colour, this.context);
-                   this.token2.push(token);
+                    token = new Circle(x, y, 20, this.colour, this.context);
+                    this.token2.push(token);
                 }
                 break;
         }

@@ -31,11 +31,9 @@ class Board {
         let ctx = this.canvas.getContext("2d");
         let posX = 240;
         let posY = 90;
-      
         for(let f = 0; f <this.rows; f++){
             let locker
-          
-             locker = new Circle (posX,posY,20,"#ffffff", ctx);
+            locker = new Circle (posX,posY,20,"#ffffff", ctx);
             this.arrayLockers.push(locker );
             locker.draw();
             for (let c = 0 ; c <this.columns -1; c++){
@@ -60,7 +58,6 @@ class Board {
         if (Juego.dimencion === "7*8"){
             this.contexto.drawImage(this.image,190,60,400,410) 
         }
-       
     }
 
     getArrayLockers(){
@@ -84,7 +81,6 @@ class Board {
         
     }
     static drawBackgroundS(contexto,i){
-       
         if (Juego.dimencion === "7*6"){
             contexto.drawImage(i,190,60,400,320)
         }

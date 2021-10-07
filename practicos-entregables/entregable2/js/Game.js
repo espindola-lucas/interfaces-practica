@@ -48,10 +48,7 @@ class Game {
         do{
             if (Juego.matrix[file][p] == 0 ){
                 Juego.matrix[file][position] = NombreJugador;
-               
-                    MatrixLockers.matrix[file][position].fill= jugadorActual;
-                
-              
+                MatrixLockers.matrix[file][position].fill= jugadorActual;
                 Help.redraw()
                 position = 0;
                 p= p-1
@@ -64,7 +61,6 @@ class Game {
             }
         } while (position != 0)
         Check.check();
-      
         if (position == 0 && Juego.matrix[file][p] != 0){
             Rows.empty[file] = "si";
         }
