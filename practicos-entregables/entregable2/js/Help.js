@@ -80,9 +80,11 @@ class Help {
 
     static redraw (){
         canvas = document.querySelector("canvas");
-        context = canvas.getContext("2d");
-        Token.drawTokens(player1.arrayTokensPlayer1,player2.arrayTokensPlayer2);
+        context = canvas.getContext("2d");   
+        context.fillStyle="white";
+        context.fillRect(0, 0, canvas.width, canvas.height); 
         Board.drawcontainer(allConteiners.array);
+        Token.drawTokens(player1.arrayTokensPlayer1,player2.arrayTokensPlayer2);
         Board.drawBackgroundS(context, imageBoard.img);
         let ctx = canvas.getContext("2d");
         Board.drawLockers(alllockers.array , ctx);
