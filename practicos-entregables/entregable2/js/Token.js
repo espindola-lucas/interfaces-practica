@@ -38,7 +38,7 @@ class Token {
                 break;
             case player2.colour: 
                 for(let i = 0; i < this.totalTokens; i++){
-                    let texto = "Fichas jugador 2"
+                    let texto = "Fichas jugador 2";
                     this.context.font="10pt Verdana";
                     this.context.fillText(texto,680,110);
                     let x = Help.getRandomInt(680, 730); // posicion random para ubicar las fichas en el canvas del lado derecho
@@ -59,18 +59,25 @@ class Token {
     }
 
     static drawTokens(tokens1,tokens2){ // es un metodo statico para que se pueda ingresar sin una instancia creada de la clase 
-        canvas = document.querySelector("canvas");
-        context = canvas.getContext("2d");   
-        context.fillStyle="white";
-        context.fillRect(0, 0, canvas.width, canvas.height);   // deja el canvas en blanco y luego vuelve a dibujar todas las fichas
+        let canvas = document.querySelector("canvas");
+        let context = canvas.getContext("2d"); 
+        let texto = "Fichas jugador 1";
+        context.fillStyle = "black"
+        context.font="10pt Verdana";
+        context.fillText(texto,60,110);
         tokens2.forEach(T => {
             T.draw()
         });
+        texto = "Fichas jugador 2";
+        context.fillStyle = "black"
+        context.font="10pt Verdana";
+        context.fillText(texto,680,110);
         tokens1.forEach(t => {
             t.draw();
         }); 
         
-    } // la utilizamos para que se mueve una ficha y se tiene q volver a dibujar todo 
+    } // la utilizamos para que se mueve una ficha y se dibujen las fichas nuevamente
+
     
     static drawInOldPosition (elemento, X ,Y ){  // a este metodo le llega una ficha y los posiciones viejas , que son las posiciones en las que estaba la ficha antes de moverla
         elemento.posX = X;  // se cambia las posiciones nuevas por las viejas

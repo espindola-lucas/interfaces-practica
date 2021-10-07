@@ -1,5 +1,5 @@
 class Board {
-    constructor (canvas, contexto, image, rows, columns, arrayLockers,arrayConteiners,matrixGame,forma){
+    constructor (canvas, contexto, image, rows, columns, arrayLockers,arrayConteiners,matrixGame,forma,img){
         this.canvas = canvas;
         this.contexto = contexto;
         this.image = image;
@@ -8,7 +8,8 @@ class Board {
         this.arrayLockers = arrayLockers;
         this.arrayConteiners = arrayConteiners
         this.matrixGame = matrixGame;
-        this.forma = forma 
+        this.forma = forma ;
+        this.img = img;
     }
 
     getMatrix(){
@@ -75,7 +76,7 @@ class Board {
         let posx = 230;
         let posy= 20;
         for (let e = 0 ; e < this.rows; e++){
-            let conteiner = new Rectangle (posx , posy ,20, 20, "#801A15",ctx,e);
+            let conteiner = new Rectangle (posx , posy ,30, 30,this.img,ctx,e);
             conteiner.draw();
             this.arrayConteiners.push(conteiner)
             posx += 50 ;

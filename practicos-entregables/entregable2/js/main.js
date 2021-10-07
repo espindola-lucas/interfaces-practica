@@ -129,7 +129,8 @@ async function tokenANDboard(){
 
 async function board (){
     img = await Help.uploadImage("./images/table.jpeg");
-    let  board = new Board(canvas, context, img,Juego.rows , Juego.Columns, arrayLockers,arrayConteiners,m,Juego.forma);
+    let imagen = await Help.uploadImage("./images/Flecha.jpg");
+    let  board = new Board(canvas, context, img,Juego.rows , Juego.Columns, arrayLockers,arrayConteiners,m,Juego.forma, imagen);
     board.drawBackground();
     board.createLockers();
     board.drawcontainers();
