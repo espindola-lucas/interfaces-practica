@@ -24,28 +24,29 @@ class Token {
     createToken(){
         switch(this.colour){  // el swicht seria como un if , si le parametro que le llega coincide con el caso 1 se ejecuta el codigo dentro del caso y si el parametro  es igual al caso 2 se ejecuta el codigo del caso 2
             case player1.colour: // el caso 1 funciona para las fichas del jugador 1
-                
+               let x = 45;
+               let y = 80; 
                 for(let i = 0; i < this.totalTokens; i++){  
                     let texto = "Fichas jugador 1";
                     this.context.font="10pt Verdana"; // tipo y tamaño de letra para el texto 
-                    this.context.fillText(texto,60,110); // filltext permite poner texto dentro del canvas , pasamos como parametro el texto que queremos poner y las posiciones
-                    let x = Help.getRandomInt(70, 110); // posicion random para ubicar las fichas en el canvas del lado izquierdo , llama a un medodo statico (es statico para poder ingresar desde otras clases sin tenes que generar una instanvia de la misma)que esta en la clase help 
-                    let y = Help.getRandomInt(150, 350);
+                    this.context.fillText(texto,10,50); // filltext permite poner texto dentro del canvas , pasamos como parametro el texto que queremos poner y las posiciones
                     let token ; 
                     token = new Circle(x, y, 20, this.colour, this.context); // la ficha circular utlizando la clase circulo que recibe posiciones , tamaño y la imagen que se le va a colocar
                     this.token1.push(token);  // guardamos esa ficha ( "circulo") dentro del arreglo del jugador 1 ya que es el caso 1
+                     y = y+13; // le sumo a y para que se dibujen en fila 
                 }
                 break;
             case player2.colour: 
+                let px = 750;
+                let py = 80;
                 for(let i = 0; i < this.totalTokens; i++){
                     let texto = "Fichas jugador 2";
                     this.context.font="10pt Verdana";
-                    this.context.fillText(texto,680,110);
-                    let x = Help.getRandomInt(680, 730); // posicion random para ubicar las fichas en el canvas del lado derecho
-                    let y = Help.getRandomInt(150, 350);
+                    this.context.fillText(texto,700,50);
                     let token                                 // en el caso 2 sucede lo mismo que en el caso 1 pero cambian los datos ya que es para crear las fichas del jugador 2
-                    token = new Circle(x, y, 20, this.colour, this.context);
+                    token = new Circle(px, py, 20, this.colour, this.context);
                     this.token2.push(token);
+                    py = py+13; 
                 }
                 break;
         }
