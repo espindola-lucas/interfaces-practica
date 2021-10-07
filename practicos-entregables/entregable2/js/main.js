@@ -28,7 +28,9 @@ document.querySelectorAll("div.chooserToken1 > button").forEach(function(element
 document.querySelectorAll("div.chooserToken2 > button").forEach(function(element){
     element.addEventListener("click", selectedToken2, false)
 });
-
+document.querySelectorAll("div.chooserBoard > button").forEach(function(element){
+    element.addEventListener("click", selectedchooserBoard, false)
+});
 const Rows ={
     empty:[]
 };
@@ -36,10 +38,10 @@ const Rows ={
 const Juego ={
     matrix : null ,
     winner : 0,
-    rows:7,
-    Columns:6,
-    Tokens:28, // cantidad de fichas por jugador 
-    dimencion : 7*6
+    rows:0,
+    Columns:0,
+    Tokens:0,// cantidad de fichas por jugador 
+    dimencion:0
 };
 
 const oldPositions = {
@@ -176,6 +178,31 @@ function selectedToken2(){
             element.style.display = 'none';
         }
     });
+}
+function selectedchooserBoard (){
+     let idButton = this.id;
+    document.querySelectorAll("div.chooserBoard  > button").forEach(function(element){
+        if( idButton != element.id){
+            element.style.display = 'none';
+        }
+    });
+    Juego.dimencion = idButton ;
+    Juego.Tokens = idButton /2;
+    if (Juego.dimencion == "5*6"){
+        Juego.Columns = 6;
+        Juego.rows= 5;
+        Juego.Tokens = 5*6/2;
+    }
+    if (Juego.dimencion == "7*6"){
+        Juego.Columns= 6;
+        Juego.rows=7
+        Juego.Tokens = 7*6/2;
+    }
+    if(Juego.dimencion == "7*8"){
+        Juego.Columns = 8;
+        Juego.rows = 7;
+        Juego.Tokens = 7*8/2;
+    }
 }
 
 function timer(stop){

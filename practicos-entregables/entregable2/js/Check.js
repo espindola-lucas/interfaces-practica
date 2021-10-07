@@ -8,7 +8,7 @@ class Check {
 
     static check(){
    let tope ;
-        if (Juego.dimencion == 5*6){
+        if (Juego.dimencion == "5*6"){
           tope = 1
            }else {
                tope = 3
