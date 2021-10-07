@@ -51,7 +51,6 @@ class Token {
         }
     }
     
-
     drawToken(tokens){
         tokens.forEach(t => { // este metodo es llamado con cada arreglo de cada  jugador
             t.draw();   // se recorre ficha por ficha y se llama al meto draw que lo diduja
