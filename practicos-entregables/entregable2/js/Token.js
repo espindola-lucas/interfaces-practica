@@ -64,14 +64,14 @@ class Token {
         let texto = "Fichas jugador 1";
         context.fillStyle = "black"
         context.font="10pt Verdana";
-        context.fillText(texto,60,110);
+        context.fillText(texto,10,50);
         tokens2.forEach(T => {
             T.draw()
         });
         texto = "Fichas jugador 2";
         context.fillStyle = "black"
         context.font="10pt Verdana";
-        context.fillText(texto,680,110);
+        context.fillText(texto,700,50);
         tokens1.forEach(t => {
             t.draw();
         }); 
