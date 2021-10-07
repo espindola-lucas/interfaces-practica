@@ -8,19 +8,13 @@ let mainMenu = document.getElementById("menu");
 let timerDiv = document.getElementById("timer");
 let player = document.getElementById("jugador");
 let finishGame = document.getElementById("finishGame");
-let playerRed;
-let playerGreen;
-let arrayLockers = [];
-let arrayConteiners = [];
-let matrixArray = [];
+let playerRed , playerGreen;
+let arrayLockers = [] ,arrayConteiners = [], matrixArray = [], token1 = [], token2 = [], m =[];
+let countSeconds, countMinutes, seconds, minutes;
 let isMouseDown = false;
 let lastClickedFigure = null;
-let img;
-let token1 = []; 
-let token2 = [];
-let m =[];
 let hiddenMainMenu = false;
-let countSeconds, countMinutes, seconds, minutes;
+let img;
 document.querySelectorAll("div.chooseToken1 > button").forEach(function(element){
     element.addEventListener("click", selectedToken1, false)
 });
@@ -31,6 +25,7 @@ document.querySelectorAll("div.chooseToken2 > button").forEach(function(element)
 document.querySelectorAll("div.chooseBoard > button").forEach(function(element){
     element.addEventListener("click", selectedchooseBoard, false)
 });
+
 const Rows ={
     empty:[]
 };
@@ -75,7 +70,6 @@ const player1 = { // esta constante tiene los datos y el arreglo de las fichas d
 };
 
 const player2 = {// esta constante tiene los datos y el arreglo de las fichas del jugador 2
-    name: 1,
     name: 2,
     arrayTokensPlayer2: 0,
     colour: ""
@@ -110,6 +104,7 @@ function initGame(){
     document.addEventListener("mousedown", Help.onMouseDown, false);
     document.addEventListener("mouseup", Help.onMouseUp, false);
     document.addEventListener("mousemove", Help.onMouseMove, false);
+    // addEventListener para el movimiento de las fichas , cada funcion a las que se dirige son metodos estaticos que estan dentro d ela clase help 
 }
 
 async function tokenANDboard(){
@@ -140,14 +135,13 @@ async function board (){
     allConteiners.array = board.getArrayConteiners();
     imageBoard.img = img ;
     MatrixLockers.matrix=board.getMatrix()
-    
-}
+    }
 
 function game (){
-    let g = new Game (Juego.rows,Juego.Columns,matrixArray)
-    g.createMatrix();
-    Juego.matrix = g.getMatrix();
-    Rows.empty = Game.emptyFile();
+    let g = new Game (Juego.rows,Juego.Columns,matrixArray) // se crea una instancia de la clase game 
+    g.createMatrix(); // retorna una matrix con las filas y columnas del tablero 
+    Juego.matrix = g.getMatrix();// guarda la matriz en la constante para despues utilizarla en otras clases 
+    Rows.empty = Game.emptyFile(); // guarda el estado de las filas (si estan llenas o vacias)
 }
 
 function selectedToken1(){
@@ -234,22 +228,22 @@ function timer(stop){
 }
 
 function Winner (){
-    if (Juego.winner != 0 && Juego.winner != "Empate"){
+    if (Juego.winner != 0 && Juego.winner != "Empate"){// este if chequea si,  no hay un ganador 
+        countSeconds = 0;// deja el timer en 0 para que corte el tiempo
+        countMinutes = 0;
+        timerDiv.style.visibility = 'hidden' // oculta el timer
+        canvas.style.display = 'none'; // oculta el canvas
+        mainMenu.style.visibility = 'visible'; // muestra el boton para volver a jugar
+        player.style.display = 'none' // oculta el texto donde dice a q jugador le toca
+        timeOut.innerHTML = 'El jugador '+  Juego.winner  +  ' gano'; //  texto diciendo quien fue el ganador 
+        finishGame.style.display = 'block'; // muestra el texto 
+    }else if (Juego.winner =="Empate"){ // si no hubo un ganador preguntapor un empate  
         countSeconds = 0;
         countMinutes = 0;
         timerDiv.style.visibility = 'hidden'
         canvas.style.display = 'none';
         mainMenu.style.visibility = 'visible';
-        timeOut.innerHTML = 'El jugador '+  Juego.winner  +  ' gano';
-        player.style.display = 'none'
-        finishGame.style.display = 'block';
-    }else if (Juego.winner =="Empate"){ 
-        countSeconds = 0;
-        countMinutes = 0;
-        timerDiv.style.visibility = 'hidden'
-        canvas.style.display = 'none';
-        mainMenu.style.visibility = 'visible';
-        timeOut.innerHTML = 'Empate!';
+        timeOut.innerHTML = ' Nadie a ganado esto es un Empate!'; // texto diciendo que fue un empate
         player.style.display = 'none'
         finishGame.style.display = 'block';
     }
