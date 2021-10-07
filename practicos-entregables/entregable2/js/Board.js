@@ -51,13 +51,13 @@ class Board {
     
 
     drawBackground(){
-        if (Juego.dimencion === 7*6){
+        if (Juego.dimencion === "7*6"){
             this.contexto.drawImage(this.image,190,60,400,320)
         }
-        if (Juego.dimencion === 5*6){
+        if (Juego.dimencion === "5*6"){
             this.contexto.drawImage(this.image,190,60,300,320) 
         }
-        if (Juego.dimencion === 7*8){
+        if (Juego.dimencion === "7*8"){
             this.contexto.drawImage(this.image,190,60,400,410) 
         }
        
@@ -85,13 +85,13 @@ class Board {
     }
     static drawBackgroundS(contexto,i){
        
-        if (Juego.dimencion === 7*6){
+        if (Juego.dimencion === "7*6"){
             contexto.drawImage(i,190,60,400,320)
         }
-        if (Juego.dimencion === 5*6){
+        if (Juego.dimencion === "5*6"){
             contexto.drawImage(i,190,60,300,320) 
         }
-        if (Juego.dimencion === 7*8){
+        if (Juego.dimencion === "7*8"){
             contexto.drawImage(i,190,60,400,410) 
         }
     }
