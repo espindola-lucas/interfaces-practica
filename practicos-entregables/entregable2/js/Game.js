@@ -63,8 +63,7 @@ class Game {
                 p = position
             }
         } while (position != 0)
-        console.table(Juego.matrix)
-       Check.check();
+        Check.check();
       
         if (position == 0 && Juego.matrix[file][p] != 0){
             Rows.empty[file] = "si";
@@ -80,7 +79,7 @@ class Game {
     }
 
     static fullRows (numberElement,selected, X ,Y){
-        if (  Rows.empty[numberElement] == "si"){
+        if ( Rows.empty[numberElement] == "si"){
             Token.drawInOldPosition(selected, X ,Y );
             }else{
             Help.deleteElement(oldPositions.array,oldPositions.positionInArray);

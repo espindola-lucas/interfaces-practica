@@ -37,9 +37,9 @@ const Juego ={
     matrix : null ,
     winner : 0,
     rows:7,
-    Columns:8,
-    Tokens:21, // cantidad de fichas por jugador 
-    dimencion : 7*8
+    Columns:6,
+    Tokens:28, // cantidad de fichas por jugador 
+    dimencion : 7*6
 };
 
 const oldPositions = {
@@ -149,7 +149,6 @@ function game (){
 }
 
 function selectedToken1(){
-    console.log(this.id);
     let idButton = this.id;
     player1.colour = idButton;
     document.querySelectorAll("div.chooserToken1 > button").forEach(function(element){
@@ -165,7 +164,6 @@ function selectedToken1(){
 }
 
 function selectedToken2(){
-    console.log(this.id);
     let idButton = this.id;
     player2.colour = idButton;
     document.querySelectorAll("div.chooserToken2 > button").forEach(function(element){
