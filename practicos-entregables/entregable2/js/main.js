@@ -69,14 +69,14 @@ const allConteiners = {
 const player1 = { // esta constante tiene los datos y el arreglo de las fichas del jugador 1
     name: 1,
     arrayTokensPlayer1: 0,
-    colour:"./images/redToken.jpg"
+    colour:""
 };
 
 const player2 = {// esta constante tiene los datos y el arreglo de las fichas del jugador 2
     name: 1,
     name: 2,
     arrayTokensPlayer2: 0,
-    colour: "./images/greenToken.jpg"
+    colour: ""
 };
 
 const currentPlayer = {

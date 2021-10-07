@@ -26,6 +26,9 @@ class Token {
             case player1.colour: // el caso 1 funciona para las fichas del jugador 1
                 
                 for(let i = 0; i < this.totalTokens; i++){  
+                    let texto = "Fichas jugador 1";
+                    this.context.font="10pt Verdana"; // tipo y tamaño de letra para el texto 
+                    this.context.fillText(texto,60,110); // filltext permite poner texto dentro del canvas , pasamos como parametro el texto que queremos poner y las posiciones
                     let x = Help.getRandomInt(70, 110); // posicion random para ubicar las fichas en el canvas del lado izquierdo , llama a un medodo statico (es statico para poder ingresar desde otras clases sin tenes que generar una instanvia de la misma)que esta en la clase help 
                     let y = Help.getRandomInt(150, 350);
                     let token ; 
@@ -35,6 +38,9 @@ class Token {
                 break;
             case player2.colour: 
                 for(let i = 0; i < this.totalTokens; i++){
+                    let texto = "Fichas jugador 2"
+                    this.context.font="10pt Verdana";
+                    this.context.fillText(texto,680,110);
                     let x = Help.getRandomInt(680, 730); // posicion random para ubicar las fichas en el canvas del lado derecho
                     let y = Help.getRandomInt(150, 350);
                     let token                                 // en el caso 2 sucede lo mismo que en el caso 1 pero cambian los datos ya que es para crear las fichas del jugador 2
@@ -44,6 +50,7 @@ class Token {
                 break;
         }
     }
+    
 
     drawToken(tokens){
         tokens.forEach(t => { // este metodo es llamado con cada arreglo de cada  jugador
