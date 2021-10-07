@@ -19,11 +19,10 @@ class Circle extends Figure {
 
         if (this.fill instanceof Image) {
              this.context.drawImage(this.fill, this.posX - this.radius, this.posY - this.radius, this.radius * 2, this.radius * 2);
-             }
+            }
         
         this.context.closePath();
     }
-
     
     isPointInside(x, y) {
         let _x = this.posX - x;

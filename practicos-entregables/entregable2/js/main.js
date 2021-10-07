@@ -21,15 +21,15 @@ let token2 = [];
 let m =[];
 let hiddenMainMenu = false;
 let countSeconds, countMinutes, seconds, minutes;
-document.querySelectorAll("div.chooserToken1 > button").forEach(function(element){
+document.querySelectorAll("div.chooseToken1 > button").forEach(function(element){
     element.addEventListener("click", selectedToken1, false)
 });
 
-document.querySelectorAll("div.chooserToken2 > button").forEach(function(element){
+document.querySelectorAll("div.chooseToken2 > button").forEach(function(element){
     element.addEventListener("click", selectedToken2, false)
 });
-document.querySelectorAll("div.chooserBoard > button").forEach(function(element){
-    element.addEventListener("click", selectedchooserBoard, false)
+document.querySelectorAll("div.chooseBoard > button").forEach(function(element){
+    element.addEventListener("click", selectedchooseBoard, false)
 });
 const Rows ={
     empty:[]
@@ -153,12 +153,12 @@ function game (){
 function selectedToken1(){
     let idButton = this.id;
     player1.colour = idButton;
-    document.querySelectorAll("div.chooserToken1 > button").forEach(function(element){
+    document.querySelectorAll("div.chooseToken1 > button").forEach(function(element){
         if(idButton != element.id){
             element.style.display = 'none';
         }
     });
-    document.querySelectorAll("div.chooserToken2 > button").forEach(function(element){
+    document.querySelectorAll("div.chooseToken2 > button").forEach(function(element){
         if(idButton == element.id){
             element.style.display = 'none';
         }
@@ -168,20 +168,20 @@ function selectedToken1(){
 function selectedToken2(){
     let idButton = this.id;
     player2.colour = idButton;
-    document.querySelectorAll("div.chooserToken2 > button").forEach(function(element){
+    document.querySelectorAll("div.chooseToken2 > button").forEach(function(element){
         if(idButton != element.id){
             element.style.display = 'none';
         }
     });
-    document.querySelectorAll("div.chooserToken1 > button").forEach(function(element){
+    document.querySelectorAll("div.chooseToken1 > button").forEach(function(element){
         if(idButton == element.id){
             element.style.display = 'none';
         }
     });
 }
-function selectedchooserBoard (){
-     let idButton = this.id;
-    document.querySelectorAll("div.chooserBoard  > button").forEach(function(element){
+function selectedchooseBoard (){
+    let idButton = this.id;
+    document.querySelectorAll("div.chooseBoard  > button").forEach(function(element){
         if( idButton != element.id){
             element.style.display = 'none';
         }
