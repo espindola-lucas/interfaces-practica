@@ -29,8 +29,8 @@ class Board {
 
     createLockers(){
         let ctx = this.canvas.getContext("2d");
-        let posX = 240;
-        let posY = 90;
+        let posX = 290;
+        let posY = 140;
         for(let f = 0; f <this.rows; f++){
             let locker
             locker = new Circle (posX,posY,20,"#ffffff", ctx);
@@ -43,20 +43,19 @@ class Board {
                 locker.draw();
             }
         posX += 50;
-        posY = 90;
+        posY = 140;
         }
     }
-    
 
     drawBackground(){
         if (Juego.dimencion === "7*6"){
-            this.contexto.drawImage(this.image,190,60,400,320)
+            this.contexto.drawImage(this.image, 240, 110, 400, 320)
         }
         if (Juego.dimencion === "5*6"){
-            this.contexto.drawImage(this.image,190,60,300,320) 
+            this.contexto.drawImage(this.image, 240, 110, 300, 320) 
         }
         if (Juego.dimencion === "7*8"){
-            this.contexto.drawImage(this.image,190,60,400,410) 
+            this.contexto.drawImage(this.image, 240, 110, 400, 410) 
         }
     }
 
@@ -70,10 +69,10 @@ class Board {
 
     drawcontainers(){
         let ctx = this.canvas.getContext("2d");
-        let posx = 230;
-        let posy= 20;
+        let posx = 280;
+        let posy= 70;
         for (let e = 0 ; e < this.rows; e++){
-            let conteiner = new Rectangle (posx , posy ,30, 30,this.img,ctx,e);
+            let conteiner = new Rectangle (posx, posy, 30, 30,this.img,ctx,e);
             conteiner.draw();
             this.arrayConteiners.push(conteiner)
             posx += 50 ;
@@ -82,13 +81,13 @@ class Board {
     }
     static drawBackgroundS(contexto,i){
         if (Juego.dimencion === "7*6"){
-            contexto.drawImage(i,190,60,400,320)
+            contexto.drawImage(i, 240, 110, 400, 320)
         }
         if (Juego.dimencion === "5*6"){
-            contexto.drawImage(i,190,60,300,320) 
+            contexto.drawImage(i, 240, 110, 300, 320) 
         }
         if (Juego.dimencion === "7*8"){
-            contexto.drawImage(i,190,60,400,410) 
+            contexto.drawImage(i, 240, 110, 400, 410) 
         }
     }
 

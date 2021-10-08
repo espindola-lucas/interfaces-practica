@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 .title{
     width: 50%;
     padding: 0.5% 0%;
@@ -5,9 +7,10 @@
     background-color: lightsalmon;
     border-radius: 10px;
     margin-left: 25%;
+    font-family: 'Indie Flower', cursive;
 }
 
-.menu .help{
+.menu .help, .menu h3{
     background-color: #FFCEB5;
     padding: 0.5% 0%;
     border-radius: 10px;
@@ -17,18 +20,20 @@
     margin-left: 25%;
 }
 
-.menu .tokens{
-    display: flex;
-    justify-content: space-around; 
+.menu .help .p1{
+    width: 50%;
+    border: 1px solid black;
 }
 
-.game > button{
-    all: unset;
-    padding: 1%;
-    background-color: #FFCEB5;
-    margin-left: 48%;
-    margin-top: 1%;
-    font-size: 20px;
+.menu .help .p2{
+    width: 50%;
+    border: 1px solid black;
+}
+
+.menu .tokens, .menu .help{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .menu .tokens button{
@@ -37,18 +42,19 @@
 }
 
 .menu .tokens button:hover{
-    border: 3px solid blue;
+    border: 3px solid lightsalmon;
 }
 
 .menu .tokens h4{
-    border: black 1px solid;
-    width: 25%;
+    width: 30%;
     text-align: center;
     margin-left: 35%;
+    padding: 1%;
 }
 
-.menu .chooseToken1, .menu .chooseToken2{
-    border: 1px solid black;
+.menu .tokens .chooseToken1, .menu .tokens .chooseToken2{
+    border: 5px solid #FFCEB5;
+    border-radius: 5px;
     width: 30%;
     margin-top: 1%;
     flex-direction: row;
@@ -60,9 +66,9 @@
 }
 
 .chooseToken1 > button, .chooseToken2 > button{
-    width: 100px;
+    width: 100px;   
     height: 100px;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-top: 2%;
     border-radius: 5px;
 }
@@ -72,21 +78,49 @@
     height: 70px;
 }
 
+.chooseBoard{
+    text-align: center;
+}
+
+.chooseBoard .board{
+    display: inline-block;
+}
+
+.chooseBoard .board{
+    all: unset;
+    border: 3px solid #FFCEB5;
+    border-radius: 5px;
+    padding: 0.5%;
+}
+
+.chooseBoard button:hover, .chooseBoard button:focus{
+    background-color: #FFCEB5;
+}
+
+.game > button{
+    all: unset;
+    padding: 1%;
+    background-color: #FFCEB5;
+    margin-left: 48%;
+    margin-top: 1%;
+    font-size: 20px;
+}
+
 #finishGame{
-    border: 1px solid black;
     width: 50%;
     text-align: center;
-    background-color: lightseagreen;
+    background-color: #FFCEB5;
     border-radius: 5px;
     margin-left: 23%;
     margin-top: 5%;
+    padding: 1%;
 }
 
 #finishGame > button{
     all: unset;
     border: 1px solid black;
     padding: 1%;
-    background-color: lightyellow;
+    background-color: white;
     border-radius: 5px;
 }
 
@@ -96,16 +130,21 @@
 }
 
 #timer{
-    border: 1px solid black;
     width: 10%;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 30px;
 }
 
 .canvasPreview{
     margin-top: 1%;
     display: flex;
     justify-content: center;
+}
+
+.canvasPreview canvas{
+    border: 5px solid #FFCEB5;
+    border-radius: 5px;
 }
