@@ -36,7 +36,6 @@ class Check {
             }
         }
         //check verificacion en horizontal
-       
 
         // verificacion diagonal 
         // verifica en diagonal , se le suma a la fila y se le resta a la columna para que valla de forma diagonal  , verifica de abajo para arriba 
@@ -48,8 +47,8 @@ class Check {
                 }
             }
         }
-      // verifica en diagonal , se le suma a la fila y se le suma a la columna para que valla de forma diagonal  , verifica de arriba para abajo
-       for (let r = 0; r <= tope; r++){
+        // verifica en diagonal , se le suma a la fila y se le suma a la columna para que valla de forma diagonal  , verifica de arriba para abajo
+        for (let r = 0; r <= tope; r++){
             for (let c = 0; c <= Juego.Columns-1/2; c++){
                 if (Check.chkLine(bd[r][c], bd[r+1][c+1], bd[r+2][c+2], bd[r+3][c+3])){
                     Juego.winner = bd[r][c];
@@ -57,8 +56,6 @@ class Check {
                 }
             }
         }
-
-       
 
         if (player1.arrayTokensPlayer1.length === 0 && player2.arrayTokensPlayer2.length === 0 ) { // si ambos arreglos de fichas estan vacios quiere decir que el tablero esta lleno y ninguno de los jugadores gano
             Juego.winner = "Empate"; // entonces hay un empate 

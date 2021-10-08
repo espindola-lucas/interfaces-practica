@@ -206,7 +206,7 @@ function timer(stop){
     minutes = document.getElementById("minutos");
 
     window.setInterval( () => {
-        if(stop != countMinutes){
+        if(stop != countSeconds){
             if (countSeconds == 60){
                 countSeconds = 0;
                 countMinutes++;

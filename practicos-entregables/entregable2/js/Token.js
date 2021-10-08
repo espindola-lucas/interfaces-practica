@@ -24,29 +24,30 @@ class Token {
     createToken(){
         switch(this.colour){  // el swicht seria como un if , si le parametro que le llega coincide con el caso 1 se ejecuta el codigo dentro del caso y si el parametro  es igual al caso 2 se ejecuta el codigo del caso 2
             case player1.colour: // el caso 1 funciona para las fichas del jugador 1
-               let x = 45;
-               let y = 80; 
+                let x = 95;
+                let y = 110; 
                 for(let i = 0; i < this.totalTokens; i++){  
-                    let texto = "Fichas jugador 1";
-                    this.context.font="10pt Verdana"; // tipo y tamaño de letra para el texto 
-                    this.context.fillText(texto,10,50); // filltext permite poner texto dentro del canvas , pasamos como parametro el texto que queremos poner y las posiciones
+                    // let texto = "Fichas jugador 1";
+                    // this.context.font="10pt Verdana"; // tipo y tamaño de letra para el texto 
+                    // this.context.fillText(texto,10,50); // filltext permite poner texto dentro del canvas , pasamos como parametro el texto que queremos poner y las posiciones
                     let token ; 
                     token = new Circle(x, y, 20, this.colour, this.context); // la ficha circular utlizando la clase circulo que recibe posiciones , tamaño y la imagen que se le va a colocar
                     this.token1.push(token);  // guardamos esa ficha ( "circulo") dentro del arreglo del jugador 1 ya que es el caso 1
-                     y = y+13; // le sumo a y para que se dibujen en fila 
+                     y = y + 15; // le sumo a y para que se dibujen en fila 
                 }
                 break;
+                
             case player2.colour: 
-                let px = 750;
-                let py = 80;
+                let px = 800;
+                let py = 110;
                 for(let i = 0; i < this.totalTokens; i++){
-                    let texto = "Fichas jugador 2";
-                    this.context.font="10pt Verdana";
-                    this.context.fillText(texto,700,50);
+                    // let texto = "Fichas jugador 2";
+                    // this.context.font="10pt Verdana";
+                    // this.context.fillText(texto,700,50);
                     let token                                 // en el caso 2 sucede lo mismo que en el caso 1 pero cambian los datos ya que es para crear las fichas del jugador 2
                     token = new Circle(px, py, 20, this.colour, this.context);
                     this.token2.push(token);
-                    py = py+13; 
+                    py = py + 15; 
                 }
                 break;
         }
@@ -61,17 +62,17 @@ class Token {
     static drawTokens(tokens1,tokens2){ // es un metodo statico para que se pueda ingresar sin una instancia creada de la clase 
         let canvas = document.querySelector("canvas");
         let context = canvas.getContext("2d"); 
-        let texto = "Fichas jugador 1";
-        context.fillStyle = "black"
-        context.font="10pt Verdana";
-        context.fillText(texto,10,50);
+        // let texto = "Fichas jugador 1";
+        // context.fillStyle = "black"
+        // context.font="10pt Verdana";
+        // context.fillText(texto,10,50);
         tokens2.forEach(T => {
             T.draw()
         });
-        texto = "Fichas jugador 2";
-        context.fillStyle = "black"
-        context.font="10pt Verdana";
-        context.fillText(texto,700,50);
+        // texto = "Fichas jugador 2";
+        // context.fillStyle = "black"
+        // context.font="10pt Verdana";
+        // context.fillText(texto,700,50);
         tokens1.forEach(t => {
             t.draw();
         }); 
