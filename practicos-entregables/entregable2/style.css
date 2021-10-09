@@ -124,18 +124,22 @@
     border-radius: 5px;
 }
 
-.insideGame{
+/* .insideGame{
     display: flex;
     justify-content: space-around;
+} */
+
+.jugador{
+    width: 20%;
+    margin-left: 20%;
 }
 
-#timer{
+.timer{
     width: 10%;
     height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 30px;
+    margin-left: 75%;
+    margin-top: -3%;
 }
 
 .canvasPreview{
