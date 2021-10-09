@@ -36,7 +36,7 @@ const Juego ={
     rows:0,
     Columns:0,
     Tokens:0,// cantidad de fichas por jugador 
-    dimencion:0
+    dimension:0
 };
 
 const oldPositions = {
@@ -79,6 +79,7 @@ const currentPlayer = {
     actual: player1.name
 };
 
+//Al cargar el DOM, se llama a esta funcion, que lo que hace es ocultar divs, y desoculta a medida que se valla solicitando.
 function hiddenGame(){
     if(hiddenMainMenu == false){
         canvas.style.display = 'none';
@@ -124,17 +125,17 @@ async function tokenANDboard(){
     board(); // se llama a la funcion que crea el tablero
 }
 
-async function board (){
-    img = await Help.uploadImage("./images/table.jpeg");
-    let imagen = await Help.uploadImage("./images/Flecha.jpg");
+async function board(){
+    img = await Help.uploadImage("./images/table.jpeg"); //Carga la imagen.
+    let imagen = await Help.uploadImage("./images/Flecha.jpg"); //Carga la imangen de la flecha que estan por encima del tablero.
     let  board = new Board(canvas, context, img,Juego.rows , Juego.Columns, arrayLockers,arrayConteiners,m,Juego.forma, imagen);
-    board.drawBackground();
-    board.createLockers();
-    board.drawcontainers();
-    alllockers.array = board.getArrayLockers();
-    allConteiners.array = board.getArrayConteiners();
-    imageBoard.img = img ;
-    MatrixLockers.matrix=board.getMatrix()
+    board.drawBackground(); //Dibuja el tablero.
+    board.createLockers();  //Dibuja los circulos dentro del tablero.
+    board.drawcontainers(); //Dibuja la flecha que esta por encima del tablero. 
+    alllockers.array = board.getArrayLockers(); //Guarda en la constante el arreglo de los circulos.
+    allConteiners.array = board.getArrayConteiners(); ///Guarda en la constante el arreglo de las flechas de arriba del tablero.
+    imageBoard.img = img ; //Guarda en la constante la imagen.
+    MatrixLockers.matrix=board.getMatrix() //Guarda en la constante la matriz del tablero.
     }
 
 function game (){
@@ -180,25 +181,28 @@ function selectedchooseBoard (){
             element.style.display = 'none';
         }
     });
-    Juego.dimencion = idButton ;
+    Juego.dimension = idButton ;
     Juego.Tokens = idButton /2;
-    if (Juego.dimencion == "5*6"){
+    if (Juego.dimension == "5*6"){
         Juego.Columns = 6;
         Juego.rows= 5;
         Juego.Tokens = 5*6/2;
     }
-    if (Juego.dimencion == "7*6"){
+    if (Juego.dimension == "7*6"){
         Juego.Columns= 6;
         Juego.rows=7
         Juego.Tokens = 7*6/2;
     }
-    if(Juego.dimencion == "7*8"){
+    if(Juego.dimension == "7*8"){
         Juego.Columns = 8;
         Juego.rows = 7;
         Juego.Tokens = 7*8/2;
     }
 }
 
+//La funcion timer lo que haces es que, se carga un ID por los segundos y minutos
+//Luego esas variables se van llenando cada un segundo. hasta llegar la minuto que esta especifica en el stop
+//Se muestra en pantalla el jugador con el turno actual, y se se acaba el tiempo se cierra el juego y avisa que el tiempo termino.
 function timer(stop){
     countSeconds = 0;
     countMinutes = 0;
@@ -248,6 +252,5 @@ function Winner (){
         finishGame.style.display = 'block';
     }
 }
-
 
 document.addEventListener("DOMContentLoaded", hiddenGame());

@@ -2,7 +2,6 @@
 
 .title{
     width: 50%;
-    padding: 0.5% 0%;
     text-align: center;
     background-color: lightsalmon;
     border-radius: 10px;
@@ -14,10 +13,10 @@
     background-color: #FFCEB5;
     padding: 0.5% 0%;
     border-radius: 10px;
-    margin-top: 1%;
     text-align: center;
     width: 50%;
     margin-left: 25%;
+    font-family: 'Indie Flower', cursive;
 }
 
 .menu .help .p1{
@@ -50,6 +49,7 @@
     text-align: center;
     margin-left: 35%;
     padding: 1%;
+    font-family: 'Indie Flower', cursive;
 }
 
 .menu .tokens .chooseToken1, .menu .tokens .chooseToken2{
@@ -69,7 +69,7 @@
     width: 100px;   
     height: 100px;
     margin-left: 10%;
-    margin-top: 2%;
+    margin-top: 1%;
     border-radius: 5px;
 }
 
@@ -80,6 +80,7 @@
 
 .chooseBoard{
     text-align: center;
+    font-family: 'Indie Flower', cursive;
 }
 
 .chooseBoard .board{
@@ -101,9 +102,10 @@
     all: unset;
     padding: 1%;
     background-color: #FFCEB5;
-    margin-left: 48%;
+    margin-left: 47%;
     margin-top: 1%;
     font-size: 20px;
+    font-family: 'Indie Flower', cursive;
 }
 
 #finishGame{
@@ -114,6 +116,7 @@
     margin-left: 23%;
     margin-top: 5%;
     padding: 1%;
+    font-family: 'Indie Flower', cursive;
 }
 
 #finishGame > button{
@@ -122,6 +125,7 @@
     padding: 1%;
     background-color: white;
     border-radius: 5px;
+    font-family: 'Indie Flower', cursive;
 }
 
 /* .insideGame{
@@ -132,6 +136,7 @@
 .jugador{
     width: 20%;
     margin-left: 20%;
+    font-family: 'Indie Flower', cursive;
 }
 
 .timer{
@@ -139,7 +144,8 @@
     height: 80px;
     font-size: 30px;
     margin-left: 75%;
-    margin-top: -3%;
+    margin-top: -5%;
+    font-family: 'Indie Flower', cursive;
 }
 
 .canvasPreview{

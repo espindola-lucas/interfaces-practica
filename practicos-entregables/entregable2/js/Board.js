@@ -12,6 +12,7 @@ class Board {
         this.img = img;
     }
 
+    //Este metodo crea una matriz y en cada posicion guardamos el casillero correspondiente.
     getMatrix(){
         let i = 0;
         for(let f = 0; f <= this.rows-1; f++){
@@ -27,16 +28,17 @@ class Board {
         return this.matrixGame;
     }
 
+    //Aca creamos los circulos arriba de la imagen del tablero.
     createLockers(){
         let ctx = this.canvas.getContext("2d");
         let posX = 290;
         let posY = 140;
-        for(let f = 0; f <this.rows; f++){
+        for(let f = 0; f < this.rows; f++){
             let locker
             locker = new Circle (posX,posY,20,"#ffffff", ctx);
             this.arrayLockers.push(locker );
             locker.draw();
-            for (let c = 0 ; c <this.columns -1; c++){
+            for (let c = 0 ; c < this.columns -1; c++){
                 posY += 50; 
                 locker = new Circle (posX,posY,20,"#ffffff", ctx);
                 this.arrayLockers.push(locker );
@@ -47,14 +49,15 @@ class Board {
         }
     }
 
+    //Hacemos le draw de la imagen del tablero, los if son para el tamaño del tablero que se haya elegido.
     drawBackground(){
-        if (Juego.dimencion === "7*6"){
+        if (Juego.dimension === "7*6"){
             this.contexto.drawImage(this.image, 240, 110, 400, 320)
         }
-        if (Juego.dimencion === "5*6"){
+        if (Juego.dimension === "5*6"){
             this.contexto.drawImage(this.image, 240, 110, 300, 320) 
         }
-        if (Juego.dimencion === "7*8"){
+        if (Juego.dimension === "7*8"){
             this.contexto.drawImage(this.image, 240, 110, 400, 410) 
         }
     }
@@ -67,6 +70,8 @@ class Board {
         return this.arrayConteiners;
     }
 
+    //Estos dibujan las flechas qu estan por encima del tablero, que es donde se tiene que soltar la ficha.
+    //Es un cuadrado con una imagen dentro.
     drawcontainers(){
         let ctx = this.canvas.getContext("2d");
         let posx = 280;
@@ -79,14 +84,16 @@ class Board {
         }
         
     }
-    static drawBackgroundS(contexto,i){
-        if (Juego.dimencion === "7*6"){
+
+    //Este metodo es estatico para poder accederlo desde otra clase, y cuando se mueve una ficha se vuelve a dibujar la imagen del tablero. 
+    static drawBackgroundS(contexto, i){
+        if (Juego.dimension === "7*6"){
             contexto.drawImage(i, 240, 110, 400, 320)
         }
-        if (Juego.dimencion === "5*6"){
+        if (Juego.dimension === "5*6"){
             contexto.drawImage(i, 240, 110, 300, 320) 
         }
-        if (Juego.dimencion === "7*8"){
+        if (Juego.dimension === "7*8"){
             contexto.drawImage(i, 240, 110, 400, 410) 
         }
     }

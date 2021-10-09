@@ -1,12 +1,7 @@
 "use strict";
 
 class Help {
-
-    //La propiedad static es utilizada para usar su metodo sin instaciar su clase
-    static getRandomInt(min, max) {     //Obtengo un numero random entre dos valores dados
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
+    
     static onMouseDown(e){
         isMouseDown = true;
 
@@ -19,7 +14,6 @@ class Help {
         }
         Help.redraw();
     }
-        
 
     static onMouseMove(e){
         if(isMouseDown && lastClickedFigure != null){
@@ -78,7 +72,7 @@ class Help {
         } 
     }
 
-    static redraw (){
+    static redraw(){
         canvas = document.querySelector("canvas");
         context = canvas.getContext("2d");   
         context.fillStyle="white";
@@ -101,7 +95,7 @@ class Help {
     }
 
     static deleteElement(array,i){
-        array.splice(i,1);
+        array.splice(i, 1);
         Help.redraw();
     }
 

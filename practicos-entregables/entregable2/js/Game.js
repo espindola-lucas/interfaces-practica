@@ -5,6 +5,7 @@ class Game {
         this.matrixGame = matrixGame;
     }
 
+    //Crea una matriz vacia con las filas y las columnas que hay en el tablero.
     createMatrix (){
         for(let f = 0; f <= this.rows-1; f++){
         this.matrixGame[f] = [];
@@ -18,6 +19,7 @@ class Game {
         return this.matrixGame;
     }
     
+    //Toma cada fila del tablero, y las marca como vacias, esto quiere decir que hay casilleros para poner fichas.
     static emptyFile (){
         for (let i = 0 ; i  <= Juego.rows-1 ; i++){
             Rows.empty[i]= "no";
@@ -25,7 +27,8 @@ class Game {
         return Rows.empty
     }
 
-    static getRows (conteiner,jugadorActual){
+    //Toma la fila en la que el jugador inserta la ficha, y checkea este vacia.
+    static getRows (conteiner, jugadorActual){
         let NombreJugador;
         for (let file= 0 ; file <Juego.rows ; file++){
             if (conteiner == file ){
@@ -42,7 +45,8 @@ class Game {
         }
     }
 
-    static checkEmpty(file , jugadorActual,NombreJugador){
+    //De la fila que eligio, busca el casillero que este vacio para poder insertar la ficha.
+    static checkEmpty(file, jugadorActual, NombreJugador){
         let position = Juego.Columns-1;
         let p = position;
         do{
@@ -61,11 +65,13 @@ class Game {
             }
         } while (position != 0)
         Check.check();
+        //Si la fila esta llena, la marca como llena.
         if (position == 0 && Juego.matrix[file][p] != 0){
             Rows.empty[file] = "si";
         }
     }
     
+    //Si la fila esta llena, vuelve a dibujar la ficha en su posicion inicial. 
     static lastPosition (position, file, p, NombreJugador, jugadorActual){
         if (Juego.matrix[file][p-1] == 0 ){
             Juego.matrix[file][position] = NombreJugador;
@@ -74,6 +80,7 @@ class Game {
         }   
     }
 
+    //Checkea si la fila esta llena, y si lo esta, dibuja la ficha en su posicion inicial.
     static fullRows (numberElement,selected, X ,Y){
         if ( Rows.empty[numberElement] == "si"){
             Token.drawInOldPosition(selected, X ,Y );
