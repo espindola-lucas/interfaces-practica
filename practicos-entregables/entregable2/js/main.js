@@ -83,10 +83,10 @@ function hiddenGame(){
     if(hiddenMainMenu == false){
         canvas.style.display = 'none';
         mainMenu.style.visibility = 'hidden';
-        timerDiv.style.visibility = 'hidden';
+        timerDiv.style.display = 'none';
         finishGame.style.display = 'none';
     }else{
-        timerDiv.style.visibility = 'hidden'
+        timerDiv.style.display = 'none'
         canvas.style.display = 'none';
         mainMenu.style.visibility = 'visible';
         player.style.display = 'none';
@@ -97,7 +97,7 @@ function hiddenGame(){
 function initGame(){
     canvas.style.display = 'block';
     play.style.display = 'none';
-    timerDiv.style.visibility = 'visible';
+    timerDiv.style.display = 'block';
     tokenANDboard(); // llama a la funcion que crea todas las fichas y el tablero
     game();
     timer(10);
@@ -231,7 +231,7 @@ function Winner (){
     if (Juego.winner != 0 && Juego.winner != "Empate"){// este if chequea si,  no hay un ganador 
         countSeconds = 0;// deja el timer en 0 para que corte el tiempo
         countMinutes = 0;
-        timerDiv.style.visibility = 'hidden' // oculta el timer
+        timerDiv.style.display = 'none' // oculta el timer
         canvas.style.display = 'none'; // oculta el canvas
         mainMenu.style.visibility = 'visible'; // muestra el boton para volver a jugar
         player.style.display = 'none' // oculta el texto donde dice a q jugador le toca
@@ -240,7 +240,7 @@ function Winner (){
     }else if (Juego.winner =="Empate"){ // si no hubo un ganador preguntapor un empate  
         countSeconds = 0;
         countMinutes = 0;
-        timerDiv.style.visibility = 'hidden'
+        timerDiv.style.display = 'none'
         canvas.style.display = 'none';
         mainMenu.style.visibility = 'visible';
         timeOut.innerHTML = ' Nadie a ganado esto es un Empate!'; // texto diciendo que fue un empate
