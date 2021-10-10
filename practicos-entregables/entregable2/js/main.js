@@ -15,9 +15,6 @@ let isMouseDown = false;
 let lastClickedFigure = null;
 let hiddenMainMenu = false;
 let img;
-document.querySelectorAll("div.chooseToken1 > button").forEach(function(element){
-    element.addEventListener("click", selectedToken1, false)
-});
 
 document.querySelectorAll("div.chooseToken2 > button").forEach(function(element){
     element.addEventListener("click", selectedToken2, false)
@@ -76,7 +73,7 @@ const player2 = {// esta constante tiene los datos y el arreglo de las fichas de
 };
 
 const currentPlayer = {
-    actual: player1.name
+    actual: player1.name 
 };
 
 //Al cargar el DOM, se llama a esta funcion, que lo que hace es ocultar divs, y desoculta a medida que se valla solicitando.
@@ -94,14 +91,14 @@ function hiddenGame(){
         finishGame.style.display = 'block';
     }
 }
-
+// cuando el jugador termina de legir las fichas y el tablero y clickea jugar se activa esta funcion 
 function initGame(){
-    canvas.style.display = 'block';
-    play.style.display = 'none';
+    canvas.style.display = 'block';  
+    play.style.display = 'none'; 
     timerDiv.style.display = 'block';
     tokenANDboard(); // llama a la funcion que crea todas las fichas y el tablero
-    game();
-    timer(10);
+    game(); // llama la a funcion que crea la matriz para la logica del juego 
+    timer(10); // llama al timer con la cantidad de minutos que va a durar el juego   
     document.addEventListener("mousedown", Help.onMouseDown, false);
     document.addEventListener("mouseup", Help.onMouseUp, false);
     document.addEventListener("mousemove", Help.onMouseMove, false);
@@ -144,22 +141,25 @@ function game (){
     Juego.matrix = g.getMatrix();// guarda la matriz en la constante para despues utilizarla en otras clases 
     Rows.empty = Game.emptyFile(); // guarda el estado de las filas (si estan llenas o vacias)
 }
+document.querySelectorAll("div.chooseToken1 > button").forEach(function(element){
+    element.addEventListener("click", selectedToken1, false) // cuando se clickea un boton para elegir las fichas del jugador 1 se  hace un foreach para saber cual es el id del clikeado y se llama  una funcion 
+});
 
 function selectedToken1(){
-    let idButton = this.id;
-    player1.colour = idButton;
-    document.querySelectorAll("div.chooseToken1 > button").forEach(function(element){
-        if(idButton != element.id){
+    let idButton = this.id; // se guarda el id de el botton q se clickeo
+    player1.colour = idButton; // ese ide corresponde a la imagen elegida entonces se guarda en la constante del jugador 1 
+    document.querySelectorAll("div.chooseToken1 > button").forEach(function(element){ //se hace un foreach de todos los botones para ocultar los q no estan clickeados 
+        if(idButton != element.id){ // si el id no es igual al que fue elegido entra al if 
             element.style.display = 'none';
         }
     });
-    document.querySelectorAll("div.chooseToken2 > button").forEach(function(element){
+    document.querySelectorAll("div.chooseToken2 > button").forEach(function(element){ // se vuelve a hacer un foreach pero esta vez de los botones que elige el jugador vos y se oculta el boton que tiene el mismo id , esto es para evitar que ambos jugadores elijan el mismo tipo de ficha 
         if(idButton == element.id){
             element.style.display = 'none';
         }
     });
 }
-
+// lo mismo que el selectdToken1
 function selectedToken2(){
     let idButton = this.id;
     player2.colour = idButton;
@@ -174,6 +174,7 @@ function selectedToken2(){
         }
     });
 }
+// foreach opara ocultar los que no fueron seleccionados y guardar en la constante las medidas elegidas
 function selectedchooseBoard (){
     let idButton = this.id;
     document.querySelectorAll("div.chooseBoard  > button").forEach(function(element){

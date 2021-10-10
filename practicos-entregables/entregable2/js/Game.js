@@ -71,7 +71,7 @@ class Game {
         }
     }
     
-    //Si la fila esta llena, vuelve a dibujar la ficha en su posicion inicial. 
+    //Si la fila esta vacia , osea tiene una posicion libre para dibujar la ficha , en la matriz de la logica pone el nombre del jugador y le cambia el fill al circulo por la imagen que le corresponde a ese jugador y vuelve a dibujar , esto hace que la ficha se dibuje en el tablero. 
     static lastPosition (position, file, p, NombreJugador, jugadorActual){
         if (Juego.matrix[file][p-1] == 0 ){
             Juego.matrix[file][position] = NombreJugador;
@@ -80,7 +80,7 @@ class Game {
         }   
     }
 
-    //Checkea si la fila esta llena, y si lo esta, dibuja la ficha en su posicion inicial.
+    //Checkea si la fila esta llena, y si lo esta, dibuja la ficha en su posicion inicial , sino elimina la ficha del arreglo de ficha correspondiente .
     static fullRows (numberElement,selected, X ,Y){
         if ( Rows.empty[numberElement] == "si"){
             Token.drawInOldPosition(selected, X ,Y );
