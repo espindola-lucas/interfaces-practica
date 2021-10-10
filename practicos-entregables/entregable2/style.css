@@ -1,22 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+:root{
+    --main-bg: #ffa07a;
+    --secondary-bg: #ffcEb5;
+    --border: 5px;
+    --google-font: 'Indie Flower', cursive; 
+}
+
 .title{
     width: 50%;
     text-align: center;
-    background-color: lightsalmon;
+    background-color: var(--main-bg);
     border-radius: 10px;
     margin-left: 25%;
-    font-family: 'Indie Flower', cursive;
+    font-family: var(--google-font);
 }
 
 .menu .help, .menu h3{
-    background-color: #FFCEB5;
+    background-color: var(--secondary-bg);
     padding: 0.5% 0%;
     border-radius: 10px;
     text-align: center;
     width: 50%;
     margin-left: 25%;
-    font-family: 'Indie Flower', cursive;
+    font-family: var(--google-font);
 }
 
 .menu .help .p1{
@@ -41,7 +48,7 @@
 }
 
 .menu .tokens button:hover{
-    border: 3px solid lightsalmon;
+    border: 3px solid var(--main-bg);
 }
 
 .menu .tokens h4{
@@ -49,12 +56,12 @@
     text-align: center;
     margin-left: 35%;
     padding: 1%;
-    font-family: 'Indie Flower', cursive;
+    font-family: var(--google-font);
 }
 
 .menu .tokens .chooseToken1, .menu .tokens .chooseToken2{
-    border: 5px solid #FFCEB5;
-    border-radius: 5px;
+    border: var(--border) solid var(--secondary-bg);
+    border-radius: var(--border);
     width: 30%;
     margin-top: 1%;
     flex-direction: row;
@@ -70,7 +77,7 @@
     height: 100px;
     margin-left: 10%;
     margin-top: 1%;
-    border-radius: 5px;
+    border-radius: var(--border);
 }
 
 .chooseToken1 > button img, .chooseToken2 > button img{
@@ -80,7 +87,7 @@
 
 .chooseBoard{
     text-align: center;
-    font-family: 'Indie Flower', cursive;
+    font-family: var(--google-font);
 }
 
 .chooseBoard .board{
@@ -89,34 +96,34 @@
 
 .chooseBoard .board{
     all: unset;
-    border: 3px solid #FFCEB5;
-    border-radius: 5px;
+    border: 3px solid var(--secondary-bg);
+    border-radius: var(--border);
     padding: 0.5%;
 }
 
 .chooseBoard button:hover, .chooseBoard button:focus{
-    background-color: #FFCEB5;
+    background-color: var(--secondary-bg);
 }
 
 .game > button{
     all: unset;
     padding: 1%;
-    background-color: #FFCEB5;
+    background-color: var(--secondary-bg);
     margin-left: 47%;
     margin-top: 1%;
     font-size: 20px;
-    font-family: 'Indie Flower', cursive;
+    font-family: var(--google-font);
 }
 
 #finishGame{
     width: 50%;
     text-align: center;
-    background-color: #FFCEB5;
-    border-radius: 5px;
+    background-color: var(--secondary-bg);
+    border-radius: var(--border);
     margin-left: 23%;
     margin-top: 5%;
     padding: 1%;
-    font-family: 'Indie Flower', cursive;
+    font-family: var(--google-font);
 }
 
 #finishGame > button{
@@ -124,8 +131,8 @@
     border: 1px solid black;
     padding: 1%;
     background-color: white;
-    border-radius: 5px;
-    font-family: 'Indie Flower', cursive;
+    border-radius: var(--border);
+    font-family: var(--google-font);
 }
 
 /* .insideGame{
@@ -136,7 +143,7 @@
 .jugador{
     width: 20%;
     margin-left: 20%;
-    font-family: 'Indie Flower', cursive;
+    font-family: var(--google-font);
 }
 
 .timer{
@@ -145,7 +152,7 @@
     font-size: 30px;
     margin-left: 75%;
     margin-top: -3%;
-    font-family: 'Indie Flower', cursive;
+    font-family: var(--google-font);
 }
 
 .canvasPreview{
@@ -155,6 +162,18 @@
 }
 
 .canvasPreview canvas{
-    border: 5px solid #FFCEB5;
-    border-radius: 5px;
+    border: var(--border) solid var(--secondary-bg);
+    border-radius: var(--border);
+}
+
+.team{
+    width: 50%;
+    text-align: center;
+    background-color: var(--main-bg);
+    border-radius: var(--border);
+    margin-left: 23%;
+    margin-top: 1%;
+    padding: 1%;
+    font-size: 20px;
+    font-family: var(--google-font);
 }
