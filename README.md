@@ -7,8 +7,6 @@ Trabajos practicos de la materia Interfaces de Usuario e Interfaces de la Tecnic
 
 Deployment: https://espindola-lucas.github.io/interfaces-practica/practicos-entregables/entregable-1/index.html
 
-![project screnshot](https://github.com/espindola-lucas/interfaces-practica/tree/main/practicos-entregables/entregable-1/screenShotProject1.png)
-
 Descripción: Está implementado en javascript. Es una pintura con lápiz y goma, pudiendo elegir el color del lápiz. La edición de imágenes con filtros está mediando la manipulación de píxeles en 2D, dentro de un lienzo.
 
 ### 2. Cuatro en linea.
