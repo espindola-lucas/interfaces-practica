@@ -7,6 +7,7 @@ let timeOut = document.getElementById("timeOut");
 let mainMenu = document.getElementById("menu");
 let timerDiv = document.getElementById("timer");
 let player = document.getElementById("jugador");
+let botonJugar = document.getElementById("g");
 let finishGame = document.getElementById("finishGame");
 let playerRed , playerGreen;
 let arrayLockers = [] ,arrayConteiners = [], matrixArray = [], token1 = [], token2 = [], m =[];
@@ -33,7 +34,7 @@ const Juego ={
     rows:0,
     Columns:0,
     Tokens:0,// cantidad de fichas por jugador 
-    dimension:0
+    dimension:null
 };
 
 const oldPositions = {
@@ -63,13 +64,13 @@ const allConteiners = {
 const player1 = { // esta constante tiene los datos y el arreglo de las fichas del jugador 1
     name: 1,
     arrayTokensPlayer1: 0,
-    colour:""
+    colour:null
 };
 
 const player2 = {// esta constante tiene los datos y el arreglo de las fichas del jugador 2
     name: 2,
     arrayTokensPlayer2: 0,
-    colour: ""
+    colour: null
 };
 
 const currentPlayer = {
@@ -83,6 +84,7 @@ function hiddenGame(){
         mainMenu.style.visibility = 'hidden';
         timerDiv.style.display = 'none';
         finishGame.style.display = 'none';
+        botonJugar.style.visibility = 'hidden';
     }else{
         timerDiv.style.display = 'none'
         canvas.style.display = 'none';
@@ -158,6 +160,10 @@ function selectedToken1(){
             element.style.display = 'none';
         }
     });
+
+    if (player1.colour != null &&  player2.colour != null &&  Juego.dimension != null){
+        botonJugar.style.visibility = 'visible'
+    }
 }
 // lo mismo que el selectdToken1
 function selectedToken2(){
@@ -173,6 +179,9 @@ function selectedToken2(){
             element.style.display = 'none';
         }
     });
+    if (player1.colour != null &&  player2.colour != null &&  Juego.dimension != null){
+        botonJugar.style.visibility = 'visible'
+    }
 }
 // foreach opara ocultar los que no fueron seleccionados y guardar en la constante las medidas elegidas
 function selectedchooseBoard (){
@@ -198,6 +207,9 @@ function selectedchooseBoard (){
         Juego.Columns = 8;
         Juego.rows = 7;
         Juego.Tokens = 7*8/2;
+    }
+    if (player1.colour != null &&  player2.colour != null &&  Juego.dimension != null){
+        botonJugar.style.visibility = 'visible'
     }
 }
 
