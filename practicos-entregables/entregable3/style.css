@@ -7,14 +7,14 @@
 }
 
 .cielo{
-  background: url(f.jpg) repeat-x;
+  background: url(images/f.jpg) repeat-x;
   animation: movesuelo 9s linear infinite;
   width: 100%;
   height: 320px;
 }
 
 .suelo{
-  background: url(fondos.jpg) repeat-x;
+  background: url(images/fondos.jpg) repeat-x;
   animation: movesuelo 5s linear infinite;
   width: 100%;
   height: 210px;
@@ -24,7 +24,7 @@
 .flor{
   width:100%;
   height: 88px;
-  background: url(flor.png) no-repeat; 
+  background: url(images/flor.png) no-repeat; 
   animation: moveplanta 30s  infinite;
   margin: 0;
   position: relative;
@@ -33,7 +33,7 @@
 .perso{
   width: 80px;
   height: 88px;
-  background: url(person.png) repeat-x;
+  background: url(images/person.png) repeat-x;
   /* animation: walk 1s steps(7) infinite;  */
   margin: 0;
   position: relative;
@@ -43,7 +43,7 @@
 .person{
   width: 80px;
   height: 88px;
-  background: url(person.png) repeat-x;
+  background: url(images/person.png) repeat-x;
   animation: walk 1s steps(7) infinite; 
   margin: 0;
   position: relative;
