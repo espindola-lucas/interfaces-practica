@@ -21,7 +21,15 @@
   position: relative;
   top: 271px;
 }
-
+.flor{
+  width:100%;
+  height: 88px;
+  background: url(flor.png) no-repeat; 
+  animation: moveplanta 30s  infinite;
+  margin: 0;
+  position: relative;
+  bottom: -70%;
+}
 .perso{
   width: 80px;
   height: 88px;
@@ -29,8 +37,8 @@
   /* animation: walk 1s steps(7) infinite;  */
   margin: 0;
   position: relative;
-  bottom: -55%;
-  left: 30%;
+   bottom: 15%; 
+  left: 25%;
 }
 .person{
   width: 80px;
@@ -39,16 +47,20 @@
   animation: walk 1s steps(7) infinite; 
   margin: 0;
   position: relative;
-  bottom: -55%;
-  left: 30%;
+  bottom: 15%;
+  left: 25%;
 }
 
 @keyframes walk {
   0% {background-position: 0}
-  100% {background-position: -570px}
+  100% {background-position: -560px}
 }
 
 @keyframes movesuelo{
   0% {background-position: 550px}
   100% {background-position: 0}
+}
+@keyframes moveplanta {
+  0% {background-position: right}
+  100% {background-position: left}
 }
