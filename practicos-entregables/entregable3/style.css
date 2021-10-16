@@ -30,6 +30,23 @@
   position: relative;
   bottom: -70%;
 }
+.fuego{
+  width:100%;
+  height: 88px;
+  background: url(fuego.png) no-repeat; 
+  animation: moveplanta 30s  infinite; 
+  margin: 0;
+  position: relative;
+  bottom: 60%; 
+}
+.fue{
+  width:100%;
+  height: 88px;
+  
+  margin: 0;
+  position: relative;
+  bottom: 60%; 
+}
 .perso{
   width: 80px;
   height: 88px;
@@ -37,7 +54,7 @@
   /* animation: walk 1s steps(7) infinite;  */
   margin: 0;
   position: relative;
-   bottom: 15%; 
+   bottom: -40%; 
   left: 25%;
 }
 .person{
