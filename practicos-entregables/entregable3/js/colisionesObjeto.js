@@ -1,18 +1,17 @@
 class colisionesObjeto{
 static randomColision (){
-    var min = 0;
-    var max = 1;
-let elegido=Math.floor(Math.random() * (max - min)) + min;
+let elegido= helps.getRandomInt(0,1)
 let flor = document.getElementById("flor");
 let fuego = document.getElementById("fuego");
     switch(elegido){  
         case 0: 
+        flor.className= "";
         flor.className= "flor";
             console.log ('flor')
             break;
             
         case 1 : 
-          
+        fuego.className= "";
         fuego.className= "fuego";
         console.log ('fuego')
             break;

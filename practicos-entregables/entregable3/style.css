@@ -25,36 +25,29 @@
   width:100%;
   height: 88px;
   background: url(images/flor.png) no-repeat; 
-  animation: moveplanta 30s  infinite;
+  animation: moveplanta 30s  infinite; 
   margin: 0;
   position: relative;
-  bottom: -70%;
+  top: -60%;
+  /* bottom: 70%; */
 }
 .fuego{
   width:100%;
   height: 88px;
-  background: url(fuego.png) no-repeat; 
-  animation: moveplanta 30s  infinite; 
+  background: url(images/fuego.png) no-repeat; 
+  /* animation: moveplanta 30s  infinite;  */
   margin: 0;
   position: relative;
   bottom: 60%; 
-}
-.fue{
-  width:100%;
-  height: 88px;
-  
-  margin: 0;
-  position: relative;
-  bottom: 60%; 
-}
+  }
 .perso{
   width: 80px;
   height: 88px;
-  background: url(images/person.png) repeat-x;
+  background: url(images/person.png) repeat-x;  
   /* animation: walk 1s steps(7) infinite;  */
   margin: 0;
   position: relative;
-   bottom: -40%; 
+  bottom: -60%; 
   left: 25%;
 }
 .person{
