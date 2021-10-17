@@ -1,4 +1,5 @@
 "use strict";
+
 const Person ={
     img:"images/person.png",
     imgCargada:""
@@ -12,11 +13,7 @@ function  initGame() {
 }
 
 function CargarImages(){
-Person.imgCargada=helps.uploadImage(Person.img);
+    Person.imgCargada=helps.uploadImage(Person.img);
 }
-
-
-
-
 
 document.addEventListener("DOMContentLoaded", initGame());

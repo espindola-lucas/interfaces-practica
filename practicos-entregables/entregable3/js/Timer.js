@@ -1,4 +1,7 @@
-class timer {
+"use strict";
+
+class Timer {
+    
     static start_timer (){
             let stop = 1
             let countSeconds = 0;
