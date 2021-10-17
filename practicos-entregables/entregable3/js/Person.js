@@ -4,7 +4,8 @@ class Person {
 
   static CargarPerson (){
     let persona = document.getElementById("person");
-    persona.style.background = Person.imgCargada  ;
+    persona.style.background = 'url('+Persona.img+')';
+    persona.className= "perso";
   }
 
   static  press_key (e) {

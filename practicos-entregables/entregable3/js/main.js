@@ -1,19 +1,23 @@
 "use strict";
 
-const Person ={
+const Persona ={
     img:"images/person.png",
-    imgCargada:""
-};
+    };
 
 function  initGame() {
+    let flor = document.getElementById("flor");
     // timer.start_timer ();
-    // CargarImages(); // no esta funcionando 
-    window.addEventListener("keydown",person.press_key); 
-    setInterval(colisionesObjeto.randomColision, 2000);
+     CargarImages(); // no esta funcionando 
+     Person.CargarPerson();
+    window.addEventListener("keydown",Person.press_key); 
+    setInterval(CrashObjects.randomColosion, 4000);
 }
 
-function CargarImages(){
-    Person.imgCargada=helps.uploadImage(Person.img);
+async function CargarImages(){
+        let img;
+        img = await Help.uploadImage(Persona.img);
+        Persona.img = img ; 
+       
 }
 
 document.addEventListener("DOMContentLoaded", initGame());
