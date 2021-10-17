@@ -24,27 +24,44 @@
 .flor{
   width:100%;
   height: 88px;
-  background: url(images/flor.png) no-repeat; 
+  background: url(images/flor.png) no-repeat;   
   animation: moveplanta 30s  infinite; 
   margin: 0;
-  position: relative;
-  top: -60%;
-  /* bottom: 70%; */
+  position: absolute;
+  bottom: 34%;
+}
+.flor1{
+  width:90%;
+  height: 88px;
+  background: url(images/flor.png) no-repeat;  
+  animation: moveplanta 30s  infinite; 
+  margin: 0;
+  position: absolute;
+  bottom: 34%;
+  left: 10%;
 }
 .fuego{
   width:100%;
   height: 88px;
   background: url(images/fuego.png) no-repeat; 
-  /* animation: moveplanta 30s  infinite;  */
+  animation: moveplanta 30s  infinite; 
   margin: 0;
-  position: relative;
-  bottom: 60%; 
+  position: absolute;
+  top: -50%;  
   }
-.perso{
+  .fuego1{
+    width:90%;
+    height: 88px;
+    background: url(images/fuego.png) no-repeat; 
+    animation: moveplanta 30s  infinite; 
+    position: absolute;
+    top: 50%; 
+    left: 10%;
+  }
+  
+.conteiner .perso{
   width: 80px;
   height: 88px;
-  background: url(images/person.png) repeat-x;  
-  /* animation: walk 1s steps(7) infinite;  */
   margin: 0;
   position: relative;
   bottom: -60%; 

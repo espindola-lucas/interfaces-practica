@@ -10,7 +10,7 @@ class helps{
             img.src = path;
             img.onload = () => resolve(img);
             img.onerror = reject;
-            
+            console.log (img)
         });
     }
 }

@@ -1,7 +1,8 @@
 class person {
 static CargarPerson (){
-  let persona = document.getElementById("person");
-  persona.style.background = Person.imgCargada  ;
+let persona = document.getElementById("person");
+persona.style.background = 'url('+Person.img+')';
+persona.className= "perso";
 }
 static  press_key (e) {
     let persona = document.getElementById("person");
@@ -10,7 +11,7 @@ static  press_key (e) {
       persona.className= "person";
     }
     if (e.keyCode == '40'){
-       persona.className= "perso";
+      persona.className= "perso";
     }
 }
 }
