@@ -25,64 +25,37 @@
   width:100%;
   height: 88px;
   background: url(images/flor.png) no-repeat; 
-  animation: moveplanta 30s  infinite; 
+  animation: moveplanta 35s  1; 
   margin: 0;
   position: absolute;
-  top: 57%; 
+  top: 61%; 
   /* bottom: 70%; */
-}
-.flor1{
-  width:90%;
-  height: 88px;
-  background: url(images/flor.png) no-repeat;  
-  animation: moveplanta 30s  infinite; 
-  margin: 0;
-  position: absolute;
-  top:60%;
-  left: 10%;
 }
 .fuego{
   width:100%;
   height: 88px;
   background: url(images/fuego.png) no-repeat; 
-  animation: moveplanta 30s  infinite;  
+  animation-name:  moveplanta ;  
+  animation-delay:3s;
+  animation-duration:35s;
+  animation-iteration-count:1;
   margin: 0;
   position: absolute;
-  top:60%
+  top:50%
   }
-  .fuego1{
-    width:90%;
-    height: 88px;
-    background: url(images/fuego.png) no-repeat; 
-    animation: moveplanta 30s  infinite; 
-    position: absolute;
-    top: 55%; 
-    left: 10%;
-  }
-.conteiner .perso{
-  width: 80px;
-  height: 88px;
-  /* background: url(images/person.png) repeat-x;   */
-  /* animation: walk 1s steps(7) infinite;  */
-  margin: 0;
-  position: relative;
-  bottom: -60%; 
-  left: 25%;
-}
 .person{
-  width: 80px;
-  height: 88px;
-  background: url(images/ninjaRunning.png) repeat-x;
+  width: 135px;
+  height: 141px;
   animation: walk 1s steps(6) infinite; 
   margin: 0;
   position: relative;
-  bottom: 15%;
+  bottom: -30%; 
   left: 25%;
 }
 
 @keyframes walk {
   0% {background-position: 0}
-  100% {background-position: -480px}
+  100% {background-position: -830px}
 }
 
 @keyframes movesuelo{
