@@ -73,7 +73,7 @@
   width: 80px;
   height: 88px;
   background: url(images/ninjaRunning.png) repeat-x;
-  animation: walk 1s steps(7) infinite; 
+  animation: walk 1s steps(6) infinite; 
   margin: 0;
   position: relative;
   bottom: 15%;
