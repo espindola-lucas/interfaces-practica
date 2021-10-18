@@ -1,7 +1,7 @@
 "use strict";
 
 const Persona ={
-    img:"images/ninjaRunning.png",
+    img:"../images/ninjaRunning.png",
     };
 
 function  initGame() {
