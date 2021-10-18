@@ -72,7 +72,7 @@
 .person{
   width: 80px;
   height: 88px;
-  background: url(images/person.png) repeat-x;
+  background: url(images/ninjaRunning.png) repeat-x;
   animation: walk 1s steps(7) infinite; 
   margin: 0;
   position: relative;
@@ -82,7 +82,7 @@
 
 @keyframes walk {
   0% {background-position: 0}
-  100% {background-position: -560px}
+  100% {background-position: -480px}
 }
 
 @keyframes movesuelo{
