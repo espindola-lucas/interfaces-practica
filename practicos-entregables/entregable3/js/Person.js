@@ -16,5 +16,5 @@ class Person {
     if (e.keyCode == '40'){
         persona.className= "perso";
     }
-}
+  }
 }
