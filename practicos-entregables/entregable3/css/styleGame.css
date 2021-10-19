@@ -7,14 +7,14 @@
 }
 
 .cielo{
-  background: url(images/f.jpg) repeat-x;
+  background: url(../images/f.jpg) repeat-x;
   animation: movesuelo 9s linear infinite;
   width: 100%;
   height: 320px;
 }
 
 .suelo{
-  background: url(images/fondos.jpg) repeat-x;
+  background: url(../images/fondos.jpg) repeat-x;
   animation: movesuelo 5s linear infinite;
   width: 100%;
   height: 210px;
@@ -24,7 +24,7 @@
 .flor{
   width:100%;
   height: 88px;
-  background: url(images/flor.png) no-repeat; 
+  background: url(../images/flor.png) no-repeat; 
   animation: moveplanta 35s  1; 
   margin: 0;
   position: absolute;
@@ -34,7 +34,7 @@
 .fuego{
   width:100%;
   height: 88px;
-  background: url(images/fuego.png) no-repeat; 
+  background: url(../images/fuego.png) no-repeat; 
   animation-name:  moveplanta ;  
   animation-delay:3s;
   animation-duration:35s;
@@ -64,5 +64,5 @@
 }
 @keyframes moveplanta {
   0% {background-position: right}
-  100% {background-position: left}
+  100% {background-position: -50px}
 }
