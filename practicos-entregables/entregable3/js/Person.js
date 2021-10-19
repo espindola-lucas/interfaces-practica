@@ -10,8 +10,9 @@ class Person {
 
   static  press_key (e) {
     let persona = document.getElementById("person");
+    console.log(e.keyCode);
     if (e.keyCode == '38'){
-        persona.className= "person";
+        persona.className= "personUp";
     }
     if (e.keyCode == '40'){
         persona.className= "perso";

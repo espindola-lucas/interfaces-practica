@@ -58,22 +58,67 @@
   margin-left: 15%;
 }
 
+.personUp{
+  background: url(../images/ninjaUp.png);
+  width: 135px;
+  height: 156px;
+  animation: jump 1s 1; 
+  display: flex;
+  margin-top: 3.5%;
+  margin-left: 15%;
+}
+
 @keyframes walk {
-  0% {background-position: 0}
-  100% {background-position: -848px}
+  0% {
+    background-position: 0
+  }
+
+  100% {
+    background-position: -848px
+  }
 }
 
 @keyframes movehill{
-  0% {background-position: 0px}
-  100% {background-position: -2045px}
+  0% {
+    background-position: 0px
+  }
+  
+  100% {
+    background-position: -2045px
+  }
 }
 
 @keyframes movetree{
-  0% {background-position: 0px}
-  100% {background-position: -1449px}
+  0% {
+    background-position: 0px
+  }
+  
+  100% {
+    background-position: -1449px
+  }
 }
 
 @keyframes moveplanta {
-  0% {background-position: right}
-  100% {background-position: -50px}
+  0% {
+    background-position: right
+  }
+  
+  100% {
+    background-position: -50px
+  }
+}
+
+@keyframes jump {
+    0% {
+      margin-top: 3.5%;
+    }
+
+    50% {
+      margin-top: 0%;
+    }
+
+    100% {
+      margin-top: 3.5%;
+    }
+
 }
