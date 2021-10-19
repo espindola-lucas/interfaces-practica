@@ -1,26 +1,27 @@
-*{
-  background: lightskyblue;
-}
-
 .conteiner{
+  width: 1500px;
+  height: 700px;
+  display: flex;
   margin-top: 5%;
-  background: url(../images/firstcapa.jpg);
+  margin-left: 5%;
 }
 
 .hills{
-  background: url(../images/secondcapa.png) repeat-x;
-  animation: movehill 9s linear infinite;
+  background: url(../images/fondo3.png) repeat-x;
+  animation: movehill 15s linear infinite;
   width: 100%;
-  height: 100%;
-  margin-top: 35%;
+  height: 659px;
+  display: flex;
+  margin-top: 10%;
 }
 
 .tree{
-  background: url(../images/thirdcapa.png) repeat-x;
-  animation: movetree 6s linear infinite;
+  background: url(../images/arboles.png) repeat-x;
+  animation: movetree 8s linear infinite;
   width: 100%;
-  height: 210px;
-  margin-top: 20%;
+  height: 200px;
+  display: flex;
+  margin-top: 30.5%;
 }
 
 .flor{
@@ -46,29 +47,30 @@
   position: absolute;
   top:50%
   }
+
 .person{
+  background: url(../images/ninjaRunning.png);
   width: 135px;
-  height: 141px;
+  height: 156px;
   animation: walk 1s steps(6) infinite; 
-  margin: 0;
-  position: relative;
-  bottom: -30%; 
-  left: 25%;
+  display: flex;
+  margin-top: 3.5%;
+  margin-left: 15%;
 }
 
 @keyframes walk {
   0% {background-position: 0}
-  100% {background-position: -830px}
+  100% {background-position: -848px}
 }
 
 @keyframes movehill{
   0% {background-position: 0px}
-  100% {background-position: -900px}
+  100% {background-position: -2045px}
 }
 
 @keyframes movetree{
   0% {background-position: 0px}
-  100% {background-position: -800px}
+  100% {background-position: -1449px}
 }
 
 @keyframes moveplanta {
