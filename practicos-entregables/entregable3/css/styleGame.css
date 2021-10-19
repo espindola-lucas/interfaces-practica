@@ -7,7 +7,6 @@
 }
 
 .hills{
-  background: url(../images/fondo3.png) repeat-x;
   animation: movehill 15s linear infinite;
   width: 100%;
   height: 659px;
@@ -16,7 +15,6 @@
 }
 
 .tree{
-  background: url(../images/arboles.png) repeat-x;
   animation: movetree 8s linear infinite;
   width: 100%;
   height: 200px;
@@ -27,29 +25,24 @@
 .flor{
   width:100%;
   height: 88px;
-  /* background: url(../images/flor.png) no-repeat;  */
+  background: url(../images/flor.png) no-repeat;  
   animation: moveplanta 35s  1; 
   margin: 0;
   position: absolute;
-  top: 61%; 
-  /* bottom: 70%; */
+ margin-top: 2.5%;
 }
 
 .fuego{
   width:100%;
   height: 88px;
-  /* background: url(../images/fuego.png) no-repeat;  */
-  animation-name:  moveplanta ;  
-  animation-delay:3s;
-  animation-duration:35s;
-  animation-iteration-count:1;
+  background: url(../images/fuego.png) no-repeat;  
+  animation: moveplanta 35s  1;
   margin: 0;
   position: absolute;
-  top:50%
+  top:83%
   }
 
 .person{
-  background: url(../images/ninjaRunning.png);
   width: 135px;
   height: 156px;
   animation: walk 1s steps(6) infinite; 
@@ -59,20 +52,24 @@
 }
 
 .personUp{
-  background: url(../images/ninjaUp.png);
-  width: 135px;
-  height: 156px;
-  animation: jump 1s 1; 
+  width: 145px;
+  height: 190px;
+  animation: jump 4s 1;  
   display: flex;
-  margin-top: 3.5%;
+  margin-top: 1.5%;
   margin-left: 15%;
 }
-
+.personD{
+  width: 135px;
+  height: 110px;
+  display: flex;
+  margin-top: 6.2%;
+  margin-left: 15%;
+}
 @keyframes walk {
   0% {
     background-position: 0
   }
-
   100% {
     background-position: -848px
   }
@@ -104,21 +101,15 @@
   }
   
   100% {
-    background-position: -50px
+    background-position: left
   }
 }
 
 @keyframes jump {
     0% {
-      margin-top: 3.5%;
+      margin-top: -10%;
     }
-
-    50% {
-      margin-top: 0%;
-    }
-
     100% {
-      margin-top: 3.5%;
+      margin-top: -10%;
     }
-
 }
