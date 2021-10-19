@@ -4,37 +4,40 @@
 
 .conteiner{
   margin-top: 5%;
+  background: url(../images/firstcapa.jpg);
 }
 
-.cielo{
-  background: url(../images/f.jpg) repeat-x;
-  animation: movesuelo 9s linear infinite;
+.hills{
+  background: url(../images/secondcapa.png) repeat-x;
+  animation: movehill 9s linear infinite;
   width: 100%;
-  height: 320px;
+  height: 100%;
+  margin-top: 35%;
 }
 
-.suelo{
-  background: url(../images/fondos.jpg) repeat-x;
-  animation: movesuelo 5s linear infinite;
+.tree{
+  background: url(../images/thirdcapa.png) repeat-x;
+  animation: movetree 6s linear infinite;
   width: 100%;
   height: 210px;
-  position: relative;
-  top: 271px;
+  margin-top: 20%;
 }
+
 .flor{
   width:100%;
   height: 88px;
-  background: url(../images/flor.png) no-repeat; 
+  /* background: url(../images/flor.png) no-repeat;  */
   animation: moveplanta 35s  1; 
   margin: 0;
   position: absolute;
   top: 61%; 
   /* bottom: 70%; */
 }
+
 .fuego{
   width:100%;
   height: 88px;
-  background: url(../images/fuego.png) no-repeat; 
+  /* background: url(../images/fuego.png) no-repeat;  */
   animation-name:  moveplanta ;  
   animation-delay:3s;
   animation-duration:35s;
@@ -58,10 +61,16 @@
   100% {background-position: -830px}
 }
 
-@keyframes movesuelo{
-  0% {background-position: 550px}
-  100% {background-position: 0}
+@keyframes movehill{
+  0% {background-position: 0px}
+  100% {background-position: -900px}
 }
+
+@keyframes movetree{
+  0% {background-position: 0px}
+  100% {background-position: -800px}
+}
+
 @keyframes moveplanta {
   0% {background-position: right}
   100% {background-position: -50px}
