@@ -36,14 +36,13 @@
   width:1500px;
   height: 80px;
   background: url(../images/bfuego.png) no-repeat;  
-  animation: moveplanta 5s   linear 1; 
+  animation: moveplanta 5s linear 1; 
   margin: 0;
   position: absolute;
   top:80%;
   }
 
-
-  .estrella{
+.estrella{
     width:1500px;
     height: 80px;
     background: url(../images/estrella.png) no-repeat;  
@@ -52,15 +51,17 @@
     position: absolute;
     top:90%;
     }
-    .moneda{
-      width:1500px;
-      height: 80px;
-      background: url(../images/moneda.png) no-repeat;  
-      animation: moveplanta 5s   linear 1; 
-      margin: 0;
-      position: absolute;
-      top:90%;
-      }
+
+.moneda{
+    width:1500px;
+    height: 80px;
+    background: url(../images/moneda.png) no-repeat;  
+    animation: movemoney 5s linear infinite; 
+    margin: 0;
+    position: absolute;
+    top:90%;
+}
+
 .person{
   width: 135px;
   height: 156px;
@@ -78,13 +79,26 @@
   margin-top: 1.5%;
   margin-left: 25%;
 }
-.personD{
+
+.personDown{
   width: 135px;
   height: 110px;
   display: flex;
   margin-top: 6.2%;
   margin-left: 25%;
 }
+
+.personDead{
+    width: 130px;
+    height: 168px;
+    animation: dead 1s steps(3) 1;
+    display: flex;
+    margin-left: 25%;
+    margin-top: 3.5%;
+}
+
+/* all keyframes */
+
 @keyframes walk {
   0% {
     background-position: 0
@@ -92,6 +106,24 @@
   100% {
     background-position: -848px
   }
+}
+
+@keyframes jump {
+    0% {
+      margin-top: -10%;
+    }
+    100% {
+      margin-top: -10%;
+    }
+}
+
+@keyframes dead {
+    0% {
+        background-position: 0
+      }
+      100% {
+        background-position: -393px
+      }
 }
 
 @keyframes movehill{
@@ -122,16 +154,3 @@
     background-position: -100px
   }
 }
-
-@keyframes jump {
-    0% {
-      margin-top: -10%;
-    }
-    100% {
-      margin-top: -10%;
-    }
-}
-
-@keyframes moveFuego {
-}
-
