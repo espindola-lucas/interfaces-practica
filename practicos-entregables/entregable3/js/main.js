@@ -11,16 +11,19 @@ const Persona ={
     hills: "images/fondo3.png",
     tree: "images/arboles.png"
  }
-let flor = document.getElementById("flor");
-flor.addEventListener("animationend", function () {
-    flor.className = ""; 
-  });
-
-// let fuego = document.getElementById("fuego");
-// fuego.addEventListener("animationend", function () {
-//     fuego.className = ""; 
-//     CrashObjects.randomColosion(2)
-// });
+ let flor = document.getElementById("flor");
+ flor.addEventListener("animationend", function () {
+     flor.className = ""; 
+     i += 1;
+     Objet (i)
+   });
+ 
+ let fuego = document.getElementById("fuego");
+ fuego.addEventListener("animationend", function () {
+     fuego.className = ""; 
+     i = 0;
+     Objet (i)
+ });
 
 function  initGame() {
     divHills.style.background = 'url('+Fondo.hills+')repeat-x';
@@ -29,7 +32,7 @@ function  initGame() {
     // timer.start_timer ();
     window.addEventListener("keydown",Person.press_key); 
     window.addEventListener("keyup" , Person.up_key);
-     setInterval (Objet(i) , 4000);
+    Objet(i) ;
     }
     
     function Objet (i){
