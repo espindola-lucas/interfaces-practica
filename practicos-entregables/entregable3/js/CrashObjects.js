@@ -5,8 +5,7 @@ class CrashObjects{
     static  terminarAnimacion (){
         console.log(termino);
     }
-    
-    
+
     static  randomColosion (selected){
     // let elegido= Help.getRandomInt(0,3)
     let flor = document.getElementById("flor");
@@ -28,8 +27,6 @@ class CrashObjects{
             case 2:
                 moneda.className= "moneda";
                 break;
-    
-    
             }
-            }
-}
+        }
+    }

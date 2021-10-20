@@ -1,46 +1,45 @@
 .conteiner{
-  width: 1500px;
-  height: 700px;
-  display: flex;
-  margin-top: 5%;
-
+    width: 1500px;
+    height: 700px;
+    display: flex;
+    margin-top: 5%;
 }
 
 .hills{
-  animation: movehill 15s linear infinite;
-  width: 100%;
-  height: 659px;
-  display: flex;
-  margin-top: 10%;
+    animation: movehill 15s linear infinite;
+    width: 100%;
+    height: 659px;
+    display: flex;
+    margin-top: 10%;
 }
 
 .tree{
-  animation: movetree 8s linear infinite;
-  width: 100%;
-  height: 200px;
-  display: flex;
-  margin-top: 30.5%;
+    animation: movetree 8s linear infinite;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    margin-top: 30.5%;
 }
 
 .flor{
-  width:1500px;
-  height: 80px;
-  background: url(../images/florp.png) no-repeat;  
-  animation: moveplanta 5s  1; 
-  margin: 0;
-  position: absolute;
- margin-top: 1.8%;
+    width:1500px;
+    height: 80px;
+    background: url(../images/florp.png) no-repeat;  
+    animation: moveplanta 5s  1; 
+    margin: 0;
+    position: absolute;
+    margin-top: 1.8%;
 }
 
 .fuego{
-  width:1500px;
-  height: 80px;
-  background: url(../images/bfuego.png) no-repeat;  
-  animation: moveplanta 5s linear 1; 
-  margin: 0;
-  position: absolute;
-  top:80%;
-  }
+    width:1500px;
+    height: 80px;
+    background: url(../images/bfuego.png) no-repeat;  
+    animation: moveplanta 5s linear 1; 
+    margin: 0;
+    position: absolute;
+    top:80%;
+}
 
 .estrella{
     width:1500px;
@@ -50,7 +49,7 @@
     margin: 0;
     position: absolute;
     top:90%;
-    }
+}
 
 .moneda{
     width:1500px;
@@ -63,29 +62,29 @@
 }
 
 .person{
-  width: 135px;
-  height: 156px;
-  animation: walk 1s steps(6) infinite; 
-  display: flex;
-  margin-top: 3.5%;
-  margin-left: 25%;
+    width: 135px;
+    height: 156px;
+    animation: walk 1s steps(6) infinite; 
+    display: flex;
+    margin-top: 3.5%;
+    margin-left: 25%;
 }
 
 .personUp{
-  width: 145px;
-  height: 190px;
-  animation: jump 4s 1;  
-  display: flex;
-  margin-top: 1.5%;
-  margin-left: 25%;
+    width: 145px;
+    height: 190px;
+    animation: jump 4s 1;  
+    display: flex;
+    margin-top: 1.5%;
+    margin-left: 25%;
 }
 
 .personDown{
-  width: 135px;
-  height: 110px;
-  display: flex;
-  margin-top: 6.2%;
-  margin-left: 25%;
+    width: 135px;
+    height: 110px;
+    display: flex;
+    margin-top: 6.2%;
+    margin-left: 25%;
 }
 
 .personDead{
@@ -100,57 +99,64 @@
 /* all keyframes */
 
 @keyframes walk {
-  0% {
-    background-position: 0
-  }
-  100% {
-    background-position: -848px
-  }
+    0% {
+        background-position: 0
+    }
+    100% {
+        background-position: -848px
+    }
 }
 
 @keyframes jump {
     0% {
-      margin-top: -10%;
+        margin-top: -10%;
     }
     100% {
-      margin-top: -10%;
+        margin-top: -10%;
     }
 }
 
 @keyframes dead {
     0% {
         background-position: 0
-      }
-      100% {
+    }
+    100% {
         background-position: -393px
-      }
+    }
 }
 
 @keyframes movehill{
-  0% {
-    background-position: 0px
-  }
-  
-  100% {
-    background-position: -2045px
-  }
+    0% {
+        background-position: 0px
+    }
+    100% {
+        background-position: -2045px
+    }
 }
 
 @keyframes movetree{
-  0% {
-    background-position: 0px
-  }
-  
-  100% {
-    background-position: -1449px
-  }
+    0% {
+        background-position: 0px
+    }
+    100% {
+        background-position: -1449px
+    }
 }
 
 @keyframes moveplanta {
-  0% {
-    background-position: right
-  }
-  100% {
-    background-position: -100px
-  }
+    0% {
+        background-position: right
+    }
+    100% {
+        background-position: -100px
+    }
+}
+
+@keyframes movemoney {
+    0% {
+        background-position: right
+    }
+    100% {
+        background-position: -100px
+    }
 }
