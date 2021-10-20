@@ -1,5 +1,5 @@
 "use strict";
-let i = 0;
+let i = 1;
 let divHills = document.getElementById("hills");
 let divTree =  document.getElementById("tree");
 const Persona ={
@@ -14,17 +14,27 @@ const Persona ={
 let flor = document.getElementById("flor");
 flor.addEventListener("animationend", function () {
     flor.className = ""; 
-    i += 1;
-    Objet (i)
+    i = 2;
+    CrashObjects.randomColosion(i);
   });
-
+let moneda = document.getElementById("moneda");
+moneda.addEventListener("animationend", function () {
+    moneda.className = ""; 
+    i = 3;
+    CrashObjects.randomColosion(i);
+  });
 let fuego = document.getElementById("fuego");
 fuego.addEventListener("animationend", function () {
     fuego.className = ""; 
-    i = 0;
-    Objet (i)
+    i = 1;
+    CrashObjects.randomColosion(i);
 });
-
+let estrella = document.getElementById("estrella");
+estrella.addEventListener("animationend", function () {
+    estrella.className = ""; 
+    i = 4;
+    CrashObjects.randomColosion(i);
+});
 function  initGame() {
     divHills.style.background = 'url('+Fondo.hills+')repeat-x';
     divTree.style.background = 'url('+Fondo.tree+')repeat-x';
@@ -32,21 +42,12 @@ function  initGame() {
     // timer.start_timer ();
     window.addEventListener("keydown",Person.press_key); 
     window.addEventListener("keyup" , Person.up_key);
-     Objet(i) ;
     }
     
-    function Objet (i){
-        if (i == 3){
-            i = 0
-        }else{
-            i = i + 1 ;
-        }
-        console.log(i)
-        CrashObjects.randomColosion(i);
-
-    }
-
-
-
-
+window.setInterval( () => {
+CrashObjects.randomColosion(i);
+},4000);
+window.setInterval( () => {
+        CrashObjects.randomColosion(3);
+        },16000);
 document.addEventListener("DOMContentLoaded", initGame());

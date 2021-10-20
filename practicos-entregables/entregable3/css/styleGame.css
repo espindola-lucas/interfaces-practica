@@ -24,24 +24,43 @@
 
 .flor{
   width:1500px;
-  height: 50px;
-  background: url(../images/flor.png) no-repeat;  
-  animation: moveplanta 35s  1; 
+  height: 80px;
+  background: url(../images/florp.png) no-repeat;  
+  animation: moveplanta 5s  1; 
   margin: 0;
   position: absolute;
- margin-top: 3.4%;
+ margin-top: 1.8%;
 }
 
 .fuego{
   width:1500px;
-  height: 88px;
-  background: url(../images/fuego.png) no-repeat;  
-  animation: moveplanta 35s  1;
+  height: 80px;
+  background: url(../images/bfuego.png) no-repeat;  
+  animation: moveplanta 5s   linear 1; 
   margin: 0;
   position: absolute;
-  top:83%
+  top:80%;
   }
 
+
+  .estrella{
+    width:1500px;
+    height: 80px;
+    background: url(../images/estrella.png) no-repeat;  
+    animation: moveplanta 5s   linear 1; 
+    margin: 0;
+    position: absolute;
+    top:90%;
+    }
+    .moneda{
+      width:1500px;
+      height: 80px;
+      background: url(../images/moneda.png) no-repeat;  
+      animation: moveplanta 5s   linear 1; 
+      margin: 0;
+      position: absolute;
+      top:90%;
+      }
 .person{
   width: 135px;
   height: 156px;
@@ -100,7 +119,7 @@
     background-position: right
   }
   100% {
-    background-position: -50px
+    background-position: -100px
   }
 }
 
@@ -112,3 +131,7 @@
       margin-top: -10%;
     }
 }
+
+@keyframes moveFuego {
+}
+
