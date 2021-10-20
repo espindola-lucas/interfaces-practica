@@ -3,7 +3,7 @@
   height: 700px;
   display: flex;
   margin-top: 5%;
-  margin-left: 5%;
+
 }
 
 .hills{
@@ -23,17 +23,17 @@
 }
 
 .flor{
-  width:100%;
-  height: 88px;
+  width:1500px;
+  height: 50px;
   background: url(../images/flor.png) no-repeat;  
   animation: moveplanta 35s  1; 
   margin: 0;
   position: absolute;
- margin-top: 2.5%;
+ margin-top: 3.4%;
 }
 
 .fuego{
-  width:100%;
+  width:1500px;
   height: 88px;
   background: url(../images/fuego.png) no-repeat;  
   animation: moveplanta 35s  1;
@@ -48,7 +48,7 @@
   animation: walk 1s steps(6) infinite; 
   display: flex;
   margin-top: 3.5%;
-  margin-left: 15%;
+  margin-left: 25%;
 }
 
 .personUp{
@@ -57,14 +57,14 @@
   animation: jump 4s 1;  
   display: flex;
   margin-top: 1.5%;
-  margin-left: 15%;
+  margin-left: 25%;
 }
 .personD{
   width: 135px;
   height: 110px;
   display: flex;
   margin-top: 6.2%;
-  margin-left: 15%;
+  margin-left: 25%;
 }
 @keyframes walk {
   0% {
@@ -99,9 +99,8 @@
   0% {
     background-position: right
   }
-  
   100% {
-    background-position: left
+    background-position: -50px
   }
 }
 
