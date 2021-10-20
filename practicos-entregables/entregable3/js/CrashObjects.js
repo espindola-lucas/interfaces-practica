@@ -11,23 +11,22 @@ class CrashObjects{
     // let elegido= Help.getRandomInt(0,3)
     let flor = document.getElementById("flor");
     let fuego = document.getElementById("fuego");
-    let flor1 = document.getElementById("flor1");
-    let fuego1 = document.getElementById("fuego1");
+    let moneda = document.getElementById("moneda");
+    let estrella = document.getElementById("estrella");
         switch(selected){  
             case 1: 
             console.log('adentro');
                 flor.className= "flor";
                 break;
     
-            case 2 : 
+            case 4: 
             fuego.className= "fuego";
-            console.log ('fuego')
-                break;
+            break;
             case 3 :
-                fuego1.className= "fuego";
+                estrella.className= "estrella";
                 break;
-            case 4 :
-                flor1.className= "flor";
+            case 2:
+                moneda.className= "moneda";
                 break;
     
     
