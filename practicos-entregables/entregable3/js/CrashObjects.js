@@ -15,13 +15,15 @@ class CrashObjects{
             case 1: 
                 console.log('adentro');
                 flor.className= "flor";
-                break;
+            break;
+
             case 2: 
+                moneda.className= "moneda";
+            break;
+
+            case 3:
                 fuego.className= "fuego";
             break;
-            case 3:
-                moneda.className= "moneda";
-                break;
         }
     }
 }

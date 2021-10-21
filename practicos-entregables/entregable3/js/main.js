@@ -1,52 +1,46 @@
 "use strict";
 
-let i = 1;
-
 const Persona ={
     imgR:"images/ninjaRunning.png",
     imgU:"images/ninjaUp.png",
     imgD:"images/ninjaDown.png"
 };
 
-const Fondo ={
-    hills: "images/fondo3.png",
-    tree: "images/arboles.png"
-}
-
 let flor = document.getElementById("flor");
 flor.addEventListener("animationend", function () {
-    flor.className = ""; 
-    i = 1;
-    CrashObjects.randomColosion(i);
+    flor.className = "";
+    CrashObjects.randomColosion(1);
 });
 
 let moneda = document.getElementById("moneda");
 moneda.addEventListener("animationend", function () {
     moneda.className = ""; 
-    i = 2;
-    CrashObjects.randomColosion(i);
+    CrashObjects.randomColosion(2);
 });
 
 let fuego = document.getElementById("fuego");
 fuego.addEventListener("animationend", function () {
     fuego.className = ""; 
-    i = 3;
-    CrashObjects.randomColosion(i);
+    CrashObjects.randomColosion(3);
 });
 
 function  initGame() {
     Person.CargarPerson();
     // timer.start_timer ();
-    window.addEventListener("keydown",Person.press_key); 
-    window.addEventListener("keyup" , Person.up_key);
+    window.addEventListener("keydown", Person.press_key); 
+    window.addEventListener("keyup", Person.up_key);
 }
 
 window.setInterval( () => {
-    CrashObjects.randomColosion(i);
+    CrashObjects.randomColosion(1);
+}, 2000);
+
+window.setInterval( () => {
+    CrashObjects.randomColosion(2);
 }, 4000);
 
-// window.setInterval( () => {
-//     CrashObjects.randomColosion(3);
-// }, 16000);
+window.setInterval( () => {
+    CrashObjects.randomColosion(3);
+}, 10000);
 
 document.addEventListener("DOMContentLoaded", initGame());
