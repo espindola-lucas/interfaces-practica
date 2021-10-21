@@ -5,23 +5,27 @@ const Persona ={
     imgU:"images/ninjaUp.png",
     imgD:"images/ninjaDown.png"
 };
-
+const Time ={
+    time:0
+}
+let i ;
 let flor = document.getElementById("flor");
 flor.addEventListener("animationend", function () {
     flor.className = "";
-    CrashObjects.randomColosion(1);
+    i = Help.getRandomInt(2,3);
+    CrashObjects.randomColosion(i);
 });
 
 let moneda = document.getElementById("moneda");
 moneda.addEventListener("animationend", function () {
-    moneda.className = ""; 
-    CrashObjects.randomColosion(2);
+    i = Help.getRandomInt(1,2);
+    CrashObjects.randomColosion(i);
 });
 
 let fuego = document.getElementById("fuego");
 fuego.addEventListener("animationend", function () {
-    fuego.className = ""; 
-    CrashObjects.randomColosion(3);
+    i = Help.getRandomInt(1,3);
+    CrashObjects.randomColosion(i)
 });
 
 function  initGame() {
@@ -31,16 +35,26 @@ function  initGame() {
     window.addEventListener("keyup", Person.up_key);
 }
 
-window.setInterval( () => {
-    CrashObjects.randomColosion(1);
-}, 2000);
+// window.setInterval( () => {
+//     CrashObjects.randomColosion(1);
+// }, 2000);
 
-window.setInterval( () => {
-    CrashObjects.randomColosion(2);
+// window.setInterval( () => {
+//     CrashObjects.randomColosion(2);
+// }, 4000);
+
+// window.setInterval( () => {
+//     CrashObjects.randomColosion(3);
+// }, 10000);
+
+
+
+
+ window.setInterval( () => {
+  i = Help.getRandomInt(1,1);
+    CrashObjects.randomColosion(i);
 }, 4000);
 
-window.setInterval( () => {
-    CrashObjects.randomColosion(3);
-}, 10000);
+
 
 document.addEventListener("DOMContentLoaded", initGame());

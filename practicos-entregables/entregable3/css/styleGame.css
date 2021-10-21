@@ -53,7 +53,7 @@
     background: url(../images/florp.png) no-repeat;  
     width: 100%;
     height: 80px;
-    animation: moveObstacle 5s linear infinite; 
+    animation: moveObstacle 5s linear 1; 
     position: absolute;
     top: 660px;
 }
@@ -62,7 +62,7 @@
     background: url(../images/fuego.png) no-repeat;  
     width: 100%;
     height: 80px;
-    animation: moveObstacle 5s linear infinite; 
+    animation: moveObstacle 5s linear 1; 
     position: absolute;
     top: 555px;
 }
@@ -71,7 +71,7 @@
     background: url(../images/moneda.png) no-repeat;  
     width: 100%;
     height: 80px;
-    animation: moveMoney 5s linear infinite; 
+    animation: moveMoney 5s linear 1; 
     position: absolute;
     top: 660px;
 }
@@ -154,7 +154,7 @@
         background-position: right
     }
     100% {
-        background-position: -100px
+        background-position: -300px
     }
 }
 
