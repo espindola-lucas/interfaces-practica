@@ -9,24 +9,24 @@ const Time ={
     time:0
 }
 let i ;
-let flor = document.getElementById("flor");
-flor.addEventListener("animationend", function () {
-    flor.className = "";
-    i = Help.getRandomInt(2,3);
-    CrashObjects.randomColosion(i);
-});
+// let flor = document.getElementById("flor");
+// flor.addEventListener("animationend", function () {
+//     flor.className = "";
+//     i = Help.getRandomInt(2,3);
+//     CrashObjects.randomColosion(i);
+// });
 
-let moneda = document.getElementById("moneda");
-moneda.addEventListener("animationend", function () {
-    i = Help.getRandomInt(1,2);
-    CrashObjects.randomColosion(i);
-});
+// let moneda = document.getElementById("moneda");
+// moneda.addEventListener("animationend", function () {
+//     i = Help.getRandomInt(1,2);
+//     CrashObjects.randomColosion(i);
+// });
 
-let fuego = document.getElementById("fuego");
-fuego.addEventListener("animationend", function () {
-    i = Help.getRandomInt(1,3);
-    CrashObjects.randomColosion(i)
-});
+// let fuego = document.getElementById("fuego");
+// fuego.addEventListener("animationend", function () {
+//     i = Help.getRandomInt(1,3);
+//     CrashObjects.randomColosion(i)
+// });
 
 function  initGame() {
     Person.CargarPerson();
@@ -48,10 +48,12 @@ function  initGame() {
 // }, 10000);
 
 
-
+window.setInterval( () => {
+      CrashObjects.DetectarColision();
+  }, 1000);
 
  window.setInterval( () => {
-  i = Help.getRandomInt(1,1);
+  i = Help.getRandomInt(1,3);
     CrashObjects.randomColosion(i);
 }, 4000);
 
