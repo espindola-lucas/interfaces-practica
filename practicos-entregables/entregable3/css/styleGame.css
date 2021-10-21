@@ -1,13 +1,16 @@
+.conteiner{
+    margin-top: 170px;
+}
+
 .layer{
     position: relative;
-    width: 1920px;
-    height: 1080px;
+    width: 100%;
+    height: 660px;
 }
 
 .layer1{
     background: url(../images/layer_07_1920\ x\ 1080.png);
     z-index: 0;
-    animation: moveBackground 70s linear infinite;
 }
 
 .layer2{
@@ -48,29 +51,29 @@
 
 .flor{
     background: url(../images/florp.png) no-repeat;  
-    width: 1500px;
+    width: 100%;
     height: 80px;
-    animation: moveObstacle 5s linear infinite; 
+    animation: moveObstacle 5s linear forwards; 
     position: absolute;
-    top: 66%;
+    top: 660px;
 }
 
 .fuego{
-    background: url(../images/bfuego.png) no-repeat;  
-    width:1500px;
+    background: url(../images/fuego.png) no-repeat;  
+    width: 100%;
     height: 80px;
-    animation: moveObstacle 5s linear infinite; 
+    animation: moveObstacle 5s linear forwards; 
     position: absolute;
-    top: 55%;
+    top: 660px;
 }
 
 .moneda{
     background: url(../images/moneda.png) no-repeat;  
-    width:1500px;
+    width: 100%;
     height: 80px;
     animation: moveMoney 5s linear infinite; 
     position: absolute;
-    top: 66%;
+    top: 660px;
 }
 
 .person{
@@ -79,16 +82,15 @@
     height: 156px;
     animation: walk 1s steps(6) infinite; 
     position: relative;
-    top: 58%;
+    top: 425px;
     left: 20%;
 }
 
 .personUp{
     width: 145px;
     height: 190px;
-    animation: jump 4s 1;  
-    position: relative;
-    top: 58%;
+    animation: jump 35s 1;  
+    position: absolute;
     left: 20%;
 }
 
@@ -96,7 +98,7 @@
     width: 135px;
     height: 110px;
     position: relative;
-    top: 58%;
+    top: 458px;
     left: 20%;
 }
 
@@ -122,10 +124,10 @@
 
 @keyframes jump {
     0% {
-        margin-top: -10%;
+        top: 280px;
     }
     100% {
-        margin-top: -10%;
+        top: 280px;
     }
 }
 
