@@ -1,99 +1,115 @@
-.conteiner{
-    width: 1500px;
-    height: 700px;
-    display: flex;
-    margin-top: 5%;
+.layer{
+    position: relative;
+    width: 1920px;
+    height: 1080px;
 }
 
-.hills{
-    animation: movehill 15s linear infinite;
-    width: 100%;
-    height: 659px;
-    display: flex;
-    margin-top: 10%;
+.layer1{
+    background: url(../images/layer_07_1920\ x\ 1080.png);
+    z-index: 0;
+    animation: moveBackground 70s linear infinite;
 }
 
-.tree{
-    animation: movetree 8s linear infinite;
-    width: 100%;
-    height: 200px;
-    display: flex;
-    margin-top: 30.5%;
+.layer2{
+    background: url(../images/layer_06_1920\ x\ 1080.png);
+    z-index: 1;
+    animation: moveBackground 50s linear infinite;
+}
+
+.layer3{
+    background: url(../images/layer_05_1920\ x\ 1080.png);
+    z-index: 2;
+    animation: moveBackground 40s linear infinite;
+}
+
+.layer4{
+    background: url(../images/layer_04_1920\ x\ 1080.png);
+    z-index: 3;
+    animation: moveBackground 30s linear infinite;
+}
+
+.layer5{
+    background: url(../images/layer_03_1920\ x\ 1080.png);
+    z-index: 4;
+    animation: moveBackground 20s linear infinite;
+}
+
+.layer6{
+    background: url(../images/layer_02_1920\ x\ 1080.png);
+    z-index: 5;
+    animation: moveBackground 15s linear infinite;
+}
+
+.layer7{
+    background: url(../images/layer_01_1920\ x\ 1080.png);
+    z-index: 5;
+    animation: moveBackground 10s linear infinite;
 }
 
 .flor{
-    width:1500px;
-    height: 80px;
     background: url(../images/florp.png) no-repeat;  
-    animation: moveplanta 5s  1; 
-    margin: 0;
+    width: 1500px;
+    height: 80px;
+    animation: moveObstacle 5s linear infinite; 
     position: absolute;
-    margin-top: 1.8%;
+    left: 50%;
+    top: 66%;
 }
 
 .fuego{
-    width:1500px;
-    height: 80px;
     background: url(../images/bfuego.png) no-repeat;  
-    animation: moveplanta 5s linear 1; 
-    margin: 0;
-    position: absolute;
-    top:80%;
-}
-
-.estrella{
     width:1500px;
     height: 80px;
-    background: url(../images/estrella.png) no-repeat;  
-    animation: moveplanta 5s   linear 1; 
-    margin: 0;
+    animation: moveObstacle 5s linear infinite; 
     position: absolute;
-    top:90%;
+    left: 50%;
+    top: 55%;
 }
 
 .moneda{
+    background: url(../images/moneda.png) no-repeat;  
     width:1500px;
     height: 80px;
-    background: url(../images/moneda.png) no-repeat;  
-    animation: movemoney 5s linear infinite; 
-    margin: 0;
+    animation: moveMoney 5s linear infinite; 
     position: absolute;
-    top:90%;
+    left: 50%;
+    top: 66%;
 }
 
 .person{
+    background: url(../images/ninjaRunning.png);
     width: 135px;
     height: 156px;
     animation: walk 1s steps(6) infinite; 
-    display: flex;
-    margin-top: 3.5%;
-    margin-left: 25%;
+    position: relative;
+    top: 58%;
+    left: 20%;
 }
 
 .personUp{
     width: 145px;
     height: 190px;
     animation: jump 4s 1;  
-    display: flex;
-    margin-top: 1.5%;
-    margin-left: 25%;
+    position: relative;
+    top: 58%;
+    left: 20%;
 }
 
 .personDown{
     width: 135px;
     height: 110px;
-    display: flex;
-    margin-top: 6.2%;
-    margin-left: 25%;
+    position: relative;
+    top: 58%;
+    left: 20%;
 }
 
 .personDead{
     width: 130px;
     height: 168px;
     animation: dead 1s steps(3) 1;
-    display: flex;
-    margin-left: 25%;
-    margin-top: 3.5%;
+    position: relative;
+    top: 58%;
+    left: 20%;
 }
 
 /* all keyframes */
@@ -125,25 +141,16 @@
     }
 }
 
-@keyframes movehill{
-    0% {
-        background-position: 0px
+@keyframes moveBackground {
+    0%{
+        background-position: 0px;
     }
-    100% {
-        background-position: -2045px
-    }
-}
-
-@keyframes movetree{
-    0% {
-        background-position: 0px
-    }
-    100% {
-        background-position: -1449px
+    100%{
+        background-position: -1920px;
     }
 }
 
-@keyframes moveplanta {
+@keyframes moveObstacle {
     0% {
         background-position: right
     }
@@ -152,11 +159,13 @@
     }
 }
 
-@keyframes movemoney {
+@keyframes moveMoney {
     0% {
-        background-position: right
+        background-position: right;
+        transform: rotateX(0deg);
     }
     100% {
-        background-position: -100px
+        background-position: -100px;
+        transform: rotateX(360deg);
     }
 }
