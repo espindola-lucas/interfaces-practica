@@ -34,16 +34,16 @@ fuego.addEventListener("animationend", function () {
     CrashObjects.randomColosion(i);
 });
 
-let estrella = document.getElementById("estrella");
-estrella.addEventListener("animationend", function () {
-    estrella.className = ""; 
-    i = 4;
-    CrashObjects.randomColosion(i);
-});
+// let estrella = document.getElementById("estrella");
+// estrella.addEventListener("animationend", function () {
+//     estrella.className = ""; 
+//     i = 4;
+//     CrashObjects.randomColosion(i);
+// });
 
 function  initGame() {
-    divHills.style.background = 'url('+Fondo.hills+')repeat-x';
-    divTree.style.background = 'url('+Fondo.tree+')repeat-x';
+    // divHills.style.background = 'url('+Fondo.hills+')repeat-x';
+    // divTree.style.background = 'url('+Fondo.tree+')repeat-x';
     Person.CargarPerson();
     // timer.start_timer ();
     window.addEventListener("keydown",Person.press_key); 
