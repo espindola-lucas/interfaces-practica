@@ -11,7 +11,7 @@ class CrashObjects{
     let flor = document.getElementById("flor");
     let fuego = document.getElementById("fuego");
     let moneda = document.getElementById("moneda");
-    let estrella = document.getElementById("estrella");
+    // let estrella = document.getElementById("estrella");
         switch(selected){  
             case 1: 
             console.log('adentro');
@@ -21,9 +21,9 @@ class CrashObjects{
             case 4: 
             fuego.className= "fuego";
             break;
-            case 3 :
-                estrella.className= "estrella";
-                break;
+            // case 3 :
+            //     estrella.className= "estrella";
+            //     break;
             case 2:
                 moneda.className= "moneda";
                 break;
