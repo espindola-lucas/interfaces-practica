@@ -16,7 +16,7 @@
 .layer2{
     background: url(../images/layer_06_1920\ x\ 1080.png);
     z-index: 1;
-    animation: moveBackground 50s linear infinite;
+  
 }
 
 .layer3{
@@ -50,8 +50,8 @@
 }
 
 .flor{
-    background: url(../images/florp.png) no-repeat;  
-    width: 100%;
+    background: url(../images/florp.png) no-repeat; 
+    width: 4.5%;
     height: 80px;
     animation: moveObstacle 5s linear infinite;  
     position: absolute;
@@ -59,17 +59,17 @@
 }
 
 .fuego{
-    background: url(../images/fuego.png) no-repeat;  
-    width: 100%;
-    height: 80px;
+    background: url(../images/fuego.png) no-repeat;   
+    width: 3.5%;
+    height: 50px;
     animation: moveObstacle 5s linear infinite; 
     position: absolute;
-    top: 570px;
+    top: 575px;
 }
 
 .moneda{
     background: url(../images/moneda.png) no-repeat;  
-    width: 100%;
+    width: 5%;
     height: 80px;
     animation: moveMoney 5s linear infinite; 
     position: absolute;
@@ -77,15 +77,14 @@
 }
 
 .person{
-    background: url(../images/ninjaRunning.png);
+    background: url(../images/ninjaRunning.png);  
     width: 135px;
     height: 156px;
-    animation: walk 1s steps(6) infinite; 
-    position: relative;
+    animation: walk 1s steps(6) infinite;  
+    position: absolute;
     top: 425px;
     left: 20%;
-}
-
+} 
 .personUp{
     width: 145px;
     height: 190px;
@@ -103,11 +102,11 @@
 }
 
 .personDead{
-    width: 130px;
+    width: 138px;
     height: 168px;
-    animation: dead 1s steps(3) 1;
+    animation: dead 1s steps(5) 1;
     position: relative;
-    top: 58%;
+    top: 412px;
     left: 20%;
 }
 
@@ -136,7 +135,7 @@
         background-position: 0
     }
     100% {
-        background-position: -393px
+        background-position: -590px
     }
 }
 
@@ -151,18 +150,17 @@
 
 @keyframes moveObstacle {
   from {
-    margin-left: 100%;
+    margin-left: 95%;
    
   }
   to {
     margin-left: 0%;
-    width: 100%;
-  }
+   }
 }
 
 @keyframes moveMoney {
     0% {
-      margin-left: 100%;
+      margin-left: 95%;
         transform: rotateX(0deg);
     }
     100% {

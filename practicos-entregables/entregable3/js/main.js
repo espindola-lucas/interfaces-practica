@@ -3,7 +3,7 @@
 const Persona ={
     imgR:"images/ninjaRunning.png",
     imgU:"images/ninjaUp.png",
-    imgD:"images/ninjaDown.png"
+    imgD:"images/ninjaMuerto.png"
 };
 const Time ={
     time:0
@@ -49,7 +49,10 @@ function  initGame() {
 
 
 window.setInterval( () => {
-      CrashObjects.DetectarColision();
+    let a = document.getElementById("fuego").getBoundingClientRect();
+    let b= document.getElementById("flor").getBoundingClientRect();
+      CrashObjects.DetectarColision(a);
+      CrashObjects.DetectarColision(b);
   }, 1000);
 
  window.setInterval( () => {
