@@ -3,7 +3,7 @@
 const Persona ={
     imgR:"images/ninjaRunning.png",
     imgU:"images/ninjaUp.png",
-    imgD:"images/ninjaMuerto.png"
+    imgD:"images/ninjaDown.png"
 };
 const Time ={
     time:0
