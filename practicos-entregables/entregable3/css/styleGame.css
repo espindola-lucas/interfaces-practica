@@ -9,12 +9,12 @@
 }
 
 .layer1{
-    background: url(../images/layer_07_1920\ x\ 1080.png);
+    background: url(../images/layer_07_1920\ x\ 1080.png); 
     z-index: 0;
 }
 
 .layer2{
-    background: url(../images/layer_06_1920\ x\ 1080.png);
+    background: url(../images/layer_06_1920\ x\ 1080.png); 
     z-index: 1;
 }
 
@@ -31,52 +31,47 @@
 }
 
 .layer5{
-    background: url(../images/layer_03_1920\ x\ 1080.png);
+    background: url(../images/layer_03_1920\ x\ 1080.png); 
     z-index: 4;
     animation: moveBackground 20s linear infinite;
 }
 
 .layer6{
-    background: url(../images/layer_02_1920\ x\ 1080.png);
+    background: url(../images/layer_02_1920\ x\ 1080.png); 
     z-index: 5;
     animation: moveBackground 15s linear infinite;
 }
 
 .layer7{
-    background: url(../images/layer_01_1920\ x\ 1080.png);
+    background: url(../images/layer_01_1920\ x\ 1080.png); 
     z-index: 5;
     animation: moveBackground 10s linear infinite;
 }
-
-.flor{
-    background: url(../images/florp.png) no-repeat; 
-    width: 4.5%;
+.barril{
+    background: url(../images/barril.png) no-repeat;  
+    width: 3.5%;
     height: 80px;
-    animation: moveObstacle 5s linear infinite;  
+    animation:  moveObstacle 5s linear 1;  
     position: absolute;
     top: 660px;
 }
-
-.fuego{
-    background: url(../images/fuego.png) no-repeat;   
-    width: 3.5%;
+.flecha{
+    background: url(../images/flecha.png) no-repeat;   
+    width: 5%;
     height: 50px;
-    animation: moveObstacle 5s linear infinite; 
+    animation: moveObstacle 5s linear 1; 
     position: absolute;
     top: 575px;
 }
-
 .moneda{
-    background: url(../images/moneda.png) no-repeat;  
+    background: url(../images/money.png) no-repeat;  
     width: 5%;
     height: 80px;
-    animation: moveMoney 5s linear infinite; 
+    animation: moveMoney 5s linear 1; 
     position: absolute;
     top: 660px;
 }
-
 .person{
-    background: url(../images/ninjaRunning.png);  
     width: 135px;
     height: 156px;
     animation: walk 1s steps(6) infinite;  
@@ -85,13 +80,14 @@
     left: 20%;
 } 
 .personUp{
-    width: 145px;
-    height: 190px;
-    animation: jump 35s 1;  
+    width: 194px;
+    height: 210px;
+    animation: Up 1s steps(9) 1 ;  
     position: absolute;
-    left: 20%;
+    left: 15%;
+    top: 360px ;
+    
 }
-
 .personDown{
     width: 160px;
     height: 105px;
@@ -99,7 +95,6 @@
     top: 460px;
     left: 20%;
 }
-
 .personDead{
     width: 138px;
     height: 168px;
@@ -125,7 +120,7 @@
         top: 280px;
     }
     100% {
-        top: 280px;
+        top: 290px;
     }
 }
 
@@ -135,6 +130,28 @@
     }
     100% {
         background-position: -590px
+    }
+}
+
+@keyframes Up {
+    0% {
+        background-position: 0;
+    }
+    10% {
+        top: 280px ;
+    }
+    20% {
+        top: 270px ;
+    }
+    30% {
+        top: 260px ;
+    }
+    60% {
+        top: 250px ;
+    }
+    100% {
+        margin-left: 3%;
+        background-position: -1754px;
     }
 }
 
@@ -148,22 +165,21 @@
 }
 
 @keyframes moveObstacle {
-  from {
-    margin-left: 95%;
-   
-  }
-  to {
-    margin-left: 0%;
-   }
+    from {
+        margin-left: 95%;
+    }
+    to {
+        margin-left: -1%;
+    }
 }
 
 @keyframes moveMoney {
     0% {
-      margin-left: 95%;
+        margin-left: 95%;
         transform: rotateX(0deg);
     }
     100% {
-      margin-left: 0%;
+        margin-left: -5%;
         transform: rotateX(360deg);
     }
 }
