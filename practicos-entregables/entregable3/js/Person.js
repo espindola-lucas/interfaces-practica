@@ -1,37 +1,33 @@
 "use strict";
 
 class Person {
-
-    static CargarPerson (){
-        let persona = document.getElementById("person");
-        // persona.style.background = 'url('+Persona.imgR+')';
-        persona.className= "person";
+    constructor (persona, clases,Persona){
+        this.persona = persona;
+        this.clases = clases;
+        this.Persona = Persona;
+    }
+    CargarPerson (){
+        this.persona.style.background = 'url('+this.Persona.imgR+')';
+        this.persona.className= this.clases.classR;
     }
 
-    static  press_key (e) {
+    static press_key (e) {
         let persona = document.getElementById("person");
-        
         if (e.keyCode == '38'){
             persona.style.background = 'url('+Persona.imgU+')';
-            persona.className= "personUp";
-            // persona.style.background = 'url(images/ninjaDead.png)';
-            // persona.className = 'personDead';
+            persona.className= Clases.classU;
         }
         if (e.keyCode == '40'){
             persona.style.background = 'url('+Persona.imgD+')';
-            persona.className= "personDown";
+            persona.className= Clases.classD;
         }
     }
 
-    static  up_key (e) {
+    static up_key (e) {
         let persona = document.getElementById("person");
-        if (e.keyCode == '38'){
-            persona.style.background = 'url('+Persona.imgR+')';
-            persona.className = "person"; 
-        }
         if (e.keyCode == '40'){
             persona.style.background = 'url('+Persona.imgR+')';
-            persona.className = "person"; 
+            persona.className = Clases.classR; 
         }
     }
 }
