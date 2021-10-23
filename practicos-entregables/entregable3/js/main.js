@@ -13,14 +13,17 @@ let barril = document.getElementById("barril");
 let barril1 = document.getElementById("barril1");
 let moneda = document.getElementById("moneda");
 let moneda1 = document.getElementById("moneda1");
-let background;
-let avatar;
 let persona = document.getElementById("person");
-const Persona ={
-    imgR:"images/ninjaRunning.png",
-    imgU:"images/ninjaUp.png",
-    imgD:"images/ninjaDown.png"
+let background;
+let avatarObj;
+
+const avatar ={
+    imgR:"images/character/ninjaRunning.png",
+    imgU:"images/character/ninjaUp.png",
+    imgD:"images/character/ninja.png",
+    imgDead: "images/character/ninjadead.png"
 };
+
 const ColisionEnd ={
     barril: 0,
     flecha:0,
@@ -29,11 +32,13 @@ const ColisionEnd ={
     moneda1:0 ,
     flecha1: 0 ,
 };
+
 const Clases ={
     classR:"person",
     classU:"personUp",
     classD:"personDown"
 }
+
 const Fondo1 ={
     layer1: "../images/layer_07_1920\ x\ 1080.png",
     layer2:"images/layer_06_1920\ x\ 1080.png",
@@ -43,6 +48,12 @@ const Fondo1 ={
     layer6:"images/layer_02_1920\ x\ 1080.png",
     layer7:"images/layer_01_1920\ x\ 1080.png"
 };
+
+persona.addEventListener("animationend", function () {
+    persona.style.background = 'url('+avatar.imgR+')';
+    persona.className= Clases.classR;
+});
+
 flecha.addEventListener("animationend", function () {
     flecha.className = '';
     ColisionEnd.flecha= 1;
@@ -78,11 +89,11 @@ function getRandomInt(min, max) {  //Obtengo un numero random entre dos valores 
 }
 
 function  initGame() {
-    avatar = new Person(persona,Clases,Persona)
-    avatar.CargarPerson();
+    avatarObj = new Person(persona, Clases, avatar)
+    avatarObj.CargarPerson();
     background = new Fondo(layer1,layer2,layer3,layer4,layer5,layer6,layer7,Fondo1);
     window.addEventListener("keydown", Person.press_key); 
-    window.addEventListener("keyup", Person.up_key);
+    // window.addEventListener("keyup", Person.up_key);
     // timer.start_timer ();
 }
 
