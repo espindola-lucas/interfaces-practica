@@ -79,7 +79,7 @@ static DetectarColision(b){
         && a_pos.b >= b_pos.t && a_pos.t <= b_pos.b ){
             console.log('detecte')
             let persona = document.getElementById("person");
-            persona.style.background = 'url(images/ninjaMuerto.png)';
+            persona.style.background = 'url('+avatar.imgDead+')';
             persona.className= "personDead";
             // let layer3 = document.getElementById("layer3");
             // let layer4 = document.getElementById("layer4");
