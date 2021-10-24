@@ -15,9 +15,17 @@ let moneda = document.getElementById("moneda");
 let moneda1 = document.getElementById("moneda1");
 let persona = document.getElementById("person");
 let personaFinish = document.getElementById("deadFinish");
-let finishGame = document.getElementById("Finish");
+let finishGame = document.getElementById("finish");
 let background;
 let avatarObj;
+
+//cosnt para obtener los id del reloj mostrado en pantalla
+const timer = {
+    minutes: document.getElementById("minutos"),
+    seconds: document.getElementById("segundos"),
+    stop: 3
+};
+
 //constante que va teniendo diferentes estados para cuando el avatar muera
 const dead ={
     Estadodead:false,
@@ -61,28 +69,33 @@ const Fondo1 ={
     layer6:"images/layer_02_1920\ x\ 1080.png",
     layer7:"images/layer_01_1920\ x\ 1080.png"
 };
+
  // addEventListener para saber cuando las animaciones terminan e indicarle q tiene que hacer
 persona.addEventListener("animationend", function () {
     if (dead.Estadodead == false){
         persona.style.background = 'url('+avatar.imgR+')';
         persona.className= Clases.classR;
     }
+    
     if (dead.Estadodead== true && dead.Actual==false){
         persona.className= 'none';
         dead.Actual =true;
         dead.Cambio=true;
     }
+    
     if(dead.Cambio == true){
     personaFinish.style.background = 'url('+avatar.imgDeadFinish+')';
     personaFinish.className= Clases.classDF;
     dead.Cambio=null;
     }
-    });
-    personaFinish.addEventListener("animationend",function () {
-        console.log('mori');
-        personaFinish.className= "none";
-        finishGame.style.display='block'
-    })
+});
+    
+personaFinish.addEventListener("animationend",function () {
+    console.log('mori');
+    personaFinish.className= "none";
+    finishGame.style.display='block'
+});
+
 flecha.addEventListener("animationend", function () {
     flecha.className = 'none';
     ColisionEnd.flecha= 1;
@@ -125,8 +138,9 @@ function  initGame() {
     avatarObj.CargarPerson();
     background = new Fondo(layer1,layer2,layer3,layer4,layer5,layer6,layer7,Fondo1);
     window.addEventListener("keydown", Person.press_key); 
-     // timer.start_timer ();
+    Timer.start_timer();
 }
+
 // set interva que se ejecuta cada 1 segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision 
 window.setInterval( () => {
     let a = document.getElementById("flecha").getBoundingClientRect();
@@ -151,6 +165,7 @@ window.setInterval( () => {
         CrashObjects.randomColosion(i);
     }
 }, 2000);
+
 window.setInterval( () => {
     if(dead.Estadodead == false){
         i = getRandomInt(5,6);
@@ -160,11 +175,3 @@ window.setInterval( () => {
 // fin set interval
 
 document.addEventListener("DOMContentLoaded", initGame());
-
-
-
-
-
-
-
-

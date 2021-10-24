@@ -18,52 +18,55 @@ class CrashObjects{
                 if (ColisionEnd.barril == 0){
                     barril.className= "barril";
                 }else {
-                ColisionEnd.barril = 0; 
+                    ColisionEnd.barril = 0; 
                 }
-                break;
+            break;
 
             case 2: 
                 if (ColisionEnd.moneda == 0){
-                moneda.className= "moneda";
+                    moneda.className= "moneda";
                 }else {
-                ColisionEnd.moneda = 0 ;
+                    ColisionEnd.moneda = 0 ;
                 }
                 
             break;
+
             case 3:
                 if (ColisionEnd.flecha == 0){
-                    
                     flecha.className= "flecha";
                 }else {
-                ColisionEnd.flecha = 0;
+                    ColisionEnd.flecha = 0;
                 }
             break;
+    
             case 4:
                 if (ColisionEnd.flecha1 == 0){
                     flecha1.className= "flecha1";
                 }else {
                     ColisionEnd.flecha1 = 0;
                 }
-                break;
+            break;
+    
             case 5: 
                 if (ColisionEnd.moneda1 == 0){
                     moneda1.className= "moneda";
                 }else{
                     ColisionEnd.moneda1 = 0;
                 }
-                break;
+            break;
+            
             case 6: 
                 if (ColisionEnd.barril1 == 0){
                     barril1.className= "barril";
                 }else {
-                ColisionEnd.barril1 = 0; 
+                    ColisionEnd.barril1 = 0; 
                 }
-                break;
-    } 
-}
+            break;
+        } 
+    }
 
 
-static DetectarColision(b,dead){
+    static DetectarColision(b,dead){
         let a  = document.getElementById("person").getBoundingClientRect();
         var a_pos = { t : a.top, 
                     l: a.left, 
@@ -82,25 +85,22 @@ static DetectarColision(b,dead){
             persona.style.background = 'url('+avatar.imgDead+')';
             persona.className= "personDead";
             }
-            
         }
-    
-}
-static DetectarColisionMoneda(b){
-    let a  = document.getElementById("person").getBoundingClientRect();
-    var a_pos = { t : a.top, 
-                l: a.left, 
-                r: a.left + a.width, 
-                b: a.top + a.height};
-    var b_pos =  {t : b.top, 
-                l: b.left, 
-                r: b.left + b.width, 
-                b: b.top + b.height};
-               //Detecta si se superponen las áreas
-    if(   a_pos.l <= b_pos.r && a_pos.r >= b_pos.l 
-    && a_pos.b >= b_pos.t && a_pos.t <= b_pos.b ){
     }
 
-}
-
+    static DetectarColisionMoneda(b){
+        let a  = document.getElementById("person").getBoundingClientRect();
+        var a_pos = { t : a.top, 
+                    l: a.left, 
+                    r: a.left + a.width, 
+                    b: a.top + a.height};
+        var b_pos =  {t : b.top, 
+                    l: b.left, 
+                    r: b.left + b.width, 
+                    b: b.top + b.height};
+                   //Detecta si se superponen las áreas
+        if( a_pos.l <= b_pos.r && a_pos.r >= b_pos.l 
+        && a_pos.b >= b_pos.t && a_pos.t <= b_pos.b ){
+        }
+    }
 }
