@@ -16,7 +16,6 @@ class CrashObjects{
         switch(selected){  
             case 1: 
                 if (ColisionEnd.barril == 0){
-                    console.log ("barril")
                     barril.className= "barril";
                 }else {
                 ColisionEnd.barril = 0; 
@@ -64,7 +63,7 @@ class CrashObjects{
 }
 
 
-static DetectarColision(b){
+static DetectarColision(b,dead){
         let a  = document.getElementById("person").getBoundingClientRect();
         var a_pos = { t : a.top, 
                     l: a.left, 
@@ -77,20 +76,13 @@ static DetectarColision(b){
                    //Detecta si se superponen las áreas
         if(   a_pos.l <= b_pos.r && a_pos.r >= b_pos.l 
         && a_pos.b >= b_pos.t && a_pos.t <= b_pos.b ){
-            console.log('detecte')
+            dead.Estadodead = true;
+            if(dead.Actual == false){
             let persona = document.getElementById("person");
             persona.style.background = 'url('+avatar.imgDead+')';
             persona.className= "personDead";
-            // let layer3 = document.getElementById("layer3");
-            // let layer4 = document.getElementById("layer4");
-            // let layer5 = document.getElementById("layer5");
-            // let layer6 = document.getElementById("layer6");
-            // let layer7= document.getElementById("layer7");
-            // layer3.style.animation = 'none';
-            // layer4.style.animation = 'none';
-            // layer5.style.animation = 'none';
-            // layer6.style.animation ='none';
-            // layer7.style.animation = 'none';
+            }
+            
         }
     
 }
@@ -107,7 +99,6 @@ static DetectarColisionMoneda(b){
                //Detecta si se superponen las áreas
     if(   a_pos.l <= b_pos.r && a_pos.r >= b_pos.l 
     && a_pos.b >= b_pos.t && a_pos.t <= b_pos.b ){
-        console.log('detecto')
     }
 
 }
