@@ -1,5 +1,9 @@
 .conteiner{
     margin-top: 170px;
+    background-color: black;
+}
+body{
+margin: 0%;
 }
 
 .layer{
@@ -105,14 +109,38 @@
 .personDead{
     width: 160px;
     height: 170px;
-    animation: dead 5s steps(4) 1;
+    animation: dead 1s steps(4) 1;
     position: relative;
     top: 412px;
     left: 20%;
 }
+.personDeadFinish{
+    width: 160px;
+    height: 150px;
+    animation:deadFinish  5s  1 ;
+    position: absolute;
+    top: 640px;
+    left: 20%;
+    
+}
+.Finish{
+    text-align: center;
+    border: 1px solid aquamarine;
+    width: 30%;
+    height: 200px;
+    position: absolute;
+    animation: moveFinish 5s linear 1; 
+    top: 360px;
+    left: 35%;
+}
 
+.Text{
+    color: azure;
+    font-size: 100px;
+}
 /* all keyframes */
 
+/*animacion de cuandop el personaje camina*/
 @keyframes walk {
     0% {
         background-position: 0
@@ -122,6 +150,17 @@
     }
 }
 
+/*animacion de cuando el personaje muere y se va de pantalla*/
+@keyframes deadFinish {
+    from {
+        margin-left: 0%;
+    }
+    to {
+        margin-left: -30%;
+    }
+}
+
+/*animacion de cuando el personaje se agacha*/
 @keyframes down {
     0% {
         background-position: 0px;
@@ -131,15 +170,18 @@
     }
 }
 
+/*aniimacion de cuando el personaje muere*/
 @keyframes dead {
     0% {
         background-position: 0px
     }
     100% {
+        width: 162px;
+        top: 420px;
         background-position: -756px;
     }
 }
-
+/*animacion de cuando el opersinaje salta*/
 @keyframes Up {
     0% {
         background-position: 0;
@@ -162,7 +204,7 @@
         background-position: -1754px;
     }
 }
-
+/*animacion del fondo*/
 @keyframes moveBackground {
     0%{
         background-position: 0px;
@@ -171,7 +213,7 @@
         background-position: -1920px;
     }
 }
-
+/* animacion de el barril y la flecha*/
 @keyframes moveObstacle {
     from {
         margin-left: 95%;
@@ -180,7 +222,14 @@
         margin-left: -1%;
     }
 }
+/* animacion del cartel que indica que perdio */
+@keyframes moveFinish {
+    0%{
+        margin-left: 40%;
+    }
+}
 
+/* animacion de la moneda*/
 @keyframes moveMoney {
     0% {
         margin-left: 95%;
