@@ -58,13 +58,12 @@
 }
 
 .flecha{
-    /* background: url(../images/objects/flecha.png) no-repeat; */
-    background: blue;
+    background: url(../images/objects/flecha.png) no-repeat; 
     width: 5%;
-    height: 34px;
+    height: 25px;
     animation: moveObstacle 5s linear 1; 
     position: absolute;
-    top: 580px;
+    top: 600px;
 }
 
 .moneda{
@@ -86,22 +85,20 @@
 }
 
 .personUp{
-    width: 194px;
+    width: 11%;
     height: 210px;
-    animation: Up 1.5s steps(9) 1;  
+    animation: Up 1.5s steps(9) 1;   
     position: absolute;
     left: 15%;
-    top: 360px ;
-    
+    top:54.5%;
 }
 
 .personDown{
-    background-color: red;
     width: 150px;
-    height: 125px;
+    height: 102px;
     animation: down 1.5s steps(6) 1;
     position: relative;
-    top: 440px;
+    top: 468px;
     left: 20%;
 }
 
@@ -122,15 +119,6 @@
     }
     100% {
         background-position: -848px
-    }
-}
-
-@keyframes jump {
-    0% {
-        top: 280px;
-    }
-    100% {
-        top: 290px;
     }
 }
 
@@ -157,18 +145,19 @@
         background-position: 0;
     }
     10% {
-        top: 280px ;
+        top: 30% ;
     }
     20% {
-        top: 270px ;
+        top: 32% ;
     }
     30% {
-        top: 260px ;
+        top: 34% ;
     }
     60% {
-        top: 250px ;
+        top: 36% ;
     }
     100% {
+        width: 10%;
         margin-left: 5%;
         background-position: -1754px;
     }

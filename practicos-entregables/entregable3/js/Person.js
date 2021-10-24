@@ -19,7 +19,7 @@ class Person {
             persona.className= Clases.classU;
         }
         if (e.keyCode == '40'){
-            // persona.style.background = 'url('+avatar.imgD+')';
+            persona.style.background = 'url('+avatar.imgD+')';
             persona.className= Clases.classD;
         }
     }
