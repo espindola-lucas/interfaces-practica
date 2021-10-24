@@ -1,9 +1,10 @@
+body{
+    margin: 0%;
+}
+
 .conteiner{
     margin-top: 170px;
     background-color: black;
-}
-body{
-margin: 0%;
 }
 
 .layer{
@@ -114,6 +115,7 @@ margin: 0%;
     top: 412px;
     left: 20%;
 }
+
 .personDeadFinish{
     width: 160px;
     height: 150px;
@@ -123,9 +125,11 @@ margin: 0%;
     left: 20%;
     
 }
-.Finish{
+
+.finish{
     text-align: center;
-    border: 1px solid aquamarine;
+    border: 2px solid white;
+    border-radius: 5px;
     width: 30%;
     height: 200px;
     position: absolute;
@@ -134,10 +138,56 @@ margin: 0%;
     left: 35%;
 }
 
-.Text{
+.finish a{
+    color: black;
+    text-decoration: none;
+}
+
+.finish button{
+    all: unset;
+    padding: 1%;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.finish .text{
     color: azure;
     font-size: 100px;
 }
+
+.timer, .attention, .amount{
+    position: absolute;
+    top: 5%;
+    padding: 0.5%;
+    border-radius: 5px;
+    background: #BDF8BD;
+}
+
+.timer {
+    left: 15%;
+}
+
+.timer > span{
+    font-size: 45px;
+}
+
+.attention{
+    left: 40%;
+    text-align: center;
+}
+
+.attention span{
+    font-size: 25px;
+}
+
+.amount{
+    left: 70%;
+}
+
+.amount span{
+    font-size: 45px;
+}
+
 /* all keyframes */
 
 /*animacion de cuandop el personaje camina*/
