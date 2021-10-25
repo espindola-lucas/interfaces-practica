@@ -81,6 +81,7 @@ class CrashObjects{
         && a_pos.b >= b_pos.t && a_pos.t <= b_pos.b ){
             dead.Estadodead = true;
             if(dead.Actual == false){
+                Juego.fin = true;
             let persona = document.getElementById("person");
             persona.style.background = 'url('+avatar.imgDead+')';
             persona.className= "personDead";
@@ -88,8 +89,11 @@ class CrashObjects{
         }
     }
 
-    static DetectarColisionMoneda(b){
+    static DetectarColisionMoneda(b ,dead ,parameter){
         let a  = document.getElementById("person").getBoundingClientRect();
+        let textoMoneda = document.getElementById("cantidad");
+        let moneda = document.getElementById("moneda");
+        let moneda1 = document.getElementById("moneda1");
         var a_pos = { t : a.top, 
                     l: a.left, 
                     r: a.left + a.width, 
@@ -101,6 +105,26 @@ class CrashObjects{
                    //Detecta si se superponen las áreas
         if( a_pos.l <= b_pos.r && a_pos.r >= b_pos.l 
         && a_pos.b >= b_pos.t && a_pos.t <= b_pos.b ){
+            if (parameter == "moneda1"){
+                moneda1.className = 'none';
+                ColisionEnd.moneda1 = 1 ;
+            }else if (parameter == "moneda"){
+                moneda.className = 'none';
+                ColisionEnd.moneda = 1 ;
+            }
+            if (CantidadMoneda.cantidad < 10 ){
+            CantidadMoneda.cantidad += 1;
+            textoMoneda.innerHTML = CantidadMoneda.cantidad;
+            }
+            if (CantidadMoneda.cantidad == 10){
+                Juego.fin = true;
+                dead.Estadodead= true;
+                dead.Actual=true;
+                let winner = document.getElementById("winner")
+                winner.style.display= 'block';
+
+            }
+            
         }
     }
 }

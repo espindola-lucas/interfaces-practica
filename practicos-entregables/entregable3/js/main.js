@@ -1,12 +1,6 @@
 "use strict";
 let i ;
-let layer1 = document.getElementById("layer1");
-let layer2 = document.getElementById("layer2");
-let layer3 = document.getElementById("layer3");
-let layer4 = document.getElementById("layer4");
-let layer5 = document.getElementById("layer5");
-let layer6 = document.getElementById("layer6");
-let layer7= document.getElementById("layer7");
+
 let flecha = document.getElementById("flecha");
 let flecha1 = document.getElementById("flecha1");
 let barril = document.getElementById("barril");
@@ -18,13 +12,18 @@ let personaFinish = document.getElementById("deadFinish");
 let finishGame = document.getElementById("finish");
 let background;
 let avatarObj;
-
+const Juego = {
+    fin:false
+}
 //cosnt para obtener los id del reloj mostrado en pantalla
 const timer = {
     minutes: document.getElementById("minutos"),
     seconds: document.getElementById("segundos"),
-    stop: 3
+    stop: 2
 };
+const CantidadMoneda ={
+    cantidad: 0
+}
 
 //constante que va teniendo diferentes estados para cuando el avatar muera
 const dead ={
@@ -61,13 +60,22 @@ const Clases ={
 }
 
 const Fondo1 ={
-    layer1: "../images/layer_07_1920\ x\ 1080.png",
-    layer2:"images/layer_06_1920\ x\ 1080.png",
-    layer3:"images/layer_05_1920\ x\ 1080.png",
-    layer4:"images/layer_04_1920\ x\ 1080.png",
-    layer5:"images/layer_03_1920\ x\ 1080.png",
-    layer6:"images/layer_02_1920\ x\ 1080.png",
-    layer7:"images/layer_01_1920\ x\ 1080.png"
+    layer1: "images/backgraund/layer_07_1920\ x\ 1080.png",
+    layer2:"images/backgraund/layer_06_1920\ x\ 1080.png",
+    layer3:"images/backgraund/layer_05_1920\ x\ 1080.png",
+    layer4:"images/backgraund/layer_04_1920\ x\ 1080.png",
+    layer5:"images/backgraund/layer_03_1920\ x\ 1080.png",
+    layer6:"images/backgraund/layer_02_1920\ x\ 1080.png",
+    layer7:"images/backgraund//layer_01_1920\ x\ 1080.png"
+};
+const FondoClase ={
+    layer1: "layer layer1",
+    layer2: "layer layer2",
+    layer3: "layer layer3",
+    layer4: "layer layer4",
+    layer5: "layer layer5",
+    layer6: "layer layer6",
+    layer7: "layer layer7"
 };
 
  // addEventListener para saber cuando las animaciones terminan e indicarle q tiene que hacer
@@ -117,7 +125,7 @@ barril1.addEventListener("animationend", function () {
 });
 
 moneda.addEventListener("animationend", function () {
-    moneda.className = 'non';
+    moneda.className = 'none';
     ColisionEnd.moneda = 1 ;
 });
 
@@ -133,10 +141,11 @@ function getRandomInt(min, max) {  //Obtengo un numero random entre dos valores 
 }
 
 function  initGame() {
+     winner.style.display='none'; // ocukta el div que solo se muestra si la persona pierde
     finishGame.style.display='none'; // ocukta el div que solo se muestra si la persona pierde
-    avatarObj = new Person(persona, Clases, avatar) 
+    Fondo.createFondo();
+    avatarObj = new Person(persona, Clases, avatar) ;
     avatarObj.CargarPerson();
-    background = new Fondo(layer1,layer2,layer3,layer4,layer5,layer6,layer7,Fondo1);
     window.addEventListener("keydown", Person.press_key); 
     Timer.start_timer();
 }
@@ -145,19 +154,20 @@ function  initGame() {
 window.setInterval( () => {
     let a = document.getElementById("flecha").getBoundingClientRect();
     let b = document.getElementById("barril").getBoundingClientRect();
-    let m = document.getElementById("moneda").getBoundingClientRect();
     let a1 = document.getElementById("flecha1").getBoundingClientRect();
     let b1 = document.getElementById("barril1").getBoundingClientRect();
-    let m1 = document.getElementById("moneda1").getBoundingClientRect();
     CrashObjects.DetectarColision(a,dead);
     CrashObjects.DetectarColision(b,dead);
-    CrashObjects.DetectarColisionMoneda(m,dead);
     CrashObjects.DetectarColision(a1,dead);
     CrashObjects.DetectarColision(b1,dead);
-    CrashObjects.DetectarColisionMoneda(m1,dead);
-}, 1000);
+}, 500);
 
-
+window.setInterval(() => {
+    let m = document.getElementById("moneda").getBoundingClientRect();
+    let m1 = document.getElementById("moneda1").getBoundingClientRect();
+    CrashObjects.DetectarColisionMoneda(m1,dead,"moneda1");
+    CrashObjects.DetectarColisionMoneda(m,dead,"moneda");
+},1000)
 // set interval utilizado para ir mandando casa sierto tiempo objetos random
 window.setInterval( () => {
     if(dead.Estadodead == false){
@@ -171,7 +181,7 @@ window.setInterval( () => {
         i = getRandomInt(5,6);
         CrashObjects.randomColosion(i);
     }
-}, 4000);
+}, 2500);
 // fin set interval
 
 document.addEventListener("DOMContentLoaded", initGame());

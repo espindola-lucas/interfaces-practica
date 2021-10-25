@@ -1,10 +1,11 @@
 body{
     margin: 0%;
+    background-color: black;  
 }
 
 .conteiner{
     margin-top: 170px;
-    background-color: black;
+   
 }
 
 .layer{
@@ -14,47 +15,47 @@ body{
 }
 
 .layer1{
-    background: url(../images/background/night/layer_07_1920\ x\ 1080.png); 
-    z-index: 0;
+    background: url(../images/background/night/layer_07_1920\ x\ 1080.png);  
+    z-index: 0; 
 }
 
 .layer2{
-    background: url(../images/background/night/layer_06_1920\ x\ 1080.png); 
-    z-index: 1;
+    background: url(../images/background/night/layer_06_1920\ x\ 1080.png);  
+    z-index: 1; 
 }
 
 .layer3{
-    background: url(../images/background/night/layer_05_1920\ x\ 1080.png);
-    z-index: 2;
+    background: url(../images/background/night/layer_05_1920\ x\ 1080.png); 
+     z-index: 2; 
     animation: moveBackground 40s linear infinite;
 }
 
 .layer4{
-    background: url(../images/background/night/layer_04_1920\ x\ 1080.png);
-    z-index: 3;
+     background: url(../images/background/night/layer_04_1920\ x\ 1080.png); 
+    z-index: 3; 
     animation: moveBackground 30s linear infinite;
 }
 
 .layer5{
-    background: url(../images/background/night/layer_03_1920\ x\ 1080.png); 
-    z-index: 4;
+     background: url(../images/background/night/layer_03_1920\ x\ 1080.png);  
+    z-index: 4; 
     animation: moveBackground 20s linear infinite;
 }
 
 .layer6{
-    background: url(../images/background/night/layer_02_1920\ x\ 1080.png); 
-    z-index: 5;
+     background: url(../images/background/night/layer_02_1920\ x\ 1080.png);  
+    z-index: 5; 
     animation: moveBackground 15s linear infinite;
 }
 
 .layer7{
-    background: url(../images/background/night/layer_01_1920\ x\ 1080.png); 
-    z-index: 5;
+    background: url(../images/background/night/layer_01_1920\ x\ 1080.png);  
+    z-index: 5;  
     animation: moveBackground 10s linear infinite;
 }
 
 .barril{
-    background: url(../images/objects/barril.png) no-repeat;  
+    background: url(../images/objects/barril.png) no-repeat;   
     width: 3.5%;
     height: 80px;
     animation:  moveObstacle 5s linear 1;  
@@ -75,7 +76,7 @@ body{
     background: url(../images/objects/money.png) no-repeat;  
     width: 5%;
     height: 80px;
-    animation: moveMoney 5s linear 1; 
+    animation: moveMoney 7s linear 1; 
     position: absolute;
     top: 660px;
 }
@@ -168,7 +169,7 @@ body{
 }
 
 .timer > span{
-    font-size: 45px;
+    font-size: 25px;
 }
 
 .attention{
@@ -185,7 +186,7 @@ body{
 }
 
 .amount span{
-    font-size: 45px;
+    font-size: 25px;
 }
 
 /* all keyframes */
@@ -283,10 +284,10 @@ body{
 @keyframes moveMoney {
     0% {
         margin-left: 95%;
-        transform: rotateX(0deg);
+        transform: rotateX(0deg); 
     }
     100% {
         margin-left: -5%;
-        transform: rotateX(360deg);
+        transform: rotateX(360deg); 
     }
 }

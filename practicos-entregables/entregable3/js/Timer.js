@@ -10,20 +10,27 @@ class Timer {
         let parar = timer.stop;
         
         window.setInterval( () => {
-            if(parar != countMinutes){
-                if (countSeconds == 60){
-                    countSeconds = 0;
-                    countMinutes++;
-                    minutes.innerHTML = countMinutes;
-                    if(countMinutes == 0){
-                        countMinutes = 0;
+            if(Juego.fin == false){
+                if(parar != countMinutes){
+                    if (countSeconds == 60){
+                        countSeconds = 0;
+                        countMinutes++;
+                        minutes.innerHTML = countMinutes;
+                        if(countMinutes == 0){
+                            countMinutes = 0;
+                        }
                     }
+                seconds.innerHTML = countSeconds;
+                countSeconds++;
+                }else{
+                    let persona = document.getElementById("person");
+                    persona.className= 'none';
+                    dead.Estadodead= true;
+                    dead.Actual=true;
+                    finishGame.style.display='block'
                 }
-            seconds.innerHTML = countSeconds;
-            countSeconds++;
-            }else{
-                console.log("fin")
             }
+            
         }, 1000)
     }
 }

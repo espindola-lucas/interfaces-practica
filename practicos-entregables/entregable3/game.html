@@ -8,27 +8,30 @@
     <title>Entregable Nº3</title>
 </head>
 <body>
-
+<div id="ocultar">
     <div class="timer">
-        <span id="minutos">0</span><span>:</span><span id="segundos">0</span>
+        <span>Tiempo en juego  </span>
+        <br>
+        <span style="margin-left: 60px;"id="minutos">0</span><span>:</span><span id="segundos">0</span>
     </div>
 
     <div class="attention">
-        <span>Cada 5 monedas agarradas <br> se resta 1 munto de juego.</span>
+        <span> Junta 10 monedas para ser el ganador </span>
     </div>
 
     <div class="amount">
-        <span>5</span>
+        <span>Cantidad de monedas juntadas :  </span>
+        <span id="cantidad"></span>
     </div>
 
     <div class ="conteiner"> 
-        <div id="layer1" class="layer layer1">
-            <div id="layer2" class="layer layer2">
-                <div id="layer3" class="layer layer3">
-                    <div id="layer4"class="layer layer4">
-                        <div  id="layer5" class="layer layer5">
-                            <div id="layer6" class="layer layer6">
-                                <div id="layer7" class="layer layer7">
+        <div id="layer1" class="">
+            <div id="layer2" class="">
+                <div id="layer3" class="">
+                    <div id="layer4"class="">
+                        <div  id="layer5" class="">
+                            <div id="layer6" class="">
+                                <div id="layer7" class="">
                                     <div id="person" class="person">
                                     </div>
                                 </div>
@@ -54,7 +57,15 @@
                 <button>Volver a jugar</button>
             </a>
         </div>
+        <div id="winner" class="finish">
+            <span class="text">Winner</span>
+            <br><br>
+            <a href="index.html">
+                <button>Volver a jugar</button>
+            </a>
+        </div>
     </div>
+ </div>
 </body>
 <script src="js/CrashObjects.js"></script>
 <script src="js/Timer.js"></script>
