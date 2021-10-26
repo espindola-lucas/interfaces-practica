@@ -4,60 +4,118 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
     <link rel="stylesheet" href="css/styleMenu.css">
+    <link rel="stylesheet" href="css/styleGame.css">
     <title>Entregable Nº3</title>
 </head>
 <body>
-    <div>
-        <section class="conteiner_load">
-            <div class="load"></div>
-        </section>
-    
-        <main class="title">
-            <h1>¡¡ Corre y Esquiva !!</h1>
-        </main>
-        
-        <hr>
-    
-        <section class="indications">
-            <h3>Como Jugar</h3>
-            <div class="steps">
-                <p>
-                    ● Flecha arriba = Saltar <br>
-                    ● Flecha abajo = Agacharse.
-                </p>
-                <p>
-                    ● Uso de los keyframes :  <br>
-                    Personaje - Obstaculos - Fondo escenario.
-                </p>
+
+    <section id="menu">
+        <div>
+            <main class="title">
+                <h1>¡¡ Corre y Esquiva !!</h1>
+            </main>
+
+            <hr>
+
+            <section class="indications">
+                <h3>Como Jugar</h3>
+                <div class="steps">
+                    <p>
+                        ● Flecha arriba = Saltar <br>
+                        ● Flecha abajo = Agacharse.
+                    </p>
+                    <p>
+                        ● Uso de los keyframes :  <br>
+                        Personaje - Obstaculos - Fondo escenario.
+                    </p>
+                </div>
+            </section>
+
+            <section class="game">
+                <fieldset class="chooseStage"><legend>Elegi el escenario</legend>
+                    <button>
+                        <img src="images/background/bgDark.png" alt="">
+                    </button>
+                    <button>
+                        <img src="images/background/bgLight.png" alt="">
+                    </button>
+                </fieldset>
+            </section>
+
+            <button class="initGame" id="initGame" onclick="initGame()"> JUGAR </button>
+
+            <hr>
+
+            <footer class="footer">
+                by Marisol Gómez - Lucas Nahuel Espindola <br>
+                Interfaces de usuario e Interacción‎ 2021.
+            </footer>
+        </div>
+    </section>
+
+    <section id="startGame">
+        <div class="timer">
+            <span>Tiempo en juego  </span>
+            <br>
+            <span style="margin-left: 60px;"id="minutos">0</span><span>:</span><span id="segundos">0</span>
+        </div>
+
+        <div class="attention">
+            <span> Junta 10 monedas para ser el ganador </span>
+        </div>
+
+        <div class="amount">
+            <span>Cantidad de monedas juntadas :  </span>
+            <span id="cantidad"></span>
+        </div>
+
+        <div class ="conteiner"> 
+            <div id="layer1" class="">
+                <div id="layer2" class="">
+                    <div id="layer3" class="">
+                        <div id="layer4"class="">
+                            <div  id="layer5" class="">
+                                <div id="layer6" class="">
+                                    <div id="layer7" class="">
+                                        <div id="person" class="person">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-        
-        <section class="game">
-            <fieldset class="chooseAvatar"><legend>Elegi el avatar</legend>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-            </fieldset>
-    
-            <fieldset class="chooseStage"><legend>Elegi el escenario</legend>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-            </fieldset>
-        </section>
-    
-        <a href="game.html"><button class="initGame"> JUGAR </button></a>
-    
-        <hr>
-    
-        <footer class="footer">
-            by Marisol Gómez - Lucas Nahuel Espindola <br>
-            Interfaces de usuario e Interacción‎ 2021.
-        </footer>
-    </div>
+
+            <span id="barril" class=""></span> 
+            <span id="flecha" class=""></span> 
+            <span id="barril1" class=""></span> 
+            <span id="flecha1" class=""></span> 
+            <span id="moneda" class=""></span>
+            <span id="moneda1" class=""></span>
+            <span id="deadFinish" class=""></span>
+
+            <div id="finish" class="finish">
+                <span class="text">Game Over</span>
+                <br><br>
+
+                <button onclick="window.location.reload()">Volver a jugar</button>
+            </div>
+
+            <div id="winner" class="finish">
+                <span class="text">Winner</span>
+                <br><br>
+
+                <button onclick="window.location.reload()">Volver a jugar</button>
+            </div>
+        </div>
+    </section>
+
 </body>
+<script src="js/CrashObjects.js"></script>
+<script src="js/Timer.js"></script>
+<script src="js/Fondo.js"></script>
+<script src="js/Person.js"></script>
+<script src="js/main.js"></script>
 </html>
