@@ -1,5 +1,4 @@
 "use strict";
-let i ;
 
 let flecha = document.getElementById("flecha");
 let flecha1 = document.getElementById("flecha1");
@@ -10,8 +9,14 @@ let moneda1 = document.getElementById("moneda1");
 let persona = document.getElementById("person");
 let personaFinish = document.getElementById("deadFinish");
 let finishGame = document.getElementById("finish");
+let menu = document.getElementById("menu");
+let game = document.getElementById("startGame");
+let startGame = document.getElementById("initGame");
+let hiddenMainMenu = false;
 let background;
 let avatarObj;
+let i;
+
 const Juego = {
     fin:false
 }
@@ -21,6 +26,7 @@ const timer = {
     seconds: document.getElementById("segundos"),
     stop: 2
 };
+
 const CantidadMoneda ={
     cantidad: 0
 }
@@ -135,13 +141,45 @@ moneda1.addEventListener("animationend", function () {
 });
 // fin addEventListeners
 
+// startGame.addEventListener("click", initGame());
+
 // la utilizamos para ir largando objertos de manera random
 function getRandomInt(min, max) {  //Obtengo un numero random entre dos valores dados
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function  initGame() {
-     winner.style.display='none'; // ocukta el div que solo se muestra si la persona pierde
+function hiddenGame(){
+    game.style.display = 'none';
+    menu.style.display = 'block';
+    document.body.style.background = "#FFFFFF"
+}
+
+function initGame() {
+
+    // set interva que se ejecuta cada 1 segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision 
+
+    window.setInterval( () => {
+        let a = document.getElementById("flecha").getBoundingClientRect();
+        let b = document.getElementById("barril").getBoundingClientRect();
+        let a1 = document.getElementById("flecha1").getBoundingClientRect();
+        let b1 = document.getElementById("barril1").getBoundingClientRect();
+        CrashObjects.DetectarColision(a,dead);
+        CrashObjects.DetectarColision(b,dead);
+        CrashObjects.DetectarColision(a1,dead);
+        CrashObjects.DetectarColision(b1,dead);
+    }, 500);
+
+    window.setInterval(() => {
+        let m = document.getElementById("moneda").getBoundingClientRect();
+        let m1 = document.getElementById("moneda1").getBoundingClientRect();
+        CrashObjects.DetectarColisionMoneda(m1,dead,"moneda1");
+        CrashObjects.DetectarColisionMoneda(m,dead,"moneda");
+    },1000)
+
+    document.body.style.background = "#000000"
+    game.style.display = 'block';
+    menu.style.display = 'none';
+    winner.style.display='none'; // ocukta el div que solo se muestra si la persona pierde
     finishGame.style.display='none'; // ocukta el div que solo se muestra si la persona pierde
     Fondo.createFondo();
     avatarObj = new Person(persona, Clases, avatar) ;
@@ -150,24 +188,6 @@ function  initGame() {
     Timer.start_timer();
 }
 
-// set interva que se ejecuta cada 1 segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision 
-window.setInterval( () => {
-    let a = document.getElementById("flecha").getBoundingClientRect();
-    let b = document.getElementById("barril").getBoundingClientRect();
-    let a1 = document.getElementById("flecha1").getBoundingClientRect();
-    let b1 = document.getElementById("barril1").getBoundingClientRect();
-    CrashObjects.DetectarColision(a,dead);
-    CrashObjects.DetectarColision(b,dead);
-    CrashObjects.DetectarColision(a1,dead);
-    CrashObjects.DetectarColision(b1,dead);
-}, 500);
-
-window.setInterval(() => {
-    let m = document.getElementById("moneda").getBoundingClientRect();
-    let m1 = document.getElementById("moneda1").getBoundingClientRect();
-    CrashObjects.DetectarColisionMoneda(m1,dead,"moneda1");
-    CrashObjects.DetectarColisionMoneda(m,dead,"moneda");
-},1000)
 // set interval utilizado para ir mandando casa sierto tiempo objetos random
 window.setInterval( () => {
     if(dead.Estadodead == false){
@@ -184,4 +204,4 @@ window.setInterval( () => {
 }, 2500);
 // fin set interval
 
-document.addEventListener("DOMContentLoaded", initGame());
+document.addEventListener("DOMContentLoaded", hiddenGame());

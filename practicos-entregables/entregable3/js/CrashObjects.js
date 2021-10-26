@@ -122,7 +122,6 @@ class CrashObjects{
                 dead.Actual=true;
                 let winner = document.getElementById("winner")
                 winner.style.display= 'block';
-
             }
             
         }

@@ -9,7 +9,7 @@ static createFondo (){
         let layer5 = document.getElementById("layer5");
         let layer6 = document.getElementById("layer6");
         let layer7= document.getElementById("layer7");
-       
+
         layer7.className = FondoClase.layer7;
         layer6.className = FondoClase.layer6;
         layer5.className = FondoClase.layer5;

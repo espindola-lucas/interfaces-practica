@@ -1,11 +1,9 @@
 body{
     margin: 0%;
-    background-color: black;  
 }
 
 .conteiner{
     margin-top: 170px;
-   
 }
 
 .layer{
@@ -26,24 +24,24 @@ body{
 
 .layer3{
     background: url(../images/background/night/layer_05_1920\ x\ 1080.png); 
-     z-index: 2; 
+    z-index: 2; 
     animation: moveBackground 40s linear infinite;
 }
 
 .layer4{
-     background: url(../images/background/night/layer_04_1920\ x\ 1080.png); 
+    background: url(../images/background/night/layer_04_1920\ x\ 1080.png); 
     z-index: 3; 
     animation: moveBackground 30s linear infinite;
 }
 
 .layer5{
-     background: url(../images/background/night/layer_03_1920\ x\ 1080.png);  
+    background: url(../images/background/night/layer_03_1920\ x\ 1080.png);  
     z-index: 4; 
     animation: moveBackground 20s linear infinite;
 }
 
 .layer6{
-     background: url(../images/background/night/layer_02_1920\ x\ 1080.png);  
+    background: url(../images/background/night/layer_02_1920\ x\ 1080.png);  
     z-index: 5; 
     animation: moveBackground 15s linear infinite;
 }
@@ -232,6 +230,7 @@ body{
         background-position: -756px;
     }
 }
+
 /*animacion de cuando el opersinaje salta*/
 @keyframes Up {
     0% {
@@ -255,6 +254,7 @@ body{
         background-position: -1754px;
     }
 }
+
 /*animacion del fondo*/
 @keyframes moveBackground {
     0%{
@@ -264,6 +264,7 @@ body{
         background-position: -1920px;
     }
 }
+
 /* animacion de el barril y la flecha*/
 @keyframes moveObstacle {
     from {
