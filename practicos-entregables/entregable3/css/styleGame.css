@@ -91,7 +91,7 @@ body{
 .personUp{
     width: 11%;
     height: 210px;
-    animation: Up 1.5s steps(9) 1;   
+    animation: Up 1.4s steps(9) 1;   
     position: absolute;
     left: 15%;
     top:54.5%;
@@ -237,20 +237,20 @@ body{
         background-position: 0;
     }
     10% {
-        top: 30% ;
+        top: 22% ;
     }
     20% {
-        top: 32% ;
+        top: 24% ;
     }
     30% {
-        top: 34% ;
+        top: 26% ;
     }
     60% {
-        top: 36% ;
+        top: 28% ;
     }
     100% {
-        width: 10%;
-        margin-left: 5%;
+        width: 8%;
+        margin-left: 3%;
         background-position: -1754px;
     }
 }
