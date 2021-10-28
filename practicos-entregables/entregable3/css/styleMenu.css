@@ -20,8 +20,12 @@
     animation: loadTitle 1s linear forwards;
 }
 
-.indications p, .indications h3{
+.indications p, .indications h2, .indications h4{
     text-align: center;
+}
+
+.indications h2{
+    text-decoration: underline;
 }
 
 .indications{

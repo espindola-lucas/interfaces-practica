@@ -13,41 +13,41 @@ body{
 }
 
 .layer1{
-    background: url(../images/background/night/layer_07_1920\ x\ 1080.png);  
+    background: url(../images/background/night/dark_07_1920_1080.png);  
     z-index: 0; 
 }
 
 .layer2{
-    background: url(../images/background/night/layer_06_1920\ x\ 1080.png);  
+    background: url(../images/background/night/dark_06_1920_1080.png);  
     z-index: 1; 
 }
 
 .layer3{
-    background: url(../images/background/night/layer_05_1920\ x\ 1080.png); 
+    background: url(../images/background/night/dark_05_1920_1080.png); 
     z-index: 2; 
     animation: moveBackground 40s linear infinite;
 }
 
 .layer4{
-    background: url(../images/background/night/layer_04_1920\ x\ 1080.png); 
+    background: url(../images/background/night/dark_04_1920_1080.png); 
     z-index: 3; 
     animation: moveBackground 30s linear infinite;
 }
 
 .layer5{
-    background: url(../images/background/night/layer_03_1920\ x\ 1080.png);  
+    background: url(../images/background/night/dark_03_1920_1080.png);  
     z-index: 4; 
     animation: moveBackground 20s linear infinite;
 }
 
 .layer6{
-    background: url(../images/background/night/layer_02_1920\ x\ 1080.png);  
+    background: url(../images/background/night/dark_02_1920_1080.png);  
     z-index: 5; 
     animation: moveBackground 15s linear infinite;
 }
 
 .layer7{
-    background: url(../images/background/night/layer_01_1920\ x\ 1080.png);  
+    background: url(../images/background/night/dark_01_1920_1080.png);  
     z-index: 5;  
     animation: moveBackground 10s linear infinite;
 }

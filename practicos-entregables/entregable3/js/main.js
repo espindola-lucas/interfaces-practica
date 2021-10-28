@@ -29,21 +29,24 @@ const timer = {
 
 const CantidadMoneda ={
     cantidad: 0
-}
+};
+
 //constante que va teniendo diferentes estados para cuando el avatar muera
 const dead ={
     Estadodead:false,
     Actual:false,
     Cambio:false,
-}
+};
+
 // constante que se utilliza para guardar todas las imagenes que se van a slocitar para el avatar
 const avatar ={
-    imgR:"images/character/ninjaRunning.png",
-    imgU:"images/character/ninjaUp.png",
-    imgD:"images/character/ninja.png",
-    imgDead: "images/character/ninjadead.png",
-    imgDeadFinish : "images/character/ninjadeadFinish.png"
+    imgR:"images/character/ninja/ninjaRunning.png",
+    imgU:"images/character/ninja/ninjaUp.png",
+    imgD:"images/character/ninja/ninja.png",
+    imgDead: "images/character/ninja/ninjadead.png",
+    imgDeadFinish : "images/character/ninja/ninjadeadFinish.png"
 };
+
 // constante que la utilizamos para saber  si una colision termino o se esta ejecutando
 const ColisionEnd ={
     barril: 0,
@@ -53,22 +56,35 @@ const ColisionEnd ={
     moneda1:0 ,
     flecha1: 0 ,
 };
+
 // constante con todos los nombres de las clases css que se utilizan para las acciones del personaje 
 const Clases ={
     classR:"person",
     classU:"personUp",
     classD:"personDown",
     classDF:"personDeadFinish"
-}
-const Fondo1 ={
-    layer1: "images/backgraund/layer_07_1920\ x\ 1080.png",
-    layer2:"images/backgraund/layer_06_1920\ x\ 1080.png",
-    layer3:"images/backgraund/layer_05_1920\ x\ 1080.png",
-    layer4:"images/backgraund/layer_04_1920\ x\ 1080.png",
-    layer5:"images/backgraund/layer_03_1920\ x\ 1080.png",
-    layer6:"images/backgraund/layer_02_1920\ x\ 1080.png",
-    layer7:"images/backgraund//layer_01_1920\ x\ 1080.png"
 };
+
+// const Fondo1 ={
+//     layer1: "images/backgraund/dark_07_1920_1080.png",
+//     layer2: "images/backgraund/dark_06_1920_1080.png",
+//     layer3: "images/backgraund/dark_05_1920_1080.png",
+//     layer4: "images/backgraund/dark_04_1920_1080.png",
+//     layer5: "images/backgraund/dark_03_1920_1080.png",
+//     layer6: "images/backgraund/dark_02_1920_1080.png",
+//     layer7: "images/backgraund/dark_01_1920_1080.png"
+// };
+
+// const Fondo2 ={
+//     layer1: "images/backgraund/city_07_1920\ x\ 1080.png",
+//     layer2: "images/backgraund/city_06_1920\ x\ 1080.png",
+//     layer3: "images/backgraund/city_05_1920\ x\ 1080.png",
+//     layer4: "images/backgraund/city_04_1920\ x\ 1080.png",
+//     layer5: "images/backgraund/city_03_1920\ x\ 1080.png",
+//     layer6: "images/backgraund/city_02_1920\ x\ 1080.png",
+//     layer7: "images/backgraund/city_01_1920\ x\ 1080.png"
+// };
+
 const FondoClase ={
     layer1: "layer layer1",
     layer2: "layer layer2",
@@ -78,6 +94,7 @@ const FondoClase ={
     layer6: "layer layer6",
     layer7: "layer layer7"
 };
+
  // addEventListener para saber cuando las animaciones terminan e indicarle q tiene que hacer
 persona.addEventListener("animationend", function () {
     if (dead.Estadodead == false){
@@ -99,34 +116,40 @@ persona.addEventListener("animationend", function () {
 });
     
 personaFinish.addEventListener("animationend",function () {
-    console.log('mori');
     personaFinish.className= "none";
     finishGame.style.display='block'
 });
+
 flecha.addEventListener("animationend", function () {
     flecha.className = 'none';
     ColisionEnd.flecha= 1;
 });
+
 flecha1.addEventListener("animationend", function () {
     flecha1.className = 'none';
     ColisionEnd.flecha1= 1;
 });
+
 barril.addEventListener("animationend", function () {
     barril.className = 'none';
     ColisionEnd.barril = 1 ;
 });
+
 barril1.addEventListener("animationend", function () {
     barril1.className = 'none';
     ColisionEnd.barril1 = 1 ;
 });
+
 moneda.addEventListener("animationend", function () {
     moneda.className = 'none';
     ColisionEnd.moneda = 1 ;
 });
+
 moneda1.addEventListener("animationend", function () {
     moneda1.className = 'none';
     ColisionEnd.moneda1 = 1 ;
 });
+
 // fin addEventListeners
 
 // startGame.addEventListener("click", initGame());
@@ -139,12 +162,12 @@ function getRandomInt(min, max) {  //Obtengo un numero random entre dos valores 
 function hiddenGame(){
     game.style.display = 'none';
     menu.style.display = 'block';
-    document.body.style.background = "#FFFFFF"
+    document.body.style.background = "#FFFFFF";
 }
 
 function initGame() {
 
-    // set interva que se ejecuta cada 1 segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision 
+    // set interval que se ejecuta cada medio segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision
 
     window.setInterval( () => {
         let a = document.getElementById("flecha").getBoundingClientRect();
@@ -157,6 +180,8 @@ function initGame() {
         CrashObjects.DetectarColision(b1,dead);
     }, 500);
 
+    // set interval que se ejecuta cada 1 segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision
+
     window.setInterval(() => {
         let m = document.getElementById("moneda").getBoundingClientRect();
         let m1 = document.getElementById("moneda1").getBoundingClientRect();
@@ -167,7 +192,7 @@ function initGame() {
     document.body.style.background = "#000000"
     game.style.display = 'block';
     menu.style.display = 'none';
-    winner.style.display='none'; // ocukta el div que solo se muestra si la persona pierde
+    winner.style.display='none'; // oculta el div que solo se muestra si la persona pierde
     finishGame.style.display='none'; // ocukta el div que solo se muestra si la persona pierde
     Fondo.createFondo();
     avatarObj = new Person(persona, Clases, avatar) ;
