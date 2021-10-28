@@ -134,7 +134,7 @@ function getRandomInt(min, max) {  //Obtengo un numero random entre dos valores 
 function hiddenGame(){
     game.style.display = 'none';
     menu.style.display = 'block';
-    document.body.style.background = "#FFFFFF";
+  ;
 }
 
 function initGame() {
