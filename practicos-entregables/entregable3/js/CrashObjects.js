@@ -6,6 +6,7 @@ class CrashObjects{
         console.log(termino);
     }
 
+    //Metodo creado para ir mostrando de manera aleatoria los objetos en pantalla.
     static randomColosion (selected){
     let barril = document.getElementById("barril");
     let flecha = document.getElementById("flecha");
@@ -13,6 +14,7 @@ class CrashObjects{
     let moneda1 = document.getElementById("moneda1");
     let flecha1 = document.getElementById("flecha1");
     let barril1 = document.getElementById("barril1");
+        
         switch(selected){  
             case 1: 
                 if (ColisionEnd.barril == 0){
@@ -122,7 +124,6 @@ class CrashObjects{
                 dead.Actual=true;
                 let winner = document.getElementById("winner")
                 winner.style.display= 'block';
-
             }
             
         }

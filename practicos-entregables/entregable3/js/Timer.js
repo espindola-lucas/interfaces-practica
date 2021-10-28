@@ -23,6 +23,7 @@ class Timer {
                 seconds.innerHTML = countSeconds;
                 countSeconds++;
                 }else{
+                    // Si Juego.fin es true, se va a mostrar el carter de que el juego a finalizado 
                     let persona = document.getElementById("person");
                     persona.className= 'none';
                     dead.Estadodead= true;
@@ -30,7 +31,6 @@ class Timer {
                     finishGame.style.display='block'
                 }
             }
-            
         }, 1000)
     }
 }
