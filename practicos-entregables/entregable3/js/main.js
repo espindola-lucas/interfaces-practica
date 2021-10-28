@@ -27,6 +27,8 @@ const timer = {
     stop: 2
 };
 
+
+// constante para el contador de monedas
 const CantidadMoneda ={
     cantidad: 0
 };
@@ -63,36 +65,6 @@ const Clases ={
     classU:"personUp",
     classD:"personDown",
     classDF:"personDeadFinish"
-};
-
-// const Fondo1 ={
-//     layer1: "images/backgraund/dark_07_1920_1080.png",
-//     layer2: "images/backgraund/dark_06_1920_1080.png",
-//     layer3: "images/backgraund/dark_05_1920_1080.png",
-//     layer4: "images/backgraund/dark_04_1920_1080.png",
-//     layer5: "images/backgraund/dark_03_1920_1080.png",
-//     layer6: "images/backgraund/dark_02_1920_1080.png",
-//     layer7: "images/backgraund/dark_01_1920_1080.png"
-// };
-
-// const Fondo2 ={
-//     layer1: "images/backgraund/city_07_1920\ x\ 1080.png",
-//     layer2: "images/backgraund/city_06_1920\ x\ 1080.png",
-//     layer3: "images/backgraund/city_05_1920\ x\ 1080.png",
-//     layer4: "images/backgraund/city_04_1920\ x\ 1080.png",
-//     layer5: "images/backgraund/city_03_1920\ x\ 1080.png",
-//     layer6: "images/backgraund/city_02_1920\ x\ 1080.png",
-//     layer7: "images/backgraund/city_01_1920\ x\ 1080.png"
-// };
-
-const FondoClase ={
-    layer1: "layer layer1",
-    layer2: "layer layer2",
-    layer3: "layer layer3",
-    layer4: "layer layer4",
-    layer5: "layer layer5",
-    layer6: "layer layer6",
-    layer7: "layer layer7"
 };
 
  // addEventListener para saber cuando las animaciones terminan e indicarle q tiene que hacer
@@ -152,7 +124,7 @@ moneda1.addEventListener("animationend", function () {
 
 // fin addEventListeners
 
-// startGame.addEventListener("click", initGame());
+
 
 // la utilizamos para ir largando objertos de manera random
 function getRandomInt(min, max) {  //Obtengo un numero random entre dos valores dados
@@ -167,7 +139,7 @@ function hiddenGame(){
 
 function initGame() {
 
-    // set interval que se ejecuta cada medio segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision
+    // set interval que se ejecuta cada medio segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision de los objetos 
 
     window.setInterval( () => {
         let a = document.getElementById("flecha").getBoundingClientRect();
@@ -180,7 +152,7 @@ function initGame() {
         CrashObjects.DetectarColision(b1,dead);
     }, 500);
 
-    // set interval que se ejecuta cada 1 segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision
+    // set interval que se ejecuta cada 1 segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision de la moneda
 
     window.setInterval(() => {
         let m = document.getElementById("moneda").getBoundingClientRect();
@@ -192,13 +164,12 @@ function initGame() {
     document.body.style.background = "#000000"
     game.style.display = 'block';
     menu.style.display = 'none';
-    winner.style.display='none'; // oculta el div que solo se muestra si la persona pierde
+    winner.style.display='none'; // oculta el div que solo se muestra si la persona gana
     finishGame.style.display='none'; // ocukta el div que solo se muestra si la persona pierde
-    Fondo.createFondo();
-    avatarObj = new Person(persona, Clases, avatar) ;
-    avatarObj.CargarPerson();
-    window.addEventListener("keydown", Person.press_key); 
-    Timer.start_timer();
+    avatarObj = new Person(persona, Clases, avatar) ;//se crea una instancia de las clases con las constante con los valores 
+    avatarObj.CargarPerson(); // carga todo en pantalla 
+    window.addEventListener("keydown", Person.press_key); // se ejecuta cuando se preciona una tecla 
+    Timer.start_timer(); // llama al timer para que enpiece a contar el tiempo 
 }
 
 // set interval utilizado para ir mandando casa sierto tiempo objetos random

@@ -67,7 +67,8 @@ class CrashObjects{
         } 
     }
 
-
+// decta la colison entre el objeto que le llega por parametro y el div de la persona
+// para saber si hay una colision vamos haciendo las comparaciones con los lados de cada div
     static DetectarColision(b,dead){
         let a  = document.getElementById("person").getBoundingClientRect();
         var a_pos = { t : a.top, 
@@ -82,6 +83,7 @@ class CrashObjects{
         if(   a_pos.l <= b_pos.r && a_pos.r >= b_pos.l 
         && a_pos.b >= b_pos.t && a_pos.t <= b_pos.b ){
             dead.Estadodead = true;
+            // este if lo hacemos para que cuando se detecter una colisicion y la persona no este muerta anterior mente se haga la animacion de morir 
             if(dead.Actual == false){
                 Juego.fin = true;
             let persona = document.getElementById("person");
@@ -90,7 +92,8 @@ class CrashObjects{
             }
         }
     }
-
+// decta la colison entre el objeto que le llega por parametro y el div de la persona
+// para saber si hay una colision vamos haciendo las comparaciones con los lados de cada div
     static DetectarColisionMoneda(b ,dead ,parameter){
         let a  = document.getElementById("person").getBoundingClientRect();
         let textoMoneda = document.getElementById("cantidad");
@@ -107,6 +110,7 @@ class CrashObjects{
                    //Detecta si se superponen las áreas
         if( a_pos.l <= b_pos.r && a_pos.r >= b_pos.l 
         && a_pos.b >= b_pos.t && a_pos.t <= b_pos.b ){
+            //if para ocultar la moneda si se produjo la colision 
             if (parameter == "moneda1"){
                 moneda1.className = 'none';
                 ColisionEnd.moneda1 = 1 ;
@@ -114,10 +118,12 @@ class CrashObjects{
                 moneda.className = 'none';
                 ColisionEnd.moneda = 1 ;
             }
+            // if para hacer el contador 
             if (CantidadMoneda.cantidad < 10 ){
             CantidadMoneda.cantidad += 1;
             textoMoneda.innerHTML = CantidadMoneda.cantidad;
             }
+            //if para que cuando junte 10 monedas se muestre el cartel de ganador 
             if (CantidadMoneda.cantidad == 10){
                 Juego.fin = true;
                 dead.Estadodead= true;
