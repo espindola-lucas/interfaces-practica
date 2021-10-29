@@ -12,7 +12,21 @@ let finishGame = document.getElementById("finish");
 let menu = document.getElementById("menu");
 let game = document.getElementById("startGame");
 let startGame = document.getElementById("initGame");
+
+let fondo1 = document.getElementById("fondo1");
+let fondo2 = document.getElementById("fondo2");
+
+let layer1 = document.getElementById("layer1");
+let layer2 = document.getElementById("layer2");
+let layer3 = document.getElementById("layer3");
+let layer4 = document.getElementById("layer4");
+let layer5 = document.getElementById("layer5");
+let layer6 = document.getElementById("layer6");
+let layer7 = document.getElementById("layer7");
+let layer8 = document.getElementById("layer8");
+
 let hiddenMainMenu = false;
+let theme;
 let background;
 let avatarObj;
 let i;
@@ -26,7 +40,6 @@ const timer = {
     seconds: document.getElementById("segundos"),
     stop: 2
 };
-
 
 // constante para el contador de monedas
 const CantidadMoneda ={
@@ -87,6 +100,14 @@ persona.addEventListener("animationend", function () {
     }
 });
     
+fondo1.addEventListener("click", function () {
+    theme = "noche";
+});
+
+fondo2.addEventListener("click", function () {
+    theme = "ciudad";
+});
+
 personaFinish.addEventListener("animationend",function () {
     personaFinish.className= "none";
     finishGame.style.display='block'
@@ -125,19 +146,49 @@ moneda1.addEventListener("animationend", function () {
 // fin addEventListeners
 
 
-
 // la utilizamos para ir largando objertos de manera random
 function getRandomInt(min, max) {  //Obtengo un numero random entre dos valores dados
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// esconde el juego, para mostrar solamente el menu
 function hiddenGame(){
+    document.body.style.background = "white";
     game.style.display = 'none';
     menu.style.display = 'block';
-  ;
 }
 
 function initGame() {
+    
+    document.body.style.background = "black";
+
+    // pregunta que fondo se eligio desde el menu, y sino elegio ninguno, setea uno por defecto
+    if(theme == "noche"){   
+        layer1.className = "layer layer1";
+        layer2.className = "layer layer2";
+        layer3.className = "layer layer3";
+        layer4.className = "layer layer4";
+        layer5.className = "layer layer5";
+        layer6.className = "layer layer6";
+        layer7.className = "layer layer7";
+    }else if(theme == "ciudad"){
+        layer1.className = "layer layer2-1";
+        layer2.className = "layer layer2-2";
+        layer3.className = "layer layer2-3";
+        layer4.className = "layer layer2-4";
+        layer5.className = "layer layer2-5";
+        layer6.className = "layer layer2-6";
+        layer7.className = "layer layer2-7";
+        layer8.className = "layer layer2-8";
+    }else{
+        layer1.className = "layer layer1";
+        layer2.className = "layer layer2";
+        layer3.className = "layer layer3";
+        layer4.className = "layer layer4";
+        layer5.className = "layer layer5";
+        layer6.className = "layer layer6";
+        layer7.className = "layer layer7";
+    }
 
     // set interval que se ejecuta cada medio segundo y se va llamando al metodo de la clase CrashObjects que detecta la colision de los objetos 
 
@@ -161,7 +212,6 @@ function initGame() {
         CrashObjects.DetectarColisionMoneda(m,dead,"moneda");
     },1000)
 
-    document.body.style.background = "#000000"
     game.style.display = 'block';
     menu.style.display = 'none';
     winner.style.display='none'; // oculta el div que solo se muestra si la persona gana

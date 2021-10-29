@@ -24,7 +24,7 @@
     text-align: center;
 }
 
-.indications h2{
+.indications h2, .indications h4{
     text-decoration: underline;
 }
 
