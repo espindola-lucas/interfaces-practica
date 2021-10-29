@@ -8,11 +8,12 @@ body{
 }
 
 .layer{
-    position: relative;
-    width: 100%;
-    height: 660px;
+    position: relative !important;
+    width: 100% !important;
+    height: 660px !important;
 }
 
+/* fondo de noche */
 .layer1{
     background: url(../images/background/night/dark_07_1920_1080.png);  
     z-index: 0; 
@@ -49,9 +50,58 @@ body{
 
 .layer7{
     background: url(../images/background/night/dark_01_1920_1080.png);  
-    z-index: 5;  
+    z-index: 6;  
     animation: moveBackground 10s linear infinite;
 }
+/* fin fondo de noche */
+
+/* fondo de ciudad */
+.layer2-1{
+    background: url(../images/background/city/layer_08_1920_1080.png);  
+    z-index: 0;
+}
+
+.layer2-2{
+    background: url(../images/background/city/layer_07_1920_1080.png);  
+    z-index: 1; 
+}
+
+.layer2-3{
+    background: url(../images/background/city/layer_06_1920_1080.png); 
+    z-index: 2; 
+    animation: moveBackground 40s linear infinite;
+}
+
+.layer2-4{
+    background: url(../images/background/city/layer_05_1920_1080.png); 
+    z-index: 3; 
+    animation: moveBackground 30s linear infinite;
+}
+
+.layer2-5{
+    background: url(../images/background/city/layer_04_1920_1080.png);  
+    z-index: 4; 
+    animation: moveBackground 20s linear infinite;
+}
+
+.layer2-6{
+    background: url(../images/background/city/layer_03_1920_1080.png);  
+    z-index: 5; 
+    animation: moveBackground 15s linear infinite;
+}
+
+.layer2-7{
+    background: url(../images/background/city/layer_02_1920_1080.png);  
+    z-index: 6;  
+    animation: moveBackground 10s linear infinite;
+}
+
+.layer2-8{
+    background: url(../images/background/city/layer_01_1920_1080.png);  
+    z-index: 7;  
+    animation: moveBackground 10s linear infinite;
+}
+/* fin fondo de ciudad */
 
 .barril{
     background: url(../images/objects/barril.png) no-repeat;   
