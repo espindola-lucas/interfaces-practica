@@ -218,7 +218,7 @@ body{
 }
 
 .timer {
-    left: 10%;
+    left: 15%;
     font-family: var(--font);
 }
 
@@ -237,7 +237,7 @@ body{
 }
 
 .amount{
-    left: 70%;
+    left: 65%;
     font-family: var(--font);
 }
 
