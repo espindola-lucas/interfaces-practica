@@ -102,10 +102,16 @@ persona.addEventListener("animationend", function () {
     
 fondo1.addEventListener("click", function () {
     theme = "noche";
+    fondo2.style = 'none';
+    fondo1.style = 'border : 2px solid red';
+    fondo1.style.transform = 'scale(1.1)';
 });
 
 fondo2.addEventListener("click", function () {
     theme = "ciudad";
+    fondo1.style = 'none';
+    fondo2.style = 'border : 2px solid red';
+    fondo1.style.transform = 'scale(1.1)';
 });
 
 personaFinish.addEventListener("animationend",function () {

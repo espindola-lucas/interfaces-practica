@@ -1,11 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Irish+Grover&display=swap');
+
 :root{
     --body-bg: #ECFEEC;
     --main-bg: #46CE46;
     --secondary-bg: #BDF8BD;
-    --border: 10px; 
+    --border: 10px;
+    --font: 'Irish Grover', cursive; 
 }
 
 /* menu */
+
+#menu .title{
+    margin-top: 2%;
+}
+
+#menu .indications{
+    margin-top: 5%;
+}
 
 .title{
     width: 50%;
@@ -14,6 +25,8 @@
     background-color: var(--main-bg);
     border-radius: var(--border);
     margin-left: 25%;
+    font-family: var(--font);
+    letter-spacing: 5px;
 }
 
 .title h1{
@@ -22,6 +35,7 @@
 
 .indications p, .indications h2, .indications h4{
     text-align: center;
+    font-family: var(--font);
 }
 
 .indications h2, .indications h4{
@@ -48,12 +62,17 @@
     padding: 0.5%; 
     margin-left: 0%;
     border-radius: var(--border);
+    font-family: var(--font);
 }
 
 .game{
     margin-top: 0.5%;
     display: flex;
     justify-content: space-evenly;
+}
+
+.game fieldset {
+    width: 49%;
 }
 
 .game .chooseStage > button{
@@ -86,10 +105,11 @@
 .initGame{
     all: unset;
     padding: 0.5%;
-    margin-left: 50%;
+    margin-left: 49%;
     text-decoration: underline;
     animation: playButton 1s linear forwards;
     background-color: var(--secondary-bg);
+    font-family: var(--font);
     border-radius: var(--border);
     margin-top: 1%;
     padding: 1%;
@@ -99,9 +119,11 @@
     background-color: var(--main-bg);
     width: 35%;
     border-radius: var(--border);
+    font-family: var(--font);
     padding: 0.5%;
     text-align: center;
     margin-left: 35%;
+    margin-top: 2%;
 }
 
 /* all keyframes */
