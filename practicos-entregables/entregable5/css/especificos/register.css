@@ -1,0 +1,16 @@
+.sessionFlow .box .form{
+    margin-top: 7%;
+}
+
+.sessionFlow .box .form p{
+    margin-top: 5%;
+}
+
+.sessionFlow .box .form label{
+    display: flex;
+    margin-top: 8%;
+}
+
+.sessionFlow .box .form button{
+    margin-top: 10%;
+}

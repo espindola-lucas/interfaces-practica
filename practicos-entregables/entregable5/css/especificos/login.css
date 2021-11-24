@@ -1,0 +1,107 @@
+@import url('../generales/variables.css');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--font-text);
+    font-family: var(--text-font);
+}
+
+.sessionFlow{
+    width: 1000px;
+    height: 700px;
+    margin-left: 20%;
+    margin-top: 8%;
+    background-color: var(--primary-color);
+}
+
+.sessionFlow{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sessionFlow .logo{
+    margin-top: 15%;
+}
+
+.sessionFlow .logo img{
+    width: 80%;
+    height: 30%;
+    margin-top: 30%;
+    margin-left: 10%;
+}
+
+.sessionFlow .logo h1{
+    text-align: center;
+    color: white;
+    font-family: var(--title-font);
+    font-size: 40px;
+}
+
+.sessionFlow .box{
+    width: 400px;
+    height: 550px;
+    background-color: white;
+    margin-top: 8%;
+}
+
+.sessionFlow .box h1{
+    text-align: center;
+    margin-top: 15%;
+}
+
+.sessionFlow .box .form{
+    /* border: 1px solid black; */
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 15%;
+}
+
+.sessionFlow .box .form a{
+    all: unset;
+}
+
+.sessionFlow .box .form input[type="text"]{
+    width: 90%;
+    line-height: 30px;
+    border: none;
+    background-color: rgba(196, 196, 196, 0.5);
+    cursor: text;
+}
+
+/* .sessionFlow .box .form input::placeholder{
+    background-color: rgba(196, 196, 196, 0.5);
+} */
+
+.sessionFlow .box .form p{
+    margin-top: 8%;
+}
+
+.sessionFlow .box .form button{
+    all: unset;
+    background-color: var(--primary-color);
+    padding: 2% 7%;
+    border-radius: 50px;
+    margin-top: 15%;
+    margin-left: 20%;
+    color: white;
+    cursor: pointer;
+}
+
+.sessionFlow .box .form .forget{
+    margin: 0px;
+    color: var(--primary-color);
+    margin-left: 13%;
+}
+
+.sessionFlow .box .form hr{
+    margin-left: -10%;
+    margin-top: 10%;
+}
+
+.sessionFlow .box .form .register{
+    margin-left: 15%;
+}
