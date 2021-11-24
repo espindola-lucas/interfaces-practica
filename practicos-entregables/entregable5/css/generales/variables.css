@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root{
+    /* Colores */
+    --primary-color: #A66FA6;
+    --secondary-color: #844B84;
+    --light-color: #E4D9E4;
+    --error-color: #C61111;
+    --gris-color: #B5B5B5;
+
+    /* Fuente */
+    --title-font: 'Playball', cursive;
+    --text-font: 'Roboto', sans-serif;
+
+    /* Tamaño fuente */
+    --size-one: 24px;
+    --size-two: 16px;
+    --size-three: 15px;
+    --size-four: 14px;
+
+    /* Formas */
+    --border-radius: 5px;
+}
