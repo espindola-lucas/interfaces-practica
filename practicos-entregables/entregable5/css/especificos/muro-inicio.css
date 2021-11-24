@@ -1,0 +1,208 @@
+@import url('css/generales/variables.css');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--font-text);
+    font-family: var(--text-font);
+}
+
+.contenido{
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 0%;
+}
+
+.contenido .sugerencias,
+.contenido .publicidad{
+    display: flex;
+    padding: 1% 2%;
+    display: table-column;
+    border-radius: var(--border-radius);
+    box-shadow: 5px 5px 10px gray;
+    height: 500px;
+}
+
+.contenido .sugerencias img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.contenido .sugerencias .nombre{
+    width: 100px;
+    float: right;
+    font-size: var(--size-three);
+}
+
+.contenido .sugerencias .nombre button{
+    border: none;
+    cursor: pointer;
+} 
+
+.contenido .sugerencias .boxUser{
+    padding: 3%;
+    border-radius: var(--border-radius);
+}
+
+.contenido .sugerencias,
+.contenido .publicidad{
+    background-color: rgb(234, 186, 234, 0.5);
+}
+
+.contenido .sugerencias h3,
+.contenido .publicidad h3{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.contenido .posts h3{
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.contenido .sugerencias .agregarUser{
+    background-color: rgb(166, 111, 166);
+    width: 80px;
+    border-radius: var(--border-radius);
+    padding: 3%;
+    color: white;
+}
+
+.contenido .sugerencias .boxUser:hover{
+    background-color: rgba(234, 186, 234, 0.6);
+}
+
+.contenido .posts{
+    width: 45%;
+}
+
+.contenido .posts h3{
+    text-align: center;
+}
+
+.contenido .posts .compartir,
+.contenido .posts .postsContactos{
+    justify-content: start;
+    margin-left: 5%;
+    background-color: rgba(196, 196, 196, 0.3);
+    width: 90%;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: var(--border-radius);
+    margin-bottom: 5%;
+}
+
+.contenido .posts .compartir .profile,
+.contenido .posts .postsContactos .user .profile{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+    left: 10%;
+}
+
+.contenido .posts .compartir p,
+.contenido .posts .postsContactos p{
+    position: relative;
+    left: 22%;
+    bottom: 50px;
+    font-size: var(--size-one);
+}
+
+.contenido .posts .compartir input{
+    /* background-color: rgba(196, 196, 196, 0.5); */
+    padding: 1%;
+    border-radius: var(--border-radius);
+    width: 75%;
+    margin-left: 10%;
+    border: none;
+}
+
+.contenido .posts .compartir h5{
+    position: relative;
+    left: 80%;
+    margin-top: 2%;
+    width: 50px;
+    padding: 0.5% 2%;
+    background-color: rgba(132, 75, 132, 1);
+    color: white;
+    border-radius: 20px;
+}
+
+.contenido .posts .postsContactos .user{
+    padding: 2.5% 0%;
+}
+
+.contenido .posts .postsContactos .user .imgPost{
+    width: 80%;
+    height: 300px;
+    margin-left: 10%;
+}
+
+.contenido .posts .postsContactos .user .acciones{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contenido .posts .postsContactos .user .acciones p{
+    all: unset;
+    color: rgba(0, 0, 0, 1);
+    margin-top: 2%;
+}
+
+.contenido .posts .postsContactos .user .acciones i{
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.contenido .posts .postsContactos .user input{
+    width: 80%;
+    height: 30px;
+    margin-left: 10%;
+    border-radius: var(--border-radius);
+    border: 1px solid gray;
+    margin-top: 2%;
+}
+
+.contenido .posts .postsContactos .user input::placeholder{
+    position: relative;
+    left: 10px;
+}
+
+.contenido .publicidad .boxPublicidad{
+    /* box-shadow: 5px 5px 10px gray; */
+    border: 1px solid gray;
+    margin-bottom: 10%;
+}
+
+.contenido .publicidad img{
+    width: 100px;
+    height: 100px;
+}
+
+.contenido .publicidad p{
+    float: right;
+    margin-top: 20%;
+}
+
+/* responsive mobile */
+
+.error{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .contenido .sugerencias,
+    .contenido .publicidad{
+        display: none;
+    }
+
+    .contenido .posts{
+        width: 90%;
+    }
+
+    .contenido .posts .compartir p,
+    .contenido .posts .postsContactos p{
+        left: 30%;
+    }
+}
