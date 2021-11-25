@@ -22,13 +22,14 @@ body{
     display: flex;
     font-family: var(--title-font);
     font-size: var(--size-one);
-    margin-top: -15%;
+    margin-top: -10%;
+    color: white;
 }
 
 .header .buscar input{
     width: 400px;
     height: 25px;
-    margin-top: 1%;
+    margin-top: 3%;
     margin-left: 20%;
     border-radius: 10px;
     font-size: var(--size-three);
@@ -42,15 +43,20 @@ body{
 }
 
 .header .navbar{
-    border: 1px solid black;
-    width: 170px;
+    width: 210px;
 }
 
 .header .navbar p{
     float: left;
     padding: 0% 2%;
+    color: white;
+    margin-left: 7%;
+    cursor: pointer;
 }
 
+.header .navbar i{
+    font-size: 28px;
+}
 /* responsive mobile */
 
 .header .buscarResponsive{
