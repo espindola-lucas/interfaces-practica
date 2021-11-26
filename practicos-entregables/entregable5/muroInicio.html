@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/generales/header.css">
-    <link rel="stylesheet" href="css/especificos/muro-inicio.css">
+    <link rel="stylesheet" href="css/especificos/muro-inicio.css"> 
+    <link rel="stylesheet" href="css/especificos/loader.css">
     <script src="https://kit.fontawesome.com/616b98738f.js" crossorigin="anonymous"></script>
     <title>SocialVet</title>
 </head>
 <body>
+   
     <!-- header -->
-    <header class="header">
+    <header class="header" id="header">
         <!-- logo y titulo del header -->
         <div class="logo">
-            <img src="" alt="">
-            <h1>SocialVet</h1>
+            <img src="images/header-logo.png" alt="">
+            <!-- <h1>SocialVet</h1> -->
         </div>
 
         <!-- input de buscar -->
@@ -36,6 +38,10 @@
         </div>
     </header>
 
+    <div class="loader-container" id="loader">
+        <div class="loader1"></div>
+        <div class="loader2"></div> 
+    </div>
     <!-- Contenido del "body" afuera del header -->
     <section class="contenido">
         <div class="sugerencias">
@@ -45,7 +51,7 @@
 
             <!-- Caja de usuarios de sugerencias -->
             <div class="boxUser">
-                <img src="descarga.jpeg" alt="">
+                <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
                     <div class="user">
                         <p>Juan Perez</p>
@@ -55,7 +61,7 @@
             </div><br>
 
             <div class="boxUser">
-                <img src="descarga.jpeg" alt="">
+                <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
                     <div class="user">
                         <p>Juan Perez</p>
@@ -65,7 +71,7 @@
             </div><br>
 
             <div class="boxUser">
-                <img src="descarga.jpeg" alt="">
+                <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
                     <div class="user">
                         <p>Juan Perez</p>
@@ -75,7 +81,7 @@
             </div><br>
 
             <div class="boxUser">
-                <img src="descarga.jpeg" alt="">
+                <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
                     <div class="user">
                         <p>Juan Perez</p>
@@ -85,7 +91,7 @@
             </div><br>
             
             <div class="boxUser">
-                <img src="descarga.jpeg" alt="">
+                <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
                     <div class="user">
                         <p>Juan Perez</p>
@@ -95,7 +101,7 @@
             </div><br>
             
             <div class="boxUser">
-                <img src="descarga.jpeg" alt="">
+                <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
                     <div class="user">
                         <p>Juan Perez</p>
@@ -111,7 +117,7 @@
             <!-- Caja para crear una publicacion -->
             <div class="compartir">
                 <h3>Crear una publicación</h3>
-                <img class="profile" src="descarga.jpeg" alt="">
+                <img class="profile" src="images/descarga.jpeg" alt="">
                 <p>Jorge Perez</p>
                 <input type="text" name="" id="" placeholder="Comparte tus ideas...">
                 <h5>Publicar</h5>
@@ -120,9 +126,9 @@
             <!-- Publicaciones de los contactos -->
             <div class="postsContactos">
                 <div class="user">
-                    <img class="profile" src="lit-killah.jpg" alt="">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
                     <p>Leandro Rodriguez</p>
-                    <img class="imgPost" src="prueba.jpg" alt=""><br>
+                    <img class="imgPost" src="images/prueba.jpg" alt=""><br>
                     <div class="acciones">
                         <p>Comentar<i class="fas fa-comment"></i></p>
                         <p>Me Gusta<i class="fas fa-heart"></i></p>
@@ -134,9 +140,9 @@
 
             <div class="postsContactos">
                 <div class="user">
-                    <img class="profile" src="lit-killah.jpg" alt="">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
                     <p>Leandro Rodriguez</p>
-                    <img class="imgPost" src="prueba.jpg" alt=""><br>
+                    <img class="imgPost" src="images/prueba.jpg" alt=""><br>
                     <div class="acciones">
                         <p>Comentar<i class="fas fa-comment"></i></p>
                         <p>Me Gusta<i class="fas fa-heart"></i></p>
@@ -148,9 +154,9 @@
 
             <div class="postsContactos">
                 <div class="user">
-                    <img class="profile" src="lit-killah.jpg" alt="">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
                     <p>Leandro Rodriguez</p>
-                    <img class="imgPost" src="prueba.jpg" alt=""><br>
+                    <img class="imgPost" src="images/prueba.jpg" alt=""><br>
                     <div class="acciones">
                         <p>Comentar<i class="fas fa-comment"></i></p>
                         <p>Me Gusta<i class="fas fa-heart"></i></p>
@@ -164,25 +170,26 @@
         <div class="publicidad">
             <h3>Publicidad</h3>
             <div class="boxPublicidad">
-                <img src="eukanuba.png" alt="">
+                <img src="images/eukanuba.png" alt="">
                 <p>Eukanuba</p>
             </div>
 
             <div class="boxPublicidad">
-                <img src="ortopedia.jpg" alt="">
+                <img src="images/ortopedia.jpg" alt="">
                 <p>Eukanuba</p>
             </div>
 
             <div class="boxPublicidad">
-                <img src="royal-canin.png" alt="">
+                <img src="images/royal-canin.png" alt="">
                 <p>Eukanuba</p>
             </div>
 
             <div class="boxPublicidad">
-                <img src="veterinaria.jpeg" alt="">
+                <img src="images/veterinaria.jpeg" alt="">
                 <p>Eukanuba</p>
             </div>
         </div>
     </section>
 </body>
+<script src="js/script.js"></script>
 </html>
