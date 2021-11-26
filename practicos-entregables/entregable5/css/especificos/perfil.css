@@ -8,7 +8,6 @@
 body{
     font-family: var(--font-text);
     font-family: var(--text-font);
-    overflow: hidden;
 }
 
 .bannerProfile .banner{
@@ -43,6 +42,7 @@ body{
 .contenedor .amigos-fotos{
     background-color: var(--light-color);
     width: 28%;
+    height: 720px;
 }
 
 .contenedor .amigos-fotos h1{
@@ -88,67 +88,4 @@ body{
     border-radius: var(--border-radius);
     width: 35%;
     height: 520px;
-}
-
-/* ring de carga */
-.loader-container{
-    width: 100%;
-    height: 910px;
-}
-
-.loader-container .loader1{
-    width: 100px;
-    height: 100px;
-    position: relative;
-    left: 50%;
-    top: 40%;
-    border: solid 4px transparent;
-    border-top-color: #844B84;
-    border-left-color: #844B84;
-    border-radius: 50%;
-    animation: loader 1.2s linear infinite;  
-}
-
-.loader-container .loader2{
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    border: solid 4px transparent;
-    border-top-color:#A66FA6;
-    border-left-color: #A66FA6;
-    border-radius: 50%;
-    animation: loader2 1.2s linear infinite;  
-}
-
-.loader-container-finish{
-    width: 100%;
-    height: 910px;
-    animation: mostrarPagina 3s 1;
-}
-
-/* keyframes */
-@keyframes loader {
-    0%{
-        transform: translate(-50%,50%) rotate(0deg);
-	    animation: loader2 1.2s linear infinite;
-    }
-
-}
-
-@keyframes loader2 {
-    0%{
-        transform: translate(-50%,50%) rotate(0deg);
-	    animation: loader2 1.2s linear infinite;
-    }
-}
-
-@keyframes mostrarPagina {
-    0%{
-        height: 910px;
-    }
-    100%{
-        height: 0px;
-    }
 }
