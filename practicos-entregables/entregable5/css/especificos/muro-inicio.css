@@ -3,34 +3,39 @@
     margin: 0;
     padding: 0;
 }
+
 body{
     font-family: var(--font-text);
     font-family: var(--text-font);
 }
+
 .contenido{
     display: flex;
     justify-content: space-around;
     padding: 2% 0%;
 }
+
 .contenido .sugerencias,
 .contenido .publicidad{
     display: flex;
     padding: 1% 2%;
     display: table-column;
     border-radius: var(--border-radius);
-    box-shadow: 5px 5px 10px gray;
     height: 500px;
 }
+
 .contenido .sugerencias img{
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
+
 .contenido .sugerencias .nombre{
     width: 100px;
     float: right;
     font-size: var(--size-three);
 }
+
 .contenido .sugerencias .nombre button{
     border: none;
     cursor: pointer;
@@ -39,17 +44,17 @@ body{
     padding: 3%;
     border-radius: var(--border-radius);
 }
-.contenido .sugerencias,
-.contenido .publicidad{
-    background-color: rgb(234, 186, 234, 0.5);
-}
+
 .contenido .sugerencias h3,
 .contenido .publicidad h3{
     color: rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
+
 .contenido .posts h3{
     color: rgba(0, 0, 0, 0.7);
 }
+
 .contenido .sugerencias .agregarUser{
     background-color: rgb(166, 111, 166);
     width: 80px;
@@ -57,24 +62,32 @@ body{
     padding: 3%;
     color: white;
 }
+
 .contenido .sugerencias .boxUser:hover{
     background-color: rgba(234, 186, 234, 0.6);
 }
+
 .contenido .posts{
     width: 45%;
 }
+
 .contenido .posts h3{
     text-align: center;
 }
+
 .contenido .posts .compartir,
 .contenido .posts .postsContactos{
     justify-content: start;
     margin-left: 5%;
     background-color: rgba(196, 196, 196, 0.3);
     width: 90%;
-    box-shadow: 5px 5px 10px gray;
     border-radius: var(--border-radius);
     margin-bottom: 5%;
+}
+
+.contenido .posts .compartir:hover,
+.contenido .posts .postsContactos:hover{
+    box-shadow: 5px 5px 10px gray;
 }
 
 .contenido .posts .compartir .profile,
@@ -159,23 +172,31 @@ body{
     position: relative;
     left: 10px;
 }
+
 .contenido .publicidad .boxPublicidad{
-    /* box-shadow: 5px 5px 10px gray; */
-    border: 1px solid gray;
     margin-bottom: 10%;
 }
+
 .contenido .publicidad img{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5%;
 }
+
 .contenido .publicidad p{
     float: right;
     margin-top: 20%;
 }
+
+/* .contenido .publicidad .boxPublicidad:hover{
+    box-shadow: 5px 5px 10px gray;
+} */
+
 /* responsive mobile */
 .error{
     display: none;
 }
+
 @media (max-width: 768px){
     .contenido .sugerencias,
     .contenido .publicidad{
