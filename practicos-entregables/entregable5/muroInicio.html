@@ -42,6 +42,7 @@
         <div class="loader1"></div>
         <div class="loader2"></div> 
     </div>
+    <div class="body" id="body"> 
     <!-- Contenido del "body" afuera del header -->
     <section class="contenido">
         <div class="sugerencias">
@@ -132,7 +133,7 @@
                     <div class="acciones">
                         <p>Comentar<i class="fas fa-comment"></i></p>
                         <p>Me Gusta<i class="fas fa-heart"></i></p>
-                        <p>Compartir<i class="fas fa-share-alt"></i></p>
+                        <p onclick="desocultar()">Compartir<i class="fas fa-share-alt"></i></p>
                     </div>
                     <input type="text" name="" id="" placeholder="Agregar comentario...">
                 </div>
@@ -190,6 +191,59 @@
             </div>
         </div>
     </section>
+    <div class="compartirAmigos" id='compartirAmigos'>
+        <div class="Amigos">
+            <h1>Compartir Publicacion a :</h1>
+            <div class="Amigo-Compartido " >
+                <div class="box-amigo">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez</p>
+                </div>
+                <div class="box-amigo">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez</p>
+                </div>
+                <div class="box-amigo">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez</p>
+                </div>
+                <div class="box-amigo">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez</p>
+                </div>
+                <div class="box-amigo">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez</p>
+                </div>
+                <div class="box-amigo">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez</p>
+                </div>
+                <div class="box-amigo">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez</p>
+                </div>
+                <div class="box-amigo">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez</p>
+                </div>
+                <div class="box-amigo">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez</p>
+                </div>
+                <div class="box-amigo">
+                    <img class="profile" src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez</p>
+                </div>
+            </div>
+            <button onclick="Cancelar()"  class="cancelar">Cancelar</button>
+            <button class="compartir">Compartir</button>
+        </div>
+    
+    </div>
+        
+</div>
 </body>
 <script src="js/script.js"></script>
+<script src="js/script-muro.js"></script>
 </html>
