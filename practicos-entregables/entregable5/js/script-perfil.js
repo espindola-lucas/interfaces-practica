@@ -7,7 +7,6 @@ function Timer() {
     let n = 0;
     let parar = 1;
     let entre = 0;
-    document.getElementById('compartirAmigos').style.display='none';
     window.setInterval(function(){
         if(parar != n){
             n++;
