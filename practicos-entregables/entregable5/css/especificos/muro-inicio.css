@@ -13,7 +13,64 @@ body{
     display: flex;
     justify-content: space-around;
     padding: 2% 0%;
+    position: absolute;
+    width: 100%;
 }
+.compartirAmigos{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(181,181, 181, 0.8);
+    position: absolute;
+}
+.compartirAmigos .Amigos h1{
+color: rgba(0, 0,0, 0.6); 
+text-align: center;
+margin-top: 3%;
+font-size: 24px;
+}
+
+.Amigo-Compartido .box-amigo {
+    margin-top: 13%;
+    display: flex;
+} 
+.Amigo-Compartido{
+    margin-left: 8%;
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+.Amigo-Compartido .box-amigo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.Amigos{
+    width: 25%;
+    height: 50%;
+    background-color: beige;
+    margin-left: 40%;
+    margin-top:5%;
+    position: absolute;
+}
+.Amigos button {
+    margin-top: 5%;
+    background-color: rgb(166, 111, 166);
+    width: 80px;
+    border-radius: var(--border-radius);
+    padding: 1%;
+    color: white;
+}
+.Amigos .cancelar{
+    margin-left: 15%;
+}
+.Amigos .compartir{
+    margin-left: 35%;
+}
+.acciones a {
+    text-decoration:none;
+
+    color: rgba(0, 0, 0, 1);
+    margin-top: 2%;
+} 
 
 .contenido .sugerencias,
 .contenido .publicidad{
@@ -79,7 +136,7 @@ body{
 .contenido .posts .postsContactos{
     justify-content: start;
     margin-left: 5%;
-    background-color: rgba(196, 196, 196, 0.3);
+    background-color: rgba(196, 196, 196, 0.5);
     width: 90%;
     border-radius: var(--border-radius);
     margin-bottom: 5%;
