@@ -1,70 +1,16 @@
 @import url('../generales/variables.css');
-
 *{
     margin: 0;
     padding: 0;
 }
-
 body{
     font-family: var(--font-text);
     font-family: var(--text-font);
 }
-
 .contenido{
     display: flex;
     justify-content: space-around;
     padding: 2% 0%;
-    position: absolute;
-    width: 100%;
-}
-.compartirAmigos{
-    width: 100%;
-    height: 910px;
-    background-color: rgba(181,181, 181, 0.8);
-    position: absolute;
-}
-.compartirAmigos .Amigos h1{
-color: rgba(0, 0,0, 0.6); 
-text-align: center;
-margin-top: 3%;
-font-size: 24px;
-}
-
-.Amigo-Compartido .box-amigo {
-    margin-top: 13%;
-    display: flex;
-} 
-.Amigo-Compartido{
-    margin-left: 8%;
-    display:grid;
-    grid-template-columns: 50% 50%;
-}
-.Amigo-Compartido .box-amigo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-.Amigos{
-    width: 25%;
-    height: 50%;
-    background-color: beige;
-    margin-left: 40%;
-    margin-top:5%;
-    position: absolute;
-}
-.Amigos button {
-    margin-top: 5%;
-    background-color: rgb(166, 111, 166);
-    width: 80px;
-    border-radius: var(--border-radius);
-    padding: 1%;
-    color: white;
-}
-.Amigos .cancelar{
-    margin-left: 15%;
-}
-.Amigos .compartir{
-    margin-left: 35%;
 }
 .contenido .sugerencias,
 .contenido .publicidad{
@@ -75,43 +21,35 @@ font-size: 24px;
     box-shadow: 5px 5px 10px gray;
     height: 500px;
 }
-
 .contenido .sugerencias img{
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
-
 .contenido .sugerencias .nombre{
     width: 100px;
     float: right;
     font-size: var(--size-three);
 }
-
 .contenido .sugerencias .nombre button{
     border: none;
     cursor: pointer;
 } 
-
 .contenido .sugerencias .boxUser{
     padding: 3%;
     border-radius: var(--border-radius);
 }
-
 .contenido .sugerencias,
 .contenido .publicidad{
     background-color: rgb(234, 186, 234, 0.5);
 }
-
 .contenido .sugerencias h3,
 .contenido .publicidad h3{
     color: rgba(0, 0, 0, 0.5);
 }
-
 .contenido .posts h3{
     color: rgba(0, 0, 0, 0.7);
 }
-
 .contenido .sugerencias .agregarUser{
     background-color: rgb(166, 111, 166);
     width: 80px;
@@ -119,19 +57,15 @@ font-size: 24px;
     padding: 3%;
     color: white;
 }
-
 .contenido .sugerencias .boxUser:hover{
     background-color: rgba(234, 186, 234, 0.6);
 }
-
 .contenido .posts{
     width: 45%;
 }
-
 .contenido .posts h3{
     text-align: center;
 }
-
 .contenido .posts .compartir,
 .contenido .posts .postsContactos{
     justify-content: start;
@@ -144,7 +78,8 @@ font-size: 24px;
 }
 
 .contenido .posts .compartir .profile,
-.contenido .posts .postsContactos .user .profile{
+.contenido .posts .postsContactos .user .profile,
+.contenedor .posts .profile{
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -153,13 +88,13 @@ font-size: 24px;
 }
 
 .contenido .posts .compartir p,
-.contenido .posts .postsContactos p{
+.contenido .posts .postsContactos p,
+.contenedor .posts p{
     position: relative;
     left: 22%;
     bottom: 50px;
     font-size: var(--size-one);
 }
-
 .contenido .posts .compartir input{
     /* background-color: rgba(196, 196, 196, 0.5); */
     padding: 1%;
@@ -168,7 +103,6 @@ font-size: 24px;
     margin-left: 10%;
     border: none;
 }
-
 .contenido .posts .compartir h5{
     position: relative;
     left: 80%;
@@ -180,32 +114,38 @@ font-size: 24px;
     border-radius: 20px;
 }
 
-.contenido .posts .postsContactos .user{
+.contenido .posts .postsContactos .user,
+.contenedor .posts .user{
     padding: 2.5% 0%;
 }
 
-.contenido .posts .postsContactos .user .imgPost{
+.contenido .posts .postsContactos .user .imgPost,
+.contenedor .posts .user .imgPost{
     width: 80%;
     height: 300px;
     margin-left: 10%;
 }
 
-.contenido .posts .postsContactos .user .acciones{
+.contenido .posts .postsContactos .user .acciones,
+.contenedor .posts .user .acciones{
     display: flex;
     justify-content: space-evenly;
 }
 
-.contenido .posts .postsContactos .user .acciones p{
+.contenido .posts .postsContactos .user .acciones p,
+.contenedor .posts .user .acciones p{
     all: unset;
     color: rgba(0, 0, 0, 1);
     margin-top: 2%;
 }
 
-.contenido .posts .postsContactos .user .acciones i{
+.contenido .posts .postsContactos .user .acciones i,
+.contenedor .posts .user .acciones i{
     color: rgba(0, 0, 0, 0.6);
 }
 
-.contenido .posts .postsContactos .user input{
+.contenido .posts .postsContactos .user input,
+.contenedor .posts .user input{
     width: 80%;
     height: 30px;
     margin-left: 10%;
@@ -214,52 +154,39 @@ font-size: 24px;
     margin-top: 2%;
 }
 
-.contenido .posts .postsContactos .user input::placeholder{
+.contenido .posts .postsContactos .user input::placeholder,
+.contenedor .posts .user input::placeholder{
     position: relative;
     left: 10px;
 }
-
 .contenido .publicidad .boxPublicidad{
     /* box-shadow: 5px 5px 10px gray; */
     border: 1px solid gray;
     margin-bottom: 10%;
 }
-
 .contenido .publicidad img{
     width: 100px;
     height: 100px;
 }
-
 .contenido .publicidad p{
     float: right;
     margin-top: 20%;
 }
-
 /* responsive mobile */
-
 .error{
     display: none;
 }
-
 @media (max-width: 768px){
     .contenido .sugerencias,
     .contenido .publicidad{
         display: none;
     }
-
     .contenido .posts{
         width: 90%;
     }
-
     .contenido .posts .compartir p,
     .contenido .posts .postsContactos p{
         left: 30%;
     }
     
 }
- .acciones a {
-    text-decoration:none;
-  
-    color: rgba(0, 0, 0, 1);
-    margin-top: 2%;
- }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/generales/header.css">
     <link rel="stylesheet" href="css/especificos/muro-inicio.css"> 
     <!-- <link rel="stylesheet" href="css/especificos/loader.css"> -->
+    <link rel="stylesheet" href="css/especificos/busqueda.css">
     <script src="https://kit.fontawesome.com/616b98738f.js" crossorigin="anonymous"></script>
     <title>SocialVet</title>
 </head>
@@ -18,6 +19,7 @@
             <img src="images/header-logo.png" alt="">
             <!-- <h1>SocialVet</h1> -->
         </div>
+
         <!-- input de buscar -->
         <div class="buscar">
             <input type="text" placeholder="Buscar...">
@@ -25,14 +27,14 @@
 
         <!-- navbar de distintas secciones -->
         <nav class="navbar">
-            <a href="muroInicio.html">
-                <p><i style="margin-left: 30%;" class="fas fa-home"></i><br>Inicio</p>
-            </a>
-            <a href="perfil.html">
-                <p style="margin-left: 7%;"><i style="margin-left: 30%;" class="fas fa-user-circle"></i><br>Perfil</p>
+            <a href="">
+                <p><i class="fas fa-home"></i><br>Inicio</p>
             </a>
             <a href="">
-                <p style="margin-left: 7%;"><i style="margin-left: 30%;" class="fas fa-comments"></i><br>Mensajess</p>
+                <p style="margin-left: 7%;"><i class="fas fa-user-circle"></i><br>Perfil</p>
+            </a>
+            <a href="">
+                <p style="margin-left: 7%;"><i class="fas fa-comments"></i><br>Mensajes</p>
             </a>
         </nav>
 
@@ -41,6 +43,7 @@
             <i class="fas fa-search"></i>
         </div>
     </header>
+
     <div class="loader-container" id="loader">
         <div class="loader1"></div>
         <div class="loader2"></div> 
@@ -48,8 +51,10 @@
     <!-- Contenido del "body" afuera del header -->
     <section class="contenido">
         <div class="sugerencias">
+
             <!-- Sugerencias de amistad -->
             <h3>Sugerencia de amistad</h3>
+
             <!-- Caja de usuarios de sugerencias -->
             <div class="boxUser">
                 <img src="images/descarga.jpeg" alt="">
@@ -60,6 +65,7 @@
                     </div>
                 </div>
             </div><br>
+
             <div class="boxUser">
                 <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
@@ -69,6 +75,7 @@
                     </div>
                 </div>
             </div><br>
+
             <div class="boxUser">
                 <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
@@ -78,6 +85,7 @@
                     </div>
                 </div>
             </div><br>
+
             <div class="boxUser">
                 <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
@@ -87,7 +95,7 @@
                     </div>
                 </div>
             </div><br>
-            
+
             <div class="boxUser">
                 <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
@@ -97,7 +105,7 @@
                     </div>
                 </div>
             </div><br>
-            
+
             <div class="boxUser">
                 <img src="images/descarga.jpeg" alt="">
                 <div class="nombre">
@@ -108,71 +116,78 @@
                 </div>
             </div><br>
         </div>
-        <!-- Lugar de los posts en general -->
-        <div class="posts">
-            <!-- Caja para crear una publicacion -->
-            <div class="compartir">
-                <h3>Crear una publicación</h3>
-                <img class="profile" src="images/descarga.jpeg" alt="">
-                <p>Jorge Perez</p>
-                <input type="text" name="" id="" placeholder="Comparte tus ideas...">
-                <h5>Publicar</h5>
-            </div>
-            <!-- Publicaciones de los contactos -->
-            <div class="postsContactos">
-                <div class="user">
-                    <img class="profile" src="images/lit-killah.jpg" alt="">
-                    <p>Leandro Rodriguez</p>
-                    <img class="imgPost" src="images/prueba.jpg" alt=""><br>
-                    <div class="acciones">
-                        <p>Comentar<i class="fas fa-comment"></i></p>
-                        <p>Me Gusta<i class="fas fa-heart"></i></p>
-                        <p>Compartir<i class="fas fa-share-alt"></i></p>
-                    </div>
-                    <input type="text" name="" id="" placeholder="Agregar comentario...">
+
+        <!-- Resultados de la busqueda -->
+        <div class="busqueda">
+            <h3>Resultados de la búsqueda</h3>
+
+            <div class="resultado">
+                <div>
+                    <img src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez <i style="margin-left: 5%;" class="fas fa-user-plus"></i><i style="margin-left: 5%;" class="fas fa-comment"></i></p>
+                    <p class="amigosEnComun">Amigos en comun 400</p>
+                </div>
+
+                <div>
+                    <img src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez <i style="margin-left: 5%;" class="fas fa-user-check"></i><i style="margin-left: 5%;" class="fas fa-comment"></i></p>
+                    <p class="amigosEnComun">Amigos en comun 400</p>
+                </div>
+
+                <div>
+                    <img src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez <i style="margin-left: 5%;" class="fas fa-user-check"></i><i style="margin-left: 5%;" class="fas fa-comment"></i></p>
+                    <p class="amigosEnComun">Amigos en comun 400</p>
+                </div>
+
+                <div>
+                    <img src="images/lit-killah.jpg" alt="">
+                    <p>Leandro Rodriguez <i style="margin-left: 5%;" class="fas fa-user-plus"></i><i style="margin-left: 5%;" class="fas fa-comment"></i></p>
+                    <p class="amigosEnComun">Amigos en comun 400</p>
                 </div>
             </div>
-            <div class="postsContactos">
-                <div class="user">
-                    <img class="profile" src="images/lit-killah.jpg" alt="">
-                    <p>Leandro Rodriguez</p>
-                    <img class="imgPost" src="images/prueba.jpg" alt=""><br>
-                    <div class="acciones">
-                        <p>Comentar<i class="fas fa-comment"></i></p>
-                        <p>Me Gusta<i class="fas fa-heart"></i></p>
-                        <p>Compartir<i class="fas fa-share-alt"></i></p>
-                    </div>
-                    <input type="text" name="" id="" placeholder="Agregar comentario...">
-                </div>
+            <!-- boxResultado -->
+            <!-- <div class="resultado">
+                <img class="profile" src="images/lit-killah.jpg" alt="">
+                <p>Leandro Rodriguez <i style="margin-left: 5%;" class="fas fa-user-plus"></i><i style="margin-left: 5%;" class="fas fa-comment"></i></p>
+                <p class="amigosEnComun">Amigos en comun 400</p>
             </div>
-            <div class="postsContactos">
-                <div class="user">
-                    <img class="profile" src="images/lit-killah.jpg" alt="">
-                    <p>Leandro Rodriguez</p>
-                    <img class="imgPost" src="images/prueba.jpg" alt=""><br>
-                    <div class="acciones">
-                        <p>Comentar<i class="fas fa-comment"></i></p>
-                        <p>Me Gusta<i class="fas fa-heart"></i></p>
-                        <p>Compartir<i class="fas fa-share-alt"></i></p>
-                    </div>
-                    <input type="text" name="" id="" placeholder="Agregar comentario...">
-                </div>
+            <div class="resultado">
+                <img class="profile" src="images/lit-killah.jpg" alt="">
+                <p>Leandro Rodriguez <i style="margin-left: 5%;" class="fas fa-user-check"></i></i><i style="margin-left: 5%;" class="fas fa-comment"></i></p>
+                <p class="amigosEnComun">Amigos en comun 400</p>
             </div>
+            <div class="resultado">
+                <img class="profile" src="images/lit-killah.jpg" alt="">
+                <p>Leandro Rodriguez <i style="margin-left: 5%;" class="fas fa-user-check"></i></i><i style="margin-left: 5%;" class="fas fa-comment"></i></p>
+                <p class="amigosEnComun">Amigos en comun 400</p>
+            </div>
+            
+            <div class="resultado">
+                <img class="profile" src="images/lit-killah.jpg" alt="">
+                <p>Leandro Rodriguez <i style="margin-left: 5%;" class="fas fa-user-plus"></i><i style="margin-left: 5%;" class="fas fa-comment"></i></p>
+                <p class="amigosEnComun">Amigos en comun 400</p>
+            </div> -->
         </div>
+
+        <!-- publicidad -->
         <div class="publicidad">
             <h3>Publicidad</h3>
             <div class="boxPublicidad">
                 <img src="images/eukanuba.png" alt="">
                 <p>Eukanuba</p>
             </div>
+
             <div class="boxPublicidad">
                 <img src="images/ortopedia.jpg" alt="">
                 <p>Eukanuba</p>
             </div>
+
             <div class="boxPublicidad">
                 <img src="images/royal-canin.png" alt="">
                 <p>Eukanuba</p>
             </div>
+
             <div class="boxPublicidad">
                 <img src="images/veterinaria.jpeg" alt="">
                 <p>Eukanuba</p>
