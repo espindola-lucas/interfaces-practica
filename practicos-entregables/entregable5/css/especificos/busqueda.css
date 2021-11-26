@@ -1,0 +1,88 @@
+@import url('../generales/variables.css');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--font-text);
+    font-family: var(--text-font);
+}
+
+.contenido .busqueda{
+    width: 45%;
+    max-width: 1000px;
+}
+
+.contenido .busqueda h3{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 5%;
+}
+
+.contenido .busqueda .resultado{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 80px);
+    grid-gap: 30px;
+}
+
+.contenido .busqueda .resultado > div {
+    display: block;
+    background-color: rgba(196, 196, 196, 0.3);
+    box-shadow: 5px 5px 10px gray;
+}
+
+.contenido .busqueda .resultado > div > img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 2%;
+}
+
+.contenido .busqueda .resultado > div > p{
+    position: relative;
+    left: 28%;
+    bottom: 80%;
+    font-size: var(--size-two);;
+}
+
+.contenido .busqueda .resultado > div > .amigosEnComun{
+    font-size: var(--size-three);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* .contenido .busqueda h3{
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.contenido .busqueda .resultado{
+    width: 45%;
+    height: 100px;
+    background-color: rgba(196, 196, 196, 0.3);
+    box-shadow: 5px 5px 10px gray;
+    border-radius: var(--border-radius);
+}
+
+.contenido .busqueda .resultado .profile{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+    left: 10%;
+    top: 15%;
+}
+
+.contenido .busqueda .resultado p{
+    position: relative;
+    left: 30%;
+    bottom: 50px;
+    font-size: 20px;
+}
+
+.contenido .busqueda .resultado .amigosEnComun{
+    font-size: var(--size-two);
+    color: rgba(0, 0, 0, 0.7);
+} */

@@ -1,122 +1,134 @@
+@import url('../generales/variables.css');
 
-
-.conteiner{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    
-}
-.perfil{
-    background-color: #E4D9E4;
-    border-radius: 5px;
-    width: 1090px;
-    height: 238px;
-    margin-top: 110px;
-}
-.nombre{
-text-align: center;
-font-size: 48px;
-}
-.circulo {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    background: #5cb85c;
-  
-
-}
-.fotos{
-    width: 20%;
-    height: 868px;
-    background-color: #E4D9E4;
-    margin-top:50px;
-    border-radius: 5px;
-    margin-left: 10%;
-}
-.lineas{
-    width: 70%;
-    height: 1px;
-  margin-left: 15%;
-    background-color: #A66FA6;
-}
-.texto{
-    margin-left: 17%;
-    font-size: 20px;
-    color: rgba(0, 0, 0,1);
-}
-
-.image-amigos{
-    display: inline-grid;
-  
-    grid-template-columns: 25% 25% 25% ;
-    
-}
-.amigo{
-    display: inline-grid;
-  
-    grid-template-columns: 25% 25% 25% 25% ;
-    
-}
-img{
-    height: 85%;
-    width: 85%;
-    margin-left: 60%;
-}
-.amigos{
-margin-left: 80%;
-height: 68px;
-width: 70px;
-margin-top: 15%;
-}
-.circulo-foto{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #5cb85c;
-    margin-left: 20%;
-}
-
-.nombre-apellido{
-    font-size:14px ;
-}
-.text-todos{
-    font-size:14px ;
-    margin-left: 65%;
+*{
+    margin: 0;
+    padding: 0;
 }
 
 body{
+    font-family: var(--font-text);
+    font-family: var(--text-font);
     overflow: hidden;
 }
+
+.bannerProfile .banner{
+    margin-top: 2%;
+    width: 75%;
+    height: 300px;
+    margin-left: 13%;
+    border-radius: var(--border-radius);
+    background-color: var(--light-color);
+}
+
+.bannerProfile .banner > img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 45%;
+    margin-top: 2%;
+}
+
+.bannerProfile .banner > h1{
+    text-align: center;
+    font-size: 48px;
+    margin-top: 2%;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2%;
+}
+
+.contenedor .amigos-fotos{
+    background-color: var(--light-color);
+    width: 28%;
+}
+
+.contenedor .amigos-fotos h1{
+    padding: 5% 15%
+}
+
+.contenedor .amigos-fotos .lineas{
+    background-color: #A66FA6;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: -5%;
+}
+
+.contenedor .amigos-fotos .fotos,
+.contenedor .amigos-fotos .amigos{
+    width: 70%;
+    margin-top: 3%;
+    margin-left: 15%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5%;
+}
+
+.contenedor .amigos-fotos .fotos .mas-fotos,
+.contenedor .amigos-fotos .fotos .mas-amigos{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.contenedor .amigos-fotos .fotos > img{
+    width: 100%;
+}
+
+.contenedor .amigos-fotos .amigos > img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.contenedor .posts{
+    background-color: rgba(196, 196, 196, 0.3);
+    box-shadow: 5px 5px 10px gray;
+    border-radius: var(--border-radius);
+    width: 35%;
+    height: 520px;
+}
+
+/* ring de carga */
 .loader-container{
     width: 100%;
     height: 910px;
 }
 
 .loader-container .loader1{
-width: 100px;
-height: 100px;
-position: relative;
-left: 50%;
-top: 40%;
-border: solid 4px transparent;
-border-top-color: #844B84;
-border-left-color: #844B84;
-border-radius: 50%;
-animation: loader 1.2s linear infinite;  
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 50%;
+    top: 40%;
+    border: solid 4px transparent;
+    border-top-color: #844B84;
+    border-left-color: #844B84;
+    border-radius: 50%;
+    animation: loader 1.2s linear infinite;  
 }
 
 .loader-container .loader2{
-width: 80px;
-height: 80px;
-position: absolute;
-left: 50%;
-top: 50%;
-border: solid 4px transparent;
-border-top-color:#A66FA6;
-border-left-color: #A66FA6;
-border-radius: 50%;
-animation: loader2 1.2s linear infinite;  
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: solid 4px transparent;
+    border-top-color:#A66FA6;
+    border-left-color: #A66FA6;
+    border-radius: 50%;
+    animation: loader2 1.2s linear infinite;  
 }
+
+.loader-container-finish{
+    width: 100%;
+    height: 910px;
+    animation: mostrarPagina 3s 1;
+}
+
+/* keyframes */
 @keyframes loader {
     0%{
         transform: translate(-50%,50%) rotate(0deg);
@@ -126,6 +138,7 @@ animation: loader2 1.2s linear infinite;
     }
     
 }
+
 @keyframes loader2 {
     0%{
         transform: translate(-50%,50%) rotate(0deg);
@@ -136,13 +149,6 @@ animation: loader2 1.2s linear infinite;
     
 }
 
-.loader-container-finish{
-    width: 100%;
-    height: 910px;
-    animation: mostrarPagina 3s 1;
-}
-
-
 @keyframes mostrarPagina {
     0%{
         height: 910px;
@@ -150,4 +156,4 @@ animation: loader2 1.2s linear infinite;
     100%{
         height: 0px;
     }
-} 
+}

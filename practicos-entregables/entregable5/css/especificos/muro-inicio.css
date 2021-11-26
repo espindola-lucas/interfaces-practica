@@ -94,7 +94,8 @@ body{
 }
 
 .contenido .posts .compartir .profile,
-.contenido .posts .postsContactos .user .profile{
+.contenido .posts .postsContactos .user .profile,
+.contenedor .posts .profile{
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -103,7 +104,8 @@ body{
 }
 
 .contenido .posts .compartir p,
-.contenido .posts .postsContactos p{
+.contenido .posts .postsContactos p,
+.contenedor .posts p{
     position: relative;
     left: 22%;
     bottom: 50px;
@@ -130,32 +132,38 @@ body{
     border-radius: 20px;
 }
 
-.contenido .posts .postsContactos .user{
+.contenido .posts .postsContactos .user,
+.contenedor .posts .user{
     padding: 2.5% 0%;
 }
 
-.contenido .posts .postsContactos .user .imgPost{
+.contenido .posts .postsContactos .user .imgPost,
+.contenedor .posts .user .imgPost{
     width: 80%;
     height: 300px;
     margin-left: 10%;
 }
 
-.contenido .posts .postsContactos .user .acciones{
+.contenido .posts .postsContactos .user .acciones,
+.contenedor .posts .user .acciones{
     display: flex;
     justify-content: space-evenly;
 }
 
-.contenido .posts .postsContactos .user .acciones p{
+.contenido .posts .postsContactos .user .acciones p,
+.contenedor .posts .user .acciones p{
     all: unset;
     color: rgba(0, 0, 0, 1);
     margin-top: 2%;
 }
 
-.contenido .posts .postsContactos .user .acciones i{
+.contenido .posts .postsContactos .user .acciones i,
+.contenedor .posts .user .acciones i{
     color: rgba(0, 0, 0, 0.6);
 }
 
-.contenido .posts .postsContactos .user input{
+.contenido .posts .postsContactos .user input,
+.contenedor .posts .user input{
     width: 80%;
     height: 30px;
     margin-left: 10%;
@@ -164,7 +172,8 @@ body{
     margin-top: 2%;
 }
 
-.contenido .posts .postsContactos .user input::placeholder{
+.contenido .posts .postsContactos .user input::placeholder,
+.contenedor .posts .user input::placeholder{
     position: relative;
     left: 10px;
 }

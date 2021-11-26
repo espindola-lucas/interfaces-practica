@@ -29,7 +29,6 @@ body{
     width: 400px;
     height: 25px;
     margin-top: 4%;
-    margin-left: -10%;
     border-radius: 10px;
     font-size: var(--size-three);
     border: none;
@@ -42,13 +41,15 @@ body{
 }
 
 .header .navbar{
-    border: 1px solid black;
-    width: 170px;
+    width: 300px;
 }
 
 .header .navbar p{
     float: left;
     padding: 0% 2%;
+    color: white;
+    font-size: var(--size-one);
+    cursor: pointer;
 }
 
 /* responsive mobile */

@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/especificos/perfil.css">
+    <link rel="stylesheet" href="css/especificos/muro-inicio.css">
     <link rel="stylesheet" href="css/generales/header.css">
-
+    <script src="https://kit.fontawesome.com/616b98738f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-      <!-- header -->
-      <header class="header" id="header">
+    <!-- header -->
+    <header class="header" id="header">
         <!-- logo y titulo del header -->
         <div class="logo">
             <img src="images/header-logo.png" alt="">
@@ -25,9 +26,15 @@
 
         <!-- navbar de distintas secciones -->
         <nav class="navbar">
-            <p>Inicio</p>
-            <p>Perfil</p>
-            <p>Mensajes</p>
+            <a href="muroInicio.html">
+                <p><i style="margin-left: 30%;" class="fas fa-home"></i><br>Inicio</p>
+            </a>
+            <a href="perfil.html">
+                <p style="margin-left: 7%;"><i style="margin-left: 30%;" class="fas fa-user-circle"></i><br>Perfil</p>
+            </a>
+            <a href="">
+                <p style="margin-left: 7%;"><i style="margin-left: 30%;" class="fas fa-comments"></i><br>Mensajes</p>
+            </a>
         </nav>
 
         <!-- responsive a partir 768px -->
@@ -35,88 +42,86 @@
             <i class="fas fa-search"></i>
         </div>
     </header>
+
+    <!-- contenido de la pagina -->
     <div class="loader-container" id="loader">
         <div class="loader1"></div>
         <div class="loader2"></div> 
     </div>
-    <div class="fotos">
-       <br>
-        <h1 class="texto">Mis fotos</h1>
-        <hr class="lineas">
-        <br>
-        <div class="image-amigos">
-            <img src="images/image.jpeg" alt=""> 
-            <img src="images/image.jpeg" alt=""> 
-            <img src="images/image.jpeg" alt=""> 
-            <img src="images/image.jpeg" alt=""> 
-            <img src="images/image.jpeg" alt=""> 
-            <img src="images/image.jpeg" alt=""> 
-            <img src="images/image.jpeg" alt=""> 
-            <img src="images/image.jpeg" alt=""> 
-            <img src="images/image.jpeg" alt=""> 
+
+    <!-- seccion de banner de perfil -->
+    <section class="bannerProfile">
+        <div class="banner">
+            <img src="images/lit-killah.jpg" alt="">
+            <h1>Jorge Perez</h1>
         </div>
-        <a  class="text-todos" href="">Ver Todas</a>
-        <hr class="lineas">
-        <br>
-        <br>
-        <h1 class="texto">Mis Amigos</h1>
-        <hr class="lineas">
-        <br>
-        <div class="amigo">
-                <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>
-                <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>
-                <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>
-                <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>
-                <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>
-                <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>
-                <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>
-                <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>  <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>
-                <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>
-                <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>  <div class = "amigos">
-                    <div class="circulo-foto"></div>
-                    <h1 class="nombre-apellido">Nombre  Apellido</h1>
-                </div>
-            </div>
-            <a  class="text-todos"  href="">Ver Todos</a>
+    </section>
+
+    <section class="contenedor">
+
+        <div class="amigos-fotos">
+            <h1>Mis Fotos</h1>
             <hr class="lineas">
-            <br>
-            <br>
-    </div>
+            <div class="fotos">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <p class="mas-fotos">Ver Todas</p>
+            </div>
+            <br><br><br><br>
+            <hr class="lineas">
 
 
+            <h1>Mis Amigos</h1>
+            <hr class="lineas">
+            <div class="amigos">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <img src="images/paisaje.jpg" alt="">
+                <p class="mas-amigos">Ver Todos</p>
+            </div>
+        </div>
+
+        <div class="posts">
+            <div class="user">
+                <img class="profile" src="images/lit-killah.jpg" alt="">
+                <p>Leandro Rodriguez</p>
+                <img class="imgPost" src="images/prueba.jpg" alt=""><br>
+                <div class="acciones">
+                    <p>Comentar<i class="fas fa-comment"></i></p>
+                    <p>Me Gusta<i class="fas fa-heart"></i></p>
+                    <p>Compartir<i class="fas fa-share-alt"></i></p>
+                </div>
+                <input type="text" name="" id="" placeholder="Agregar comentario...">
+            </div>
+        </div>
+
+        <!-- <div class="posts">
+            <div class="user">
+                <img class="profile" src="images/lit-killah.jpg" alt="">
+                <p>Leandro Rodriguez</p>
+                <img class="imgPost" src="images/prueba.jpg" alt=""><br>
+                <div class="acciones">
+                    <p>Comentar<i class="fas fa-comment"></i></p>
+                    <p>Me Gusta<i class="fas fa-heart"></i></p>
+                    <p>Compartir<i class="fas fa-share-alt"></i></p>
+                </div>
+                <input type="text" name="" id="" placeholder="Agregar comentario...">
+            </div>
+        </div> -->
+    </section>
 </body>
 <script src="js/script.js"></script>
 </html>
