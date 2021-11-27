@@ -13,7 +13,16 @@ body{
     display: flex;
     justify-content: space-around;
     padding: 2% 0%;
+    position: absolute;
+    width: 100%;
 }
+
+.acciones a {
+    text-decoration:none;
+
+    color: rgba(0, 0, 0, 1);
+    margin-top: 2%;
+} 
 
 .contenido .sugerencias,
 .contenido .publicidad{
@@ -79,7 +88,7 @@ body{
 .contenido .posts .postsContactos{
     justify-content: start;
     margin-left: 5%;
-    background-color: rgba(196, 196, 196, 0.3);
+    background-color: rgba(196, 196, 196, 0.5);
     width: 90%;
     border-radius: var(--border-radius);
     margin-bottom: 5%;
