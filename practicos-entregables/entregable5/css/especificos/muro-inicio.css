@@ -19,7 +19,6 @@ body{
 
 .acciones a {
     text-decoration:none;
-
     color: rgba(0, 0, 0, 1);
     margin-top: 2%;
 } 
@@ -161,9 +160,9 @@ body{
     margin-top: 2%;
 }
 
-.contenido .posts .postsContactos .user .acciones i,
-.contenedor .posts .user .acciones i{
-    color: rgba(0, 0, 0, 0.6);
+.contenido .posts .postsContactos .user .acciones svg,
+.contenedor .posts .user .acciones svg{
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .contenido .posts .postsContactos .user input,

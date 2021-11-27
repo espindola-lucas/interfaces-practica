@@ -29,6 +29,7 @@ body{
     width: 400px;
     height: 25px;
     margin-top: 4%;
+    margin-left: 30%;
     border-radius: 10px;
     font-size: var(--size-three);
     border: none;
@@ -41,7 +42,7 @@ body{
 }
 
 .header .navbar{
-    width: 300px;
+    width: 520px;
 }
 
 .header .navbar p:hover{
@@ -56,6 +57,74 @@ body{
     font-size: var(--size-one);
     cursor: pointer;
 }
+
+.header .navbar > a > p > svg{
+    margin-left: 25%;
+}
+
+/* .header .navbar .notification_wrap{
+    width: 500px;
+    margin: 120px auto 0;
+}
+
+.header .navbar .notification_wrap .notification_icon{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    font-size: 32px;
+    text-align: center;
+    color: blue;
+}
+
+.header .navbar .notification_wrap .notification_icon .fa-bell{
+    cursor: pointer;
+}
+
+.notification_wrap .dropdown{
+    width: 350px;
+    height: auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.125);
+    margin: 15px auto 0;
+    padding: 15px;
+    position: relative;
+    display: none;
+}
+
+.notification_wrap .dropdown .notify_item{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #dbdaff;
+}
+
+.notification_wrap .dropdown .notify_item:last-child{
+    border-bottom: 0px;
+}
+
+.notification_wrap .dropdown .notify_item .notify_img{
+    margin-right: 15px;
+}
+
+.notification_wrap .dropdown .notify_item .notify_info .notify_time{
+    color: #c5c5a6;
+    font-size: 12px;
+}
+
+.notification_wrap .dropdown:before{
+    content: "";
+    position: absolute;
+    top: -30px;
+    transform: translateX(-50%);
+    border: 1px solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.notification_wrap .dropdown:active{
+    display: block;
+} */
 
 /* responsive mobile */
 .header .buscarResponsive{

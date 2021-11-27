@@ -11,30 +11,6 @@ body{
     font-family: var(--text-font);
 }
 
-/* banner del perfil */
-.bannerProfile .banner{
-    margin-top: 2%;
-    width: 75%;
-    height: 300px;
-    margin-left: 13%;
-    border-radius: var(--border-radius);
-    background-color: var(--light-color);
-}
-
-.bannerProfile .banner > img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-left: 45%;
-    margin-top: 2%;
-}
-
-.bannerProfile .banner > h1{
-    text-align: center;
-    font-size: 48px;
-    margin-top: 2%;
-}
-
 /* "contenido" de la pagina, por fuera del banner */
 .contenedor{
     display: flex;
@@ -46,6 +22,7 @@ body{
 .contenedor .amigos-fotos{
     /* background-color: var(--light-color); */
     width: 28%;
+    margin-right: 20%;
 }
 
 .contenedor .amigos-fotos h1{
@@ -97,7 +74,7 @@ body{
     background-color: rgba(196, 196, 196, 0.3);
     border-radius: var(--border-radius);
     width: 180%;
-    margin-left: -48%;
+    margin-left: -90%;
     height: 520px;
     margin-bottom: 15%;
 }
