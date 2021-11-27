@@ -1,7 +1,7 @@
 document.getElementById('loader').addEventListener("animationend", function () {
     document.getElementById('loader').style.display='none';
     });
-
+    
 function Timer() {
 
     document.getElementById('body').style.display='none'; 

@@ -1,13 +1,4 @@
-function desocultar (){
-    document.getElementById('compartirAmigos').style.display='block';
-}
 
-function Cancelar (){
-    document.getElementById('compartirAmigos').style.display='none';
-} 
-function ocultar(){
-    document.getElementById('compartirAmigos').style.display='none';
-    
+function pintar (){
+    document.getElementById('box-amigo').style.backgroundColor = rgba(234, 186, 234, 0.6);
 }
-
-document.addEventListener("DOMContentLoaded", ocultar()); 
