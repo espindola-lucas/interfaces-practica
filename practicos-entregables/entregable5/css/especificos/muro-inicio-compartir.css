@@ -19,7 +19,8 @@ font-size: 24px;
     margin-top: 13%;
     display: flex;
     width: 90%;
-    height: 90%;
+    height: 70%;
+    padding: 2%;
 } 
 .Amigo-Compartido{
     margin-left: 8%;
@@ -38,7 +39,7 @@ font-size: 24px;
 }
 .Amigos{
     width: 25%;
-    height: 50%;
+    height: 55%;
     background-color: beige;
     margin-left: 40%;
     margin-top:5%;
@@ -57,9 +58,9 @@ font-size: 24px;
 .Amigos .compartir{
     margin-left: 25%;
 }
-.Amigos a{
+.Amigos .boton{
     text-decoration:none;
-    color: white;
+    color: white; 
 }
 
 .box-amigo:hover{

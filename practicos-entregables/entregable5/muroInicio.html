@@ -19,11 +19,12 @@
             <!-- <h1>SocialVet</h1> -->
         </div>
         <!-- input de buscar -->
-        <div class="buscar">
-            <input type="text" placeholder="Buscar...">
-        </div>
-
-        <!-- navbar de distintas secciones -->
+    
+            <div class="buscar">
+                <input type="text" placeholder="Buscar... ">  
+                
+            </div>
+    <!-- navbar de distintas secciones -->
         <nav class="navbar">
             <p><i style="margin-left: 40%; font-size: 35px;" class="fas fa-bell"></i><i class="fas fa-chevron-down"></i><br>Notificaciones</p>
             <!-- <div class="wrapper">
@@ -99,7 +100,7 @@
             <div class="nombre">
                 <div class="user">
                     <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </div><br>
@@ -108,7 +109,7 @@
             <div class="nombre">
                 <div class="user">
                     <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </div><br>
@@ -117,7 +118,7 @@
             <div class="nombre">
                 <div class="user">
                     <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </div><br>
@@ -126,17 +127,7 @@
             <div class="nombre">
                 <div class="user">
                     <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
-                </div>
-            </div>
-        </div><br>
-        
-        <div class="boxUser">
-            <img src="images/descarga.jpeg" alt="">
-            <div class="nombre">
-                <div class="user">
-                    <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </div><br>
@@ -146,7 +137,17 @@
             <div class="nombre">
                 <div class="user">
                     <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
+                </div>
+            </div>
+        </div><br>
+        
+        <div class="boxUser">
+            <img src="images/descarga.jpeg" alt="">
+            <div class="nombre">
+                <div class="user">
+                    <p>Juan Perez</p>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </div><br>
@@ -160,6 +161,7 @@
             <p>Jorge Perez</p>
             <input type="text" name="" id="" placeholder="Comparte tus ideas...">
             <h5>Publicar</h5>
+            <p class= "anadir-publicacion">Añadir a tu publicacion <i id="icono" class="fa fa-picture-o"></i></p>
         </div>
         <!-- Publicaciones de los contactos -->
         <div class="postsContactos">
@@ -168,12 +170,7 @@
                 <p>Leandro Rodriguez</p>
                 <img class="imgPost" src="images/prueba.jpg" alt=""><br>
                 <div class="acciones">
-                    <p>Comentar<i class="fas fa-comment"></i></p>
-                    <p>Me Gusta<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.8281 1.97656C10.5391 0.875 8.64062 1.08594 7.44531 2.30469L7 2.77344L6.53125 2.30469C5.35938 1.08594 3.4375 0.875 2.14844 1.97656C0.671875 3.24219 0.601562 5.49219 1.91406 6.85156L6.46094 11.5391C6.74219 11.8438 7.23438 11.8438 7.51562 11.5391L12.0625 6.85156C13.375 5.49219 13.3047 3.24219 11.8281 1.97656Z" fill="black"/>
-                        </svg>
-                    </p>
-                    <a href="muroinicio-compartir.html"><p>Compartir<i class="fas fa-share-alt"></i></p></a>
+
                 </div>
                 <input type="text" name="" id="" placeholder="Agregar comentario...">
             </div>
@@ -184,11 +181,7 @@
                 <p>Leandro Rodriguez</p>
                 <img class="imgPost" src="images/prueba.jpg" alt=""><br>
                 <div class="acciones">
-                    <p>Comentar<i class="fas fa-comment"></i></p>
-                    <p>Me Gusta<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.8281 1.97656C10.5391 0.875 8.64062 1.08594 7.44531 2.30469L7 2.77344L6.53125 2.30469C5.35938 1.08594 3.4375 0.875 2.14844 1.97656C0.671875 3.24219 0.601562 5.49219 1.91406 6.85156L6.46094 11.5391C6.74219 11.8438 7.23438 11.8438 7.51562 11.5391L12.0625 6.85156C13.375 5.49219 13.3047 3.24219 11.8281 1.97656Z" fill="black"/>
-                        </svg></p>
-                    <a href="muroinicio-compartir.html"><p>Compartir<i class="fas fa-share-alt"></i></p></a>
+
                 </div>
                 <input type="text" name="" id="" placeholder="Agregar comentario...">
             </div>
@@ -199,11 +192,7 @@
                 <p>Leandro Rodriguez</p>
                 <img class="imgPost" src="images/prueba.jpg" alt=""><br>
                 <div class="acciones">
-                    <p>Comentar<i class="fas fa-comment"></i></p>
-                    <p>Me Gusta<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.8281 1.97656C10.5391 0.875 8.64062 1.08594 7.44531 2.30469L7 2.77344L6.53125 2.30469C5.35938 1.08594 3.4375 0.875 2.14844 1.97656C0.671875 3.24219 0.601562 5.49219 1.91406 6.85156L6.46094 11.5391C6.74219 11.8438 7.23438 11.8438 7.51562 11.5391L12.0625 6.85156C13.375 5.49219 13.3047 3.24219 11.8281 1.97656Z" fill="black"/>
-                        </svg></p>
-                    <a href="muroinicio-compartir.html"><p>Compartir<i class="fas fa-share-alt"></i></p></a>
+
                 </div>
                 <input type="text" name="" id="" placeholder="Agregar comentario...">
             </div>
