@@ -19,11 +19,12 @@
             <!-- <h1>SocialVet</h1> -->
         </div>
         <!-- input de buscar -->
-        <div class="buscar">
-            <input type="text" placeholder="Buscar...">
-        </div>
-
-        <!-- navbar de distintas secciones -->
+    
+            <div class="buscar">
+                <input type="text" placeholder="Buscar... ">  
+                
+            </div>
+    <!-- navbar de distintas secciones -->
         <nav class="navbar">
             <a href="muroInicio.html">
                 <p><i style="margin-left: 30%;" class="fas fa-home"></i><br>Inicio</p>
@@ -57,7 +58,7 @@
             <div class="nombre">
                 <div class="user">
                     <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </div><br>
@@ -66,7 +67,7 @@
             <div class="nombre">
                 <div class="user">
                     <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </div><br>
@@ -75,7 +76,7 @@
             <div class="nombre">
                 <div class="user">
                     <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </div><br>
@@ -84,17 +85,7 @@
             <div class="nombre">
                 <div class="user">
                     <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
-                </div>
-            </div>
-        </div><br>
-        
-        <div class="boxUser">
-            <img src="images/descarga.jpeg" alt="">
-            <div class="nombre">
-                <div class="user">
-                    <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </div><br>
@@ -104,7 +95,17 @@
             <div class="nombre">
                 <div class="user">
                     <p>Juan Perez</p>
-                    <button class="agregarUser">Agregar<i class="fas fa-user-plus"></i></button>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
+                </div>
+            </div>
+        </div><br>
+        
+        <div class="boxUser">
+            <img src="images/descarga.jpeg" alt="">
+            <div class="nombre">
+                <div class="user">
+                    <p>Juan Perez</p>
+                    <button onclick= "cambiarIcono()" class="agregarUser">Agregar <i id="icono" class="fas fa-user-plus"></i></button>
                 </div>
             </div>
         </div><br>
@@ -118,6 +119,7 @@
             <p>Jorge Perez</p>
             <input type="text" name="" id="" placeholder="Comparte tus ideas...">
             <h5>Publicar</h5>
+            <p class= "anadir-publicacion">Añadir a tu publicacion <i id="icono" class="fa fa-picture-o"></i></p>
         </div>
         <!-- Publicaciones de los contactos -->
         <div class="postsContactos">
@@ -126,9 +128,9 @@
                 <p>Leandro Rodriguez</p>
                 <img class="imgPost" src="images/prueba.jpg" alt=""><br>
                 <div class="acciones">
-                    <p>Comentar<i class="fas fa-comment"></i></p>
-                    <p>Me Gusta<i class="fas fa-heart"></i></p>
-                    <a href="muroinicio-compartir.html"><p>Compartir<i class="fas fa-share-alt"></i></p></a>
+                    <p>Comentar  <i class="fas fa-comment"></i></p>
+                    <p>Me Gusta  <i class="fas fa-heart"></i></p>
+                    <a href="muroinicio-compartir.html"><p>Compartir  <i class="fas fa-share-alt"></i></p></a>
                 </div>
                 <input type="text" name="" id="" placeholder="Agregar comentario...">
             </div>
@@ -139,9 +141,9 @@
                 <p>Leandro Rodriguez</p>
                 <img class="imgPost" src="images/prueba.jpg" alt=""><br>
                 <div class="acciones">
-                    <p>Comentar<i class="fas fa-comment"></i></p>
-                    <p>Me Gusta<i class="fas fa-heart"></i></p>
-                    <a href="muroinicio-compartir.html"><p>Compartir<i class="fas fa-share-alt"></i></p></a>
+                    <p>Comentar <i class="fas fa-comment"></i></p>
+                    <p>Me Gusta <i class="fas fa-heart"></i></p>
+                    <a href="muroinicio-compartir.html"><p>Compartir <i class="fas fa-share-alt"></i></p></a>
                 </div>
                 <input type="text" name="" id="" placeholder="Agregar comentario...">
             </div>
@@ -152,9 +154,9 @@
                 <p>Leandro Rodriguez</p>
                 <img class="imgPost" src="images/prueba.jpg" alt=""><br>
                 <div class="acciones">
-                    <p>Comentar<i class="fas fa-comment"></i></p>
-                    <p>Me Gusta<i class="fas fa-heart"></i></p>
-                    <a href="muroinicio-compartir.html"><p>Compartir<i class="fas fa-share-alt"></i></p></a>
+                    <p>Comentar <i class="fas fa-comment"></i></p>
+                    <p>Me Gusta <i class="fas fa-heart"></i></p>
+                    <a href="muroinicio-compartir.html"><p>Compartir <i class="fas fa-share-alt"></i></p></a>
                 </div>
                 <input type="text" name="" id="" placeholder="Agregar comentario...">
             </div>

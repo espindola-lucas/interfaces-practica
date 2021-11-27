@@ -33,7 +33,13 @@ body{
     font-size: var(--size-three);
     border: none;
 }
-
+.header .buscador{
+    background-color: blue;
+    width: 23%;
+    border-radius: 10px;
+    font-size: var(--size-three);
+    border: none;
+}
 .header .buscar input::placeholder{
     font-size: var(--size-three);
     position: relative;
