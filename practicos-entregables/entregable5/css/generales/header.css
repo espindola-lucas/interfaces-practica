@@ -9,13 +9,20 @@ body{
     font-family: var(--font-text);
     font-family: var(--text-font);
 }
-
+.notificaciones{
+    background-color:blue;
+    width: 400px; 
+    height: 500px;
+    margin-top: -2%; 
+    position: absolute; margin-left: 66%;
+}
 .header{
     background: var(--primary-color);
     margin: auto;
     display: flex;
     justify-content: space-between;
     padding: 0.5%;
+    /* position: fixed; */
 }
 
 .header .logo h1{
@@ -32,7 +39,9 @@ body{
     margin-left: 30%;
     border-radius: 10px;
     font-size: var(--size-three);
-    border: none;
+    outline: none;
+    padding: 2%;
+    border: beige solid 1px;
 }
 .header .buscador{
     background-color: blue;
@@ -44,9 +53,11 @@ body{
 .header .buscar input::placeholder{
     font-size: var(--size-three);
     position: relative;
-    left: 10px;
+    left: 2%;
 }
-
+.header datalist {
+    background-color: white;
+}
 .header .navbar{
     width: 520px;
 }
@@ -60,8 +71,9 @@ body{
     float: left;
     padding: 0% 2%;
     color: white;
-    font-size: var(--size-one);
+    font-size: 20px;
     cursor: pointer;
+    margin-left: 1%;
 }
 
 .header .navbar > a > p > svg{
