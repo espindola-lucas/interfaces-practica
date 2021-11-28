@@ -10,6 +10,12 @@ body{
     font-family: var(--font-text);
     font-family: var(--text-font);
 }
+.Perfil{
+background-color: rgba(132, 75, 132, 1);
+width: 10%;
+height: 110%;
+border-radius: 15px;
+}
 
 /* "contenido" de la pagina, por fuera del banner */
 .contenedor{
@@ -74,7 +80,7 @@ body{
 
 /* posts "barra" lateral derecha */
 .contenedor .posts .boxPosts{
-    background-color: rgba(196, 196, 196, 0.3);
+    background-color: rgba(196, 196, 196, 0.5);
     border-radius: var(--border-radius);
     width: 180%;
     margin-left: -90%;
