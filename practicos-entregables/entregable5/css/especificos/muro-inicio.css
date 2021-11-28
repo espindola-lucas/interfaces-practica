@@ -72,7 +72,8 @@ body{
     color: rgba(0, 0, 0, 0.7);
 }
 
-.contenido .posts .anadir-publicacion{
+.contenido .posts .anadir-publicacion,
+.contenedor .posts .compartir .anadir-publicacion{
     margin-top: 3%;
     margin-left: -12%;
     color: rgba(0, 0, 0, 0.7);
@@ -133,7 +134,8 @@ body{
     bottom: 50px;
     font-size: var(--size-one);
 }
-.contenido .posts .compartir input{
+.contenido .posts .compartir input,
+.contenedor .posts .compartir > input{
     /* background-color: rgba(196, 196, 196, 0.5); */
     padding: 1%;
     border-radius: var(--border-radius);
@@ -141,7 +143,8 @@ body{
     margin-left: 10%;
     border: none;
 }
-.contenido .posts .compartir h5{
+.contenido .posts .compartir h5,
+.contenedor .posts .compartir h5{
     position: relative;
     left: 80%;
     margin-top: 2%;
@@ -161,6 +164,12 @@ body{
 .contenedor .posts .user .imgPost{
     width: 80%;
     height: 300px;
+    margin-left: 10%;
+}
+
+.contenido .posts .user > span{
+    display: block;
+    width: 80%;
     margin-left: 10%;
 }
 

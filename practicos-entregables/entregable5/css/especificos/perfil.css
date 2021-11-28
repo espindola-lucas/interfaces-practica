@@ -79,6 +79,30 @@ border-radius: 15px;
 }
 
 /* posts "barra" lateral derecha */
+.contenedor .posts .compartir{
+    background-color: rgba(196, 196, 196, 0.5);
+    border-radius: var(--border-radius);
+    width: 180%;
+    margin-left: -90%;
+    margin-bottom: 15%;
+}
+
+.contenedor .posts .compartir > h3{
+    text-align: center;
+}
+
+.contenedor .posts .compartir > p{
+
+}
+
+.contenedor .posts .compartir > input{
+    padding: 1%;
+    border-radius: var(--border-radius);
+    width: 75%;
+    margin-left: 10%;
+    border: none;
+}
+
 .contenedor .posts .boxPosts{
     background-color: rgba(196, 196, 196, 0.5);
     border-radius: var(--border-radius);
