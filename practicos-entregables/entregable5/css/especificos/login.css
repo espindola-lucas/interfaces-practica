@@ -90,8 +90,8 @@ body{
     background-color: rgba(196, 196, 196, 0.5);
 } */
 
-.sessionFlow .box .form p{
-    margin-top: 8%;
+.sessionFlow .box .form .label{
+    margin-top: 8%; 
 }
 
 .sessionFlow .box .form button{
@@ -109,6 +109,7 @@ body{
     margin: 0px;
     color: var(--primary-color);
     margin-left: 13%;
+    margin-top: 8%;
 }
 
 .sessionFlow .box .form hr{
@@ -138,4 +139,10 @@ body{
     100%{margin-left: -330%;
     }
    
+}
+
+.box .error{
+color: red;
+font-size: 11px;
+margin-top: 1%;
 }

@@ -21,11 +21,13 @@
         <section class="box">
             <h1>Iniciar Sesión</h1>
             <div class="form">
-                <p>Email</p>
-                <input type="text" placeholder="Ingrese su email">
-                <p>Contraseña</p>
-                <input type="text" placeholder="Ingrese su contraseña">
-                <a href="muroInicio.html"><button>Iniciar Sesión</button></a>
+                <p class="label">Email</p>
+                <input id='input1' type="text" placeholder="Ingrese su email">
+                <p id='error' class="error">El email que ingresaste es invalido.</p>
+                <p class="label">Contraseña</p>
+                <input id='input2' type="text" placeholder="Ingrese su contraseña">
+                <p id='errores' class="error">La contraseña que ingresaste es invalida.</p>
+                <a onclick="Mostrar_Error()"><button>Iniciar Sesión</button></a>
                 <p class="forget">¿Olvidaste tu contraseña?</p>
                 <hr>
                 <a href="register.html"><button class="register">Crear una cuenta</button></a>
@@ -33,4 +35,5 @@
         </section>
     </main>
 </body>
+<script src="js/script-login.js"></script>
 </html>
