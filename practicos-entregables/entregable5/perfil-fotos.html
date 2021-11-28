@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/especificos/perfil.css">
-    <link rel="stylesheet" href="css/especificos/muro-inicio.css">
     <link rel="stylesheet" href="css/generales/header.css">
-    <link rel="stylesheet" href="css/especificos/loader.css">
     <link rel="stylesheet" href="css/generales/banner.css">
+    <link rel="stylesheet" href="css/generales/grid-perfil-amigos-fotos.css">
+    <link rel="stylesheet" href="css/especificos/perfil.css">
+    <link rel="stylesheet" href="css/especificos/loader.css">
     <script src="https://kit.fontawesome.com/616b98738f.js" crossorigin="anonymous"></script>
     <title>SocialVet</title>
 </head>
@@ -72,76 +72,84 @@
         </div>
     </section>
 
-    <section class="contenedor">
+    <hr>
 
-        <div class="amigos-fotos">
-            <h1>Mis Fotos</h1>
-            <hr class="lineas">
-            <div class="fotos">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <a href="perfil-fotos.html" class="mas-fotos"><p>Ver Todas</p></a>
-                <hr class="lineas">
-            </div>
-            <br><br><br><br>
+    <section class="navbarFotos">
+        <a href="perfil.html"><i class="fas fa-reply"></i>Volver a mi perfil</a>
 
-            <h1>Mis Amigos</h1>
-            <hr class="lineas">
-            <div class="amigos">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <img src="images/paisaje.jpg" alt="">
-                <a href="perfil-amigos.html" class="mas-amigos"><p>Ver Todos</p></a>
-                <hr class="lineas">
-            </div>
+        <p>Mis Fotos</p><br>
+    </section>
+
+    <section class="navbarAlbum">
+        <div class="album">
+            <img src="images/leon.png" alt="">
+            <p>Album 1</p>
         </div>
 
-        <div class="posts">
+        <div class="album">
+            <img src="images/leon.png" alt="">
+            <p>Album 2</p>
+        </div>
 
-            <div class="boxPosts">
-                <div class="user">
-                    <img class="profile" src="images/lit-killah.jpg" alt="">
-                    <p>Leandro Rodriguez</p>
-                    <img class="imgPost" src="images/prueba.jpg" alt=""><br>
-                    <div class="acciones">
-                        <p>Comentar<i class="fas fa-comment"></i></p>
-                        <p>Me Gusta<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.8281 1.97656C10.5391 0.875 8.64062 1.08594 7.44531 2.30469L7 2.77344L6.53125 2.30469C5.35938 1.08594 3.4375 0.875 2.14844 1.97656C0.671875 3.24219 0.601562 5.49219 1.91406 6.85156L6.46094 11.5391C6.74219 11.8438 7.23438 11.8438 7.51562 11.5391L12.0625 6.85156C13.375 5.49219 13.3047 3.24219 11.8281 1.97656Z" fill="black"/>
-                            </svg></p>
-                        <p>Compartir<i class="fas fa-share-alt"></i></p>
-                    </div>
-                    <input type="text" name="" id="" placeholder="Agregar comentario...">
-                </div>
-            </div>
+        <div class="album">
+            <img src="images/leon.png" alt="">
+            <p>Album 3</p>
+        </div>
 
-            <div class="boxPosts">
-                <div class="user">
-                    <img class="profile" src="images/lit-killah.jpg" alt="">
-                    <p>Leandro Rodriguez</p>
-                    <img class="imgPost" src="images/prueba.jpg" alt=""><br>
-                    <div class="acciones">
-                        <p>Comentar<i class="fas fa-comment"></i></p>
-                        <p>Me Gusta<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.8281 1.97656C10.5391 0.875 8.64062 1.08594 7.44531 2.30469L7 2.77344L6.53125 2.30469C5.35938 1.08594 3.4375 0.875 2.14844 1.97656C0.671875 3.24219 0.601562 5.49219 1.91406 6.85156L6.46094 11.5391C6.74219 11.8438 7.23438 11.8438 7.51562 11.5391L12.0625 6.85156C13.375 5.49219 13.3047 3.24219 11.8281 1.97656Z" fill="black"/>
-                            </svg></p>
-                        <p>Compartir<i class="fas fa-share-alt"></i></p>
-                    </div>
-                    <input type="text" name="" id="" placeholder="Agregar comentario...">
-                </div>
-            </div>
+        <div class="album">
+            <img src="images/leon.png" alt="">
+            <p>Album 4</p>
+        </div>
+
+        <div class="album">
+            <img src="images/leon.png" alt="">
+            <p>Album 5</p>
+        </div>
+    </section>
+
+    <section class="todasMisFotos">
+        <p>Todas Mis Fotos</p>
+        <div class="gridFotos">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
+            <img src="images/leon.png" alt="">
         </div>
     </section>
 </body>

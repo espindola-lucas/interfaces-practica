@@ -36,7 +36,8 @@ body{
     margin-top: 1%;
 }
 
-.contenedor .amigos-fotos .fotos > hr{
+.contenedor .amigos-fotos .fotos > hr,
+.contenedor .amigos-fotos .amigos > hr{
     background-color: #A66FA6;
     width: 335%;
     margin-left: 0%;
@@ -54,9 +55,11 @@ body{
 }
 
 .contenedor .amigos-fotos .fotos .mas-fotos,
-.contenedor .amigos-fotos .fotos .mas-amigos{
-    grid-column-start: 3;
-    grid-column-end: 4;
+.contenedor .amigos-fotos .amigos .mas-amigos{
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    grid-column: 3 / 4;
 }
 
 .contenedor .amigos-fotos .fotos > img{
