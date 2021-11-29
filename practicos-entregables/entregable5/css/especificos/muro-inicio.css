@@ -185,7 +185,10 @@ body{
     color: rgba(0, 0, 0, 1);
     margin-top: 2%;
 }
-
+.contenido .posts .postsContactos .user .acciones p,
+.contenedor .posts .user .acciones p:hover{
+    cursor:pointer;
+}
 .contenido .posts .postsContactos .user .acciones svg,
 .contenedor .posts .user .acciones svg{
     background-color: rgba(0, 0, 0, 0.6);
@@ -213,7 +216,7 @@ body{
 }
 
 .contenido .publicidad img{
-    width: 200px;
+    width: 259px;
     height: 200px;
     margin-bottom: 5%;
     border:#C4C4C4 solid 1px;

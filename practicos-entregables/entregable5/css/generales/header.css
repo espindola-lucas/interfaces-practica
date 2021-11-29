@@ -51,18 +51,21 @@ body{
     /* position: fixed; */
 }
 
-.header .logo h1{
-    display: flex;
-    font-family: var(--title-font);
-    font-size: var(--size-one);
-    margin-top: -15%;
+.header .logo img{
+height: 80%;
 }
-
+.header .navbar div {
+    display: none;
+}
+    
+.header .navbar a:hover + div {
+    display: block;
+}
 .header .buscar input{
     width: 400px;
     height: 25px;
     margin-top: 4%;
-    margin-left: 20%;
+    margin-left: 10%;
     border-radius: 10px;
     font-size: var(--size-three);
     outline: none;
@@ -71,7 +74,6 @@ body{
 }
 
 .header .buscador{
-    background-color: blue;
     width: 23%;
     border-radius: 10px;
     font-size: var(--size-three);
@@ -89,7 +91,9 @@ body{
 }
 
 .header .navbar{
-    width: 400px;
+    width: 250px;
+    margin-top: 0.5%;
+    
 }
 
 .header .navbar > a > p{
@@ -100,7 +104,6 @@ body{
     background-color: var(--secondary-color);
     border-radius: var(--border-radius);
 }
-
 .header .navbar p{
     float: left;
     padding: 0% 2%;
@@ -109,7 +112,6 @@ body{
     cursor: pointer;
     margin-left: 1%;
 }
-
 /* .header .navbar > a > p > svg{
     margin-left: 25%;
 } */

@@ -10,12 +10,6 @@ body{
     font-family: var(--font-text);
     font-family: var(--text-font);
 }
-.Perfil{
-background-color: rgba(132, 75, 132, 1);
-width: 10%;
-height: 110%;
-border-radius: 15px;
-}
 
 /* "contenido" de la pagina, por fuera del banner */
 .contenedor{
@@ -69,7 +63,8 @@ border-radius: 15px;
 }
 
 .contenedor .amigos-fotos .fotos > img{
-    width: 100%;
+    width: 100px;
+    height: 100px;
 }
 
 .contenedor .amigos-fotos .amigos > img{

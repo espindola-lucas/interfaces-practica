@@ -63,7 +63,7 @@ hr{
 .todasMisFotos > p{
     font-size: var(--size-one);
     margin-left: 13%;
-    margin-top: 2%;
+    margin-top: 5%;
     text-decoration: underline;
     text-decoration-color: var(--light-color);
 }
