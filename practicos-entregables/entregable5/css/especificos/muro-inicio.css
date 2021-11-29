@@ -215,17 +215,28 @@ body{
     
 }
 
-.contenido .publicidad img{
-    width: 259px;
+.contenido .publicidad img,
+.contenido .publicidad p{
+    width: 200px;
     height: 200px;
     margin-bottom: 5%;
     border:#C4C4C4 solid 1px;
     margin-top: 2%;
 }
 
+.contenido .publicidad a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .contenido .publicidad p{
-    float: right;
-    margin-top: 20%;
+    text-align: center;
+    font-size: var(--size-one);
+    height: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    padding: 2%;
 }
 
 /* .contenido .publicidad .boxPublicidad:hover{

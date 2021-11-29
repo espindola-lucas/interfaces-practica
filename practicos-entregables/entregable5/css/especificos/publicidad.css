@@ -1,0 +1,62 @@
+@import url('../generales/variables.css');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* estilos generales de la pagina */
+body{
+    font-family: var(--font-text);
+    font-family: var(--text-font);
+}
+
+.explicacionPublicidad > h1{
+    text-align: center;
+    margin-top: 2%;
+    font-size: 42px;
+}
+
+.explicacionPublicidad > p{
+    font-size: var(--size-one);
+    margin-top: 2%;
+    text-align: center;
+}
+
+.prioridadesPublicidad, 
+.formulario{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2%;
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+.prioridadesPublicidad > div{
+    width: 15%;
+}
+
+.prioridadesPublicidad > div > h1{
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: var(--light-color);
+}
+
+.prioridadesPublicidad > div > p{
+    text-align: center;
+    font-size: var(--size-two);
+}
+
+.formulario{
+    margin-left: 17%;
+}
+
+.formulario .form{
+    margin-left: -5%;
+}
+
+.formulario .form > label,
+.formulario .form > select{
+    display: inline-block;
+    margin-top: 20px;
+}
