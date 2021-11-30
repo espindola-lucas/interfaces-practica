@@ -9,12 +9,12 @@ body{
     font-family: var(--text-font);
 }
 .inicio{
-    background-color: rgba(132, 75, 132, 1);
     padding: 1%;
     width: 10%;
     height: 110%;
     border-radius: 15px;
-    }
+}
+
 .contenido{
     display: flex;
     justify-content: space-around;
@@ -160,8 +160,7 @@ body{
     padding: 2.5% 0%;
 }
 
-.contenido .posts .postsContactos .user .imgPost,
-.contenedor .posts .user .imgPost{
+.contenido .posts .postsContactos .user .imgPost{
     width: 80%;
     height: 300px;
     margin-left: 10%;

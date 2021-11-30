@@ -14,8 +14,10 @@ body{
 /* "contenido" de la pagina, por fuera del banner */
 .contenedor{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 2%;
+    width: 75%;
+    margin-left: 13%;
 }
 
 /* barra lateral izquierda */
@@ -26,21 +28,20 @@ body{
 }
 
 .contenedor .amigos-fotos h1{
-    padding: 0% 15%
+    /* padding: 0% 15% */
 }
 
 .contenedor .amigos-fotos .lineas{
     background-color: #A66FA6;
-    width: 70%;
-    margin-left: 15%;
+    width: 80%;
+    /* margin-left: 15%; */
     margin-top: 1%;
 }
 
 .contenedor .amigos-fotos .fotos > hr,
 .contenedor .amigos-fotos .amigos > hr{
     background-color: #A66FA6;
-    width: 335%;
-    margin-left: 0%;
+    width: 330%;
     margin-top: -1%;
 }
 
@@ -48,7 +49,7 @@ body{
 .contenedor .amigos-fotos .amigos{
     width: 70%;
     margin-top: 3%;
-    margin-left: 15%;
+    /* margin-left: 15%; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5%;
@@ -78,7 +79,7 @@ body{
     background-color: rgba(196, 196, 196, 0.5);
     border-radius: var(--border-radius);
     width: 180%;
-    margin-left: -90%;
+    margin-left: -80%;
     margin-bottom: 15%;
 }
 
@@ -86,8 +87,10 @@ body{
     text-align: center;
 }
 
-.contenedor .posts .compartir > p{
-
+.contenedor .posts .user .imgPost{
+    width: 80%;
+    height: 300px;
+    margin-left: 10%;
 }
 
 .contenedor .posts .compartir > input{
@@ -102,9 +105,10 @@ body{
     background-color: rgba(196, 196, 196, 0.5);
     border-radius: var(--border-radius);
     width: 180%;
-    margin-left: -90%;
+    margin-left: -80%;
     height: 520px;
     margin-bottom: 15%;
+    padding-bottom: 4%;
 }
 
 .contenedor .posts .boxPosts:hover{
