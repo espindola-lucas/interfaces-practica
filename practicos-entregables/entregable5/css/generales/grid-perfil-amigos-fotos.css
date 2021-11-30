@@ -11,14 +11,13 @@ body{
     font-family: var(--text-font);
 }
 
-/* grid fotos */
-
 hr{
     width: 75%;
     margin-top: 2%;
     margin-left: 13%;
 }
 
+/* perfil fotos */
 .navbarFotos{
     display: flex;
     margin-left: 25%;
@@ -60,7 +59,26 @@ hr{
     text-align: center;
 }
 
-.todasMisFotos > p{
+/* perfil amigos */
+.todosMisAmigos .gridAmigos .amigo{
+    display: flex;
+    width: 50%;
+}
+
+.todosMisAmigos .gridAmigos .amigo > img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.todosMisAmigos .gridAmigos .amigo > p{
+    margin-top: 1% !important; 
+    margin-left: 0.5% !important;
+}
+
+/* grid general */
+.todasMisFotos > p,
+.todosMisAmigos > p{
     font-size: var(--size-one);
     margin-left: 13%;
     margin-top: 5%;
@@ -68,7 +86,8 @@ hr{
     text-decoration-color: var(--light-color);
 }
 
-.todasMisFotos .gridFotos{
+.todasMisFotos .gridFotos,
+.todosMisAmigos .gridAmigos{
     width: 85%;
     margin-top: 2%;
     margin-left: 13%;
