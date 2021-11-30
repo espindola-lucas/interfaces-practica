@@ -68,7 +68,7 @@ body{
     height: 100px;
 }
 
-.contenedor .amigos-fotos .amigos > img{
+.contenedor .amigos-fotos .amigos >  img{
     width: 60px;
     height: 60px;
     border-radius: 50%;
