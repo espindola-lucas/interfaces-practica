@@ -99,7 +99,10 @@ body{
 .contenido .posts h3{
     text-align: center;
 }
-
+.contenido .posts .compartir .anadir-publicacion{
+    font-size: 20px;
+    margin-left: 0.5%;
+}
 .contenido .posts .compartir,
 .contenido .posts .postsContactos{
     justify-content: start;
@@ -119,8 +122,8 @@ body{
 .contenido .posts .compartir .profile,
 .contenido .posts .postsContactos .user .profile,
 .contenedor .posts .profile{
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     position: relative;
     left: 10%;
@@ -130,7 +133,7 @@ body{
 .contenido .posts .postsContactos p,
 .contenedor .posts p{
     position: relative;
-    left: 22%;
+    left: 18%;
     bottom: 50px;
     font-size: var(--size-one);
 }
@@ -146,7 +149,7 @@ body{
 .contenido .posts .compartir h5,
 .contenedor .posts .compartir h5{
     position: relative;
-    left: 80%;
+    left: 75%;
     margin-top: 2%;
     width: 50px;
     padding: 0.5% 2%;
