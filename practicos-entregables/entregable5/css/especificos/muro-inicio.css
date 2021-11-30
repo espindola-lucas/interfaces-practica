@@ -243,9 +243,12 @@ body{
 } */
 
 /* responsive mobile */
-.error{
+
+main,
+.lineaResponsive{
     display: none;
 }
+
 
 @media (max-width: 768px){
     .contenido .sugerencias,
@@ -259,5 +262,20 @@ body{
     .contenido .posts .postsContactos p{
         left: 30%;
     }
-    
+
+    .buscarResponsive > a{
+        margin-top: 10%;
+    }
+
+    main{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+
+    .lineaResponsive{
+        display: block;
+        background-color: #A66FA6;
+    }
 }
