@@ -11,9 +11,13 @@ body{
     font-family: var(--text-font);
 }
 
+.header{
+    margin-top: -5%;
+}
+
 .explicacionPublicidad > h1{
     text-align: center;
-    margin-top: 2%;
+    margin-top: 5%;
     font-size: 42px;
 }
 
@@ -51,6 +55,10 @@ body{
     margin-left: 5%;
 }
 
+.pagarPublicidad .formulario > table tr td{
+    text-align: center;
+}
+
 .pagarPublicidad .formadePago .form{
     margin-left: -5%;
 }
@@ -65,4 +73,14 @@ body{
     background-color: rgba(196, 196, 196, 0.7);
     border: none;
     height: 20px;
+}
+
+.pagarPublicidad .formadePago .form > button{
+    margin-top: 2%;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2%;
+    font-weight: bold;
+    font-size: var(--size-two);
 }
