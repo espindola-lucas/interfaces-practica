@@ -31,6 +31,9 @@ body{
 .contenido .busqueda .resultado > div {
     display: block;
     background-color: rgba(196, 196, 196, 0.3);
+}
+
+.contenido .busqueda .resultado > div:hover{
     box-shadow: 5px 5px 10px gray;
 }
 
