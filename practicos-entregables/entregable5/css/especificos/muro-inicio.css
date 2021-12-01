@@ -21,6 +21,7 @@ body{
     padding: 2% 0%;
     position: absolute;
     width: 100%;
+    margin-top: 4%;
 }
 
 .acciones a {
@@ -257,6 +258,7 @@ main,
     }
     .contenido .posts{
         width: 90%;
+        margin-top: 4%;
     }
     .contenido .posts .compartir p,
     .contenido .posts .postsContactos p{
@@ -267,15 +269,23 @@ main,
         margin-top: 10%;
     }
 
+    /* .header{
+        margin-top: -13%;
+    }
+
     main{
         display: flex;
         justify-content: space-around;
-        margin-top: 3%;
+    }
+
+    .main > svg{
+        position: fixed;
+        margin-top: 20%;
         margin-bottom: 3%;
     }
 
     .lineaResponsive{
         display: block;
         background-color: #A66FA6;
-    }
+    } */
 }

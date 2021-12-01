@@ -43,25 +43,30 @@ body{
 }
 
 .header{
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+.header .fixed{
     background: var(--primary-color);
     margin: auto;
     display: flex;
     justify-content: space-between;
     padding: 0.5%;
-    /* position: fixed; */
 }
 
-.header .logo img{
+.header .fixed .logo img{
 height: 80%;
 }
-.header .navbar div {
+.header .fixed .navbar div {
     display: none;
 }
     
-.header .navbar a:hover + div {
+.header .fixed .navbar a:hover + div {
     display: block;
 }
-.header .buscar input{
+.header .fixed .buscar input{
     width: 400px;
     height: 25px;
     margin-top: 4%;
@@ -73,20 +78,20 @@ height: 80%;
     border: beige solid 1px;
 }
 
-.header .buscador{
+.header .fixed .buscador{
     width: 23%;
     border-radius: 10px;
     font-size: var(--size-three);
     border: none;
 }
 
-.header .buscar input::placeholder{
+.header .fixed .buscar input::placeholder{
     font-size: var(--size-three);
     position: relative;
     left: 2%;
 }
 
-.header datalist {
+.header .fixed datalist {
     background-color: white;
 }
 
@@ -96,15 +101,15 @@ height: 80%;
     
 }
 
-.header .navbar > a > p{
+.header .fixed .navbar > a > p{
     margin-left: 5%;
 }
 
-.header .navbar p:hover{
+.header .fixed .navbar p:hover{
     background-color: var(--secondary-color);
     border-radius: var(--border-radius);
 }
-.header .navbar p{
+.header .fixed .navbar p{
     float: left;
     padding: 0% 2%;
     color: white;
@@ -117,7 +122,7 @@ height: 80%;
 } */
 
 /* responsive mobile */
-.header .buscarResponsive{
+.header .fixed .buscarResponsive{
     display: none;
 }
 
