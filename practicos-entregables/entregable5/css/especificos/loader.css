@@ -1,8 +1,7 @@
-
-
 .body{
     overflow: hidden;
 }
+
 .loader-container{
     width: 100%;
 }
@@ -32,6 +31,7 @@ border-left-color: #A66FA6;
 border-radius: 50%;
 animation: loader2 1.2s linear infinite;  
 }
+
 @keyframes loader {
     0%{
         transform: translate(-50%,50%) rotate(0deg);
@@ -41,6 +41,7 @@ animation: loader2 1.2s linear infinite;
     }
     
 }
+
 @keyframes loader2 {
     0%{
         transform: translate(-50%,50%) rotate(0deg);

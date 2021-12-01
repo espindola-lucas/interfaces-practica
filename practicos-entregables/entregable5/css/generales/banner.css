@@ -1,19 +1,22 @@
 @import url('../generales/variables.css');
 
-*{
-    margin: 0;
-    padding: 0;
-}
-
 /* estilos generales de la pagina */
 body{
     font-family: var(--font-text);
     font-family: var(--text-font);
 }
 
+.header{
+    margin-top: -6%;
+}
+
+.bannerProfile{
+    margin-bottom: 2%;
+}
+
 /* banner del perfil */
 .bannerProfile .banner{
-    margin-top: 2%;
+    margin-top: 6%;
     width: 75%;
     height: 300px;
     margin-left: 13%;

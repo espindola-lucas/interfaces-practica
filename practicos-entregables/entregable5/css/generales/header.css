@@ -43,6 +43,12 @@ body{
 }
 
 .header{
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+.header .fijado{
     background: var(--primary-color);
     margin: auto;
     display: flex;
@@ -51,17 +57,17 @@ body{
     /* position: fixed; */
 }
 
-.header .logo img{
+.header .fijado .logo img{
 height: 80%;
 }
-.header .navbar div {
+.header .fijado .navbar div {
     display: none;
 }
     
-.header .navbar a:hover + div {
+.header .fijado .navbar a:hover + div {
     display: block;
 }
-.header .buscar input{
+.header .fijado .buscar input{
     width: 400px;
     height: 25px;
     margin-top: 4%;
@@ -73,44 +79,44 @@ height: 80%;
     border: beige solid 1px;
 }
 
-.header .buscador{
+.header .fijado .buscador{
     width: 23%;
     border-radius: 10px;
     font-size: var(--size-three);
     border: none;
 }
 
-.header .buscar input::placeholder{
+.header .fijado .buscar input::placeholder{
     font-size: var(--size-three);
     position: relative;
     left: 2%;
 }
 
-.header datalist {
+.header .fijado datalist {
     background-color: white;
 }
 
-.header .navbar{
+.header .fijado .navbar{
     width: 250px;
     margin-top: 0.5%;
     
 }
 
-.header .navbar > a > p{
+.header .fijado .navbar > a > p{
     margin-left: 5%;
 }
 
-.header .navbar p:hover path:hover{
+.header .fijado .navbar p:hover path:hover{
     /* background-color: var(--secondary-color);
     border-radius: var(--border-radius); */
     fill:var(--secondary-color);
 }
-.header .navbar p:hover i:hover{
+.header .fijado .navbar p:hover i:hover{
     color: var(--secondary-color);
     /* border-radius: var(--border-radius); */
     /* fill:var(--secondary-color); */ 
 }
-.header .navbar p{
+.header .fijado .navbar p{
     float: left;
     padding: 0% 2%;
     color: white;
@@ -118,12 +124,12 @@ height: 80%;
     cursor: pointer;
     margin-left: 1%;
 }
-/* .header .navbar > a > p > svg{
+/* .header .fijado .navbar > a > p > svg{
     margin-left: 25%;
 } */
 
 /* responsive mobile */
-.header .buscarResponsive{
+.header .fijado .buscarResponsive{
     display: none;
 }
 

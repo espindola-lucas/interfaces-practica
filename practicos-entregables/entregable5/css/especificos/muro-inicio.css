@@ -8,6 +8,7 @@ body{
     font-family: var(--font-text);
     font-family: var(--text-font);
 }
+
 .inicio{
     padding: 1%;
     width: 10%;
@@ -21,6 +22,7 @@ body{
     padding: 2% 0%;
     position: absolute;
     width: 100%;
+    margin-top: 4%;
 }
 
 .acciones a {
@@ -101,7 +103,9 @@ body{
 .contenido .posts .compartir .anadir-publicacion{
     font-size: 20px;
     margin-left: -8%;
+    cursor: pointer;
 }
+
 .contenido .posts .compartir,
 .contenido .posts .postsContactos{
     justify-content: start;
@@ -152,6 +156,7 @@ body{
     background-color: rgba(132, 75, 132, 1);
     color: white;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .contenido .posts .postsContactos .user{
