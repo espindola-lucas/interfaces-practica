@@ -72,8 +72,7 @@ body{
     color: rgba(0, 0, 0, 0.7);
 }
 
-.contenido .posts .anadir-publicacion,
-.contenedor .posts .compartir .anadir-publicacion{
+.contenido .posts .anadir-publicacion{
     margin-top: 3%;
     margin-left: -12%;
     color: rgba(0, 0, 0, 0.7);
@@ -101,7 +100,7 @@ body{
 }
 .contenido .posts .compartir .anadir-publicacion{
     font-size: 20px;
-    margin-left: 0.5%;
+    margin-left: -8%;
 }
 .contenido .posts .compartir,
 .contenido .posts .postsContactos{
@@ -120,8 +119,7 @@ body{
 }
 
 .contenido .posts .compartir .profile,
-.contenido .posts .postsContactos .user .profile,
-.contenedor .posts .profile{
+.contenido .posts .postsContactos .user .profile{
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -130,15 +128,14 @@ body{
 }
 
 .contenido .posts .compartir p,
-.contenido .posts .postsContactos p,
-.contenedor .posts p{
+.contenido .posts .postsContactos p{
     position: relative;
     left: 18%;
     bottom: 50px;
     font-size: var(--size-one);
 }
-.contenido .posts .compartir input,
-.contenedor .posts .compartir > input{
+
+.contenido .posts .compartir input{
     /* background-color: rgba(196, 196, 196, 0.5); */
     padding: 1%;
     border-radius: var(--border-radius);
@@ -146,8 +143,7 @@ body{
     margin-left: 10%;
     border: none;
 }
-.contenido .posts .compartir h5,
-.contenedor .posts .compartir h5{
+.contenido .posts .compartir h5{
     position: relative;
     left: 75%;
     margin-top: 2%;
@@ -158,8 +154,7 @@ body{
     border-radius: 20px;
 }
 
-.contenido .posts .postsContactos .user,
-.contenedor .posts .user{
+.contenido .posts .postsContactos .user{
     padding: 2.5% 0%;
 }
 
@@ -175,29 +170,24 @@ body{
     margin-left: 10%;
 }
 
-.contenido .posts .postsContactos .user .acciones,
-.contenedor .posts .user .acciones{
+.contenido .posts .postsContactos .user .acciones{
     display: flex;
     justify-content: space-evenly;
 }
 
-.contenido .posts .postsContactos .user .acciones p,
-.contenedor .posts .user .acciones p{
+.contenido .posts .postsContactos .user .acciones p{
     all: unset;
     color: rgba(0, 0, 0, 1);
     margin-top: 2%;
 }
-.contenido .posts .postsContactos .user .acciones p,
-.contenedor .posts .user .acciones p:hover{
+.contenido .posts .postsContactos .user .acciones p{
     cursor:pointer;
 }
-.contenido .posts .postsContactos .user .acciones svg,
-.contenedor .posts .user .acciones svg{
+.contenido .posts .postsContactos .user .acciones svg{
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.contenido .posts .postsContactos .user input,
-.contenedor .posts .user input{
+.contenido .posts .postsContactos .user input{
     width: 80%;
     height: 30px;
     margin-left: 10%;
@@ -206,8 +196,7 @@ body{
     margin-top: 2%;
 }
 
-.contenido .posts .postsContactos .user input::placeholder,
-.contenedor .posts .user input::placeholder{
+.contenido .posts .postsContactos .user input::placeholder{
     position: relative;
     left: 10px;
 }
