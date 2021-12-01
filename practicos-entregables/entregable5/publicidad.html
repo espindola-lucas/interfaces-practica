@@ -82,40 +82,54 @@
         </div>
     </section>
 
-    <section class="formulario">
-        <table>
-            <tr>
-                <th>Precio</th>
-                <th>Prioridad</th>
-            </tr>
-            <tr>
-                <td>250</td>
-                <td>Baja</td>
-            </tr>
-            <tr>
-                <td>500</td>
-                <td>Media</td>
-            </tr>
-            <tr>
-                <td>1000</td>
-                <td>Alta</td>
-            </tr>
-        </table>
-
-        <form class="form">
-            <label>Nombre y Apellido</label><br>
-            <input type="text" placeholder="Nombre y Apellido"><br>
-            <label>Nombre de la Publicidad</label><br>
-            <input type="text" placeholder="Nombre de la Publicidad"><br>
-            <label>Insertar Imagen</label><br>
-            <input type="file"><br>
-            <select>
-                <option value="volvo">Prioridad</option>
-                <option value="saab">Baja</option>
-                <option value="opel">Media</option>
-                <option value="audi">Alta</option>
-            </select>
-        </form>
+    <section class="pagarPublicidad">
+        <section class="formulario">
+            <table>
+                <tr>
+                    <th>Precio</th>
+                    <th>Prioridad</th>
+                </tr>
+                <tr>
+                    <td>250</td>
+                    <td>Baja</td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>Media</td>
+                </tr>
+                <tr>
+                    <td>1000</td>
+                    <td>Alta</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section class="formadePago">
+            <form class="form">
+                <label>Nombre y Apellido</label><br>
+                <input type="text" placeholder="Nombre y Apellido"><br>
+                <label>Nombre de la Publicidad</label><br>
+                <input type="text" placeholder="Nombre de la Publicidad"><br>
+                <label>Insertar Imagen</label><br>
+                <input type="file"><br>
+                <label>Seleccione prioridad: </label>
+                <select>
+                    <option>--</option>
+                    <option>Baja</option>
+                    <option>Media</option>
+                    <option>Alta</option>
+                </select><br>
+                <label>Seleccione tarjeta: </label>
+                <select>
+                    <option>--</option>
+                    <option>Banca</option>
+                    <option>Visa</option>
+                    <option>Mastercard</option>
+                </select><br>
+                <label>Insertar numero de tarjeta</label><br>
+                <input type="text" placeholder="Ingrese numero de tarjeta">
+            </form>
+        </section>
     </section>
 </body>
 <script src="js/script.js"></script>
