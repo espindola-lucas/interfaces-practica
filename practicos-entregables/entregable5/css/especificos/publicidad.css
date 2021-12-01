@@ -24,7 +24,7 @@ body{
 }
 
 .prioridadesPublicidad, 
-.formulario{
+.pagarPublicidad{
     display: flex;
     justify-content: space-evenly;
     margin-top: 2%;
@@ -47,16 +47,22 @@ body{
     font-size: var(--size-two);
 }
 
-.formulario{
-    margin-left: 17%;
+.pagarPublicidad .formulario{
+    margin-left: 5%;
 }
 
-.formulario .form{
+.pagarPublicidad .formadePago .form{
     margin-left: -5%;
 }
 
-.formulario .form > label,
-.formulario .form > select{
+.pagarPublicidad .formadePago .form > label,
+.pagarPublicidad .formadePago .form > select{
     display: inline-block;
     margin-top: 20px;
+}
+
+.pagarPublicidad .formadePago .form > input[type=text]{
+    background-color: rgba(196, 196, 196, 0.7);
+    border: none;
+    height: 20px;
 }
