@@ -51,37 +51,43 @@ body{
     font-size: var(--size-two);
 }
 
-.pagarPublicidad .formulario{
+.formularios{
+    display: flex;
+    height: 20%;
+}
+
+.pagarPublicidad .publicidad{
+    padding: 1%;
+    width: 25%;
+}
+
+.pagarPublicidad .publicidad > form{
+}
+
+.pagarPublicidad .publicidad > form > input[type=text],
+.pagarPublicidad .pago > form > select,
+.pagarPublicidad .pago > form > input[type=checkbox],
+.pagarPublicidad .pago > form > input[type=text]{
+    margin-bottom: 5%;
+}
+
+.pagarPublicidad .pago{
+    padding: 1%;
+    width: 25%;
+}
+
+.pagarPublicidad .pago > form > input[type=checkbox]{
     margin-left: 5%;
 }
 
-.pagarPublicidad .formulario > table tr td{
-    text-align: center;
-}
-
-.pagarPublicidad .formadePago .form{
-    margin-left: -5%;
-    width: 100%;
-}
-
-.pagarPublicidad .formadePago .form > label,
-.pagarPublicidad .formadePago .form > select{
-    display: inline-block;
-    margin-top: 20px;
-}
-
-.pagarPublicidad .formadePago .form > input[type=text]{
-    background-color: rgba(196, 196, 196, 0.7);
-    border: none;
-    height: 20px;
-}
-
-.pagarPublicidad .formadePago .form > button{
+button{
+    all: unset;
+    margin-left: 46%;
     margin-top: 2%;
-    border: none;
     background-color: var(--primary-color);
     color: white;
-    padding: 2%;
+    padding: 0.5% 2%;
+    border-radius: 25px;
     font-weight: bold;
-    font-size: var(--size-two);
+    cursor: pointer;
 }

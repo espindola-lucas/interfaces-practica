@@ -88,35 +88,46 @@
     </section>
 
     <section class="pagarPublicidad">
-        <section class="formadePago">
+        <fieldset class="publicidad">
+            <legend>Datos de la publicidad</legend>
+            <form>
+                <label>Nombre de empresa/emprendimiento</label><br>
+                <input type="text" placeholder="Ingrese el nombre"><br>
+                <label>Adjuntar imagen de la publicidad</label><br>
+                <input type="file">
+            </form>
 
-            <form class="form">
-                <label>Nombre y Apellido</label><br>
-                <input type="text" placeholder="Nombre y Apellido"><br>
-                <label>Nombre de la Publicidad</label><br>
-                <input type="text" placeholder="Nombre de la Publicidad"><br>
-                <label>Insertar Imagen</label><br>
-                <input type="file"><br>
-                <label>Seleccione prioridad: </label>
+        </fieldset>
+        <fieldset class="pago">
+            <legend>Datos de pago</legend>
+            <form>
+                <label>Elija su plan: </label>
                 <select>
                     <option>--</option>
                     <option>Baja</option>
                     <option>Media</option>
                     <option>Alta</option>
                 </select><br>
-                <label>Seleccione tarjeta: </label>
-                <select>
-                    <option>--</option>
-                    <option>Banca</option>
-                    <option>Visa</option>
-                    <option>Mastercard</option>
-                </select><br>
-                <label>Insertar numero de tarjeta</label><br>
+
+                <label>Elija su tarjeta: </label><br>
+                <input type="checkbox">
+                <label>Visa</label>
+                <input type="checkbox">
+                <label>MasterCard</label>
+                <input type="checkbox">
+                <label>Credicoop</label><br>
+                <label>Nombre y Apellido</label><br>
+                <input type="text" placeholder="Nombre y Apellido"><br>
+                <label>Numero de la tarjeta</label><br>
                 <input type="text" placeholder="Ingrese numero de tarjeta"><br>
-                <button type="submit">Enviar Datos</button>
+                <label>Vencimiento</label><br>
+                <input type="text" placeholder="Ingrese MM/AA"><br>
+                <label>Codigo de seguridad</label><br>
+                <input type="text" placeholder="Ingrese codigo de seguridad"><br>
             </form>
-        </section>
+        </fieldset>
     </section>
+    <button>Enviar Datos</button>
 </body>
 <script src="js/script.js"></script>
 <script src="js/script-muro.js"></script>
