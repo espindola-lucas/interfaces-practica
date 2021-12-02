@@ -73,12 +73,11 @@ body{
 
 .contenedor .amigos-fotos .amigos .boxAmigo{
     display: flex;
-    margin-top: 10%;
 }
 
 .contenedor .amigos-fotos .amigos .boxAmigo >  img{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 }
 
@@ -89,18 +88,14 @@ body{
 
 /* posts "barra" lateral derecha */
 
-.contenedor .posts .compartir{
-    width: 265%;
-    margin-left: -166%;
-    background-color: rgba(196, 196, 196, 0.5);
-    border-radius: var(--border-radius);
-    margin-bottom: 15%;
-    padding-top: 10%;
-    padding-bottom: 10%;
+.contenedor .posts{
+    width: 55%;
 }
 
-.contenedor .posts .compartir > h3{
-    text-align: center;
+.contenedor .posts .compartir{
+    background-color: rgba(196, 196, 196, 0.5);
+    border-radius: var(--border-radius);
+    padding: 1%;
 }
 
 .contenedor .posts .compartir .profile,
@@ -111,23 +106,23 @@ body{
     margin-left: 10%;
 }
 
-.contenedor .posts .compartir .name{
+.contenedor .posts .compartir > h3{
+    text-align: center;
+}
+
+.contenedor .posts .compartir .name,
+.contenedor .posts .boxPosts .user .name{
     font-size: var(--size-one);
     margin-left: 20%;
     margin-top: -8%;
 }
 
 .contenedor .posts .compartir input{
-    margin-top: 8%;
+    margin-top: 5%;
     width: 75%;
     border: none;
     margin-left: 10%;
     padding: 1%;
-}
-
-.contenedor .posts .compartir > p{
-    margin-left: 10%;
-    margin-top: 2%;
 }
 
 .contenedor .posts .compartir .anadir-publicacion{
@@ -145,32 +140,25 @@ body{
     background-color: rgba(132, 75, 132, 1);
     color: white;
     border-radius: 20px;
-    cursor: pointer;
 }
 
 .contenedor .posts .boxPosts{
-    width: 265%;
-    margin-left: -166%;
     background-color: rgba(196, 196, 196, 0.5);
     border-radius: var(--border-radius);
+    margin-bottom: 5%;
+    margin-top: 5%;
     padding-top: 5%;
     padding-bottom: 5%;
-    margin-bottom: 15%;
-}
-
-.contenedor .posts .boxPosts .user .profile{
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-}
-
-.contenedor .posts .boxPosts .user .name{
-    font-size: var(--size-one);
-    margin-left: 20%;
-    margin-top: -6%;
 }
 
 .contenedor .posts .boxPosts .user .imgPost{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.contenedor .posts .boxPosts .user > span{
+    display: block;
     width: 80%;
     margin-left: 10%;
     margin-top: 5%;
