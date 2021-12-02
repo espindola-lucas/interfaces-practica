@@ -262,15 +262,15 @@ body{
     .navegacion .menu{
         display: flex;
         justify-content: space-around;
-        width: 100%;
+        width: 90%;
         margin-top: -2.5%;
         height: 50px;
         background-color: white;
         z-index: 9999;
     }
 
-    .navegacion .menu > svg{
-        margin-top: 1%;
+    .navbarResponsive{
+        margin-top: 3%;
     }
 
     /* body */
