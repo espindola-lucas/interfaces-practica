@@ -14,7 +14,16 @@ body{
 .header{
     margin-top: -5%;
 }
-
+.pagarPublicidad fieldset{
+   border: none;
+   border:solid 2px var(--secondary-color);
+}
+.publicidad legend {
+    color:var(--secondary-color) ;
+}
+.pago legend{
+    color:var(--secondary-color) ;
+}
 .explicacionPublicidad > h1{
     text-align: center;
     margin-top: 5%;
