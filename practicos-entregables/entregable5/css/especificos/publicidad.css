@@ -61,6 +61,7 @@ body{
 
 .pagarPublicidad .formadePago .form{
     margin-left: -5%;
+    width: 100%;
 }
 
 .pagarPublicidad .formadePago .form > label,

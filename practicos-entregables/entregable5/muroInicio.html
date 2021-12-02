@@ -32,7 +32,7 @@
                 </datalist>
         <!-- navbar de distintas secciones -->
             <nav class="navbar">
-                <p onclick="mostrarNotificacion()"><i style="margin-left: 40%; font-size: 35px;" class="fas fa-bell"></i><br></p>
+                <p id="campana" onclick="mostrarNotificacion()"><i id="campana" style="margin-left: 40%; font-size: 35px;" class="fas fa-bell"></i><br></p>
 
                 <a href="muroInicio.html">
                     <p ><svg style="margin-left: 5%;" width="41" height="32" viewBox="0 0 41 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -177,8 +177,8 @@
                 <p>Leandro Rodriguez</p>
                 <img class="imgPost" src="images/descarga (5).jpeg" alt=""><br>
                 <div class="acciones">
-                    <p>9 - Comentar <i class="fas fa-comment"></i></p>
-                    <p onclick="cambiarPath()">134 - Me Gusta <svg id='svg' style="background-color: rgba(196, 196, 196, 0.3)" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <p> Comentar <i class="fas fa-comment"></i></p>
+                    <p onclick="cambiarPath()"> Me Gusta <svg id='svg' style="background-color: rgba(196, 196, 196, 0.3)" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path id='myPath'  d="M11.8281 1.97656C10.5391 0.875 8.64062 1.08594 7.44531 2.30469L7 2.77344L6.53125 2.30469C5.35938 1.08594 3.4375 0.875 2.14844 1.97656C0.671875 3.24219 0.601562 5.49219 1.91406 6.85156L6.46094 11.5391C6.74219 11.8438 7.23438 11.8438 7.51562 11.5391L12.0625 6.85156C13.375 5.49219 13.3047 3.24219 11.8281 1.97656Z" fill="black"/>
                         </svg>
                     </p>
@@ -195,8 +195,8 @@
                     Tenemos una tristeza terrible, mis papás están sin consuelo... Nosotros no llegamos a tiempo...esperamos que nuestra advertencia sirva para evitar otra muerte! 
                     Estén atentos que en el barrio de la calle LAPRIDA!! Hay un h de p q asesino que no mide las consecuencias! </span>
                 <div class="acciones">
-                    <p>2 - Comentar <i class="fas fa-comment"></i></p>
-                    <p>619 - Me Gusta <svg   onclick="cambiarColor()" id='svg'style="background-color: rgba(196, 196, 196, 0.3)" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <p> Comentar <i class="fas fa-comment"></i></p>
+                    <p> Me Gusta <svg   onclick="cambiarColor()" id='svg'style="background-color: rgba(196, 196, 196, 0.3)" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path id='myPath' onclick="cambiarPath()" d="M11.8281 1.97656C10.5391 0.875 8.64062 1.08594 7.44531 2.30469L7 2.77344L6.53125 2.30469C5.35938 1.08594 3.4375 0.875 2.14844 1.97656C0.671875 3.24219 0.601562 5.49219 1.91406 6.85156L6.46094 11.5391C6.74219 11.8438 7.23438 11.8438 7.51562 11.5391L12.0625 6.85156C13.375 5.49219 13.3047 3.24219 11.8281 1.97656Z" fill= " black"/>
                         </svg>
                     </p>
@@ -211,8 +211,8 @@
                 <p>Pablo Monaco</p>
                 <img class="imgPost" src="images/images (7).jpeg" alt=""><br>
                 <div class="acciones">
-                    <p>6 - Comentar <i class="fas fa-comment"></i></p>
-                    <p>549 Me Gusta <svg   onclick="cambiarColor()" id='svg'style="background-color: rgba(196, 196, 196, 0.3)" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <p> Comentar <i class="fas fa-comment"></i></p>
+                    <p>Me Gusta <svg   onclick="cambiarColor()" id='svg'style="background-color: rgba(196, 196, 196, 0.3)" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path  d="M11.8281 1.97656C10.5391 0.875 8.64062 1.08594 7.44531 2.30469L7 2.77344L6.53125 2.30469C5.35938 1.08594 3.4375 0.875 2.14844 1.97656C0.671875 3.24219 0.601562 5.49219 1.91406 6.85156L6.46094 11.5391C6.74219 11.8438 7.23438 11.8438 7.51562 11.5391L12.0625 6.85156C13.375 5.49219 13.3047 3.24219 11.8281 1.97656Z" fill= " black"/>
                         </svg>
                     </p>
@@ -227,8 +227,8 @@
                 <p>Carolina Garcia</p>
                 <span>Hola consulta, alguien que corte uñas a conejos? Esta acostumbrado a andar adentro de casa y cuando lo saco duerme y no gasta las uña.</span>
                 <div class="acciones">
-                    <p>154 - Comentar <i class="fas fa-comment"></i></p>
-                    <p>64 Me Gusta <svg   onclick="cambiarColor()" id='svg'style="background-color: rgba(196, 196, 196, 0.3)" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <p> Comentar <i class="fas fa-comment"></i></p>
+                    <p> Me Gusta <svg   onclick="cambiarColor()" id='svg'style="background-color: rgba(196, 196, 196, 0.3)" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path id='myPath' onclick="cambiarPath()" d="M11.8281 1.97656C10.5391 0.875 8.64062 1.08594 7.44531 2.30469L7 2.77344L6.53125 2.30469C5.35938 1.08594 3.4375 0.875 2.14844 1.97656C0.671875 3.24219 0.601562 5.49219 1.91406 6.85156L6.46094 11.5391C6.74219 11.8438 7.23438 11.8438 7.51562 11.5391L12.0625 6.85156C13.375 5.49219 13.3047 3.24219 11.8281 1.97656Z" fill= " black"/>
                         </svg>
                     </p>
@@ -240,45 +240,45 @@
     </div>
     <div id="notificacion"  class="notificaciones">
         <div class="notificacion">
-            <img src="images/lit-killah.jpg" alt="">
+            <img src="images/perfil25.jpg" alt="">
             <p class="tiempoNotificacion">Hace 10 minutos</p>
-            <p><strong>Alejandro Roldan: </strong>Le gusto tu publicación</p>
+            <p><strong>Alejandro Roldan: </strong>Comento tu publicacion</p>
         </div>
 
         <div class="notificacion">
-            <img src="images/lit-killah.jpg" alt="">
-            <p class="tiempoNotificacion">Hace 10 minutos</p>
-            <p><strong>Alejandro Roldan: </strong>Le gusto tu publicación</p>
+            <img src="images/Perfil27.jpeg" alt="">
+            <p class="tiempoNotificacion">Hace 15 minutos</p>
+            <p><strong>Joaquin Lopez: </strong>Le gusto tu publicación</p>
         </div>
 
         <div class="notificacion">
-            <img src="images/lit-killah.jpg" alt="">
-            <p class="tiempoNotificacion">Hace 10 minutos</p>
-            <p><strong>Alejandro Roldan: </strong>Le gusto tu publicación</p>
+            <img src="images/perfil29.jpeg" alt="">
+            <p class="tiempoNotificacion">Hace 20 minutos</p>
+            <p><strong>Carolina Perez: </strong>Le gusto tu publicación</p>
         </div>
 
         <div class="notificacion">
-            <img src="images/lit-killah.jpg" alt="">
-            <p class="tiempoNotificacion">Hace 10 minutos</p>
-            <p><strong>Alejandro Roldan: </strong>Le gusto tu publicación</p>
+            <img src="images/perfil3.jpg" alt="">
+            <p class="tiempoNotificacion">Hace 1 dia</p>
+            <p><strong>Alejandra Rivas: </strong>Comento tu publicacion</p>
         </div>
 
         <div class="notificacion">
-            <img src="images/lit-killah.jpg" alt="">
-            <p class="tiempoNotificacion">Hace 10 minutos</p>
-            <p><strong>Alejandro Roldan: </strong>Le gusto tu publicación</p>
+            <img src="images/perfil4.png" alt="">
+            <p class="tiempoNotificacion">Hace 2 dias</p>
+            <p><strong>Julian Gonzalez: </strong>Le gusto tu publicación</p>
         </div>
 
         <div class="notificacion">
-            <img src="images/lit-killah.jpg" alt="">
-            <p class="tiempoNotificacion">Hace 10 minutos</p>
-            <p><strong>Alejandro Roldan: </strong>Le gusto tu publicación</p>
+            <img src="images/perfil5.jpg" alt="">
+            <p class="tiempoNotificacion">Hace 3 dias</p>
+            <p><strong>Sofia Antonia: </strong>Le gusto tu publicación</p>
         </div>
 
         <div class="notificacion">
-            <img src="images/lit-killah.jpg" alt="">
-            <p class="tiempoNotificacion">Hace 10 minutos</p>
-            <p><strong>Alejandro Roldan: </strong>Le gusto tu publicación</p>
+            <img src="images/perfil8.jpeg" alt="">
+            <p class="tiempoNotificacion">Hace 3 dias</p>
+            <p><strong>Julieta vegas: </strong>Le gusto tu publicación</p>
         </div>
     </div>
 
