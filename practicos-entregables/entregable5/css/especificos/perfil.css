@@ -145,6 +145,7 @@ body{
     background-color: rgba(132, 75, 132, 1);
     color: white;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .contenedor .posts .boxPosts{

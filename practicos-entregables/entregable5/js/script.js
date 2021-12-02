@@ -16,8 +16,7 @@ function Timer() {
             if (entre == 0){
                 entre = 1 ;
                 document.getElementById('body').style.display='block'; 
-    document.getElementById('loader').className = "loader-container-finish";
-    
+                document.getElementById('circulo').className = "loader-container-finish";
                 n = 0 ;
                 parar = 0;
             }
@@ -27,5 +26,4 @@ function Timer() {
 
 }
 
-    
 document.addEventListener("DOMContentLoaded", Timer());

@@ -58,8 +58,9 @@ body{
 }
 
 .header .fijado .logo img{
-height: 80%;
+    height: 80%;
 }
+
 .header .fijado .navbar div {
     display: none;
 }
@@ -67,6 +68,7 @@ height: 80%;
 .header .fijado .navbar a:hover + div {
     display: block;
 }
+
 .header .fijado .buscar input{
     width: 400px;
     height: 25px;
