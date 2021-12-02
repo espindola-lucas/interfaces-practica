@@ -142,7 +142,7 @@ body{
     display: none;
 }
 
-@media (max-width: 768px){
+@media (max-width: 468px){
     .sessionFlow{
         display: none;
     }
@@ -152,23 +152,25 @@ body{
     }
 
     .sessionMobile > img{
-        margin-left: 40%;
-        margin-top: 15%;
+        width: 150px;
+        height: 150px;
+        margin-left: 30%;
+        margin-top: 5%;
     }
 
     .sessionMobile > h1{
         position: absolute;
         font-family: var(--title-font);
-        font-size: 60px;
+        font-size: 30px;
         font-weight: 100;
-        margin-top: 45%;
-        margin-left: 38%;
+        margin-top: 50%;
+        margin-left: 35%;
     }
 
     .sessionMobile > form{
         position: absolute;
-        margin-top: 60%;
-        margin-left: 30%;
+        margin-top: 65%;
+        margin-left: 20%;
     }
 
     .sessionMobile > form > label{
@@ -176,7 +178,7 @@ body{
     }
 
     .sessionMobile > form > input{
-        width: 200%;
+        width: 130%;
         border: none;
         height: 25px;
         background-color: rgba(196, 196, 196, 0.6);
@@ -191,8 +193,8 @@ body{
         color: white;
         cursor: pointer;
         position: absolute;
-        margin-top: 80%;
-        margin-left: -28%;
+        margin-top: 100%;
+        margin-left: -45%;
         font-size: 20px;
         font-weight: bold;
     }
@@ -200,12 +202,15 @@ body{
     .sessionMobile > a > p{
         color: var(--primary-color);
         position: absolute;
-        margin-top: 88%;
-        margin-left: -25%;
+        margin-top: 112%;
+        margin-left: -46%;
     }
 
     .sessionMobile .registrarse > button{
-        margin-top: 100%;
-        margin-left: -30%;
+        margin-top: 130%;
+        margin-left: -48%;
+        padding: 2% 7%;
+        font-weight: bold;
+        cursor: pointer;
     }
 }

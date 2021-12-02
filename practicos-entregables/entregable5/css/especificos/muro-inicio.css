@@ -242,34 +242,20 @@ body{
     display: none;
 }
 
-@media (max-width: 768px){
-    .contenido .sugerencias,
-    .contenido .publicidad{
-        display: none;
-    }
-
-    .contenido .posts{
-        width: 90%;
-    }
-
-    .contenido .posts .compartir p,
-    .contenido .posts .postsContactos p{
-        left: 20%;
-    }
-
+@media (max-width: 468px){
     .header,
     .navegacion .menu{
         position: fixed;
     }
 
     .header .fijado{
-        margin-top: -12%;
+        margin-top: -17%;
         width: 100%;
     }
 
     .navegacion{
         display: flex;
-        margin-top: 13%;
+        margin-top: 18%;
         justify-content: space-around;
     }
 
@@ -285,6 +271,27 @@ body{
 
     .navegacion .menu > svg{
         margin-top: 1%;
+    }
+
+    /* body */
+    .contenido .sugerencias,
+    .contenido .publicidad,
+    .contenido .posts .compartir .anadir-publicacion{
+        display: none;
+    }
+
+    .contenido .posts{
+        width: 95%;
+        margin-top: 10%;
+    }
+
+    .contenido .posts .compartir p,
+    .contenido .posts .postsContactos p{
+        left: 30%;
+    }
+
+    .contenido .posts .postsContactos .user .imgPost{
+        height: 200px;
     }
 
     /* .lineaResponsive{
