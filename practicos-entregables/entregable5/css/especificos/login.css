@@ -72,7 +72,8 @@ body{
     all: unset;
 }
 
-.sessionFlow .box .form input[type="text"]{
+.sessionFlow .box .form input[type="text"],
+.sessionFlow .box .form input[type="password"]{
     width: 90%;
     line-height: 30px;
     border: none;
