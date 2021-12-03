@@ -57,7 +57,8 @@ body{
     /* position: fixed; */
 }
 
-.header .fijado .logo img{
+.header .fijado .logo > a > img{
+    cursor: pointer;
     height: 80%;
 }
 
