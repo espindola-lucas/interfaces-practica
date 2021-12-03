@@ -110,6 +110,7 @@ body{
 
 .sessionFlow .box .form .register{
     margin-left: 15%;
+    background-color: var(--secondary-color);
 }
 
 @keyframes cambio {
@@ -213,5 +214,6 @@ body{
         padding: 2% 7%;
         font-weight: bold;
         cursor: pointer;
+        background-color: var(--secondary-color);
     }
 }
